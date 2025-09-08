@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass, asdict
-from typing import List, Optional
+from typing import List, Optional, Tuple
 import os
 from datetime import datetime
 from dateutil import parser as dateparser
@@ -126,32 +126,118 @@ def parse_start_time(raw: str) -> datetime:
         return datetime.utcnow()
 
 
+def ensure_prop_type(client: Client, name: str) -> Optional[str]:
+    existing = client.table("prop_types").select("id").eq("name", name).limit(1).execute()
+    if existing.data:
+        return existing.data[0]["id"]
+    ins = client.table("prop_types").insert({"name": name}).execute()
+    return ins.data[0]["id"] if ins.data else None
+
+
+def predict_total_kills(player_name: str, team_name: str) -> float:
+    """Stub predictive model.
+    Replace with real model inference (e.g., load pickle/onnx). For now deterministic hash-based pseudo prediction.
+    """
+    base = sum(ord(c) for c in (player_name + team_name)) % 25
+    return round(12 + base * 0.3, 1)  # yields roughly 12 - 19 range
+
+
+async def fetch_roster(page, match_url: str) -> Tuple[List[str], List[str]]:
+    """Visit match detail page and extract two rosters (up to 5 players each).
+    Returns (team_a_players, team_b_players)."""
+    try:
+        await page.goto(match_url, wait_until="domcontentloaded")
+        await page.wait_for_timeout(800)
+        # Common selectors: team containers with players list
+        team_blocks = await page.query_selector_all(".vm-stats-game-header .team")
+        if not team_blocks or len(team_blocks) < 2:
+            # fallback: look for .match-header .wf-card .team
+            team_blocks = await page.query_selector_all(".match-header .team")
+        rosters: List[List[str]] = []
+        for block in team_blocks[:2]:
+            names = []
+            # Player name selectors attempts
+            player_nodes = await block.query_selector_all(".player, .wf-module-item, .mod-player")
+            for pn in player_nodes:
+                txt = (await pn.inner_text() or "").strip()
+                if not txt:
+                    continue
+                clean = " ".join(txt.split())
+                # filter out role labels etc.
+                if len(clean) > 20:  # skip long text blocks
+                    continue
+                if clean.lower() in {"coach", "sub"}:
+                    continue
+                if clean and clean not in names:
+                    names.append(clean)
+                if len(names) >= 5:
+                    break
+            rosters.append(names)
+        while len(rosters) < 2:
+            rosters.append([])
+        return rosters[0], rosters[1]
+    except Exception as e:
+        print(f"Roster parse failed for {match_url}: {e}")
+        return [], []
+
+
 async def persist_matches(matches: List[UpcomingMatch]):
     client = init_supabase()
     inserted = 0
-    for m in matches:
-        try:
-            team_a_id = await ensure_team(client, m.team1)
-            team_b_id = await ensure_team(client, m.team2)
-            if not team_a_id or not team_b_id:
-                continue
-            start_time = parse_start_time(m.start_time)
-            # Check existing (same teams & start_time within one minute tolerance)
-            # Since start_time is timestamptz in DB, we match exact ISO string; adjust if needed.
-            start_iso = start_time.isoformat(timespec="seconds")
-            existing = client.table("matches").select("id").eq("team_a_id", team_a_id).eq("team_b_id", team_b_id).eq("start_time", start_iso).limit(1).execute()
-            if existing.data:
-                continue
-            client.table("matches").insert({
-                "team_a_id": team_a_id,
-                "team_b_id": team_b_id,
-                "start_time": start_iso,
-                "status": "SCHEDULED"
-            }).execute()
-            inserted += 1
-        except Exception as e:
-            print(f"Failed to persist match {m.team1} vs {m.team2}: {e}")
-    print(f"Inserted {inserted} new matches (out of {len(matches)} scraped).")
+    prop_type_id = ensure_prop_type(client, "Total Kills")
+    async with async_playwright() as pw:
+        browser = await pw.chromium.launch(headless=True)
+        page = await browser.new_page()
+        for m in matches:
+            try:
+                team_a_id = await ensure_team(client, m.team1)
+                team_b_id = await ensure_team(client, m.team2)
+                if not team_a_id or not team_b_id:
+                    continue
+                start_time = parse_start_time(m.start_time)
+                start_iso = start_time.isoformat(timespec="seconds")
+                existing = client.table("matches").select("id").eq("team_a_id", team_a_id).eq("team_b_id", team_b_id).eq("start_time", start_iso).limit(1).execute()
+                if existing.data:
+                    continue  # skip enrichment for existing for now
+                # Insert match
+                match_ins = client.table("matches").insert({
+                    "team_a_id": team_a_id,
+                    "team_b_id": team_b_id,
+                    "start_time": start_iso,
+                    "status": "SCHEDULED"
+                }).execute()
+                if not match_ins.data:
+                    continue
+                match_id = match_ins.data[0]["id"]
+                inserted += 1
+                # Fetch rosters
+                team_a_players, team_b_players = await fetch_roster(page, m.url)
+                # Ensure players and insert prop lines
+                for pname, tid in [(p, team_a_id) for p in team_a_players] + [(p, team_b_id) for p in team_b_players]:
+                    if not pname:
+                        continue
+                    # ensure player
+                    existing_player = client.table("players").select("id").eq("name", pname).eq("team_id", tid).limit(1).execute()
+                    if existing_player.data:
+                        player_id = existing_player.data[0]["id"]
+                    else:
+                        pinsert = client.table("players").insert({"name": pname, "team_id": tid}).execute()
+                        player_id = pinsert.data[0]["id"] if pinsert.data else None
+                    if not player_id or not prop_type_id:
+                        continue
+                    predicted = predict_total_kills(pname, m.team1 if tid == team_a_id else m.team2)
+                    # Insert prop line for player
+                    client.table("prop_lines").insert({
+                        "match_id": match_id,
+                        "player_id": player_id,
+                        "prop_type_id": prop_type_id,
+                        "line_value": predicted,
+                        "status": "OPEN"
+                    }).execute()
+            except Exception as e:
+                print(f"Failed to fully process match {m.team1} vs {m.team2}: {e}")
+        await browser.close()
+    print(f"Inserted {inserted} new matches (with generated prop lines).")
 
 
 async def _main():
