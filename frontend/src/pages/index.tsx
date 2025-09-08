@@ -1,16 +1,8 @@
 import React from "react";
 import dayjs from "dayjs";
 import MatchCard from "../components/MatchCard";
-import { createClient } from "@supabase/supabase-js";
 
-type DBMatch = { id: string; starts_at: string; team_a: { name: string } | null; team_b: { name: string } | null };
-
-const supabase = typeof window !== 'undefined'
-  ? createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
-  : (null as any);
+type DBMatch = { id: string; starts_at: string; team_a?: { name: string } | null; team_b?: { name: string } | null };
 
 export default function Home() {
   const [date, setDate] = React.useState<string>(dayjs().format("YYYY-MM-DD"));
@@ -19,19 +11,31 @@ export default function Home() {
   const [err, setErr] = React.useState<string | null>(null);
 
   async function fetchMatches() {
-    if (!supabase) return;
     try {
       setLoading(true);
-      // Filter for matches starting today (UTC) & status SCHEDULED or LIVE
+      const baseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+      if (!baseUrl || !anon) throw new Error("Missing Supabase env vars");
       const start = dayjs(date).startOf('day').toISOString();
       const end = dayjs(date).endOf('day').toISOString();
-      const { data, error } = await supabase
-        .from('matches')
-  .select('id, starts_at, status, team_a:team_a_id(name), team_b:team_b_id(name)')
-        .gte('starts_at', start)
-        .lte('starts_at', end)
-        .in('status', ['SCHEDULED','LIVE']);
-      if (error) throw error;
+      // Build query params for RLS-safe filtering (eq, gte, lte, in status)
+      const url = new URL(`${baseUrl}/rest/v1/matches`);
+      url.searchParams.set('select', 'id,starts_at,status,team_a:team_a_id(name),team_b:team_b_id(name)');
+      url.searchParams.set('starts_at', `gte.${start}`);
+      url.searchParams.set('starts_at', `lte.${end}`); // overridden if duplicate; adjust using and/or alternative
+      // Use range filtering differently: need two parameters; use gte and lte encoded differently
+      // We'll append manually for both conditions
+      url.searchParams.delete('starts_at');
+      url.search += `&starts_at=gte.${encodeURIComponent(start)}&starts_at=lte.${encodeURIComponent(end)}`;
+      url.search += `&status=in.(SCHEDULED,LIVE)`;
+      const resp = await fetch(url.toString(), {
+        headers: {
+          'apikey': anon,
+          'Authorization': `Bearer ${anon}`,
+        },
+      });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const data: DBMatch[] = await resp.json();
       setMatches(data || []);
       setErr(null);
     } catch (e: any) {
