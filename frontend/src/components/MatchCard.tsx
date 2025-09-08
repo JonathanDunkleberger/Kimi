@@ -8,7 +8,7 @@ import { useBetSlip } from "../store/betSlipStore";
 type Match = { id: string; team_a: string; team_b: string; start_time?: string | null };
 
 export default function MatchCard({ match }: { match: Match }) {
-  const { add } = useBetSlip();
+  const { selections, add, remove } = useBetSlip();
   const [lines, setLines] = React.useState<Array<{ id: string; player: string; prop: string; line: number; status: string }>>([]);
 
   React.useEffect(() => {
@@ -23,6 +23,12 @@ export default function MatchCard({ match }: { match: Match }) {
   }, [match.id]);
 
   function select(lineId: string, choice: "over" | "under") {
+    const existing = selections.find(s => s.prop_line_id === lineId);
+    if (existing && existing.choice === choice) {
+      // toggle off
+      remove(lineId);
+      return;
+    }
     add({ prop_line_id: lineId, choice });
     window.dispatchEvent(new CustomEvent("open-slip"));
   }
@@ -59,8 +65,31 @@ export default function MatchCard({ match }: { match: Match }) {
                 <TableCell>{p.prop}</TableCell>
                 <TableCell className="text-right">{p.line}</TableCell>
                 <TableCell className="text-right space-x-2">
-                  <Button size="sm" onClick={() => select(p.id, "over")}>More</Button>
-                  <Button size="sm" variant="secondary" onClick={() => select(p.id, "under")}>Less</Button>
+                  {(() => {
+                    const sel = selections.find(s => s.prop_line_id === p.id);
+                    const overActive = sel?.choice === "over";
+                    const underActive = sel?.choice === "under";
+                    return (
+                      <>
+                        <Button
+                          size="sm"
+                          variant={overActive ? "default" : "outline"}
+                          className={overActive ? "bg-green-600 hover:bg-green-600 text-white border-green-700" : ""}
+                          onClick={() => select(p.id, "over")}
+                        >
+                          {overActive ? "Selected" : "More"}
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant={underActive ? "secondary" : "outline"}
+                          className={underActive ? "bg-red-600 hover:bg-red-600 text-white border-red-700" : ""}
+                          onClick={() => select(p.id, "under")}
+                        >
+                          {underActive ? "Selected" : "Less"}
+                        </Button>
+                      </>
+                    );
+                  })()}
                 </TableCell>
               </TableRow>
             ))}
