@@ -1,42 +1,51 @@
 import React from "react";
 import dayjs from "dayjs";
 import MatchCard from "../components/MatchCard";
+import { createClient } from "@supabase/supabase-js";
 
-type APIMatch = { id: string; start_time: string | null; team_a: { name: string }; team_b: { name: string } };
+type DBMatch = { id: string; starts_at: string; team1: { name: string } | null; team2: { name: string } | null };
+
+const supabase = typeof window !== 'undefined'
+  ? createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+  : (null as any);
 
 export default function Home() {
   const [date, setDate] = React.useState<string>(dayjs().format("YYYY-MM-DD"));
-  // toast removed in favor of shadcn UI
-
-
-
-
-
-
-
-  const [matches, setMatches] = React.useState<APIMatch[]>([]);
-  const [loading, setLoading] = React.useState<boolean>(true);
+  const [matches, setMatches] = React.useState<DBMatch[]>([]);
+  const [loading, setLoading] = React.useState(false);
   const [err, setErr] = React.useState<string | null>(null);
 
   async function fetchMatches() {
+    if (!supabase) return;
     try {
       setLoading(true);
-      const r = await fetch("/api/matches");
-      const j = await r.json();
-      setMatches(j.matches || []);
-  setErr(null);
+      // Filter for matches starting today (UTC) & status SCHEDULED or LIVE
+      const start = dayjs(date).startOf('day').toISOString();
+      const end = dayjs(date).endOf('day').toISOString();
+      const { data, error } = await supabase
+        .from('matches')
+        .select('id, starts_at, status, team1:team1_id(name), team2:team2_id(name)')
+        .gte('starts_at', start)
+        .lte('starts_at', end)
+        .in('status', ['SCHEDULED','LIVE']);
+      if (error) throw error;
+      setMatches(data || []);
+      setErr(null);
     } catch (e: any) {
-  setErr("Failed to load matches");
+      setErr('Failed to load matches');
     } finally {
       setLoading(false);
     }
   }
 
-  React.useEffect(() => { fetchMatches(); }, []);
+  React.useEffect(() => { fetchMatches(); }, [date]);
 
   return (
     <>
-  <div className="">
+      <div className="">
         <div style={{display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:12}}>
           <h2 style={{margin:"8px 0"}}>Today’s Board</h2>
           <div style={{display:"flex", gap:10}}>
@@ -45,15 +54,13 @@ export default function Home() {
           </div>
         </div>
 
-  {loading && <div className="card" style={{padding:16}}>Loading…</div>}
-  {err && <div className="card" style={{padding:16, color:"var(--danger)"}}>{err}</div>}
+        {loading && <div className="card" style={{padding:16}}>Loading…</div>}
+        {err && <div className="card" style={{padding:16, color:"var(--danger)"}}>{err}</div>}
 
-        {matches.map((m) => (
-          <MatchCard key={m.id} match={{ id: m.id, team_a: m.team_a?.name ?? "Team A", team_b: m.team_b?.name ?? "Team B", start_time: m.start_time }} />
+        {matches.map(m => (
+          <MatchCard key={m.id} match={{ id: m.id, team_a: m.team1?.name || 'Team A', team_b: m.team2?.name || 'Team B', start_time: m.starts_at }} />
         ))}
       </div>
-
-  {/* BetSlip is global in Layout now */}
     </>
   );
 }

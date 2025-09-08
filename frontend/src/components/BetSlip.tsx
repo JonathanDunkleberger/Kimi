@@ -12,11 +12,33 @@ export type BetSlipHandle = {
 export default function BetSlip(props: { open: boolean; onOpenChange: (o: boolean) => void }) {
   const { selections, remove, clear } = useBetSlip();
   const [wager, setWager] = React.useState<string>("");
+  const [submitting, setSubmitting] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
 
-  function placeBet() {
-    // TODO: wire to actual API once ready
-    clear();
-    props.onOpenChange(false);
+  async function placeBet() {
+    if (submitting) return;
+    setError(null);
+    const stake = parseInt(wager, 10);
+    if (!stake || stake <= 0) { setError('Enter a valid wager'); return; }
+    if (selections.length === 0) { setError('No selections'); return; }
+    setSubmitting(true);
+    try {
+      const legs = selections.map(s => ({ line_id: s.prop_line_id, side: s.choice.toUpperCase() }));
+      const resp = await fetch('/api/bets/place', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ stake, legs })
+      });
+      const json = await resp.json();
+      if (!resp.ok) throw new Error(json.error || 'Failed');
+      clear();
+      props.onOpenChange(false);
+      setWager("");
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -26,6 +48,7 @@ export default function BetSlip(props: { open: boolean; onOpenChange: (o: boolea
           <SheetTitle>Your Picks</SheetTitle>
         </SheetHeader>
         <div className="py-4 space-y-3">
+          {error && <div className="text-sm text-red-600">{error}</div>}
           {selections.length === 0 && <div className="text-sm text-muted-foreground">No selections yet.</div>}
           <ul className="space-y-2">
             {selections.map((s) => (
@@ -42,7 +65,9 @@ export default function BetSlip(props: { open: boolean; onOpenChange: (o: boolea
               <Label htmlFor="wager">Wager Amount</Label>
               <Input id="wager" type="number" placeholder="10" value={wager} onChange={(e)=>setWager(e.target.value)} />
             </div>
-            <Button className="w-full" onClick={placeBet} disabled={selections.length === 0}>Place Bet</Button>
+            <Button className="w-full" onClick={placeBet} disabled={selections.length === 0 || submitting}>
+              {submitting ? 'Placing...' : 'Place Bet'}
+            </Button>
           </div>
         </SheetFooter>
       </SheetContent>

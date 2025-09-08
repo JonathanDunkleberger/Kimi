@@ -4,8 +4,16 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from "@/components/ui/button";
 import dayjs from "dayjs";
 import { useBetSlip } from "../store/betSlipStore";
+import { createClient } from "@supabase/supabase-js";
 
 type Match = { id: string; team_a: string; team_b: string; start_time?: string | null };
+
+const supabase = typeof window !== 'undefined'
+  ? createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+  : (null as any);
 
 export default function MatchCard({ match }: { match: Match }) {
   const { selections, add, remove } = useBetSlip();
@@ -13,11 +21,44 @@ export default function MatchCard({ match }: { match: Match }) {
 
   React.useEffect(() => {
     async function load() {
-      const u = new URL("/api/match-props", window.location.origin);
-      u.searchParams.set("match_id", match.id);
-      const r = await fetch(u);
-      const j = await r.json();
-      setLines(j.lines || []);
+      if (!supabase) return;
+      // Try prop_lines table first
+      const { data: pl, error } = await supabase
+        .from('prop_lines')
+        .select('id, line_value, status, player:player_id(name, handle), prop_type:prop_type_id(name)')
+        .eq('match_id', match.id)
+        .in('status', ['OPEN','FROZEN']);
+
+      if (error) {
+        return; // silently ignore for now
+      }
+      if (pl) {
+        setLines(pl.map((row: any) => ({
+          id: row.id,
+          player: row.player?.name || row.player?.handle || 'Player',
+          prop: row.prop_type?.name || 'Prop',
+          line: row.line_value,
+          status: row.status
+        })));
+        return;
+      }
+
+      // Fallback to legacy lines table
+      const { data: legacy } = await supabase
+        .from('lines')
+        .select('id, line_value, status, stat, player:player_id(name, handle)')
+        .eq('match_id', match.id)
+        .in('status', ['OPEN','FROZEN']);
+
+      if (legacy) {
+        setLines(legacy.map((row: any) => ({
+          id: row.id,
+            player: row.player?.name || row.player?.handle || 'Player',
+            prop: row.stat || 'Stat',
+            line: row.line_value,
+            status: row.status
+        })));
+      }
     }
     load();
   }, [match.id]);
