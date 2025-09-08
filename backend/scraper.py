@@ -24,6 +24,7 @@ from dateutil import parser as dateparser
 
 from playwright.async_api import async_playwright
 from supabase import create_client, Client
+from model_infer import predict_total_kills  # real model-backed prediction
 
 VLR_MATCHES_URL = "https://www.vlr.gg/matches"
 
@@ -135,12 +136,7 @@ def ensure_prop_type(client: Client, name: str) -> Optional[str]:
     return ins.data[0]["id"] if ins.data else None
 
 
-def predict_total_kills(player_name: str, team_name: str) -> float:
-    """Stub predictive model.
-    Replace with real model inference (e.g., load pickle/onnx). For now deterministic hash-based pseudo prediction.
-    """
-    base = sum(ord(c) for c in (player_name + team_name)) % 25
-    return round(12 + base * 0.3, 1)  # yields roughly 12 - 19 range
+## Removed local stub; using model_infer.predict_total_kills
 
 
 async def fetch_roster(page, match_url: str) -> Tuple[List[str], List[str]]:
