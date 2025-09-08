@@ -26,6 +26,27 @@ from playwright.async_api import async_playwright
 from supabase import create_client, Client
 from model_infer import predict_total_kills  # real model-backed prediction
 
+# ---------------- Configuration: Professional Event Filtering ---------------- #
+
+APPROVED_KEYWORDS = [
+    "VCT",
+    "Champions",
+    "Masters",
+    "Kickoff",
+    "International League",
+    "Americas",
+    "EMEA",
+    "Pacific",
+    "China",
+    "Game Changers",  # Top-tier women's league
+]
+
+def is_approved_event(event_name: str) -> bool:
+    if not event_name:
+        return False
+    lower = event_name.lower()
+    return any(k.lower() in lower for k in APPROVED_KEYWORDS)
+
 VLR_MATCHES_URL = "https://www.vlr.gg/matches"
 
 
@@ -35,6 +56,7 @@ class UpcomingMatch:
     team2: str
     start_time: str  # raw time string as shown (could be 'LIVE', 'TBD', or localized time)
     url: str         # absolute URL to match page
+    event_name: str  # extracted tournament / league name
 
 
 async def fetch_upcoming_matches(headless: bool = True) -> List[UpcomingMatch]:
@@ -86,7 +108,30 @@ async def fetch_upcoming_matches(headless: bool = True) -> List[UpcomingMatch]:
             time_el = await a.query_selector(".match-item-time") or await a.query_selector(".match-item-status")
             time_text = (await time_el.inner_text() if time_el else "").strip() or "TBD"
 
-            results.append(UpcomingMatch(team1=team_names[0], team2=team_names[1], start_time=time_text, url=match_url))
+            # Attempt to extract event / tournament name (multiple selector fallbacks)
+            event_selectors = [
+                ".match-item-event",
+                ".match-item-league",
+                ".match-item-series",
+                ".match-item-header .text-of",
+            ]
+            event_name = ""
+            for sel in event_selectors:
+                el = await a.query_selector(sel)
+                if el:
+                    txt = (await el.inner_text() or "").strip()
+                    if txt:
+                        event_name = " ".join(txt.split())
+                        break
+            # Fallback: attribute data-event-name if present
+            if not event_name:
+                maybe_attr = await a.get_attribute("data-event-name")
+                if maybe_attr:
+                    event_name = maybe_attr.strip()
+            if not event_name:
+                event_name = "Unknown"
+
+            results.append(UpcomingMatch(team1=team_names[0], team2=team_names[1], start_time=time_text, url=match_url, event_name=event_name))
 
         await browser.close()
     return results
@@ -187,6 +232,10 @@ async def persist_matches(matches: List[UpcomingMatch]):
         page = await browser.new_page()
         for m in matches:
             try:
+                # Filter: only persist if tournament/event is approved
+                if not is_approved_event(getattr(m, "event_name", "")):
+                    print(f"Skipping non-pro event: {m.team1} vs {m.team2} | Event='{getattr(m, 'event_name', 'Unknown')}'")
+                    continue
                 team_a_id = await ensure_team(client, m.team1)
                 team_b_id = await ensure_team(client, m.team2)
                 if not team_a_id or not team_b_id:
@@ -202,7 +251,8 @@ async def persist_matches(matches: List[UpcomingMatch]):
                     "team_b_id": team_b_id,
                     "start_time": start_iso,
                     "status": "SCHEDULED",
-                    "vlr_url": m.url
+                    "vlr_url": m.url,
+                    "event_name": getattr(m, "event_name", None)
                 }).execute()
                 if not match_ins.data:
                     continue
