@@ -16,9 +16,13 @@ from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass, asdict
-from typing import List
+from typing import List, Optional
+import os
+from datetime import datetime
+from dateutil import parser as dateparser
 
 from playwright.async_api import async_playwright
+from supabase import create_client, Client
 
 VLR_MATCHES_URL = "https://www.vlr.gg/matches"
 
@@ -86,10 +90,76 @@ async def fetch_upcoming_matches(headless: bool = True) -> List[UpcomingMatch]:
     return results
 
 
+# ---------------- Supabase Persistence ---------------- #
+
+def init_supabase() -> Client:
+    url = os.environ.get("SUPABASE_URL") or os.environ.get("SUPABASE_PROJECT_URL")
+    key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+    if not url or not key:
+        raise RuntimeError("Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in environment.")
+    return create_client(url, key)
+
+
+async def ensure_team(client: Client, name: str) -> Optional[str]:
+    """Return team id, creating if needed."""
+    name_norm = name.strip()
+    existing = client.table("teams").select("id").eq("name", name_norm).limit(1).execute()
+    if existing.data:
+        return existing.data[0]["id"]
+    ins = client.table("teams").insert({"name": name_norm}).execute()
+    return ins.data[0]["id"] if ins.data else None
+
+
+def parse_start_time(raw: str) -> datetime:
+    # Attempt flexible parsing; if 'LIVE' or 'TBD', use now as placeholder to avoid duplicate inserts
+    txt = raw.strip().upper()
+    if txt in {"LIVE", "TBD", "ONGOING"}:
+        return datetime.utcnow()
+    try:
+        # Many times on VLR include timezone or relative; rely on dateutil parse
+        dt = dateparser.parse(raw)
+        if not dt.tzinfo:
+            # assume UTC if no tz
+            return dt
+        return dt.astimezone(tz=None).replace(tzinfo=None)
+    except Exception:
+        return datetime.utcnow()
+
+
+async def persist_matches(matches: List[UpcomingMatch]):
+    client = init_supabase()
+    inserted = 0
+    for m in matches:
+        try:
+            team_a_id = await ensure_team(client, m.team1)
+            team_b_id = await ensure_team(client, m.team2)
+            if not team_a_id or not team_b_id:
+                continue
+            start_time = parse_start_time(m.start_time)
+            # Check existing (same teams & start_time within one minute tolerance)
+            # Since start_time is timestamptz in DB, we match exact ISO string; adjust if needed.
+            start_iso = start_time.isoformat(timespec="seconds")
+            existing = client.table("matches").select("id").eq("team_a_id", team_a_id).eq("team_b_id", team_b_id).eq("start_time", start_iso).limit(1).execute()
+            if existing.data:
+                continue
+            client.table("matches").insert({
+                "team_a_id": team_a_id,
+                "team_b_id": team_b_id,
+                "start_time": start_iso,
+                "status": "SCHEDULED"
+            }).execute()
+            inserted += 1
+        except Exception as e:
+            print(f"Failed to persist match {m.team1} vs {m.team2}: {e}")
+    print(f"Inserted {inserted} new matches (out of {len(matches)} scraped).")
+
+
 async def _main():
     matches = await fetch_upcoming_matches()
     for m in matches:
         print(asdict(m))
+    # Persist
+    await persist_matches(matches)
 
 
 if __name__ == "__main__":
