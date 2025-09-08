@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import MatchCard from "../components/MatchCard";
 import { createClient } from "@supabase/supabase-js";
 
-type DBMatch = { id: string; starts_at: string; team1: { name: string } | null; team2: { name: string } | null };
+type DBMatch = { id: string; starts_at: string; team_a: { name: string } | null; team_b: { name: string } | null };
 
 const supabase = typeof window !== 'undefined'
   ? createClient(
@@ -27,7 +27,7 @@ export default function Home() {
       const end = dayjs(date).endOf('day').toISOString();
       const { data, error } = await supabase
         .from('matches')
-        .select('id, starts_at, status, team1:team1_id(name), team2:team2_id(name)')
+  .select('id, starts_at, status, team_a:team_a_id(name), team_b:team_b_id(name)')
         .gte('starts_at', start)
         .lte('starts_at', end)
         .in('status', ['SCHEDULED','LIVE']);
@@ -58,7 +58,7 @@ export default function Home() {
         {err && <div className="card" style={{padding:16, color:"var(--danger)"}}>{err}</div>}
 
         {matches.map(m => (
-          <MatchCard key={m.id} match={{ id: m.id, team_a: m.team1?.name || 'Team A', team_b: m.team2?.name || 'Team B', start_time: m.starts_at }} />
+          <MatchCard key={m.id} match={{ id: m.id, team_a: m.team_a?.name || 'Team A', team_b: m.team_b?.name || 'Team B', start_time: m.starts_at }} />
         ))}
       </div>
     </>
