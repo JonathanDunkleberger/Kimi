@@ -15,6 +15,7 @@ CLI:
 from __future__ import annotations
 
 import asyncio
+import sys
 from dataclasses import dataclass, asdict
 from typing import List, Optional, Tuple
 import os
@@ -204,7 +205,8 @@ async def persist_matches(matches: List[UpcomingMatch]):
                     "team_a_id": team_a_id,
                     "team_b_id": team_b_id,
                     "start_time": start_iso,
-                    "status": "SCHEDULED"
+                    "status": "SCHEDULED",
+                    "vlr_url": m.url
                 }).execute()
                 if not match_ins.data:
                     continue
@@ -241,12 +243,134 @@ async def persist_matches(matches: List[UpcomingMatch]):
 
 
 async def _main():
+    # Default behavior: scrape upcoming & persist
     matches = await fetch_upcoming_matches()
     for m in matches:
         print(asdict(m))
-    # Persist
     await persist_matches(matches)
 
 
+# ---------------- Settlement (Results) Logic ---------------- #
+
+async def scrape_final_scoreboard(page, match_url: str) -> dict:
+    """Scrape final scoreboard for a completed match.
+
+    Returns dict mapping player_name -> kills.
+    Tries multiple selector strategies to be resilient to layout changes.
+    """
+    data = {}
+    try:
+        await page.goto(match_url, wait_until="domcontentloaded")
+        await page.wait_for_timeout(1200)
+        # Potential scoreboard row selectors
+        row_selectors = [
+            ".vm-stats-game .wf-table tbody tr",
+            ".scoreboard tbody tr",
+            "table tbody tr"
+        ]
+        rows = []
+        for sel in row_selectors:
+            rows = await page.query_selector_all(sel)
+            if rows:
+                break
+        for r in rows:
+            text = (await r.inner_text() or "").strip()
+            if not text:
+                continue
+            # Extract cells
+            tds = await r.query_selector_all("td")
+            if len(tds) < 5:
+                continue
+            name_cell = tds[0]
+            name = (await name_cell.inner_text() or "").strip()
+            if not name or len(name) > 24:
+                continue
+            # Try to find kills: often second or third numeric column
+            kills = None
+            for td in tds[1:6]:
+                val = (await td.inner_text() or "").strip()
+                if val.isdigit():
+                    # heuristically accept first numeric as kills if not yet set
+                    kills = int(val)
+                    break
+            if kills is not None:
+                data[name] = kills
+    except Exception as e:
+        print(f"Failed scoreboard scrape for {match_url}: {e}")
+    return data
+
+
+async def settle_completed_matches():
+    """Find matches marked COMPLETED, scrape final results, and call settlement RPC for each prop line."""
+    client = init_supabase()
+    # Fetch completed matches with a stored URL
+    resp = client.table("matches").select("id, vlr_url").eq("status", "COMPLETED").not_.is_("vlr_url", "null").execute()
+    matches = resp.data or []
+    if not matches:
+        print("No completed matches to settle.")
+        return
+    # Fetch prop type id for total kills (if using prop_types/prop_lines schema)
+    total_prop_type = None
+    try:
+        p = client.table("prop_types").select("id").eq("name", "Total Kills").limit(1).execute()
+        if p.data:
+            total_prop_type = p.data[0]["id"]
+    except Exception:
+        pass
+    settled_count = 0
+    async with async_playwright() as pw:
+        browser = await pw.chromium.launch(headless=True)
+        page = await browser.new_page()
+        for m in matches:
+            match_id = m["id"]
+            url = m.get("vlr_url")
+            if not url:
+                continue
+            scoreboard = await scrape_final_scoreboard(page, url)
+            if not scoreboard:
+                continue
+            # For each player kill total attempt to find matching prop lines
+            for player_name, kills in scoreboard.items():
+                # Attempt to locate player record
+                player_resp = client.table("players").select("id").eq("name", player_name).limit(1).execute()
+                if not player_resp.data:
+                    # Alternative column name 'handle'
+                    player_resp = client.table("players").select("id").eq("handle", player_name).limit(1).execute()
+                if not player_resp.data:
+                    continue
+                player_id = player_resp.data[0]["id"]
+                # Fetch prop line(s). Prefer prop_lines table; fallback to lines.
+                line_id = None
+                try:
+                    if total_prop_type:
+                        pl = client.table("prop_lines").select("id").eq("match_id", match_id).eq("player_id", player_id).eq("prop_type_id", total_prop_type).eq("status", "OPEN").limit(1).execute()
+                        if pl.data:
+                            line_id = pl.data[0]["id"]
+                    if not line_id:
+                        # fallback lines table (stat = 'kills_match')
+                        ln = client.table("lines").select("id, stat, status").eq("match_id", match_id).eq("player_id", player_id).eq("stat", "kills_match").eq("status", "OPEN").limit(1).execute()
+                        if ln.data:
+                            line_id = ln.data[0]["id"]
+                except Exception:
+                    pass
+                if not line_id:
+                    continue
+                # Call settlement RPC
+                try:
+                    client.rpc("settle_prop_line", {"prop_line_id": line_id, "actual_result": kills}).execute()
+                    settled_count += 1
+                except Exception as e:
+                    print(f"Settlement RPC failed for line {line_id}: {e}")
+        await browser.close()
+    print(f"Settled {settled_count} prop lines.")
+
+
+def cli():
+    if len(sys.argv) > 1 and sys.argv[1].lower() in {"settle", "results"}:
+        asyncio.run(settle_completed_matches())
+    else:
+        asyncio.run(_main())
+
+
 if __name__ == "__main__":
-    asyncio.run(_main())
+    cli()
