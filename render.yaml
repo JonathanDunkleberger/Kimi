@@ -1,0 +1,44 @@
+services:
+  # Python Web Service for the Model API
+  - type: web
+    name: model-api
+    env: python
+    rootDir: ./backend
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn model_api.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+
+  # Python Cron Job for Scraping Matches
+  - type: cron
+    name: vlr-match-scraper
+    env: python
+    rootDir: ./backend
+    plan: free
+    schedule: "0 * * * *" # Runs every hour
+    buildCommand: "pip install -r requirements.txt; python -m playwright install chromium"
+    startCommand: "python scraper.py"
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+
+  # Python Cron Job for Settling Bets
+  - type: cron
+    name: bet-settlement
+    env: python
+    rootDir: ./backend
+    plan: free
+    schedule: "*/15 * * * *" # Runs every 15 minutes
+    buildCommand: "pip install -r requirements.txt; python -m playwright install chromium"
+    startCommand: "python scraper.py settle"
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
