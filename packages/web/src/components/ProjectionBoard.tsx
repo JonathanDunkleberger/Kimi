@@ -29,9 +29,22 @@ export const ProjectionBoard: React.FC = () => {
               ${selected ? 'border-primary/70 ring-1 ring-primary/50 bg-gradient-to-br from-primary/15 via-card/60 to-background/20' : 'border-border/60 bg-card/60'}`}
             >
               <div className="flex items-start justify-between gap-2">
-                <div>
-                  <div className="font-medium leading-tight">{p.player.name}</div>
-                  <div className="text-[11px] uppercase tracking-wide text-muted-foreground mt-0.5">{p.player.team || '—'}</div>
+                <div className="flex items-start gap-2">
+                  {p.player.imageUrl ? (
+                    <img
+                      src={p.player.imageUrl}
+                      alt={p.player.name}
+                      loading="lazy"
+                      className="w-8 h-8 rounded-md object-cover border border-border/60 bg-background/40"
+                      onError={(e)=>{ (e.target as HTMLImageElement).style.visibility='hidden'; }}
+                    />
+                  ) : (
+                    <div className="w-8 h-8 rounded-md bg-border/40 flex items-center justify-center text-[10px] text-muted-foreground select-none">{p.player.name.slice(0,2).toUpperCase()}</div>
+                  )}
+                  <div>
+                    <div className="font-medium leading-tight">{p.player.name}</div>
+                    <div className="text-[11px] uppercase tracking-wide text-muted-foreground mt-0.5">{p.player.team || '—'}</div>
+                  </div>
                 </div>
                 <div className="text-right">
                   <div className="text-sm font-semibold">{p.value.toFixed(1)}</div>
