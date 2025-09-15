@@ -11,6 +11,7 @@
     "dev:api": "npm --workspace @app/api run dev",
     "build:api": "npm --workspace @app/api run build",
     "prisma:generate": "npm --workspace @app/api run prisma:generate",
-    "prisma:push": "npm --workspace @app/api run prisma:push"
+    "prisma:push": "npm --workspace @app/api run prisma:push",
+    "build:verify": "pnpm --filter ./packages/web build && pnpm --filter ./packages/api build"
   }
 }
