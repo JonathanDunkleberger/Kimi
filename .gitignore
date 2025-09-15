@@ -6,7 +6,6 @@ node_modules/
 out/
 .turbo/
 .vercel/
-pnpm-lock.yaml
 
 # Logs & diagnostics
 npm-debug.log*
