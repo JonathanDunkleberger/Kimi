@@ -190,9 +190,18 @@ def normalize_player_stats(df: pd.DataFrame) -> pd.DataFrame:
         df['clutches_played'] = pd.to_numeric(parts[1], errors='coerce')
     # Kills:Deaths ratio field e.g. '55:39'
     if 'kills_deaths' in df.columns:
-        kd_parts = df['kills_deaths'].astype(str).str.split(':', n=1, expand=True)
-        df['kills_kd_field'] = pd.to_numeric(kd_parts[0], errors='coerce')
-        df['deaths_kd_field'] = pd.to_numeric(kd_parts[1], errors='coerce')
+        # Some rows may have malformed entries (e.g. single number, text) or use '/' instead of ':'
+        raw = df['kills_deaths'].astype(str).str.strip()
+        # Normalize delimiter to ':' for valid patterns like '55/39' or '55:39'
+        normalized = raw.str.replace('/', ':', regex=False)
+        # Keep only patterns matching digits:digits; others become NaN
+        valid_mask = normalized.str.fullmatch(r"\d+:\d+")
+        safe = normalized.where(valid_mask, None)
+        # Split only on valid patterns
+        kills_part = safe.str.split(':').str[0]
+        deaths_part = safe.str.split(':').str[1]
+        df['kills_kd_field'] = pd.to_numeric(kills_part, errors='coerce')
+        df['deaths_kd_field'] = pd.to_numeric(deaths_part, errors='coerce')
     return df
 
 def engineer_features(df: pd.DataFrame) -> pd.DataFrame:
