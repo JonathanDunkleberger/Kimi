@@ -1,0 +1,16 @@
+{
+  "name": "valorant-props-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "packages/web",
+    "packages/api"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @app/web run dev",
+    "dev:api": "npm --workspace @app/api run dev",
+    "build:api": "npm --workspace @app/api run build",
+    "prisma:generate": "npm --workspace @app/api run prisma:generate",
+    "prisma:push": "npm --workspace @app/api run prisma:push"
+  }
+}

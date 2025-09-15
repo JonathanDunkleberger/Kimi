@@ -1,0 +1,13 @@
+# Inherit root .gitignore rules; only add package-specific ignores here.
+.next/
+.vercel/
+node_modules/
+
+# Local preview exports (if using `next export` inside this package)
+out/
+
+# Keep env examples only
+.env
+.env.*
+!.env.example
+!.env.*.example

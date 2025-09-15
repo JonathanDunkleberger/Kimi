@@ -1,24 +1,52 @@
-# Global ignores for this project
+### Root Monorepo Ignore ###
 
-# Node / Next.js
+# Node / Next.js / Tooling
 node_modules/
 .next/
 out/
 .turbo/
 .vercel/
+pnpm-lock.yaml
+
+# Logs & diagnostics
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+*.log
+logs/
+*.pid
+*.pid.lock
 
-# Python
+# TypeScript build cache
+*.tsbuildinfo
+
+# Python / ML
 __pycache__/
 *.py[cod]
 *.pyo
 .venv/
 venv/
+.python-version
+*.ipynb_checkpoints
 
-# Env files (never commit secrets anywhere)
+# Model & data artifacts
+ml/models/
+ml/checkpoints/
+ml/.cache/
+*.joblib
+*.pickle
+*.pkl
+*.onnx
+
+# Coverage / build outputs
+dist/
+build/
+coverage/
+.coverage
+coverage.lcov
+
+# Environment / secrets (allow documented examples)
 .env
 .env.*
 **/.env
@@ -28,17 +56,26 @@ venv/
 !**/.env.example
 !**/.env.*.example
 
-# OS / Editor
+# IDE / Editor / OS
+.vscode/
+.idea/
 .DS_Store
 Thumbs.db
-.vscode/
 
-# Build artifacts
-dist/
-build/
-coverage/
-.coverage
-
-# Docker/local overrides
+# Docker & local overrides
 docker-compose.override.yml
 *.local
+*.override.yml
+
+# Misc
+*.swp
+*.swo
+*.tmp
+tmp/
+.cache/
+
+# Prisma generated client (kept if inside node_modules) - ignore potential local engine builds
+prisma/*.db
+
+# Lock render build artifacts if any
+.render-build/
