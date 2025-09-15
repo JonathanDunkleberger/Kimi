@@ -81,12 +81,40 @@ PLAYER_KEEP = [
     'clutches_won_played', 'max_kills_map'
 ]
 
+def _infer_year_from_path(p: Path) -> int | None:
+    # Search each part for 4-digit year
+    for part in p.parts[::-1]:
+        m = re.search(r"(20\d{2})", part)
+        if m:
+            try:
+                return int(m.group(1))
+            except ValueError:
+                continue
+    return None
+
 def load_matches() -> pd.DataFrame:
-    if not MATCHES_FILE.exists():
-        raise FileNotFoundError(f"Missing matches file: {MATCHES_FILE}")
-    df = pd.read_csv(MATCHES_FILE)
-    # Normalize names to align join keys
-    df = df.rename(columns={
+    """Recursively discover the matches metadata CSV.
+
+    Looks for a file named exactly 'all_matches_games_ids.csv' anywhere under DATA_DIR.
+    If multiple are found, prefers the one with the greatest file size (assumed most complete).
+    """
+    candidates: list[Path] = []
+    for root, _dirs, files in os.walk(DATA_DIR):
+        for f in files:
+            if f.lower() == 'all_matches_games_ids.csv':
+                candidates.append(Path(root) / f)
+
+    if not candidates:
+        raise FileNotFoundError(
+            f"Could not locate 'all_matches_games_ids.csv' under {DATA_DIR}. Searched recursively."
+        )
+
+    # Pick largest file (heuristic for most complete)
+    chosen = max(candidates, key=lambda p: p.stat().st_size)
+    print(f"[preprocess] Using matches file: {chosen} (found {len(candidates)} candidates)", file=sys.stderr)
+
+    df = pd.read_csv(chosen)
+    rename_map = {
         'Tournament': 'tournament',
         'Stage': 'stage',
         'Match Type': 'match_type',
@@ -94,7 +122,13 @@ def load_matches() -> pd.DataFrame:
         'Game ID': 'game_id',
         'Match ID': 'match_id',
         'Year': 'year'
-    })
+    }
+    df = df.rename(columns=rename_map)
+
+    # Normalize whitespace in key columns for safer joins
+    for col in ['tournament', 'stage', 'match_type']:
+        if col in df.columns:
+            df[col] = df[col].astype(str).str.strip()
     return df
 
 def parse_year_from_dir(path: Path) -> int | None:
@@ -104,22 +138,41 @@ def parse_year_from_dir(path: Path) -> int | None:
     return None
 
 def load_all_player_stats() -> pd.DataFrame:
-    rows = []
-    for child in DATA_DIR.iterdir():
-        if not child.is_dir():
-            continue
-        year = parse_year_from_dir(child)
-        if not year:
-            continue
-        stats_path = child / 'players_stats' / 'players_stats.csv'
-        if not stats_path.exists():
-            continue
-        df = pd.read_csv(stats_path)
-        df['__year_from_dir'] = year
-        rows.append(df)
+    """Recursively load every players_stats.csv under DATA_DIR.
+
+    Year inference order:
+      1. Four-digit year detected in any directory segment of the file path.
+      2. 'Year' column in the CSV if present.
+      3. Fallback: -1 (unknown year).
+    """
+    rows: list[pd.DataFrame] = []
+    file_count = 0
+    for root, _dirs, files in os.walk(DATA_DIR):
+        for f in files:
+            if f.lower() == 'players_stats.csv':
+                file_count += 1
+                path = Path(root) / f
+                try:
+                    df = pd.read_csv(path)
+                except Exception as e:  # skip unreadable files but log
+                    print(f"[preprocess] WARN could not read {path}: {e}", file=sys.stderr)
+                    continue
+                inferred_year = _infer_year_from_path(path)
+                if 'Year' in df.columns and pd.api.types.is_numeric_dtype(df['Year']):
+                    # Trust explicit column if consistent
+                    year_series = df['Year'].dropna().unique()
+                    if len(year_series) == 1:
+                        inferred_year = int(year_series[0])
+                df['__year_from_dir'] = inferred_year if inferred_year is not None else -1
+                rows.append(df)
+
     if not rows:
-        raise RuntimeError("No players_stats.csv files found.")
+        raise RuntimeError(
+            f"No players_stats.csv files found under {DATA_DIR} (searched {file_count} potential locations)."
+        )
+
     combined = pd.concat(rows, ignore_index=True)
+    print(f"[preprocess] Loaded {len(rows)} players_stats partitions; total rows={len(combined)}", file=sys.stderr)
     return combined
 
 def normalize_player_stats(df: pd.DataFrame) -> pd.DataFrame:
