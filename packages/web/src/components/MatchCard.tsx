@@ -16,7 +16,7 @@ const supabase = typeof window !== 'undefined'
   : (null as any);
 
 export default function MatchCard({ match }: { match: Match }) {
-  const { selections, add, remove } = useBetSlip();
+  const { selections, toggle, remove } = useBetSlip();
   const [lines, setLines] = React.useState<Array<{ id: string; player: string; prop: string; line: number; status: string }>>([]);
 
   React.useEffect(() => {
@@ -64,13 +64,16 @@ export default function MatchCard({ match }: { match: Match }) {
   }, [match.id]);
 
   function select(lineId: string, choice: "over" | "under") {
-    const existing = selections.find(s => s.prop_line_id === lineId);
-    if (existing && existing.choice === choice) {
-      // toggle off
+    // Map legacy line id + choice to store Selection shape (projectionId, pickType MORE/LESS)
+    const pickType = choice === "over" ? "MORE" : "LESS";
+    const existing = selections.find(s => (s as any).prop_line_id === lineId || s.projectionId === lineId);
+    // If selections originate from projections list they use projectionId; here lines table id substitutes projectionId
+    if ((existing as any)?.prop_line_id === lineId) {
+      // migrate inline: convert to standardized shape for toggle logic
+      // remove then let toggle add below with normalized shape
       remove(lineId);
-      return;
     }
-    add({ prop_line_id: lineId, choice });
+    toggle({ projectionId: lineId, pickType });
     window.dispatchEvent(new CustomEvent("open-slip"));
   }
 
@@ -107,9 +110,9 @@ export default function MatchCard({ match }: { match: Match }) {
                 <TableCell className="text-right">{p.line}</TableCell>
                 <TableCell className="text-right space-x-2">
                   {(() => {
-                    const sel = selections.find(s => s.prop_line_id === p.id);
-                    const overActive = sel?.choice === "over";
-                    const underActive = sel?.choice === "under";
+                    const sel = selections.find(s => (s as any).prop_line_id === p.id || s.projectionId === p.id);
+                    const overActive = sel ? ((sel as any).choice === "over" || (sel as any).pickType === "MORE") : false;
+                    const underActive = sel ? ((sel as any).choice === "under" || (sel as any).pickType === "LESS") : false;
                     return (
                       <>
                         <Button
