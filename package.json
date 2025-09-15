@@ -6,6 +6,9 @@
     "packages/web",
     "packages/api"
   ],
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev:web": "npm --workspace @app/web run dev",
     "dev:api": "npm --workspace @app/api run dev",
