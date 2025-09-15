@@ -1,35 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "../components/Header";
-import { getMe } from "../lib/api";
+import { useMe } from "../lib/api";
 
 export default function Account() {
-  const [me, setMe] = useState<{username:string;credits:number} | null>(null);
-  const [err, setErr] = useState<string | null>(null);
-
-  async function load() {
-    try { const m = await getMe(); setMe({username:m.username, credits:m.credits}); setErr(null); }
-    catch (e:any) { setErr(e.message); setMe(null); }
-  }
-  useEffect(()=>{ load(); }, []);
+  // TODO: integrate real auth token acquisition (e.g., Clerk) and pass token to useMe(token)
+  const token: string | undefined = undefined;
+  const { me, error, isLoading, refresh } = useMe(token);
 
   return (
     <>
-      <Header onAccountChange={load}/>
+  <Header onAccountChange={refresh}/>
       <div className="container">
         <div className="card" style={{padding:20}}>
           <h2 style={{marginTop:0}}>Account</h2>
-          {!me && !err && <div>Loading…</div>}
-          {err && <div style={{color:"var(--danger)"}}>Not signed in or API error.</div>}
+          {!me && !error && <div>Loading…</div>}
+          {error && <div style={{color:"var(--danger)"}}>Not signed in or API error.</div>}
           {me && (
             <>
               <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:14}}>
                 <div className="card" style={{padding:14}}>
-                  <div className="small">Username</div>
-                  <div style={{fontWeight:600}}>{me.username}</div>
+                  <div className="small">Email</div>
+                  <div style={{fontWeight:600}}>{me.email || '—'}</div>
                 </div>
                 <div className="card" style={{padding:14}}>
-                  <div className="small">Credits</div>
-                  <div style={{fontWeight:700, fontSize:18}}>{me.credits}</div>
+                  <div className="small">Balance</div>
+                  <div style={{fontWeight:700, fontSize:18}}>{me.balance}</div>
                 </div>
               </div>
               <div style={{marginTop:16}}>
