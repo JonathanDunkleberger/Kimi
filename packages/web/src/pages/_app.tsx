@@ -11,24 +11,16 @@ export default function App({ Component, pageProps }: AppProps) {
     setTheme(getInitialTheme());
   }, []);
 
-  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY || 'pk_stub_noauth';
   const content = (
     <Layout>
       <Component {...pageProps} />
     </Layout>
   );
 
-  if (!publishableKey) {
-    if (process.env.NODE_ENV !== 'production') {
-      // eslint-disable-next-line no-console
-      console.warn('[Auth] NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY missing: running without ClerkProvider');
-    }
-    return content;
+  if (publishableKey === 'pk_stub_noauth' && process.env.NODE_ENV !== 'production') {
+    // eslint-disable-next-line no-console
+    console.warn('[Auth] Using stub Clerk publishable key; auth features are disabled.');
   }
-
-  return (
-    <ClerkProvider publishableKey={publishableKey}>
-      {content}
-    </ClerkProvider>
-  );
+  return <ClerkProvider publishableKey={publishableKey}>{content}</ClerkProvider>;
 }
