@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { LegIn, createEntry } from "../lib/api";
-import { getAuthToken } from "../lib/auth";
+import { createEntry } from "../lib/api";
 import { Selection } from "./PlayerPropRow";
 
 export default function EntryBuilder(props: {
@@ -11,10 +10,10 @@ export default function EntryBuilder(props: {
 }) {
   const [stake, setStake] = useState<number>(10);
   const [rule, setRule] = useState<"2LEG_3X"|"3LEG_5X">("2LEG_3X");
-  const token = getAuthToken();
+  const token: string | undefined = undefined; // TODO: integrate Clerk session token
 
-  const legs: LegIn[] = props.selections.map(s => ({ line_id: s.line_id, side: s.side }));
-  const canSubmit = !!token && legs.length >= 2 && legs.length <= 3 && (rule === "2LEG_3X" ? legs.length === 2 : legs.length === 3);
+  const pickCount = props.selections.length;
+  const canSubmit = !!token && pickCount >= 2 && pickCount <= 3 && (rule === "2LEG_3X" ? pickCount === 2 : pickCount === 3);
 
   const projectedPayout = useMemo(()=>{
     const mult = rule === "2LEG_3X" ? 3 : 5;
@@ -22,12 +21,14 @@ export default function EntryBuilder(props: {
   }, [stake, rule]);
 
   async function submit() {
-  if (!token) { props.toast("Please sign in first."); return; }
+    if (!token) { props.toast("Please sign in first."); return; }
     if (!canSubmit) { props.toast("Choose 2 or 3 legs to match the payout rule."); return; }
     try {
-      const out = await createEntry({ stake, payout_rule: rule, legs });
+      const picks = props.selections.map(s => ({ playerProjectionId: s.line_id, pickType: s.side }));
+      const out = await createEntry({ wager: stake, picks }, token);
       props.toast("Entry submitted!");
-      props.onSubmitted(out.new_credits);
+      // We don't currently get new credits in the Entry response; trigger balance refresh upstream if needed
+      props.onSubmitted(stake); // pass stake for now (caller may refetch actual balance)
     } catch (e:any) {
       props.toast(`Failed: ${e.message}`);
     }
@@ -36,7 +37,7 @@ export default function EntryBuilder(props: {
   return (
     <div className="builder">
       <div className="builder-header">
-        <div><b>Entry Builder</b> <span className="small">({props.selections.length} leg{props.selections.length!==1?"s":""})</span></div>
+  <div><b>Entry Builder</b> <span className="small">({props.selections.length} pick{props.selections.length!==1?"s":""})</span></div>
         <div className="small">Stake → Payout</div>
       </div>
       <div className="builder-body">
