@@ -28,6 +28,7 @@ model Player {
   id            String @id @unique
   name          String
   team          String
+  imageUrl      String? // Player portrait URL
   projections   PlayerProjection[]
   stats         PlayerMatchStat[]
 }

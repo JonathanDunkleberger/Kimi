@@ -108,6 +108,29 @@ Example cron (every 30 min):
 
 To adjust the displayed stat label, edit `STAT_TYPE_DISPLAY` inside `odds_setter.py`.
 
+## Judge Cron
+
+Script: `judge.py` settles picks for recently completed matches.
+
+Flow:
+
+1. Fetch past matches (`/valorant/matches/past`) and filter by time window (default 180 minutes).
+2. Gather unsettled picks whose projections belong to those matches.
+3. Extract player kills from match payload for statType `Kills Per Round`.
+4. POST results to internal `/settlements` with admin token.
+
+Run (dry run):
+
+```bash
+python packages/api/ml/judge.py --dry-run --verbose --minutes-back 240
+```
+
+Cron example (every 15 min):
+
+```cron
+*/15 * * * * /usr/bin/python /app/packages/api/ml/judge.py >> /var/log/judge.log 2>&1
+```
+
 ---
 
 Maintained as part of the API ML workflow.

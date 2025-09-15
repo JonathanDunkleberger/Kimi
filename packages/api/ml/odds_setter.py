@@ -150,20 +150,21 @@ def ensure_match(conn, match: Dict[str, Any]):
 
 
 def ensure_player(conn, player: Dict[str, Any]):
-    # Player schema: id (String), name, team
+    # Player schema: id (String), name, team, imageUrl
     pid = str(player.get('id') or uuid4())
     name = player.get('name') or player.get('slug') or f"player_{pid}"
     team = None
     if player.get('current_team') and isinstance(player['current_team'], dict):
         team = player['current_team'].get('acronym') or player['current_team'].get('name')
+    image_url = player.get('image_url') or player.get('image') or None
     with conn.cursor() as cur:
         cur.execute(
             """
-            INSERT INTO "Player" (id, name, team)
-            VALUES (%s, %s, %s)
-            ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, team=COALESCE(EXCLUDED.team, "Player".team);
+            INSERT INTO "Player" (id, name, team, "imageUrl")
+            VALUES (%s, %s, %s, %s)
+            ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, team=COALESCE(EXCLUDED.team, "Player".team), "imageUrl"=COALESCE(EXCLUDED."imageUrl", "Player"."imageUrl");
             """,
-            (pid, name, team)
+            (pid, name, team, image_url)
         )
     return pid, name
 
