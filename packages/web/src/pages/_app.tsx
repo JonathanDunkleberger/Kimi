@@ -8,14 +8,27 @@ import Layout from "@/components/Layout";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    // set immediately to avoid FOUC
     setTheme(getInitialTheme());
   }, []);
+
+  const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const content = (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
+
+  if (!publishableKey) {
+    if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
+      console.warn('[Auth] NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY missing: running without ClerkProvider');
+    }
+    return content;
+  }
+
   return (
-    <ClerkProvider>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+    <ClerkProvider publishableKey={publishableKey}>
+      {content}
     </ClerkProvider>
   );
 }
