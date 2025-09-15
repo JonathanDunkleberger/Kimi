@@ -1,5 +1,5 @@
 import React from "react";
-import BetSlip from "../components/BetSlip";
+import EntrySlip from "../components/EntrySlip";
 import { useBetSlip } from "../store/betSlipStore";
 import ProjectionBoard from "../components/ProjectionBoard";
 
@@ -21,7 +21,13 @@ export default function Home() {
       <section>
         <ProjectionBoard />
       </section>
-      <BetSlip open={slipOpen} onOpenChange={setSlipOpen} />
+      <EntrySlip open={slipOpen} onOpenChange={setSlipOpen} />
+      <button
+        onClick={() => setSlipOpen(true)}
+        className="md:hidden fixed bottom-5 right-5 rounded-full bg-primary text-primary-foreground shadow-lg px-5 py-3 text-sm font-semibold tracking-wide"
+      >
+        Picks ({selections.length})
+      </button>
     </main>
   );
 }
