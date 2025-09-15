@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import classNames from "classnames";
-import { BoardLine } from "../lib/api";
+import { Projection } from "../lib/api";
 
 export type Selection = {
   line_id: string;
@@ -10,36 +10,44 @@ export type Selection = {
   side: "MORE" | "LESS";
 };
 
+// Adapt Projection to line shape expected by this component.
+// Projection: { id, statType, value, player: { id, name, team, imageUrl? } }
+type LineLike = Projection & { line_id?: string; line_value?: number; playerName?: string };
+
 export default function PlayerPropRow(props: {
-  line: BoardLine;
+  line: LineLike;
   selected?: Selection | null;
   onToggle: (sel: Selection | null) => void;
   locked?: boolean;
   focused?: boolean;
 }) {
   const { line, selected, locked, focused } = props;
+  const lineId = line.line_id || line.id;
+  const playerName = (line as any).player?.name || (line as any).playerName || (line as any).player || "Player";
+  const team = (line as any).player?.team || (line as any).team || null;
+  const lineValue = line.line_value ?? line.value;
   const activeSide = selected?.side;
 
   // Track previous line value for animation
-  const prevValRef = useRef<number>(line.line_value);
+  const prevValRef = useRef<number>(lineValue);
   const [moved, setMoved] = useState<"up"|"down"|null>(null);
 
   useEffect(() => {
     const prev = prevValRef.current;
-    if (line.line_value !== prev) {
-      setMoved(line.line_value > prev ? "up" : "down");
-      prevValRef.current = line.line_value;
+    if (lineValue !== prev) {
+      setMoved(lineValue > prev ? "up" : "down");
+      prevValRef.current = lineValue;
       const id = setTimeout(()=>setMoved(null), 900);
       return ()=>clearTimeout(id);
     }
-  }, [line.line_value]);
+  }, [lineValue]);
 
   function choose(side: "MORE"|"LESS") {
     if (locked) return;
     if (activeSide === side) {
       props.onToggle(null); // unselect
     } else {
-      props.onToggle({ line_id: line.line_id, player: line.player, team: line.team, line_value: line.line_value, side });
+      props.onToggle({ line_id: lineId, player: playerName, team: team, line_value: lineValue, side });
     }
   }
 
@@ -50,18 +58,18 @@ export default function PlayerPropRow(props: {
     >
       <div className="player">
         <div style={{display:"flex", alignItems:"center", gap:8}}>
-          <div>{line.player}</div>
+          <div>{playerName}</div>
           {moved === "up" && <span title="Line moved up" style={{color:"var(--success)"}}>↑</span>}
           {moved === "down" && <span title="Line moved down" style={{color:"var(--danger)"}}>↓</span>}
         </div>
         <div className="small sub">
-          {line.team ? `${line.team} • ` : ""} kills:
-          <b> {line.line_value.toFixed(1)}</b>
+          {team ? `${team} • ` : ""} kills:
+          <b> {lineValue.toFixed(1)}</b>
           {locked && <span style={{marginLeft:8, color:"var(--danger)"}}>(locked)</span>}
         </div>
       </div>
-      <button className={classNames("more", {active: activeSide==="MORE"})} disabled={locked} onClick={()=>choose("MORE")}>More</button>
-      <button className={classNames("less", {active: activeSide==="LESS"})} disabled={locked} onClick={()=>choose("LESS")}>Less</button>
+  <button className={classNames("more", {active: activeSide==="MORE"})} disabled={locked} onClick={()=>choose("MORE")}>More</button>
+  <button className={classNames("less", {active: activeSide==="LESS"})} disabled={locked} onClick={()=>choose("LESS")}>Less</button>
     </div>
   );
 }
