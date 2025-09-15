@@ -2,12 +2,13 @@ import 'dotenv/config';
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import { PrismaClient, Pick as PickModel } from '@prisma/client';
-import { clerkClient, ClerkExpressRequireAuth } from '@clerk/express';
+import { clerkClient, clerkMiddleware, requireAuth, getAuth } from '@clerk/express';
 
 const prisma = new PrismaClient();
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(clerkMiddleware());
 
 app.get('/health', (_req: Request, res: Response) => {
   res.json({ ok: true, service: 'api', timestamp: new Date().toISOString() });
@@ -35,9 +36,9 @@ async function ensureUser(id: string, email?: string | null) {
 }
 
 // Create entry with picks
-app.post('/entries', ClerkExpressRequireAuth(), async (req: Request, res: Response) => {
-  const auth = (req as any).auth;
-  const userId = auth.userId as string;
+app.post('/entries', requireAuth(), async (req: Request, res: Response) => {
+  const { userId } = getAuth(req);
+  if (!userId) return res.status(401).json({ error: 'Unauthenticated' });
   // fetch Clerk user for email (optional)
   let email: string | undefined;
   try {
@@ -69,9 +70,9 @@ app.post('/entries', ClerkExpressRequireAuth(), async (req: Request, res: Respon
 });
 
 // List entries for current user
-app.get('/entries', ClerkExpressRequireAuth(), async (req: Request, res: Response) => {
-  const auth = (req as any).auth;
-  const userId = auth.userId as string;
+app.get('/entries', requireAuth(), async (req: Request, res: Response) => {
+  const { userId } = getAuth(req);
+  if (!userId) return res.status(401).json({ error: 'Unauthenticated' });
   await ensureUser(userId);
   try {
     const entries = await prisma.entry.findMany({
@@ -88,9 +89,9 @@ app.get('/entries', ClerkExpressRequireAuth(), async (req: Request, res: Respons
 });
 
 // Current user summary
-app.get('/me', ClerkExpressRequireAuth(), async (req: Request, res: Response) => {
-  const auth = (req as any).auth;
-  const userId = auth.userId as string;
+app.get('/me', requireAuth(), async (req: Request, res: Response) => {
+  const { userId } = getAuth(req);
+  if (!userId) return res.status(401).json({ error: 'Unauthenticated' });
   try {
     const clerkUser = await clerkClient.users.getUser(userId);
     const email = clerkUser?.primaryEmailAddress?.emailAddress;

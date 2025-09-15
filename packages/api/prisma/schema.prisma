@@ -1,0 +1,58 @@
+// Minimal Prisma schema reconstructed from API usage.
+// Adjust datasource & generator as needed for your environment.
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String   @id
+  email     String?  @unique
+  balance   Int      @default(0)
+  createdAt DateTime @default(now())
+  entries   Entry[]
+}
+
+model Player {
+  id        String   @id @default(cuid())
+  name      String
+  team      String?
+  projections PlayerProjection[]
+}
+
+model PlayerProjection {
+  id        String   @id @default(cuid())
+  playerId  String
+  player    Player   @relation(fields: [playerId], references: [id])
+  statType  String
+  value     Float
+  createdAt DateTime @default(now())
+  picks     Pick[]
+}
+
+model Entry {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  wager     Int
+  payout    Int
+  isWin     Boolean?
+  createdAt DateTime @default(now())
+  picks     Pick[]
+}
+
+model Pick {
+  id                 String           @id @default(cuid())
+  entryId            String
+  entry              Entry            @relation(fields: [entryId], references: [id])
+  playerProjectionId String
+  playerProjection   PlayerProjection @relation(fields: [playerProjectionId], references: [id])
+  pickType           String
+  result             Float?
+  isWin              Boolean?
+}

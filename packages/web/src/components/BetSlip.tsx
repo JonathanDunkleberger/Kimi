@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useBetSlip } from "../store/betSlipStore";
-import { useAuth } from '@clerk/nextjs';
+import { useAuth } from '@/lib/authClient';
 
 export type BetSlipHandle = {
   open: () => void;

@@ -1,7 +1,7 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import ThemeToggle from './ThemeToggle';
-import { UserButton, SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
+import { UserButton, SignedIn, SignedOut, SignInButton } from '@/lib/authClient';
 
 export default function Header(_props: { onAccountChange?: () => void }) {
 

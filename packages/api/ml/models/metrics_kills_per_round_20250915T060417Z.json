@@ -1,0 +1,30 @@
+{
+  "target": "kills_per_round",
+  "model": "hgb",
+  "timestamp": "20250915T060417Z",
+  "mae": 0.0018081067135347348,
+  "rmse": 0.002255271919464803,
+  "r2": 0.999886465680831,
+  "feature_importance": null,
+  "feature_cols": [
+    "rating",
+    "acs",
+    "adr",
+    "kpr",
+    "apr",
+    "fkpr",
+    "fdpr",
+    "assists",
+    "first_kills",
+    "first_deaths",
+    "kdr",
+    "kad",
+    "fk_fd_diff",
+    "hs_rate",
+    "clutch_rate",
+    "rounds_played"
+  ],
+  "test_size": 0.2,
+  "min_rounds": 20,
+  "limit_year": null
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEntries } from '../lib/api';
-import { useAuth } from '@clerk/nextjs';
+import { useAuth } from '@/lib/authClient';
 
 function statusStyle(e: { isWin?: boolean | null }) {
   if (e.isWin === true) return { background: 'rgba(47,210,143,0.20)' };

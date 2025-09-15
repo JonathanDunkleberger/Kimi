@@ -3,7 +3,7 @@ import { useBetSlip } from '../store/betSlipStore';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { useAuth } from '@clerk/nextjs';
+import { useAuth } from '@/lib/authClient';
 
 /**
  * EntrySlip
