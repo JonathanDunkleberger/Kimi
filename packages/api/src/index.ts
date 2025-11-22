@@ -31,7 +31,7 @@ async function ensureUser(id: string, email?: string | null) {
   await prisma.user.upsert({
     where: { id },
     update: {},
-    create: { id, email: email || `${id}@placeholder.local` }
+    create: { id, email: email || `${id}@placeholder.local`, balance: 1000000 }
   });
 }
 
@@ -53,18 +53,36 @@ app.post('/entries', requireAuth(), async (req: Request, res: Response) => {
   // Basic multiplier: 2 picks -> 3x, 3 picks -> 5x, else linear 1x * count
   let multiplier = 1;
   if (picks.length === 2) multiplier = 3; else if (picks.length === 3) multiplier = 5; else multiplier = picks.length;
+  
   try {
-    const entry = await prisma.entry.create({
-      data: {
-        userId,
-        wager,
-        payout: wager * multiplier,
-        picks: { create: picks.map(p => ({ playerProjectionId: p.playerProjectionId, pickType: p.pickType })) }
-      },
-      include: { picks: { include: { playerProjection: { include: { player: true } } } } }
+    const result = await prisma.$transaction(async (tx) => {
+      const user = await tx.user.findUnique({ where: { id: userId } });
+      if (!user || user.balance < wager) {
+        throw new Error('Insufficient balance');
+      }
+
+      const entry = await tx.entry.create({
+        data: {
+          userId,
+          wager,
+          payout: wager * multiplier,
+          picks: { create: picks.map(p => ({ playerProjectionId: p.playerProjectionId, pickType: p.pickType })) }
+        },
+        include: { picks: { include: { playerProjection: { include: { player: true } } } } }
+      });
+
+      await tx.user.update({
+        where: { id: userId },
+        data: { balance: { decrement: wager } }
+      });
+
+      return entry;
     });
-    res.json(entry);
+    res.json(result);
   } catch (e:any) {
+    if (e.message === 'Insufficient balance') {
+      return res.status(400).json({ error: 'Insufficient balance' });
+    }
     res.status(500).json({ error: 'Failed to create entry' });
   }
 });

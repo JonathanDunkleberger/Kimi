@@ -1,15 +1,22 @@
 import React from "react";
 import Header from "../components/Header";
 import { useMe } from "../lib/api";
+import { useAuth } from "../lib/authClient";
 
 export default function Account() {
-  // TODO: integrate real auth token acquisition (e.g., Clerk) and pass token to useMe(token)
-  const token: string | undefined = undefined;
-  const { me, error, isLoading, refresh } = useMe(token);
+  const { getToken, isSignedIn } = useAuth();
+  const [token, setToken] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    if (isSignedIn) getToken().then(setToken);
+    else setToken(null);
+  }, [isSignedIn, getToken]);
+
+  const { me, error, isLoading, refresh } = useMe(token || undefined);
 
   return (
     <>
-  <Header onAccountChange={refresh}/>
+      <Header onAccountChange={refresh}/>
       <div className="container">
         <div className="card" style={{padding:20}}>
           <h2 style={{marginTop:0}}>Account</h2>
@@ -24,7 +31,7 @@ export default function Account() {
                 </div>
                 <div className="card" style={{padding:14}}>
                   <div className="small">Balance</div>
-                  <div style={{fontWeight:700, fontSize:18}}>{me.balance}</div>
+                  <div style={{fontWeight:700, fontSize:18}}>{me.balance.toLocaleString()}</div>
                 </div>
               </div>
               <div style={{marginTop:16}}>

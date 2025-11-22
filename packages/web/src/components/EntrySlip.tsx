@@ -4,6 +4,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { useAuth } from '@/lib/authClient';
+import { useMe } from '@/lib/api';
 
 /**
  * EntrySlip
@@ -15,6 +16,15 @@ export default function EntrySlip({
 }: { open: boolean; onOpenChange: (o: boolean) => void }) {
   const { selections, remove, clear } = useBetSlip();
   const { getToken, isSignedIn } = useAuth();
+  const [token, setToken] = React.useState<string | null>(null);
+  
+  React.useEffect(() => {
+    if (isSignedIn) getToken().then(setToken);
+    else setToken(null);
+  }, [isSignedIn, getToken]);
+
+  const { me, refresh: refreshMe } = useMe(token || undefined);
+
   const [wager, setWager] = React.useState('');
   const [submitting, setSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
@@ -25,21 +35,22 @@ export default function EntrySlip({
     setError(null); setSuccess(null);
     const stake = parseInt(wager, 10);
     if (!stake || stake <= 0) { setError('Enter a valid wager'); return; }
+    if (me && stake > me.balance) { setError('Insufficient balance'); return; }
     if (selections.length === 0) { setError('No selections'); return; }
     setSubmitting(true);
     try {
       const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost:4000';
       const picks = selections.map(s => ({ playerProjectionId: s.projectionId, pickType: s.pickType }));
       const headers: HeadersInit = { 'Content-Type': 'application/json' };
-      if (isSignedIn) {
-        try { const token = await getToken({ template: 'default' }); if (token) headers['Authorization'] = `Bearer ${token}`; } catch {}
-      }
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+      
       const resp = await fetch(`${apiBase}/entries`, { method: 'POST', headers, body: JSON.stringify({ wager: stake, picks }) });
       const json = await resp.json();
       if (!resp.ok) throw new Error(json.error || 'Failed to place entry');
       clear();
       setWager('');
       setSuccess('Entry placed');
+      refreshMe();
       onOpenChange(false);
     } catch (e: any) {
       setError(e.message);

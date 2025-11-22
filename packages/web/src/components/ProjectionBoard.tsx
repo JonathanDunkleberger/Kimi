@@ -5,19 +5,42 @@ import { useBetSlip } from '../store/betSlipStore';
 export const ProjectionBoard: React.FC = () => {
   const { projections, isLoading, error, refresh } = useProjections();
   const { selections, toggle } = useBetSlip();
+  const [activeStat, setActiveStat] = React.useState<string>('ALL');
 
   if (isLoading) return <div className="p-4 text-sm text-muted-foreground">Loading projections...</div>;
   if (error) return <div className="p-4 text-sm text-destructive">Failed to load projections</div>;
   if (!projections.length) return <div className="p-4 text-sm text-muted-foreground">No projections available.</div>;
 
+  const stats = Array.from(new Set(projections.map(p => p.statType))).sort();
+  const filtered = activeStat === 'ALL' ? projections : projections.filter(p => p.statType === activeStat);
+
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       <div className="flex items-center justify-between">
         <h3 className="text-sm font-semibold text-muted-foreground tracking-wide uppercase">Projections</h3>
-  <button onClick={() => refresh()} className="text-xs underline text-accent hover:text-accent-foreground">Refresh</button>
+        <button onClick={() => refresh()} className="text-xs underline text-accent hover:text-accent-foreground">Refresh</button>
       </div>
+
+      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+        <button
+          onClick={() => setActiveStat('ALL')}
+          className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors whitespace-nowrap border ${activeStat === 'ALL' ? 'bg-primary text-primary-foreground border-primary' : 'bg-card text-muted-foreground border-border hover:border-primary/50'}`}
+        >
+          ALL
+        </button>
+        {stats.map(s => (
+          <button
+            key={s}
+            onClick={() => setActiveStat(s)}
+            className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-colors whitespace-nowrap border ${activeStat === s ? 'bg-primary text-primary-foreground border-primary' : 'bg-card text-muted-foreground border-border hover:border-primary/50'}`}
+          >
+            {s}
+          </button>
+        ))}
+      </div>
+
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {projections.map(p => {
+        {filtered.map(p => {
           const sel = selections.find(s => s.projectionId === p.id);
           const isMore = sel?.pickType === 'MORE';
           const isLess = sel?.pickType === 'LESS';
