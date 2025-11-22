@@ -37,6 +37,8 @@ import psycopg2
 import psycopg2.extras
 from dotenv import load_dotenv
 
+import time
+
 STAT_TYPE = 'Kills Per Round'
 
 
@@ -46,6 +48,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument('--limit-matches', type=int, default=80, help='Max completed matches to inspect')
     p.add_argument('--dry-run', action='store_true', help='Do not POST settlements; just print planned payload')
     p.add_argument('--verbose', action='store_true')
+    p.add_argument('--loop', action='store_true', help='Run in a continuous loop (for background workers)')
+    p.add_argument('--interval', type=int, default=60, help='Sleep interval in seconds when looping')
     return p.parse_args()
 
 
@@ -122,6 +126,81 @@ def post_settlements(base_url: str, admin_token: str, results: List[Dict[str, An
         raise RuntimeError(f'Settlements failed {r.status_code}: {r.text[:200]}')
     return r.json()
 
+def run_once(args, token, admin_token, api_base, db_url):
+    try:
+        conn = connect_db(db_url)
+    except Exception as e:
+        log(f'Database connection failed: {e}', error=True)
+        return
+
+    lookback_cutoff = datetime.now(timezone.utc) - timedelta(minutes=args.minutes_back)
+
+    try:
+        completed = fetch_recent_completed(token, args.limit_matches)
+    except Exception as e:
+        log(f'Failed to fetch completed matches: {e}', error=True)
+        conn.close()
+        return
+
+    # Filter by time window
+    relevant: List[Dict[str, Any]] = []
+    for m in completed:
+        finished_at = m.get('end_at') or m.get('finished_at') or m.get('modified_at')
+        try:
+            if finished_at:
+                dt = datetime.fromisoformat(finished_at.replace('Z','+00:00'))
+                if dt >= lookback_cutoff:
+                    relevant.append(m)
+        except Exception:
+            continue
+
+    if not relevant:
+        log('No recently completed matches in window')
+        conn.close()
+        return
+
+    match_ids = [str(m.get('id')) for m in relevant if m.get('id')]
+    if not match_ids:
+        log('No valid match IDs after filtering')
+        conn.close()
+        return
+
+    try:
+        unsettled = load_unsettled_picks_for_matches(conn, match_ids)
+    except Exception as e:
+        log(f'Failed to load unsettled picks: {e}', error=True)
+        conn.close()
+        return
+
+    if not unsettled:
+        log('No unsettled picks for recent matches')
+        conn.close()
+        return
+
+    # Build kills map aggregated from each match
+    kills_map: Dict[str, float] = {}
+    for m in relevant:
+        km = fetch_match_player_kills(token, m)
+        kills_map.update(km)
+
+    results_payload = build_results_payload(unsettled, kills_map)
+    conn.close()
+
+    if not results_payload:
+        log('No results to settle (missing player kills)')
+        return
+
+    if args.dry_run or args.verbose:
+        log(f'Prepared settlements count={len(results_payload)} sample={results_payload[:3]}')
+    if args.dry_run:
+        return
+
+    try:
+        resp = post_settlements(api_base, admin_token, results_payload)
+        log(f'Settlements response: {resp}')
+    except Exception as e:
+        log(f'Settlements POST failed: {e}', error=True)
+
 
 def main():
     load_dotenv()
@@ -140,73 +219,16 @@ def main():
         log('DATABASE_URL missing', error=True)
         sys.exit(1)
 
-    try:
-        conn = connect_db(db_url)
-    except Exception as e:
-        log(f'Database connection failed: {e}', error=True)
-        sys.exit(1)
-
-    lookback_cutoff = datetime.now(timezone.utc) - timedelta(minutes=args.minutes_back)
-
-    try:
-        completed = fetch_recent_completed(token, args.limit_matches)
-    except Exception as e:
-        log(f'Failed to fetch completed matches: {e}', error=True)
-        sys.exit(1)
-
-    # Filter by time window
-    relevant: List[Dict[str, Any]] = []
-    for m in completed:
-        finished_at = m.get('end_at') or m.get('finished_at') or m.get('modified_at')
-        try:
-            if finished_at:
-                dt = datetime.fromisoformat(finished_at.replace('Z','+00:00'))
-                if dt >= lookback_cutoff:
-                    relevant.append(m)
-        except Exception:
-            continue
-
-    if not relevant:
-        log('No recently completed matches in window')
-        return
-
-    match_ids = [str(m.get('id')) for m in relevant if m.get('id')]
-    if not match_ids:
-        log('No valid match IDs after filtering')
-        return
-
-    try:
-        unsettled = load_unsettled_picks_for_matches(conn, match_ids)
-    except Exception as e:
-        log(f'Failed to load unsettled picks: {e}', error=True)
-        return
-
-    if not unsettled:
-        log('No unsettled picks for recent matches')
-        return
-
-    # Build kills map aggregated from each match
-    kills_map: Dict[str, float] = {}
-    for m in relevant:
-        km = fetch_match_player_kills(token, m)
-        kills_map.update(km)
-
-    results_payload = build_results_payload(unsettled, kills_map)
-    if not results_payload:
-        log('No results to settle (missing player kills)')
-        return
-
-    if args.dry_run or args.verbose:
-        log(f'Prepared settlements count={len(results_payload)} sample={results_payload[:3]}')
-    if args.dry_run:
-        return
-
-    try:
-        resp = post_settlements(api_base, admin_token, results_payload)
-        log(f'Settlements response: {resp}')
-    except Exception as e:
-        log(f'Settlements POST failed: {e}', error=True)
-        sys.exit(1)
+    if args.loop:
+        log(f"Starting judge in loop mode (interval={args.interval}s)")
+        while True:
+            try:
+                run_once(args, token, admin_token, api_base, db_url)
+            except Exception as e:
+                log(f"Unexpected error in loop: {e}", error=True)
+            time.sleep(args.interval)
+    else:
+        run_once(args, token, admin_token, api_base, db_url)
 
 
 if __name__ == '__main__':

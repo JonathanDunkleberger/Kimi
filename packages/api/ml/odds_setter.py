@@ -69,6 +69,8 @@ def parse_args() -> argparse.Namespace:
     p.add_argument('--limit-matches', type=int, default=50, help='Limit number of upcoming matches pulled')
     p.add_argument('--dry-run', action='store_true', help='Do everything except DB writes')
     p.add_argument('--verbose', action='store_true')
+    p.add_argument('--loop', action='store_true', help='Run in a continuous loop')
+    p.add_argument('--interval', type=int, default=300, help='Sleep interval in seconds (default 5m)')
     return p.parse_args()
 
 
@@ -193,6 +195,74 @@ def build_feature_vector(player_name: str, feature_cols: List[str], cache: Dict[
     return {c: 0.0 for c in feature_cols}
 
 
+def run_once(args, token, db_url, model, feature_cols, feature_cache):
+    try:
+        matches = fetch_upcoming_matches(token, args.limit_matches)
+    except Exception as e:
+        log(f'Failed to fetch upcoming matches: {e}', error=True)
+        return
+
+    if not matches:
+        log('No upcoming matches returned by API')
+        return
+
+    conn = None
+    if not args.dry_run:
+        try:
+            conn = connect_db(db_url)
+        except Exception as e:
+            log(f'Database connection failed: {e}', error=True)
+            return
+
+    total_projections = 0
+    skipped_players = 0
+
+    for m in matches:
+        try:
+            match_id = ensure_match(conn, m) if conn else str(m.get('id'))
+        except Exception as e:
+            log(f'Skip match {m.get("id")}: ensure_match failed: {e}', error=True)
+            continue
+
+        players = m.get('players') or []
+        if not players:
+            log(f'Match {m.get("id")}: no players array; skipping player projections')
+            continue
+
+        for p in players:
+            try:
+                pid, pname = ensure_player(conn, p) if conn else (str(p.get('id') or uuid4()), p.get('name') or 'unknown')
+            except Exception as e:
+                log(f'Failed ensure_player for match {m.get("id")} player {p.get("id")}: {e}', error=True)
+                skipped_players += 1
+                continue
+
+            feats_dict = build_feature_vector(pname, feature_cols, feature_cache)
+            feats = [feats_dict[c] for c in feature_cols]
+            try:
+                pred = float(model.predict([feats])[0])
+            except Exception as e:
+                log(f'Prediction failed for player {pname}: {e}', error=True)
+                skipped_players += 1
+                continue
+
+            projection_value = max(0.0, round(pred, 2))
+            if args.verbose:
+                log(f'Predict {pname} match={match_id} value={projection_value}')
+            if not args.dry_run and conn:
+                try:
+                    upsert_projection(conn, pid, STAT_TYPE_DISPLAY, match_id, projection_value)
+                except Exception as e:
+                    log(f'Upsert projection failed player {pname}: {e}', error=True)
+                    skipped_players += 1
+                    continue
+            total_projections += 1
+
+    if conn:
+        conn.close()
+    log(f'Done. projections={total_projections} skipped_players={skipped_players}')
+
+
 def main():
     load_dotenv()  # optional .env
     args = parse_args()
@@ -219,73 +289,16 @@ def main():
 
     log(f'Model loaded target={args.target} features={len(feature_cols)} players_in_cache={len(feature_cache)}')
 
-    try:
-        matches = fetch_upcoming_matches(token, args.limit_matches)
-    except Exception as e:
-        log(f'Failed to fetch upcoming matches: {e}', error=True)
-        sys.exit(1)
-
-    if not matches:
-        log('No upcoming matches returned by API')
-        return
-
-    conn = None
-    if not args.dry_run:
-        try:
-            conn = connect_db(db_url)
-        except Exception as e:
-            log(f'Database connection failed: {e}', error=True)
-            sys.exit(1)
-
-    total_projections = 0
-    skipped_players = 0
-
-    for m in matches:
-        try:
-            match_id = ensure_match(conn, m) if conn else str(m.get('id'))
-        except Exception as e:
-            log(f'Skip match {m.get("id")}: ensure_match failed: {e}', error=True)
-            continue
-
-        players = m.get('players') or []
-        # If players missing, optionally fall back to opponents roster (not always present) -> requires additional calls (not implemented)
-        if not players:
-            log(f'Match {m.get("id")}: no players array; skipping player projections')
-            continue
-
-        for p in players:
+    if args.loop:
+        log(f"Starting odds_setter in loop mode (interval={args.interval}s)")
+        while True:
             try:
-                pid, pname = ensure_player(conn, p) if conn else (str(p.get('id') or uuid4()), p.get('name') or 'unknown')
+                run_once(args, token, db_url, model, feature_cols, feature_cache)
             except Exception as e:
-                log(f'Failed ensure_player for match {m.get("id")} player {p.get("id")}: {e}', error=True)
-                skipped_players += 1
-                continue
-
-            feats_dict = build_feature_vector(pname, feature_cols, feature_cache)
-            feats = [feats_dict[c] for c in feature_cols]
-            try:
-                pred = float(model.predict([feats])[0])
-            except Exception as e:
-                log(f'Prediction failed for player {pname}: {e}', error=True)
-                skipped_players += 1
-                continue
-
-            # Clip or round optionally
-            projection_value = max(0.0, round(pred, 2))
-            if args.verbose:
-                log(f'Predict {pname} match={match_id} value={projection_value}')
-            if not args.dry_run and conn:
-                try:
-                    upsert_projection(conn, pid, STAT_TYPE_DISPLAY, match_id, projection_value)
-                except Exception as e:
-                    log(f'Upsert projection failed player {pname}: {e}', error=True)
-                    skipped_players += 1
-                    continue
-            total_projections += 1
-
-    if conn:
-        conn.close()
-    log(f'Done. projections={total_projections} skipped_players={skipped_players}')
+                log(f"Unexpected error in loop: {e}", error=True)
+            time.sleep(args.interval)
+    else:
+        run_once(args, token, db_url, model, feature_cols, feature_cache)
 
 
 if __name__ == '__main__':
