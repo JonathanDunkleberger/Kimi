@@ -23,12 +23,12 @@ services:
       - key: ADMIN_TOKEN
         generateValue: true
 
-cronJobs:
   # --------------------------------------------------------------------------------
   # 2. Cron Job: Judge (Python)
   #    Runs every minute to settle bets.
   # --------------------------------------------------------------------------------
-  - name: judge-job
+  - type: cron
+    name: judge-job
     env: python
     plan: starter
     region: oregon
@@ -54,7 +54,8 @@ cronJobs:
   # 3. Cron Job: Odds Setter (Python)
   #    Runs every 5 minutes to update projections.
   # --------------------------------------------------------------------------------
-  - name: odds-setter-job
+  - type: cron
+    name: odds-setter-job
     env: python
     plan: starter
     region: oregon
