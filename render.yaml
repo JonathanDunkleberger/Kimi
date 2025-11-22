@@ -23,17 +23,18 @@ services:
       - key: ADMIN_TOKEN
         generateValue: true
 
+cronJobs:
   # --------------------------------------------------------------------------------
-  # 2. Background Worker: Judge (Python)
-  #    Runs continuously with --loop to settle bets.
+  # 2. Cron Job: Judge (Python)
+  #    Runs every minute to settle bets.
   # --------------------------------------------------------------------------------
-  - type: worker
-    name: judge-worker
+  - name: judge-job
     env: python
     plan: free
     rootDir: .
+    schedule: "*/1 * * * *"
     buildCommand: pip install -r packages/api/ml/requirements.txt
-    startCommand: python packages/api/ml/judge.py --loop --interval 60
+    startCommand: python packages/api/ml/judge.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
@@ -49,16 +50,16 @@ services:
         value: http://kimi-api:10000
 
   # --------------------------------------------------------------------------------
-  # 3. Background Worker: Odds Setter (Python)
-  #    Runs continuously with --loop to update projections.
+  # 3. Cron Job: Odds Setter (Python)
+  #    Runs every 5 minutes to update projections.
   # --------------------------------------------------------------------------------
-  - type: worker
-    name: odds-setter-worker
+  - name: odds-setter-job
     env: python
     plan: free
     rootDir: .
+    schedule: "*/5 * * * *"
     buildCommand: pip install -r packages/api/ml/requirements.txt
-    startCommand: python packages/api/ml/odds_setter.py --loop --interval 300
+    startCommand: python packages/api/ml/odds_setter.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
