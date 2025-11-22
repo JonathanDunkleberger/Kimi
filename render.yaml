@@ -30,7 +30,6 @@ cronJobs:
   # --------------------------------------------------------------------------------
   - name: judge-job
     env: python
-    plan: free
     rootDir: .
     schedule: "*/1 * * * *"
     buildCommand: pip install -r packages/api/ml/requirements.txt
@@ -55,7 +54,6 @@ cronJobs:
   # --------------------------------------------------------------------------------
   - name: odds-setter-job
     env: python
-    plan: free
     rootDir: .
     schedule: "*/5 * * * *"
     buildCommand: pip install -r packages/api/ml/requirements.txt
