@@ -48,8 +48,8 @@ export const ProjectionBoard: React.FC = () => {
           return (
             <div
               key={p.id}
-              className={`relative group border rounded-lg p-3 backdrop-blur shadow-sm hover:shadow transition-all flex flex-col gap-2
-              ${selected ? 'border-primary/70 ring-1 ring-primary/50 bg-gradient-to-br from-primary/15 via-card/60 to-background/20' : 'border-border/60 bg-card/60'}`}
+              className={`relative group border rounded-lg p-3 shadow-sm hover:shadow transition-all flex flex-col gap-2
+              ${selected ? 'border-primary ring-1 ring-primary bg-card' : 'border-border bg-card'}`}
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="flex items-start gap-2">
@@ -58,11 +58,11 @@ export const ProjectionBoard: React.FC = () => {
                       src={p.player.imageUrl}
                       alt={p.player.name}
                       loading="lazy"
-                      className="w-8 h-8 rounded-md object-cover border border-border/60 bg-background/40"
+                      className="w-8 h-8 rounded-md object-cover border border-border bg-background"
                       onError={(e)=>{ (e.target as HTMLImageElement).style.visibility='hidden'; }}
                     />
                   ) : (
-                    <div className="w-8 h-8 rounded-md bg-border/40 flex items-center justify-center text-[10px] text-muted-foreground select-none">{p.player.name.slice(0,2).toUpperCase()}</div>
+                    <div className="w-8 h-8 rounded-md bg-border flex items-center justify-center text-[10px] text-muted-foreground select-none">{p.player.name.slice(0,2).toUpperCase()}</div>
                   )}
                   <div>
                     <div className="font-medium leading-tight">{p.player.name}</div>
@@ -77,11 +77,13 @@ export const ProjectionBoard: React.FC = () => {
               <div className="mt-auto flex gap-2">
                 <button
                   onClick={() => toggle({ projectionId: p.id, pickType: 'MORE' })}
-                  className={`flex-1 px-2 py-1.5 rounded-md text-[11px] font-semibold border transition-colors focus:outline-none focus:ring-2 focus:ring-ring/50 focus:ring-offset-1 focus:ring-offset-background ${isMore ? 'bg-primary text-primary-foreground border-primary' : 'border-primary/70 text-primary hover:bg-primary/10'}`}
+                  className={`flex-1 px-2 py-1.5 rounded-md text-[11px] font-semibold border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 focus:ring-offset-background ${isMore ? 'text-black border-transparent' : 'border-border text-muted-foreground hover:bg-secondary'}`}
+                  style={isMore ? { backgroundColor: 'var(--success)' } : {}}
                 >MORE</button>
                 <button
                   onClick={() => toggle({ projectionId: p.id, pickType: 'LESS' })}
-                  className={`flex-1 px-2 py-1.5 rounded-md text-[11px] font-semibold border transition-colors focus:outline-none focus:ring-2 focus:ring-ring/50 focus:ring-offset-1 focus:ring-offset-background ${isLess ? 'bg-destructive text-destructive-foreground border-destructive' : 'border-destructive/70 text-destructive hover:bg-destructive/10'}`}
+                  className={`flex-1 px-2 py-1.5 rounded-md text-[11px] font-semibold border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-1 focus:ring-offset-background ${isLess ? 'text-white border-transparent' : 'border-border text-muted-foreground hover:bg-secondary'}`}
+                  style={isLess ? { backgroundColor: 'var(--danger)' } : {}}
                 >LESS</button>
               </div>
             </div>

@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10 space-y-6">
       <header className="flex items-center justify-between">
-        <h2 className="text-xl md:text-2xl font-bold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+        <h2 className="text-xl md:text-2xl font-bold tracking-tight text-foreground">
           Player Projections
         </h2>
       </header>
