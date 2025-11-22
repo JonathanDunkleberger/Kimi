@@ -1,14 +1,69 @@
 services:
-  # Python Web Service for the Model API
+  # --------------------------------------------------------------------------------
+  # 1. Web Service: Kimi API (Node.js)
+  # --------------------------------------------------------------------------------
   - type: web
-    name: model-api
-    env: python
-    rootDir: ./backend
+    name: kimi-api
+    env: node
     plan: free
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "uvicorn model_api.main:app --host 0.0.0.0 --port $PORT"
+    rootDir: .
+    # Build the API package specifically
+    buildCommand: corepack enable && corepack prepare pnpm@9.12.3 --activate && pnpm install --filter @app/api... --prod=false && pnpm --filter @app/api build
+    # Start the compiled Node.js app
+    startCommand: pnpm --filter @app/api start
     envVars:
-      - key: SUPABASE_URL
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: DATABASE_URL
         sync: false
-      - key: SUPABASE_SERVICE_ROLE_KEY
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: ADMIN_TOKEN
+        generateValue: true
+
+  # --------------------------------------------------------------------------------
+  # 2. Background Worker: Judge (Python)
+  #    Runs continuously with --loop to settle bets.
+  # --------------------------------------------------------------------------------
+  - type: worker
+    name: judge-worker
+    env: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r packages/api/ml/requirements.txt
+    startCommand: python packages/api/ml/judge.py --loop --interval 60
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DATABASE_URL
+        fromService: kimi-api
+        name: DATABASE_URL
+      - key: PANDA_SCORE_TOKEN
+        sync: false
+      - key: ADMIN_TOKEN
+        fromService: kimi-api
+        name: ADMIN_TOKEN
+      - key: INTERNAL_API_BASE
+        value: http://kimi-api:10000
+
+  # --------------------------------------------------------------------------------
+  # 3. Background Worker: Odds Setter (Python)
+  #    Runs continuously with --loop to update projections.
+  # --------------------------------------------------------------------------------
+  - type: worker
+    name: odds-setter-worker
+    env: python
+    plan: free
+    rootDir: .
+    buildCommand: pip install -r packages/api/ml/requirements.txt
+    startCommand: python packages/api/ml/odds_setter.py --loop --interval 300
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: DATABASE_URL
+        fromService: kimi-api
+        name: DATABASE_URL
+      - key: PANDA_SCORE_TOKEN
         sync: false
