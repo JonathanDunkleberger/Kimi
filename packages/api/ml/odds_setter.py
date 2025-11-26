@@ -226,6 +226,15 @@ def ensure_player(conn, player: Dict[str, Any]):
     team = None
     if player.get('current_team') and isinstance(player['current_team'], dict):
         team = player['current_team'].get('acronym') or player['current_team'].get('name')
+    
+    # Fallback for VLR scraper data which might have 'team' directly
+    if not team and player.get('team'):
+        team = player.get('team')
+        
+    # Final fallback if team is still null (required by DB constraint)
+    if not team:
+        team = 'FA' # Free Agent / Unknown
+
     image_url = player.get('image_url') or player.get('image') or None
     with conn.cursor() as cur:
         cur.execute(
