@@ -57,7 +57,7 @@ from uuid import uuid4
 
 ROOT = Path(__file__).parent
 MODELS_DIR = ROOT / 'models'
-DATA_CSV = ROOT / 'data' / 'training_data.csv'
+DATA_CSV = ROOT / 'data' / 'player_features.csv'
 
 STAT_TYPE_DISPLAY = 'Kills'
 
