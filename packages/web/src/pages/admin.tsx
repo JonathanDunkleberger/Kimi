@@ -57,7 +57,6 @@ export default function Admin() {
         {/* Create Prop Line */}
         <CreatePropLine matches={matches} players={players} onCreated={() => window.location.reload()} />
       </div>
-    </>
   );
 }
 
