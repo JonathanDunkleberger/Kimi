@@ -78,52 +78,45 @@ export const ProjectionBoard: React.FC = () => {
             <Card 
               key={p.id}
               className={`
-                relative overflow-hidden transition-all duration-200 border-0 ring-1 ring-border bg-card shadow-lg
-                ${selected ? 'ring-2 ring-primary shadow-primary/10' : 'hover:ring-primary/50 hover:shadow-xl hover:-translate-y-1'}
+                relative overflow-hidden transition-all duration-200 border border-border bg-card shadow-sm
+                ${selected ? 'ring-2 ring-primary' : 'hover:border-primary/50'}
               `}
             >
-              {/* Team Background Gradient */}
-              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-secondary/50 to-transparent pointer-events-none" />
-
               <CardContent className="p-0">
                 {/* Player Header */}
-                <div className="relative p-5 flex items-start justify-between z-10">
-                  <div className="flex items-center gap-4">
-                    <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-background ring-2 ring-border shrink-0 shadow-sm">
-                      {p.player.imageUrl ? (
-                        <img
-                          src={p.player.imageUrl}
-                          alt={p.player.name}
-                          className="w-full h-full object-cover"
-                          onError={(e)=>{ (e.target as HTMLImageElement).style.display='none'; }}
-                        />
-                      ) : (
-                        <div className="w-full h-full flex items-center justify-center text-sm font-black text-muted-foreground bg-secondary">
-                          {p.player.name.slice(0,2).toUpperCase()}
-                        </div>
-                      )}
-                    </div>
-                    <div>
-                      <h4 className="font-black text-lg leading-none tracking-tight text-foreground">{p.player.name}</h4>
-                      <div className="flex items-center gap-2 mt-1.5">
-                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground uppercase tracking-wider">
-                          {p.player.team || 'FA'}
-                        </span>
+                <div className="p-4 flex items-center gap-4">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden bg-secondary ring-2 ring-border shrink-0">
+                    {p.player.imageUrl ? (
+                      <img
+                        src={p.player.imageUrl}
+                        alt={p.player.name}
+                        className="w-full h-full object-cover"
+                        onError={(e)=>{ (e.target as HTMLImageElement).style.display='none'; }}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-lg font-bold text-muted-foreground">
+                        {p.player.name.slice(0,2).toUpperCase()}
                       </div>
+                    )}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-lg truncate text-foreground">{p.player.name}</h4>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <span className="font-medium uppercase">{p.player.team || 'FA'}</span>
+                      <span>•</span>
+                      <span>VALORANT</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Stat Value */}
-                <div className="px-5 pb-4 text-center relative z-10">
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-4xl font-black tracking-tighter text-foreground drop-shadow-sm">{p.value}</span>
-                  </div>
-                  <div className="text-xs font-bold text-primary uppercase tracking-widest mt-1">{p.statType}</div>
+                <div className="px-4 pb-4 flex flex-col items-center justify-center">
+                  <div className="text-3xl font-black text-foreground tracking-tight">{p.value}</div>
+                  <div className="text-xs font-bold text-primary uppercase tracking-wider mt-1">{p.statType}</div>
                 </div>
 
                 {/* Actions */}
-                <div className="grid grid-cols-2 gap-px bg-border mt-2">
+                <div className="grid grid-cols-2 border-t border-border divide-x divide-border">
                   <button
                     onClick={() => toggle({ 
                       projectionId: p.id, 
@@ -134,18 +127,14 @@ export const ProjectionBoard: React.FC = () => {
                       value: p.value
                     })}
                     className={`
-                      group relative flex flex-col items-center justify-center py-4 transition-all duration-200
+                      flex flex-col items-center justify-center py-3 transition-colors
                       ${isMore 
                         ? 'bg-green-500/10 text-green-500' 
-                        : 'bg-card hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
+                        : 'hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
                       }
                     `}
                   >
-                    <span className="text-[10px] uppercase font-black tracking-widest mb-1 group-hover:scale-110 transition-transform">More</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={isMore ? "animate-bounce" : ""}>
-                      <path d="M18 15l-6-6-6 6"/>
-                    </svg>
-                    {isMore && <div className="absolute inset-0 ring-inset ring-2 ring-green-500" />}
+                    <span className="text-xs font-black uppercase tracking-wider">More</span>
                   </button>
                   
                   <button
@@ -158,18 +147,14 @@ export const ProjectionBoard: React.FC = () => {
                       value: p.value
                     })}
                     className={`
-                      group relative flex flex-col items-center justify-center py-4 transition-all duration-200
+                      flex flex-col items-center justify-center py-3 transition-colors
                       ${isLess 
                         ? 'bg-red-500/10 text-red-500' 
-                        : 'bg-card hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
+                        : 'hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
                       }
                     `}
                   >
-                    <span className="text-[10px] uppercase font-black tracking-widest mb-1 group-hover:scale-110 transition-transform">Less</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={isLess ? "animate-bounce" : ""}>
-                      <path d="M6 9l6 6 6-6"/>
-                    </svg>
-                    {isLess && <div className="absolute inset-0 ring-inset ring-2 ring-red-500" />}
+                    <span className="text-xs font-black uppercase tracking-wider">Less</span>
                   </button>
                 </div>
               </CardContent>

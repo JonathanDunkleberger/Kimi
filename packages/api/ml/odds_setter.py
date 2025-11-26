@@ -64,6 +64,7 @@ MODELS_DIR = ROOT / 'models'
 DATA_CSV = ROOT / 'data' / 'player_features.csv'
 
 STAT_TYPE_DISPLAY = 'Kills'
+ESTIMATED_ROUNDS_PER_MATCH = 40  # Approx 2 maps * 20 rounds
 
 
 def parse_args() -> argparse.Namespace:
@@ -339,9 +340,13 @@ def run_once(args, token, db_url, model, feature_cols, feature_cache):
                 skipped_players += 1
                 continue
 
-            projection_value = max(0.0, round(pred, 2))
+            # Convert rate (kills/round) to match total (kills/match)
+            # Model predicts kills_per_round (e.g. 0.75).
+            # We project for a full match (approx 40 rounds for Bo3).
+            projection_value = max(0.0, round(pred * ESTIMATED_ROUNDS_PER_MATCH, 1))
+            
             if args.verbose:
-                log(f'Predict {pname} match={match_id} value={projection_value}')
+                log(f'Predict {pname} match={match_id} rate={pred:.2f} val={projection_value}')
             if not args.dry_run and conn:
                 try:
                     upsert_projection(conn, pid, STAT_TYPE_DISPLAY, match_id, projection_value)

@@ -35,12 +35,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-black text-lg shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
-                K
-              </div>
-              <span className="font-black tracking-tighter text-2xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
-                Kimi
+            <Link href="/" className="flex items-center gap-2 group no-underline">
+              <span className="font-black tracking-tighter text-2xl text-foreground group-hover:text-foreground/80 transition-colors">
+                Kira
               </span>
             </Link>
           </div>
