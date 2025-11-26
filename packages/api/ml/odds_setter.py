@@ -252,7 +252,8 @@ def upsert_projection(conn, player_id: str, stat_type: str, match_id: str, value
         )
 
 
-def build_feature_vector(player_name: str, feature_cols: List[str], cache: Dict[str, Dict[str, float]]):
+def build_feature_vector(player_obj: Dict[str, Any], feature_cols: List[str], cache: Dict[str, Dict[str, float]]):
+    player_name = player_obj.get('name') or 'unknown'
     # Exact match first; attempt case-insensitive fallback
     if player_name in cache:
         return cache[player_name]
@@ -260,6 +261,21 @@ def build_feature_vector(player_name: str, feature_cols: List[str], cache: Dict[
     key = lowered.get(player_name.lower())
     if key:
         return cache[key]
+    
+    # If missing from cache, try to fetch from VLR if URL is present
+    if 'url' in player_obj and 'vlr.gg' in player_obj['url']:
+        log(f"Fetching missing stats for {player_name} from {player_obj['url']}")
+        try:
+            stats = vlr_scraper.get_player_stats(player_obj['url'])
+            if stats:
+                # Update cache so we don't fetch again this run
+                # Ensure all feature cols are present
+                full_stats = {c: stats.get(c, 0.0) for c in feature_cols}
+                cache[player_name] = full_stats
+                return full_stats
+        except Exception as e:
+            log(f"Failed to fetch stats for {player_name}: {e}", error=True)
+
     return {c: 0.0 for c in feature_cols}
 
 
@@ -305,7 +321,7 @@ def run_once(args, token, db_url, model, feature_cols, feature_cache):
                 skipped_players += 1
                 continue
 
-            feats_dict = build_feature_vector(pname, feature_cols, feature_cache)
+            feats_dict = build_feature_vector(p, feature_cols, feature_cache)
             feats = [feats_dict[c] for c in feature_cols]
             try:
                 pred = float(model.predict([feats])[0])

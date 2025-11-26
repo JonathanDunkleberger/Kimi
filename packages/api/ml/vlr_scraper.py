@@ -174,11 +174,7 @@ def get_match_players(match_url):
         seen_ids.add(pid)
         
         name = link.get_text(strip=True)
-        # Try to find team?
-        # The player row might be in a table that has a team header?
-        # Or we can just return the list and let the caller figure it out or assign based on count.
         
-        # For now, just return the list of players found.
         players.append({
             'id': pid,
             'name': name,
@@ -186,6 +182,136 @@ def get_match_players(match_url):
         })
         
     return players
+
+def get_player_stats(player_url):
+    ua = UserAgent()
+    headers = {'User-Agent': ua.random}
+    headers['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    
+    try:
+        resp = requests.get(player_url, headers=headers, timeout=10)
+        resp.raise_for_status()
+    except Exception as e:
+        print(f"Error fetching player stats {player_url}: {e}", file=sys.stderr)
+        return {}
+
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    
+    # Find the stats table. It's usually the first table in the "Stats" section or just the main table.
+    # The table has headers like "Agent", "Usage", "Rounds", "Rating", "ACS", "K:D", "ADR", "KAST", "KPR", "APR", "FKPR", "FDPR", "K", "D", "A", "FK", "FD"
+    
+    # We want to aggregate these stats across all agents (weighted by rounds?)
+    # Or just take the top agent? Weighted average is better.
+    
+    stats_table = soup.select_one('table.wf-table')
+    if not stats_table:
+        return {}
+        
+    rows = stats_table.select('tbody tr')
+    
+    total_rounds = 0
+    weighted_stats = {
+        'kpr': 0.0,
+        'adr': 0.0,
+        'acs': 0.0,
+        'fkpr': 0.0,
+        'fdpr': 0.0,
+        'hs_rate': 0.0, # Not in the table snippet above? Need to check if HS% is there.
+        'clutch_rate': 0.0 # Not in table snippet.
+    }
+    
+    # HS% and Clutch% might be in a different table or hidden?
+    # In the snippet, I don't see HS%.
+    # Wait, looking at the snippet again:
+    # Agent, Usage, Rnd, Rat, ACS, K:D, ADR, KAST, KPR, APR, FKPR, FDPR, K, D, A, FK, FD
+    # No HS% in this table.
+    # Maybe it's in the "Detailed" tab or another section.
+    # For now, we can estimate or just use what we have.
+    # If the model requires HS%, we might have to put 0 or average.
+    
+    # Let's iterate rows
+    for row in rows:
+        cols = row.select('td')
+        if len(cols) < 10:
+            continue
+            
+        try:
+            # Col 2: Rounds (index 2)
+            rounds = int(cols[2].get_text(strip=True))
+            if rounds == 0: continue
+            
+            # Col 4: ACS (index 4)
+            acs = float(cols[4].get_text(strip=True))
+            
+            # Col 6: ADR (index 6)
+            adr = float(cols[6].get_text(strip=True))
+            
+            # Col 8: KPR (index 8)
+            kpr = float(cols[8].get_text(strip=True))
+            
+            # Col 10: FKPR (index 10)
+            fkpr = float(cols[10].get_text(strip=True))
+            
+            # Col 11: FDPR (index 11)
+            fdpr = float(cols[11].get_text(strip=True))
+            
+            total_rounds += rounds
+            weighted_stats['kpr'] += kpr * rounds
+            weighted_stats['adr'] += adr * rounds
+            weighted_stats['acs'] += acs * rounds
+            weighted_stats['fkpr'] += fkpr * rounds
+            weighted_stats['fdpr'] += fdpr * rounds
+            
+        except ValueError:
+            continue
+            
+    if total_rounds > 0:
+        for k in weighted_stats:
+            weighted_stats[k] /= total_rounds
+            
+    # Add other fields that might be needed by the model, set to 0 if unknown
+    # The model likely needs: kpr, adr, acs, fkpr, fdpr, hs_rate, clutch_rate, kdr, kad, fk_fd_diff
+    
+    # We can calculate KDR and KAD from K, D, A totals if we parse them.
+    # Let's parse K, D, A totals.
+    
+    total_k = 0
+    total_d = 0
+    total_a = 0
+    total_fk = 0
+    total_fd = 0
+    
+    for row in rows:
+        cols = row.select('td')
+        if len(cols) < 15: continue
+        try:
+            k = int(cols[12].get_text(strip=True))
+            d = int(cols[13].get_text(strip=True))
+            a = int(cols[14].get_text(strip=True))
+            fk = int(cols[15].get_text(strip=True))
+            fd = int(cols[16].get_text(strip=True))
+            
+            total_k += k
+            total_d += d
+            total_a += a
+            total_fk += fk
+            total_fd += fd
+        except ValueError:
+            continue
+            
+    if total_d > 0:
+        weighted_stats['kdr'] = total_k / total_d
+        weighted_stats['kad'] = (total_k + total_a) / total_d
+    else:
+        weighted_stats['kdr'] = 0.0
+        weighted_stats['kad'] = 0.0
+        
+    weighted_stats['fk_fd_diff'] = total_fk - total_fd
+    
+    # HS% is often in the "Overview" or "Stats" tab but maybe not in this specific table.
+    # We'll leave hs_rate and clutch_rate as 0.0 for now, or try to find them.
+    
+    return weighted_stats
 
 if __name__ == "__main__":
     matches = get_upcoming_matches()
