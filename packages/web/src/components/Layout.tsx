@@ -1,14 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { useSession, useSupabaseClient, useUser } from "@supabase/auth-helpers-react";
+import { useAuth, SignInButton, SignOutButton } from "@/lib/authClient";
 import { Button } from "@/components/ui/button";
-import AuthDialog from "./AuthDialog";
 import BetSlip from "./BetSlip";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const user = useUser();
-  const supabase = useSupabaseClient();
-  const [open, setOpen] = React.useState(false);
+  const { isSignedIn } = useAuth();
   const [slipOpen, setSlipOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -16,14 +13,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     window.addEventListener("open-slip", onOpen as EventListener);
     return () => window.removeEventListener("open-slip", onOpen as EventListener);
   }, []);
-
-  async function handleAuthClick() {
-    if (user) {
-      await supabase.auth.signOut();
-    } else {
-      setOpen(true);
-    }
-  }
 
   const SlipContext = React.createContext<{ openSlip: () => void }>({ openSlip: () => {} });
 
@@ -36,15 +25,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             Kimi
           </Link>
           <div className="flex items-center gap-2">
-            <Button variant={user ? "secondary" : "default"} onClick={handleAuthClick}>
-              {user ? "Logout" : "Login"}
-            </Button>
+            {isSignedIn ? (
+              <SignOutButton>
+                <Button variant="secondary">Logout</Button>
+              </SignOutButton>
+            ) : (
+              <SignInButton mode="modal">
+                <Button variant="default">Login</Button>
+              </SignInButton>
+            )}
           </div>
         </div>
       </header>
       <main className="container mx-auto px-4 py-6">{children}</main>
-      <AuthDialog open={open} onOpenChange={setOpen} />
-  <BetSlip open={slipOpen} onOpenChange={setSlipOpen} />
+      <BetSlip open={slipOpen} onOpenChange={setSlipOpen} />
       </div>
     </SlipContext.Provider>
   );

@@ -32,6 +32,11 @@ export function useAuth() {
   return useContext(StubAuthContext);
 }
 
+export function useUser() {
+  if (hasKey && realClerk?.useUser) return realClerk.useUser();
+  return { isLoaded: true, isSignedIn: false, user: null };
+}
+
 export const SignedIn: React.FC<PropsWithChildren> = ({ children }) => {
   if (hasKey && realClerk?.SignedIn) return React.createElement(realClerk.SignedIn, null, children);
   return null;
@@ -46,6 +51,11 @@ type AnyProps = Record<string, unknown>;
 
 export const SignInButton: React.FC<AnyProps> = (props) => {
   if (hasKey && realClerk?.SignInButton) return React.createElement(realClerk.SignInButton, props);
+  return <>{props.children || null}</>;
+};
+
+export const SignOutButton: React.FC<AnyProps> = (props) => {
+  if (hasKey && realClerk?.SignOutButton) return React.createElement(realClerk.SignOutButton, props);
   return <>{props.children || null}</>;
 };
 
