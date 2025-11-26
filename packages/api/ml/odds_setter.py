@@ -54,6 +54,10 @@ import psycopg2.extras
 import joblib
 from dotenv import load_dotenv
 from uuid import uuid4
+try:
+    from . import vlr_scraper
+except ImportError:
+    import vlr_scraper
 
 ROOT = Path(__file__).parent
 MODELS_DIR = ROOT / 'models'
@@ -113,30 +117,79 @@ def build_feature_cache(feature_cols: List[str]) -> Dict[str, Dict[str, float]]:
 
 
 def fetch_upcoming_matches(token: str, limit: int) -> List[Dict[str, Any]]:
-    url = f'https://api.pandascore.co/valorant/matches/upcoming'
-    params = {'per_page': 100}  # Fetch more to filter
-    headers = {'Authorization': f'Bearer {token}'}
-    resp = requests.get(url, params=params, headers=headers, timeout=20)
-    if resp.status_code != 200:
-        raise RuntimeError(f"PandaScore error {resp.status_code}: {resp.text[:200]}")
-    data = resp.json()
-    
-    # Filter for Tier 1 VCT and Game Changers
-    filtered = []
-    keywords = ['champions tour', 'vct', 'game changers']
-    for m in data:
-        league_name = m.get('league', {}).get('name', '').lower()
-        # Also check series name or tournament name if league name is generic
-        series_name = m.get('series', {}).get('name', '').lower()
-        tournament_name = m.get('tournament', {}).get('name', '').lower()
-        
-        full_context = f"{league_name} {series_name} {tournament_name}"
-        
-        if any(k in full_context for k in keywords):
-            filtered.append(m)
+    # 1. Try PandaScore
+    panda_matches = []
+    try:
+        url = f'https://api.pandascore.co/valorant/matches/upcoming'
+        params = {'per_page': 100}  # Fetch more to filter
+        headers = {'Authorization': f'Bearer {token}'}
+        resp = requests.get(url, params=params, headers=headers, timeout=20)
+        if resp.status_code == 200:
+            data = resp.json()
+            # Filter for Tier 1 VCT and Game Changers
+            keywords = ['champions tour', 'vct', 'game changers']
+            for m in data:
+                league_name = m.get('league', {}).get('name', '').lower()
+                series_name = m.get('series', {}).get('name', '').lower()
+                tournament_name = m.get('tournament', {}).get('name', '').lower()
+                full_context = f"{league_name} {series_name} {tournament_name}"
+                if any(k in full_context for k in keywords):
+                    panda_matches.append(m)
+        else:
+            log(f"PandaScore error {resp.status_code}: {resp.text[:200]}", error=True)
+    except Exception as e:
+        log(f"PandaScore fetch failed: {e}", error=True)
+
+    # 2. Try VLR.gg (Scraper)
+    vlr_matches = []
+    try:
+        scraped = vlr_scraper.get_upcoming_matches()
+        # Filter for Game Changers or VCT if needed, but scraper usually returns all upcoming
+        # We specifically want Game Changers if PandaScore missed them
+        for m in scraped:
+            # Convert to PandaScore-like structure
+            # PandaScore: id, scheduled_at, name, opponents, players
+            # VLR: id, scheduled_at, team_a, team_b, event, url
             
-    # Trim if limit < per_page
-    return filtered[:limit]
+            # Check if this match is already in panda_matches (fuzzy match by time and teams?)
+            # For now, just add all VLR matches that seem to be Game Changers
+            if 'game changers' in m['event'].lower() or 'vct' in m['event'].lower() or 'champions' in m['event'].lower():
+                # Fetch players for this match
+                players = vlr_scraper.get_match_players(m['url'])
+                
+                # Construct pseudo-PandaScore object
+                vlr_obj = {
+                    'id': f"vlr_{m['id']}", # Prefix to avoid collision
+                    'scheduled_at': m['scheduled_at'],
+                    'name': f"{m['team_a']} vs {m['team_b']}",
+                    'opponents': [
+                        {'opponent': {'acronym': m['team_a'], 'name': m['team_a']}},
+                        {'opponent': {'acronym': m['team_b'], 'name': m['team_b']}}
+                    ],
+                    'players': players, # List of {id, name, url}
+                    'source': 'vlr'
+                }
+                vlr_matches.append(vlr_obj)
+    except Exception as e:
+        log(f"VLR scraper failed: {e}", error=True)
+
+    # Merge: Prefer PandaScore if available? Or VLR?
+    # If PandaScore has players, it's usually better structured.
+    # But if PandaScore is missing the match, use VLR.
+    
+    # Simple merge: Add VLR matches that don't overlap with PandaScore matches
+    # Overlap check: Same teams and similar time?
+    # For now, just append VLR matches. The DB upsert handles ID collisions, but IDs are different.
+    # So we might have duplicates in DB if we are not careful.
+    # But since PandaScore IDs are integers and VLR IDs are integers (prefixed), they won't collide in DB.
+    # But we might have two "Match" rows for the same real match.
+    # This is acceptable for now to ensure coverage.
+    
+    all_matches = panda_matches + vlr_matches
+    # Sort by time
+    all_matches.sort(key=lambda x: x.get('scheduled_at') or '')
+    
+    return all_matches[:limit]
 
 
 def connect_db(url: str):
