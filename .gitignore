@@ -37,7 +37,7 @@ ml/.cache/
 *.pickle
 *.pkl
 *.onnx
-packages/api/ml/data/
+packages/api/ml/data/*
 !packages/api/ml/data/.gitkeep
 !packages/api/ml/data/README.md
 !packages/api/ml/data/player_features.csv
