@@ -151,9 +151,9 @@ def ensure_match(conn, match: Dict[str, Any]):
     with conn.cursor() as cur:
         cur.execute(
             """
-            INSERT INTO "Match" (id, "scheduledAt", status, event, "teamA", "teamB")
-            VALUES (%s, COALESCE(%s, NOW()), %s, %s, %s, %s)
-            ON CONFLICT (id) DO UPDATE SET "scheduledAt"=EXCLUDED."scheduledAt", status=EXCLUDED.status, event=EXCLUDED.event, "teamA"=EXCLUDED."teamA", "teamB"=EXCLUDED."teamB";
+            INSERT INTO "Match" (id, "scheduledAt", status, event, "teamA", "teamB", "updatedAt")
+            VALUES (%s, COALESCE(%s, NOW()), %s, %s, %s, %s, NOW())
+            ON CONFLICT (id) DO UPDATE SET "scheduledAt"=EXCLUDED."scheduledAt", status=EXCLUDED.status, event=EXCLUDED.event, "teamA"=EXCLUDED."teamA", "teamB"=EXCLUDED."teamB", "updatedAt"=NOW();
             """,
             (match_id, scheduled_at, status, name, teamA, teamB)
         )
