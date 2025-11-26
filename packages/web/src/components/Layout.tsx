@@ -32,8 +32,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <Link href="/" className="font-semibold tracking-wide">
-            VALPROPS
+          <Link href="/" className="font-black tracking-tighter text-xl">
+            Kimi
           </Link>
           <div className="flex items-center gap-2">
             <Button variant={user ? "secondary" : "default"} onClick={handleAuthClick}>

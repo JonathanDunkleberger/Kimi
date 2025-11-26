@@ -33,13 +33,14 @@ venv/
 ml/models/
 ml/checkpoints/
 ml/.cache/
-*.joblib
+# *.joblib  <-- Commented out to allow tracking models
 *.pickle
 *.pkl
 *.onnx
 packages/api/ml/data/
 !packages/api/ml/data/.gitkeep
 !packages/api/ml/data/README.md
+!packages/api/ml/models/*.joblib
 
 # Coverage / build outputs
 dist/
