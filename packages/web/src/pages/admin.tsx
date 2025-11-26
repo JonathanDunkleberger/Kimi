@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
 
 type Team = { id: string; name: string };
@@ -30,27 +29,24 @@ export default function Admin() {
 
   if (!session) {
     return (
-      <div className="container">
-        <Header />
-        <div className="card" style={{ padding: 20, marginTop: 20 }}>
-          <h3>You must be logged in to access Admin.</h3>
-          <a href="/account" className="btn">Go to login</a>
+      <div className="container mx-auto p-6">
+        <div className="p-6 rounded-xl border border-border bg-card shadow-sm space-y-4">
+          <h3 className="font-bold text-lg">You must be logged in to access Admin.</h3>
+          <a href="/account" className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">Go to login</a>
         </div>
       </div>
     );
   }
 
   return (
-    <>
-      <Header />
-      <div className="container" style={{ display: "grid", gap: 16 }}>
-        <div className="card" style={{ padding: 16 }}>
-          <h2 style={{ marginTop: 0 }}>Admin</h2>
-          <p className="small">Create teams, players, matches, and prop lines.</p>
-        </div>
+    <div className="container mx-auto space-y-6">
+      <div className="p-6 rounded-xl border border-border bg-card shadow-sm">
+        <h2 className="text-2xl font-black tracking-tight mb-2">Admin</h2>
+        <p className="text-sm text-muted-foreground">Create teams, players, matches, and prop lines.</p>
+      </div>
 
-        {/* Create Team */}
-        <CreateTeam onCreated={() => window.location.reload()} />
+      {/* Create Team */}
+      <CreateTeam onCreated={() => window.location.reload()} />
 
         {/* Create Player */}
         <CreatePlayer teams={teams} onCreated={() => window.location.reload()} />

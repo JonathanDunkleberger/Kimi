@@ -1,12 +1,25 @@
 import React from "react";
 import Link from "next/link";
-import { useAuth, SignInButton, SignOutButton } from "@/lib/authClient";
+import { useAuth, SignInButton, UserButton } from "@/lib/authClient";
 import { Button } from "@/components/ui/button";
 import BetSlip from "./BetSlip";
+import ThemeToggle from "./ThemeToggle";
+import { useMe } from "@/lib/api";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const { isSignedIn } = useAuth();
+  const { isSignedIn, getToken } = useAuth();
   const [slipOpen, setSlipOpen] = React.useState(false);
+  const [token, setToken] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    if (isSignedIn) {
+      getToken().then(setToken);
+    } else {
+      setToken(null);
+    }
+  }, [isSignedIn, getToken]);
+
+  const { me } = useMe(token || undefined);
 
   React.useEffect(() => {
     function onOpen() { setSlipOpen(true); }
@@ -18,20 +31,40 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <SlipContext.Provider value={{ openSlip: () => setSlipOpen(true) }}>
-      <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <Link href="/" className="font-black tracking-tighter text-xl">
-            Kimi
-          </Link>
+      <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
+      <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-black text-lg shadow-lg shadow-primary/20 group-hover:scale-105 transition-transform">
+                K
+              </div>
+              <span className="font-black tracking-tighter text-2xl bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
+                Kimi
+              </span>
+            </Link>
+          </div>
+          <div className="flex items-center gap-4">
+            <ThemeToggle className="hidden sm:flex" />
+            
             {isSignedIn ? (
-              <SignOutButton>
-                <Button variant="secondary">Logout</Button>
-              </SignOutButton>
+              <div className="flex items-center gap-4">
+                {me && (
+                  <div className="hidden md:flex flex-col items-end">
+                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">Balance</span>
+                    <span className="font-mono font-bold text-primary text-lg leading-none">${me.balance.toLocaleString()}</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-2">
+                  <Link href="/account">
+                    <Button variant="ghost" size="sm">Account</Button>
+                  </Link>
+                  <UserButton afterSignOutUrl="/" />
+                </div>
+              </div>
             ) : (
               <SignInButton mode="modal">
-                <Button variant="default">Login</Button>
+                <Button variant="default" className="font-bold shadow-lg shadow-primary/20">Login</Button>
               </SignInButton>
             )}
           </div>

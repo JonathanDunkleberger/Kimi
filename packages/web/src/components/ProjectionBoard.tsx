@@ -9,39 +9,61 @@ export const ProjectionBoard: React.FC = () => {
   const { selections, toggle } = useBetSlip();
   const [activeStat, setActiveStat] = React.useState<string>('ALL');
 
-  if (isLoading) return <div className="p-8 text-center text-muted-foreground animate-pulse">Loading projections...</div>;
-  if (error) return <div className="p-8 text-center text-destructive">Failed to load projections. Please try again later.</div>;
-  if (!projections.length) return <div className="p-8 text-center text-muted-foreground">No projections available at the moment.</div>;
+  if (isLoading) return (
+    <div className="flex flex-col items-center justify-center py-20 space-y-4 text-muted-foreground animate-pulse">
+      <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin" />
+      <p>Loading projections...</p>
+    </div>
+  );
+  
+  if (error) return (
+    <div className="flex flex-col items-center justify-center py-20 space-y-4 text-destructive">
+      <p>Failed to load projections.</p>
+      <Button variant="outline" onClick={() => refresh()}>Try Again</Button>
+    </div>
+  );
+
+  if (!projections.length) return (
+    <div className="flex flex-col items-center justify-center py-20 space-y-6 text-center">
+      <div className="space-y-2">
+        <h3 className="text-xl font-bold text-foreground">No projections available</h3>
+        <p className="text-muted-foreground max-w-md mx-auto">
+          There are no active projections at the moment. This could mean no matches are scheduled soon, or the data is being updated.
+        </p>
+      </div>
+      <Button onClick={() => refresh()}>Check for Updates</Button>
+    </div>
+  );
 
   const stats = Array.from(new Set(projections.map(p => p.statType))).sort();
   const filtered = activeStat === 'ALL' ? projections : projections.filter(p => p.statType === activeStat);
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide w-full sm:w-auto">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-card/50 p-2 rounded-xl border border-border/50">
+        <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide w-full sm:w-auto px-2">
           <Button
-            variant={activeStat === 'ALL' ? 'default' : 'outline'}
+            variant={activeStat === 'ALL' ? 'secondary' : 'ghost'}
             size="sm"
             onClick={() => setActiveStat('ALL')}
-            className="rounded-full"
+            className={`rounded-lg font-bold ${activeStat === 'ALL' ? 'bg-primary text-primary-foreground hover:bg-primary/90' : ''}`}
           >
             ALL
           </Button>
           {stats.map(s => (
             <Button
               key={s}
-              variant={activeStat === s ? 'default' : 'outline'}
+              variant={activeStat === s ? 'secondary' : 'ghost'}
               size="sm"
               onClick={() => setActiveStat(s)}
-              className="rounded-full whitespace-nowrap"
+              className={`rounded-lg font-bold whitespace-nowrap ${activeStat === s ? 'bg-primary text-primary-foreground hover:bg-primary/90' : ''}`}
             >
               {s}
             </Button>
           ))}
         </div>
-        <button onClick={() => refresh()} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-          Refresh Data
+        <button onClick={() => refresh()} className="text-xs font-medium text-muted-foreground hover:text-primary transition-colors px-4">
+          Refresh Board
         </button>
       </div>
 
@@ -55,13 +77,19 @@ export const ProjectionBoard: React.FC = () => {
           return (
             <Card 
               key={p.id}
-              className={`relative overflow-hidden transition-all duration-200 hover:shadow-md ${selected ? 'ring-2 ring-primary border-primary' : 'hover:border-primary/50'}`}
+              className={`
+                relative overflow-hidden transition-all duration-200 border-0 ring-1 ring-border bg-card shadow-lg
+                ${selected ? 'ring-2 ring-primary shadow-primary/10' : 'hover:ring-primary/50 hover:shadow-xl hover:-translate-y-1'}
+              `}
             >
-              <CardContent className="p-4 space-y-4">
-                {/* Header: Player Info & Value */}
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden bg-secondary border border-border shrink-0">
+              {/* Team Background Gradient */}
+              <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-secondary/50 to-transparent pointer-events-none" />
+
+              <CardContent className="p-0">
+                {/* Player Header */}
+                <div className="relative p-5 flex items-start justify-between z-10">
+                  <div className="flex items-center gap-4">
+                    <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-background ring-2 ring-border shrink-0 shadow-sm">
                       {p.player.imageUrl ? (
                         <img
                           src={p.player.imageUrl}
@@ -70,24 +98,32 @@ export const ProjectionBoard: React.FC = () => {
                           onError={(e)=>{ (e.target as HTMLImageElement).style.display='none'; }}
                         />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center text-xs font-bold text-muted-foreground">
+                        <div className="w-full h-full flex items-center justify-center text-sm font-black text-muted-foreground bg-secondary">
                           {p.player.name.slice(0,2).toUpperCase()}
                         </div>
                       )}
                     </div>
                     <div>
-                      <h4 className="font-bold text-sm leading-tight line-clamp-1">{p.player.name}</h4>
-                      <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{p.player.team || 'FA'}</p>
+                      <h4 className="font-black text-lg leading-none tracking-tight text-foreground">{p.player.name}</h4>
+                      <div className="flex items-center gap-2 mt-1.5">
+                        <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-secondary text-secondary-foreground uppercase tracking-wider">
+                          {p.player.team || 'FA'}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-right shrink-0">
-                    <div className="text-2xl font-black tracking-tighter leading-none text-foreground">{p.value}</div>
-                    <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wide mt-1">{p.statType}</div>
                   </div>
                 </div>
 
+                {/* Stat Value */}
+                <div className="px-5 pb-4 text-center relative z-10">
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-4xl font-black tracking-tighter text-foreground drop-shadow-sm">{p.value}</span>
+                  </div>
+                  <div className="text-xs font-bold text-primary uppercase tracking-widest mt-1">{p.statType}</div>
+                </div>
+
                 {/* Actions */}
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-px bg-border mt-2">
                   <button
                     onClick={() => toggle({ 
                       projectionId: p.id, 
@@ -98,15 +134,18 @@ export const ProjectionBoard: React.FC = () => {
                       value: p.value
                     })}
                     className={`
-                      relative flex flex-col items-center justify-center py-2 px-1 rounded-md border transition-all duration-200
+                      group relative flex flex-col items-center justify-center py-4 transition-all duration-200
                       ${isMore 
-                        ? 'bg-green-500/10 border-green-500 text-green-600 dark:text-green-400 font-bold' 
-                        : 'border-border hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
+                        ? 'bg-green-500/10 text-green-500' 
+                        : 'bg-card hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
                       }
                     `}
                   >
-                    <span className="text-[10px] uppercase font-bold tracking-wider mb-0.5">More</span>
-                    {isMore && <div className="absolute inset-0 ring-1 ring-inset ring-green-500 rounded-md" />}
+                    <span className="text-[10px] uppercase font-black tracking-widest mb-1 group-hover:scale-110 transition-transform">More</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={isMore ? "animate-bounce" : ""}>
+                      <path d="M18 15l-6-6-6 6"/>
+                    </svg>
+                    {isMore && <div className="absolute inset-0 ring-inset ring-2 ring-green-500" />}
                   </button>
                   
                   <button
@@ -119,15 +158,18 @@ export const ProjectionBoard: React.FC = () => {
                       value: p.value
                     })}
                     className={`
-                      relative flex flex-col items-center justify-center py-2 px-1 rounded-md border transition-all duration-200
+                      group relative flex flex-col items-center justify-center py-4 transition-all duration-200
                       ${isLess 
-                        ? 'bg-red-500/10 border-red-500 text-red-600 dark:text-red-400 font-bold' 
-                        : 'border-border hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
+                        ? 'bg-red-500/10 text-red-500' 
+                        : 'bg-card hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
                       }
                     `}
                   >
-                    <span className="text-[10px] uppercase font-bold tracking-wider mb-0.5">Less</span>
-                    {isLess && <div className="absolute inset-0 ring-1 ring-inset ring-red-500 rounded-md" />}
+                    <span className="text-[10px] uppercase font-black tracking-widest mb-1 group-hover:scale-110 transition-transform">Less</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className={isLess ? "animate-bounce" : ""}>
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                    {isLess && <div className="absolute inset-0 ring-inset ring-2 ring-red-500" />}
                   </button>
                 </div>
               </CardContent>

@@ -12,17 +12,17 @@ export default function Home() {
   }, [selections]);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-10 space-y-8">
-      <header className="flex items-center justify-between border-b border-border pb-6">
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-8 space-y-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/50 pb-6">
         <div>
-          <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground">
-            Kimi
-          </h2>
-          <p className="text-sm text-muted-foreground mt-1">
+          <h1 className="text-3xl md:text-4xl font-black tracking-tight text-foreground">
+            Board
+          </h1>
+          <p className="text-muted-foreground mt-1 font-medium">
             Daily Fantasy Valorant • Tier 1 VCT & Game Changers
           </p>
         </div>
-      </header>
+      </div>
       <section>
         <ProjectionBoard />
       </section>
