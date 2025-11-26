@@ -39,7 +39,7 @@ from dotenv import load_dotenv
 
 import time
 
-STAT_TYPE = 'Kills Per Round'
+STAT_TYPE = 'Kills'
 
 
 def parse_args() -> argparse.Namespace:
@@ -62,11 +62,21 @@ def fetch_recent_completed(token: str, limit: int) -> List[Dict[str, Any]]:
     # Filter completed matches; PandaScore supports status filters via endpoint variations
     url = 'https://api.pandascore.co/valorant/matches/past'
     headers = {'Authorization': f'Bearer {token}'}
-    params = {'per_page': min(limit, 100)}
+    params = {'per_page': 100} # Fetch more to filter
     r = requests.get(url, headers=headers, params=params, timeout=20)
     if r.status_code != 200:
         raise RuntimeError(f'PandaScore response {r.status_code}: {r.text[:200]}')
-    return r.json()
+    
+    data = r.json()
+    # Filter for Tier 1 VCT and Game Changers
+    filtered = []
+    keywords = ['champions tour', 'vct', 'game changers']
+    for m in data:
+        league_name = m.get('league', {}).get('name', '').lower()
+        if any(k in league_name for k in keywords):
+            filtered.append(m)
+            
+    return filtered[:limit]
 
 
 def connect_db(url: str):
@@ -183,7 +193,9 @@ def run_once(args, token, admin_token, api_base, db_url):
         km = fetch_match_player_kills(token, m)
         kills_map.update(km)
 
-    results_payload = build_results_payload(unsettled, kills_map)
+    # Cast unsettled to List[Dict[str, Any]] to satisfy type checker
+    unsettled_list: List[Dict[str, Any]] = [dict(row) for row in unsettled]
+    results_payload = build_results_payload(unsettled_list, kills_map)
     conn.close()
 
     if not results_payload:

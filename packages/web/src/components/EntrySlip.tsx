@@ -71,11 +71,14 @@ export default function EntrySlip({
         {selections.length === 0 && <div className="text-sm text-muted-foreground">No selections yet.</div>}
         <ul className="space-y-2">
           {selections.map(s => (
-            <li key={s.projectionId} className="rounded-md border border-border/60 p-2 flex items-center justify-between gap-2 bg-background/40">
-              <div className="text-xs font-mono truncate" title={s.projectionId}>{s.projectionId}</div>
+            <li key={s.projectionId} className="rounded-md border border-border/60 p-3 flex items-center justify-between gap-2 bg-background/40">
+              <div className="flex flex-col">
+                <div className="text-xs font-bold">{s.player}</div>
+                <div className="text-[10px] text-muted-foreground">{s.statType} • {s.value}</div>
+              </div>
               <div className="flex items-center gap-2">
-                <span className={`text-[10px] font-semibold px-1.5 py-0.5 rounded ${s.pickType === 'MORE' ? 'bg-primary/20 text-primary' : 'bg-destructive/20 text-destructive'}`}>{s.pickType}</span>
-                <button onClick={() => remove(s.projectionId)} className="text-[10px] text-muted-foreground hover:text-destructive">✕</button>
+                <span className={`text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider ${s.pickType === 'MORE' ? 'bg-green-500/20 text-green-600 dark:text-green-400' : 'bg-red-500/20 text-red-600 dark:text-red-400'}`}>{s.pickType}</span>
+                <button onClick={() => remove(s.projectionId)} className="text-muted-foreground hover:text-destructive p-1">✕</button>
               </div>
             </li>
           ))}

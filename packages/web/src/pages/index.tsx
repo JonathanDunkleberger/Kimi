@@ -12,11 +12,16 @@ export default function Home() {
   }, [selections]);
 
   return (
-    <main className="max-w-6xl mx-auto px-4 md:px-8 py-6 md:py-10 space-y-6">
-      <header className="flex items-center justify-between">
-        <h2 className="text-xl md:text-2xl font-bold tracking-tight text-foreground">
-          Player Projections
-        </h2>
+    <main className="max-w-7xl mx-auto px-4 md:px-8 py-6 md:py-10 space-y-8">
+      <header className="flex items-center justify-between border-b border-border pb-6">
+        <div>
+          <h2 className="text-2xl md:text-3xl font-black tracking-tight text-foreground">
+            Kimi
+          </h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            Daily Fantasy Valorant • Tier 1 VCT & Game Changers
+          </p>
+        </div>
       </header>
       <section>
         <ProjectionBoard />
@@ -24,9 +29,9 @@ export default function Home() {
       <EntrySlip open={slipOpen} onOpenChange={setSlipOpen} />
       <button
         onClick={() => setSlipOpen(true)}
-        className="md:hidden fixed bottom-5 right-5 rounded-full bg-primary text-primary-foreground shadow-lg px-5 py-3 text-sm font-semibold tracking-wide"
+        className="md:hidden fixed bottom-5 right-5 z-50 rounded-full bg-primary text-primary-foreground shadow-xl px-6 py-3 text-sm font-bold tracking-wide ring-2 ring-offset-2 ring-primary"
       >
-        Picks ({selections.length})
+        Slip ({selections.length})
       </button>
     </main>
   );

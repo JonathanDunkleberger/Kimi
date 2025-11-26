@@ -1,6 +1,14 @@
 import { create } from "zustand";
 
-export type Selection = { projectionId: string; pickType: "MORE" | "LESS" };
+export type Selection = { 
+  projectionId: string; 
+  pickType: "MORE" | "LESS";
+  // Metadata for display
+  player: string;
+  team: string;
+  statType: string;
+  value: number;
+};
 
 type BetSlipState = {
   selections: Selection[];

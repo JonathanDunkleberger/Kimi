@@ -59,7 +59,7 @@ ROOT = Path(__file__).parent
 MODELS_DIR = ROOT / 'models'
 DATA_CSV = ROOT / 'data' / 'training_data.csv'
 
-STAT_TYPE_DISPLAY = 'Kills Per Round'
+STAT_TYPE_DISPLAY = 'Kills'
 
 
 def parse_args() -> argparse.Namespace:
@@ -114,14 +114,23 @@ def build_feature_cache(feature_cols: List[str]) -> Dict[str, Dict[str, float]]:
 
 def fetch_upcoming_matches(token: str, limit: int) -> List[Dict[str, Any]]:
     url = f'https://api.pandascore.co/valorant/matches/upcoming'
-    params = {'per_page': min(limit, 100)}
+    params = {'per_page': 100}  # Fetch more to filter
     headers = {'Authorization': f'Bearer {token}'}
     resp = requests.get(url, params=params, headers=headers, timeout=20)
     if resp.status_code != 200:
         raise RuntimeError(f"PandaScore error {resp.status_code}: {resp.text[:200]}")
     data = resp.json()
+    
+    # Filter for Tier 1 VCT and Game Changers
+    filtered = []
+    keywords = ['champions tour', 'vct', 'game changers']
+    for m in data:
+        league_name = m.get('league', {}).get('name', '').lower()
+        if any(k in league_name for k in keywords):
+            filtered.append(m)
+            
     # Trim if limit < per_page
-    return data[:limit]
+    return filtered[:limit]
 
 
 def connect_db(url: str):
