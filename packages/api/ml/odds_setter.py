@@ -126,7 +126,13 @@ def fetch_upcoming_matches(token: str, limit: int) -> List[Dict[str, Any]]:
     keywords = ['champions tour', 'vct', 'game changers']
     for m in data:
         league_name = m.get('league', {}).get('name', '').lower()
-        if any(k in league_name for k in keywords):
+        # Also check series name or tournament name if league name is generic
+        series_name = m.get('series', {}).get('name', '').lower()
+        tournament_name = m.get('tournament', {}).get('name', '').lower()
+        
+        full_context = f"{league_name} {series_name} {tournament_name}"
+        
+        if any(k in full_context for k in keywords):
             filtered.append(m)
             
     # Trim if limit < per_page

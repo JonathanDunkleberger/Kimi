@@ -36,15 +36,13 @@ async function ensureUser(id: string, email?: string | null) {
 }
 
 // Create entry with picks
-app.post('/entries', requireAuth(), async (req: Request, res: Response) => {
-  const { userId } = getAuth(req);
-  if (!userId) return res.status(401).json({ error: 'Unauthenticated' });
+app.post('/entries', async (req: Request, res: Response) => {
+  // Mock auth for guest mode
+  const userId = 'guest_user_123';
+  
   // fetch Clerk user for email (optional)
-  let email: string | undefined;
-  try {
-    const user = await clerkClient.users.getUser(userId);
-    email = user?.primaryEmailAddress?.emailAddress;
-  } catch {}
+  let email: string | undefined = 'guest@example.com';
+  
   await ensureUser(userId, email);
   const { wager, picks } = req.body as { wager: number; picks: { playerProjectionId: string; pickType: string }[] };
   if (!wager || !Array.isArray(picks) || picks.length === 0) {
@@ -88,9 +86,8 @@ app.post('/entries', requireAuth(), async (req: Request, res: Response) => {
 });
 
 // List entries for current user
-app.get('/entries', requireAuth(), async (req: Request, res: Response) => {
-  const { userId } = getAuth(req);
-  if (!userId) return res.status(401).json({ error: 'Unauthenticated' });
+app.get('/entries', async (req: Request, res: Response) => {
+  const userId = 'guest_user_123';
   await ensureUser(userId);
   try {
     const entries = await prisma.entry.findMany({
@@ -107,12 +104,10 @@ app.get('/entries', requireAuth(), async (req: Request, res: Response) => {
 });
 
 // Current user summary
-app.get('/me', requireAuth(), async (req: Request, res: Response) => {
-  const { userId } = getAuth(req);
-  if (!userId) return res.status(401).json({ error: 'Unauthenticated' });
+app.get('/me', async (req: Request, res: Response) => {
+  const userId = 'guest_user_123';
   try {
-    const clerkUser = await clerkClient.users.getUser(userId);
-    const email = clerkUser?.primaryEmailAddress?.emailAddress;
+    const email = 'guest@example.com';
     await ensureUser(userId, email);
     const appUser = await prisma.user.findUnique({ where: { id: userId } });
     if (!appUser) return res.status(404).json({ error: 'User not found' });

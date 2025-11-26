@@ -20,48 +20,39 @@ interface StubAuth {
 
 const stubValue: StubAuth = {
   isLoaded: true,
-  isSignedIn: false,
-  userId: null,
-  getToken: async () => null,
+  isSignedIn: true, // Force signed in as guest
+  userId: 'guest_user_123',
+  getToken: async () => 'guest_token',
 };
 
 const StubAuthContext = createContext<StubAuth>(stubValue);
 
 export function useAuth() {
-  if (hasKey && realClerk?.useAuth) return realClerk.useAuth();
+  // Always return stub auth for now to bypass Clerk
   return useContext(StubAuthContext);
 }
 
 export const SignedIn: React.FC<PropsWithChildren> = ({ children }) => {
-  if (hasKey && realClerk?.SignedIn) return React.createElement(realClerk.SignedIn, null, children);
-  return null;
+  // Always render children as if signed in
+  return <>{children}</>;
 };
 
 export const SignedOut: React.FC<PropsWithChildren> = ({ children }) => {
-  if (hasKey && realClerk?.SignedOut) return React.createElement(realClerk.SignedOut, null, children);
-  return <>{children}</>; // treat as signed out
+  // Never render children as if signed out
+  return null;
 };
 
 type AnyProps = Record<string, unknown>;
 
 export const SignInButton: React.FC<AnyProps> = (props) => {
-  if (hasKey && realClerk?.SignInButton) return React.createElement(realClerk.SignInButton, props);
   return <>{props.children || null}</>;
 };
 
 export const UserButton: React.FC<AnyProps> = (props) => {
-  if (hasKey && realClerk?.UserButton) return React.createElement(realClerk.UserButton, props);
-  return null;
+  return <div className="w-8 h-8 rounded-full bg-gray-500 flex items-center justify-center text-white font-bold">G</div>;
 };
 
 export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  if (hasKey && realClerk?.ClerkProvider) {
-    const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!;
-  return <realClerk.ClerkProvider publishableKey={publishableKey}>{children}</realClerk.ClerkProvider> as any;
-  }
-  if (!hasKey && process.env.NODE_ENV !== 'production') {
-    // eslint-disable-next-line no-console
-    console.warn('[Auth] Running without Clerk key; using stub auth context.');
-  }
+  // Always use stub provider
   return <StubAuthContext.Provider value={stubValue}>{children}</StubAuthContext.Provider>;
 };
