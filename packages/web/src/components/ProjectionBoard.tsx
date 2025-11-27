@@ -34,7 +34,7 @@ const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
                 <img
                   src={p.player.imageUrl}
                   alt={p.player.name}
-                  className="h-[110%] w-auto object-contain drop-shadow-xl translate-y-2"
+                  className="h-[100%] w-auto object-contain drop-shadow-xl translate-y-1"
                   onError={() => setImgError(true)}
                 />
               ) : (
@@ -218,7 +218,7 @@ export const ProjectionBoard: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
         {displayProjections.map(p => {
           const sel = selections.find(s => s.projectionId === p.id);
           const isMore = sel?.pickType === 'MORE';

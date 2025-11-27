@@ -41,7 +41,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2 group no-underline mr-4">
               <span className="font-black tracking-tighter text-2xl text-foreground group-hover:text-foreground/80 transition-colors">
-                Kira
+                Kimi
               </span>
             </Link>
 
