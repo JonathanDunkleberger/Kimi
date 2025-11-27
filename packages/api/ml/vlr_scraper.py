@@ -197,6 +197,17 @@ def get_player_stats(player_url):
 
     soup = BeautifulSoup(resp.text, 'html.parser')
     
+    # Extract player image
+    image_url = None
+    header_img = soup.select_one('.player-header img')
+    if header_img:
+        src = header_img.get('src')
+        if src and 'owcdn' in src:
+            if src.startswith('//'):
+                image_url = 'https:' + src
+            else:
+                image_url = src
+
     # Find the stats table. It's usually the first table in the "Stats" section or just the main table.
     # The table has headers like "Agent", "Usage", "Rounds", "Rating", "ACS", "K:D", "ADR", "KAST", "KPR", "APR", "FKPR", "FDPR", "K", "D", "A", "FK", "FD"
     
@@ -205,7 +216,7 @@ def get_player_stats(player_url):
     
     stats_table = soup.select_one('table.wf-table')
     if not stats_table:
-        return {}
+        return {'image_url': image_url} if image_url else {}
         
     rows = stats_table.select('tbody tr')
     
@@ -266,8 +277,12 @@ def get_player_stats(player_url):
             continue
             
     if total_rounds > 0:
-        for k in weighted_stats:
-            weighted_stats[k] /= total_rounds
+        for k in ['kpr', 'adr', 'acs', 'fkpr', 'fdpr', 'hs_rate', 'clutch_rate']:
+            if k in weighted_stats:
+                weighted_stats[k] /= total_rounds
+    
+    if image_url:
+        weighted_stats['image_url'] = image_url
             
     # Add other fields that might be needed by the model, set to 0 if unknown
     # The model likely needs: kpr, adr, acs, fkpr, fdpr, hs_rate, clutch_rate, kdr, kad, fk_fd_diff

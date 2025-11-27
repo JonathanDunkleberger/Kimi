@@ -9,7 +9,13 @@ async function jsonFetch<T>(url: string, init?: RequestInit): Promise<T> {
 }
 
 // Projections
-export type Projection = { id: string; statType: string; value: number; player: { id: string; name: string; team: string; imageUrl?: string | null } };
+export type Projection = { 
+  id: string; 
+  statType: string; 
+  value: number; 
+  player: { id: string; name: string; team: string; imageUrl?: string | null };
+  match: { id: string; teamA: string; teamB: string; scheduledAt: string; event: string };
+};
 export function useProjections() {
   const { data, error, isLoading, mutate } = useSWR<Projection[]>(`${API_BASE}/projections`, (u: string) => jsonFetch<Projection[]>(u));
   return { projections: data || [], error, isLoading, refresh: mutate };

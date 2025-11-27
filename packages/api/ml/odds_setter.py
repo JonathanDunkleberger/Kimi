@@ -47,6 +47,8 @@ import time
 from pathlib import Path
 from typing import Any, Dict, List
 
+print("Loading modules...")
+
 import pandas as pd
 import requests
 import psycopg2
@@ -58,6 +60,8 @@ try:
     from . import vlr_scraper
 except ImportError:
     import vlr_scraper
+
+print("Starting odds_setter script...")
 
 ROOT = Path(__file__).parent
 MODELS_DIR = ROOT / 'models'
@@ -99,7 +103,7 @@ def load_model(target: str):
     return model, feature_cols, meta
 
 
-def build_feature_cache(feature_cols: List[str]) -> Dict[str, Dict[str, float]]:
+def build_feature_cache(feature_cols: List[str]) -> Dict[str, Dict[str, Any]]:
     if not DATA_CSV.exists():
         raise FileNotFoundError(f"Missing training dataset: {DATA_CSV}")
     df = pd.read_csv(DATA_CSV)
@@ -111,7 +115,7 @@ def build_feature_cache(feature_cols: List[str]) -> Dict[str, Dict[str, float]]:
     if 'player' not in df.columns:
         raise RuntimeError('training_data.csv missing player column')
     latest = df.groupby('player', as_index=False).tail(1)
-    cache: Dict[str, Dict[str, float]] = {}
+    cache: Dict[str, Dict[str, Any]] = {}
     for _, row in latest.iterrows():
         cache[str(row['player']).strip()] = {c: float(row[c]) if c in row and pd.notna(row[c]) else 0.0 for c in feature_cols}
     return cache
@@ -262,7 +266,7 @@ def upsert_projection(conn, player_id: str, stat_type: str, match_id: str, value
         )
 
 
-def build_feature_vector(player_obj: Dict[str, Any], feature_cols: List[str], cache: Dict[str, Dict[str, float]]):
+def build_feature_vector(player_obj: Dict[str, Any], feature_cols: List[str], cache: Dict[str, Dict[str, Any]]):
     player_name = player_obj.get('name') or 'unknown'
     # Exact match first; attempt case-insensitive fallback
     if player_name in cache:
@@ -282,6 +286,11 @@ def build_feature_vector(player_obj: Dict[str, Any], feature_cols: List[str], ca
                 # Ensure all feature cols are present
                 full_stats = {c: stats.get(c, 0.0) for c in feature_cols}
                 cache[player_name] = full_stats
+                
+                # If we found an image URL, return it so we can update the DB
+                if 'image_url' in stats:
+                    full_stats['image_url'] = stats['image_url']
+                    
                 return full_stats
         except Exception as e:
             log(f"Failed to fetch stats for {player_name}: {e}", error=True)
@@ -332,7 +341,19 @@ def run_once(args, token, db_url, model, feature_cols, feature_cache):
                 continue
 
             feats_dict = build_feature_vector(p, feature_cols, feature_cache)
-            feats = [feats_dict[c] for c in feature_cols]
+            
+            # Update player image if found during stats fetch
+            if 'image_url' in feats_dict and feats_dict['image_url'] and conn:
+                try:
+                    with conn.cursor() as cur:
+                        cur.execute(
+                            """UPDATE "Player" SET "imageUrl"=%s WHERE id=%s AND "imageUrl" IS NULL""",
+                            (feats_dict['image_url'], pid)
+                        )
+                except Exception as e:
+                    log(f"Failed to update image for {pname}: {e}", error=True)
+
+            feats = [feats_dict.get(c, 0.0) for c in feature_cols]
             try:
                 pred = float(model.predict([feats])[0])
             except Exception as e:
@@ -362,6 +383,7 @@ def run_once(args, token, db_url, model, feature_cols, feature_cache):
 
 
 def main():
+    print("Starting odds_setter...")
     load_dotenv()  # optional .env
     args = parse_args()
     token = args.token or os.getenv('PANDA_SCORE_TOKEN') or os.getenv('PANDASCORE_TOKEN')

@@ -18,7 +18,10 @@ app.get('/health', (_req: Request, res: Response) => {
 app.get('/projections', async (_req: Request, res: Response) => {
   try {
     const projections = await prisma.playerProjection.findMany({
-      include: { player: true }
+      include: { 
+        player: true,
+        match: true
+      }
     });
     res.json(projections);
   } catch (e:any) {
