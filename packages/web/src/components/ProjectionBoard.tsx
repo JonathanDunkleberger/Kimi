@@ -26,13 +26,8 @@ const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
       `}
     >
       <CardContent className="p-0 flex flex-col h-full">
-        {/* Top Section: Image & Fire */}
+        {/* Top Section: Image */}
         <div className="relative h-[120px] flex justify-center items-end bg-gradient-to-b from-secondary/20 to-transparent pt-4">
-           {/* Fire Icon (Mock) */}
-           <div className="absolute top-3 right-3 flex items-center gap-1 text-orange-500 font-bold text-xs z-10">
-             <span>🔥</span> <span>{Math.floor(p.value * 12)}</span>
-           </div>
-
            {/* Player Image */}
            <div className="relative w-full h-full flex items-end justify-center overflow-hidden">
               {!imgError && p.player.imageUrl ? (
@@ -223,7 +218,7 @@ export const ProjectionBoard: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {displayProjections.map(p => {
           const sel = selections.find(s => s.projectionId === p.id);
           const isMore = sel?.pickType === 'MORE';
