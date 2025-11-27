@@ -47,9 +47,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {isSignedIn ? (
               <div className="flex items-center gap-4">
                 {me && (
-                  <div className="hidden md:flex flex-col items-end">
+                  <div className="flex flex-col items-end mr-4">
                     <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">Balance</span>
-                    <span className="font-mono font-bold text-primary text-lg leading-none">${me.balance.toLocaleString()}</span>
+                    <span className="font-mono font-bold text-green-500 text-lg leading-none">${me.balance.toLocaleString()}</span>
                   </div>
                 )}
                 <div className="flex items-center gap-2">

@@ -87,7 +87,7 @@ const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
             className={`
               flex items-center justify-center py-3 transition-colors group
               ${isLess 
-                ? 'bg-red-500/10 text-red-500' 
+                ? 'bg-green-500 text-white' 
                 : 'hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
               }
             `}
@@ -107,7 +107,7 @@ const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
             className={`
               flex items-center justify-center py-3 transition-colors group
               ${isMore 
-                ? 'bg-green-500/10 text-green-500' 
+                ? 'bg-green-500 text-white' 
                 : 'hover:bg-secondary/50 text-muted-foreground hover:text-foreground'
               }
             `}
@@ -151,8 +151,48 @@ export const ProjectionBoard: React.FC = () => {
     </div>
   );
 
+  // Filter Logic:
+  // 1. Filter by Stat Type
+  // 2. Filter by "Next Day of Matches"
+  // 3. Deduplicate (One card per player)
+  
+  let filtered = activeStat === 'ALL' ? projections : projections.filter(p => p.statType === activeStat);
+  
+  // Sort by time
+  filtered.sort((a, b) => {
+    const tA = new Date(a.match?.scheduledAt || 0).getTime();
+    const tB = new Date(b.match?.scheduledAt || 0).getTime();
+    return tA - tB;
+  });
+
+  // Find the date of the earliest match in the filtered set
+  let targetDateStr = "";
+  if (filtered.length > 0) {
+      const firstDate = new Date(filtered[0].match?.scheduledAt || Date.now());
+      targetDateStr = firstDate.toDateString();
+  }
+
+  // Filter to only include matches on that day
+  if (targetDateStr) {
+    filtered = filtered.filter(p => {
+        const d = new Date(p.match?.scheduledAt || Date.now());
+        return d.toDateString() === targetDateStr;
+    });
+  }
+
+  // Deduplicate by player ID (keep first occurrence which is earliest game)
+  const seenPlayers = new Set();
+  const uniqueProjections = [];
+  for (const p of filtered) {
+    if (!seenPlayers.has(p.player.id)) {
+      seenPlayers.add(p.player.id);
+      uniqueProjections.push(p);
+    }
+  }
+
+  const displayProjections = uniqueProjections;
+
   const stats = Array.from(new Set(projections.map(p => p.statType))).sort();
-  const filtered = activeStat === 'ALL' ? projections : projections.filter(p => p.statType === activeStat);
 
   return (
     <div className="space-y-6">
@@ -183,8 +223,8 @@ export const ProjectionBoard: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {filtered.map(p => {
+      <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        {displayProjections.map(p => {
           const sel = selections.find(s => s.projectionId === p.id);
           const isMore = sel?.pickType === 'MORE';
           const isLess = sel?.pickType === 'LESS';
