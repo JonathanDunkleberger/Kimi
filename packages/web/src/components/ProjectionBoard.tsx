@@ -21,29 +21,29 @@ const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
   return (
     <Card 
       className={`
-        relative overflow-hidden transition-all duration-200 border bg-card shadow-sm hover:shadow-md flex flex-col
+        relative overflow-hidden transition-all duration-200 border bg-card shadow-sm hover:shadow-md flex flex-col h-[320px]
         ${selected ? 'ring-2 ring-primary border-transparent' : 'border-border/60'}
       `}
     >
       <CardContent className="p-0 flex flex-col h-full">
         {/* Top Section: Image & Fire */}
-        <div className="relative pt-6 pb-2 flex justify-center items-center bg-gradient-to-b from-secondary/20 to-transparent">
+        <div className="relative h-[120px] flex justify-center items-end bg-gradient-to-b from-secondary/20 to-transparent pt-4">
            {/* Fire Icon (Mock) */}
-           <div className="absolute top-3 right-3 flex items-center gap-1 text-orange-500 font-bold text-xs">
+           <div className="absolute top-3 right-3 flex items-center gap-1 text-orange-500 font-bold text-xs z-10">
              <span>🔥</span> <span>{Math.floor(p.value * 12)}</span>
            </div>
 
            {/* Player Image */}
-           <div className="relative w-24 h-24">
+           <div className="relative w-full h-full flex items-end justify-center overflow-hidden">
               {!imgError && p.player.imageUrl ? (
                 <img
                   src={p.player.imageUrl}
                   alt={p.player.name}
-                  className="w-full h-full object-contain drop-shadow-xl"
+                  className="h-[110%] w-auto object-contain drop-shadow-xl translate-y-2"
                   onError={() => setImgError(true)}
                 />
               ) : (
-                <div className="w-full h-full rounded-full bg-secondary flex items-center justify-center text-2xl font-black text-muted-foreground ring-4 ring-background">
+                <div className="w-20 h-20 mb-2 rounded-full bg-secondary flex items-center justify-center text-2xl font-black text-muted-foreground ring-4 ring-background">
                   {p.player.name.slice(0,2).toUpperCase()}
                 </div>
               )}
@@ -51,30 +51,30 @@ const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
         </div>
 
         {/* Info Section */}
-        <div className="text-center px-4 pb-2 space-y-1">
-          <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider truncate">
+        <div className="text-center px-4 py-2 space-y-1 flex-1 flex flex-col justify-center">
+          <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider truncate w-full">
             {matchLabel}
           </div>
-          <h3 className="font-black text-lg leading-none text-foreground truncate">
+          <h3 className="font-black text-lg leading-none text-foreground truncate w-full">
             {p.player.name}
           </h3>
           <div className="text-[10px] font-medium text-muted-foreground">
             {matchTime}
           </div>
-        </div>
-
-        {/* Stat Value */}
-        <div className="text-center py-2">
-          <div className="text-4xl font-black text-foreground tracking-tighter leading-none drop-shadow-sm">
-            {p.value}
-          </div>
-          <div className="text-[10px] font-bold text-primary uppercase tracking-widest mt-1">
-            {p.statType}
+          
+          {/* Stat Value */}
+          <div className="mt-2">
+            <div className="text-4xl font-black text-foreground tracking-tighter leading-none drop-shadow-sm">
+              {p.value}
+            </div>
+            <div className="text-[10px] font-bold text-primary uppercase tracking-widest mt-1">
+              {p.statType}
+            </div>
           </div>
         </div>
 
         {/* Actions (Bottom) */}
-        <div className="mt-auto grid grid-cols-2 border-t border-border divide-x divide-border">
+        <div className="mt-auto grid grid-cols-2 border-t border-border divide-x divide-border h-[48px]">
           <button
             onClick={() => toggle({ 
               projectionId: p.id, 
@@ -223,7 +223,7 @@ export const ProjectionBoard: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {displayProjections.map(p => {
           const sel = selections.find(s => s.projectionId === p.id);
           const isMore = sel?.pickType === 'MORE';
