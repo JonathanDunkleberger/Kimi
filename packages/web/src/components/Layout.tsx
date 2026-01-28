@@ -10,7 +10,6 @@ import { useMe } from "@/lib/api";
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { isSignedIn, getToken } = useAuth();
   const router = useRouter();
-  const [slipOpen, setSlipOpen] = React.useState(false);
   const [token, setToken] = React.useState<string | null>(null);
 
   React.useEffect(() => {
@@ -23,19 +22,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   const { me } = useMe(token || undefined);
 
-  React.useEffect(() => {
-    function onOpen() { setSlipOpen(true); }
-    window.addEventListener("open-slip", onOpen as EventListener);
-    return () => window.removeEventListener("open-slip", onOpen as EventListener);
-  }, []);
-
-  const SlipContext = React.createContext<{ openSlip: () => void }>({ openSlip: () => {} });
-
   const isActive = (path: string) => router.pathname === path;
 
   return (
-    <SlipContext.Provider value={{ openSlip: () => setSlipOpen(true) }}>
-      <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
+    // Removed SlipContext provider as BetSlip handles its own visibility based on store
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 flex flex-col">
       <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-8">
@@ -48,6 +39,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             {/* Navigation Tabs */}
             <nav className="hidden md:flex items-center gap-1">
               <Link href="/">
+                <Button variant={isActive('/') ? 'secondary' : 'ghost'} size="sm" className="font-bold">
+                  Board
+                </Button>
+              </Link>
                 <Button 
                   variant="ghost" 
                   className={`font-bold text-sm h-9 ${isActive('/') ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
@@ -91,9 +86,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
       </header>
-      <main className="container mx-auto px-4 py-6">{children}</main>
-      <BetSlip open={slipOpen} onOpenChange={setSlipOpen} />
+      
+      <main className="flex-1 w-full max-w-[1920px] mx-auto relative">
+         <div className="flex items-start gap-6 p-6">
+            {/* Main Content Area */}
+            <div className="flex-1 min-w-0">
+              {children}
+            </div>
+            
+            {/* Bet Slip Sidebar - Desktop */}
+            <div className="hidden xl:block w-[380px] flex-shrink-0 sticky top-[88px]">
+               <BetSlip />
+            </div>
+         </div>
+      </main>
+      
+      {/* Mobile/Tablet Fixed Toggle or Sheet would go here, but for now rendering hidden on mobile if not implemented */}
+      {/* We can rely on a mobile-specific floating button later if needed */}
       </div>
-    </SlipContext.Provider>
   );
 }
