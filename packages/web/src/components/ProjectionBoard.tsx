@@ -4,6 +4,42 @@ import { useBetSlip } from '../store/betSlipStore';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 
+// --- HEX Color Helper for Team Jerseys ---
+const getTeamColor = (team: string) => {
+  // Simple hash to get a consistent color for a team name
+  let hash = 0;
+  for (let i = 0; i < team.length; i++) {
+    hash = team.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
+  return '#' + '00000'.substring(0, 6 - c.length) + c;
+};
+
+// --- Jersey Fallback Component ---
+const JerseyPlaceholder = ({ team, name }: { team: string; name: string }) => {
+  const color = getTeamColor(team || 'FA');
+  return (
+    <div className="relative w-full h-full flex items-end justify-center pb-2">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-[90%] w-auto drop-shadow-lg"
+        fill={color}
+        stroke="rgba(255,255,255,0.2)"
+        strokeWidth="1"
+      >
+        {/* Simple Jersey Shape */}
+        <path d="M16 2L20 4L22 8L18 10V22H6V10L2 8L4 4L8 2H16Z" />
+        {/* Collar */}
+        <path d="M9 2C9 4 15 4 15 2" fill="none" stroke="rgba(0,0,0,0.3)" strokeWidth="1" />
+      </svg>
+      {/* Team Text Overlay */}
+      <div className="absolute bottom-6 font-black text-white/90 text-xs tracking-tighter drop-shadow-md bg-black/30 px-2 py-0.5 rounded">
+        {team?.slice(0, 4).toUpperCase()}
+      </div>
+    </div>
+  );
+};
+
 const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
   const [imgError, setImgError] = useState(false);
   
@@ -38,9 +74,7 @@ const ProjectionCard = ({ p, selected, isMore, isLess, toggle }: any) => {
                   onError={() => setImgError(true)}
                 />
               ) : (
-                <div className="w-20 h-20 mb-2 rounded-full bg-secondary flex items-center justify-center text-2xl font-black text-muted-foreground ring-4 ring-background">
-                  {p.player.name.slice(0,2).toUpperCase()}
-                </div>
+                <JerseyPlaceholder team={team} name={p.player.name} />
               )}
            </div>
         </div>
@@ -218,7 +252,7 @@ export const ProjectionBoard: React.FC = () => {
         </button>
       </div>
 
-      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3">
+      <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
         {displayProjections.map(p => {
           const sel = selections.find(s => s.projectionId === p.id);
           const isMore = sel?.pickType === 'MORE';
