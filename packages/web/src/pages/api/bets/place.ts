@@ -1,12 +1,21 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { createPagesServerClient } from "@supabase/auth-helpers-nextjs";
+import { createClient } from "@supabase/supabase-js";
 
 // Payload: { stake: number, legs: [{ line_id: string, side: 'OVER'|'UNDER' }] }
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  const supabase = createPagesServerClient({ req, res });
-  const { data: { user }, error: userErr } = await supabase.auth.getUser();
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (!supabaseUrl || !supabaseKey) return res.status(500).json({ error: "Server misconfigured" });
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  // Authenticate via the access token from the Authorization header
+  const token = req.headers.authorization?.replace('Bearer ', '');
+  if (!token) return res.status(401).json({ error: "Unauthorized" });
+
+  const { data: { user }, error: userErr } = await supabase.auth.getUser(token);
   if (userErr || !user) return res.status(401).json({ error: "Unauthorized" });
 
   const { stake, legs } = req.body || {};

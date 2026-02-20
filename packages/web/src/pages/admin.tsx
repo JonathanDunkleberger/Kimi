@@ -1,13 +1,14 @@
 import React from "react";
-import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react";
+import { supabase } from "@/lib/supabase";
+import { useAuthStore } from "@/stores/authStore";
+import { Lock } from "lucide-react";
 
 type Team = { id: string; name: string };
 type Player = { id: string; name: string };
 type Match = { id: string; start_time: string };
 
 export default function Admin() {
-  const session = useSession();
-  const supabase = useSupabaseClient();
+  const { user } = useAuthStore();
 
   const [teams, setTeams] = React.useState<Team[]>([]);
   const [players, setPlayers] = React.useState<Player[]>([]);
@@ -25,14 +26,14 @@ export default function Admin() {
       if (!m.error && m.data) setMatches(m.data);
     }
     load();
-  }, [supabase]);
+  }, []);
 
-  if (!session) {
+  if (!user) {
     return (
       <div className="container mx-auto p-6">
-        <div className="p-6 rounded-xl border border-border bg-card shadow-sm space-y-4">
-          <h3 className="font-bold text-lg">You must be logged in to access Admin.</h3>
-          <a href="/account" className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">Go to login</a>
+        <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] shadow-sm space-y-4 text-center">
+          <Lock className="w-8 h-8 mx-auto text-[var(--text-muted)]" />
+          <h3 className="font-bold text-lg">You must be signed in to access Admin.</h3>
         </div>
       </div>
     );
