@@ -116,10 +116,9 @@ def upsert_team(t: dict, game: str) -> Optional[str]:
     logo = t.get("image_url")
     location = t.get("location")
 
-    # Check if exists by pandascore_id
+    # 1) Check by pandascore_id
     existing = sb.table("teams").select("id").eq("pandascore_id", ps_id).execute()
     if existing.data:
-        # Update
         sb.table("teams").update({
             "name": name,
             "abbrev": acronym,
@@ -128,30 +127,43 @@ def upsert_team(t: dict, game: str) -> Optional[str]:
             "game": game,
         }).eq("pandascore_id", ps_id).execute()
         return existing.data[0]["id"]
-    else:
-        # Also check by name to avoid duplicates from seed data
-        by_name = sb.table("teams").select("id").eq("name", name).execute()
-        if by_name.data:
-            sb.table("teams").update({
-                "pandascore_id": ps_id,
-                "abbrev": acronym,
-                "logo_url": logo,
-                "region": location,
-                "game": game,
-            }).eq("name", name).execute()
-            return by_name.data[0]["id"]
-        # Insert new
-        row = {
+
+    # 2) Check by abbreviation (catches seed-data teams like 100T, TOR, etc.)
+    by_abbrev = sb.table("teams").select("id").eq("abbrev", acronym).execute()
+    if by_abbrev.data:
+        sb.table("teams").update({
+            "pandascore_id": ps_id,
             "name": name,
-            "abbrev": acronym,
             "logo_url": logo,
-            "color": DEFAULT_COLORS.get(game, "#666"),
             "region": location,
             "game": game,
+        }).eq("abbrev", acronym).execute()
+        return by_abbrev.data[0]["id"]
+
+    # 3) Check by name
+    by_name = sb.table("teams").select("id").eq("name", name).execute()
+    if by_name.data:
+        sb.table("teams").update({
             "pandascore_id": ps_id,
-        }
-        res = sb.table("teams").insert(row).execute()
-        return res.data[0]["id"] if res.data else None
+            "abbrev": acronym,
+            "logo_url": logo,
+            "region": location,
+            "game": game,
+        }).eq("name", name).execute()
+        return by_name.data[0]["id"]
+
+    # 4) Insert new team
+    row = {
+        "name": name,
+        "abbrev": acronym,
+        "logo_url": logo,
+        "color": DEFAULT_COLORS.get(game, "#666"),
+        "region": location,
+        "game": game,
+        "pandascore_id": ps_id,
+    }
+    res = sb.table("teams").insert(row).execute()
+    return res.data[0]["id"] if res.data else None
 
 
 def upsert_player(p: dict, team_uuid: Optional[str], game: str) -> Optional[str]:
