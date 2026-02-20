@@ -1,35 +1,92 @@
-import React from "react";
-import { useBetSlip } from "../store/betSlipStore";
-import ProjectionBoard from "../components/ProjectionBoard";
+import React, { useMemo, useState } from 'react';
+import { useMatches, useAllPropLines } from '@/hooks/useMatches';
+import MatchSection from '@/components/MatchSection';
+import { Crosshair, Swords, Loader2, CalendarOff } from 'lucide-react';
+import type { Game } from '@/types';
 
-export default function Home() {
-  const { selections } = useBetSlip();
-  
-  // We use the global slip context from Layout, so we just need to trigger it if needed.
-  // But actually, Layout handles the slip state. We might want a way to open it from here.
-  // For now, let's just show the board. The Layout has the slip.
+const GAMES: { key: Game; label: string; icon: React.ReactNode }[] = [
+  { key: 'valorant', label: 'Valorant', icon: <Crosshair size={16} strokeWidth={2.5} /> },
+  { key: 'cod', label: 'Call of Duty', icon: <Swords size={16} strokeWidth={2.5} /> },
+];
+
+export default function BoardPage() {
+  const [activeGame, setActiveGame] = useState<Game>('cod');
+  const { matches, loading: matchesLoading } = useMatches(activeGame);
+  const matchIds = useMemo(() => matches.map((m) => m.id), [matches]);
+  const { propLines, loading: propsLoading } = useAllPropLines(matchIds);
+
+  const loading = matchesLoading || propsLoading;
+
+  const liveCount = matches.filter((m) => m.status === 'live').length;
 
   return (
-    <main className="max-w-7xl mx-auto px-4 md:px-8 py-8 space-y-8">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border/50 pb-6">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight text-foreground">
-            Board
-          </h1>
-          <p className="text-muted-foreground mt-1 font-medium">
-            Daily Fantasy Valorant • Tier 1 VCT & Game Changers
-          </p>
+    <div className="anim-in">
+      {/* Hero */}
+      <div className="hero-banner">
+        <div className="hero-badge">
+          {liveCount > 0 ? (
+            <>
+              <div className="pulse" />
+              {liveCount} Live
+            </>
+          ) : (
+            <>
+              <CalendarOff size={12} />
+              Upcoming
+            </>
+          )}
+        </div>
+        <div className="hero-title">
+          {activeGame === 'cod' ? 'Call of Duty League' : 'VCT Championship'}
+        </div>
+        <div className="hero-sub">
+          Pick Over/Under on player stat lines. Build 2 &ndash; 6 leg entries.
+          ML-powered projections.
         </div>
       </div>
-      <section>
-        <ProjectionBoard />
-      </section>
-      <button
-        onClick={() => window.dispatchEvent(new Event('open-slip'))}
-        className="md:hidden fixed bottom-5 right-5 z-50 rounded-full bg-primary text-primary-foreground shadow-xl px-6 py-3 text-sm font-bold tracking-wide ring-2 ring-offset-2 ring-primary"
-      >
-        Slip ({selections.length})
-      </button>
-    </main>
+
+      {/* Game Tabs */}
+      <div className="game-tabs">
+        {GAMES.map((g) => (
+          <button
+            key={g.key}
+            className={`game-tab ${activeGame === g.key ? 'active' : ''}`}
+            onClick={() => setActiveGame(g.key)}
+          >
+            {g.icon}
+            <span>{g.label}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Content */}
+      {loading ? (
+        <div className="board-empty">
+          <Loader2 size={28} className="spin" />
+          <span>Loading matches&hellip;</span>
+        </div>
+      ) : matches.length === 0 ? (
+        <div className="board-empty">
+          <CalendarOff size={28} />
+          <div className="board-empty-title">No matches available</div>
+          <div className="board-empty-sub">
+            Check back soon &mdash; {activeGame === 'cod' ? 'CDL' : 'VCT'} matches appear as they&apos;re scheduled.
+          </div>
+        </div>
+      ) : (
+        matches.map((match) => {
+          const matchPropLines = propLines.filter(
+            (pl) => pl.match_id === match.id
+          );
+          return (
+            <MatchSection
+              key={match.id}
+              match={match}
+              propLines={matchPropLines}
+            />
+          );
+        })
+      )}
+    </div>
   );
 }

@@ -1,108 +1,63 @@
-import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useAuth, SignInButton, UserButton } from "@/lib/authClient";
-import { Button } from "@/components/ui/button";
-import BetSlip from "./BetSlip";
-import ThemeToggle from "./ThemeToggle";
-import { useMe } from "@/lib/api";
+import React, { useState } from 'react';
+import Nav from './Nav';
+import BetSlipV2 from './BetSlipV2';
+import AuthModal from './AuthModal';
+import KimiToast from './KimiToast';
+import { useAuthStore } from '@/stores/authStore';
+import { useSlipStore } from '@/stores/slipStore';
+import { Crosshair } from 'lucide-react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const { isSignedIn, getToken } = useAuth();
-  const router = useRouter();
-  const [token, setToken] = React.useState<string | null>(null);
-
-  React.useEffect(() => {
-    if (isSignedIn) {
-      getToken().then(setToken);
-    } else {
-      setToken(null);
-    }
-  }, [isSignedIn, getToken]);
-
-  const { me } = useMe(token || undefined);
-
-  const isActive = (path: string) => router.pathname === path;
+  const [showAuth, setShowAuth] = useState(false);
+  const [mobileSlip, setMobileSlip] = useState(false);
+  const picks = useSlipStore((s) => s.picks);
+  const user = useAuthStore((s) => s.user);
 
   return (
-    // Removed SlipContext provider as BetSlip handles its own visibility based on store
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20 flex flex-col">
-      <header className="sticky top-0 z-40 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2 group no-underline mr-4">
-              <span className="font-black tracking-tighter text-2xl text-foreground group-hover:text-foreground/80 transition-colors">
-                Kimi
-              </span>
-            </Link>
+    <div className="app-shell">
+      <Nav
+        onLoginClick={() => setShowAuth(true)}
+        onSlipToggle={() => setMobileSlip((p) => !p)}
+      />
 
-            {/* Navigation Tabs */}
-            <nav className="hidden md:flex items-center gap-1">
-              <Link href="/">
-                <Button variant={isActive('/') ? 'secondary' : 'ghost'} size="sm" className="font-bold">
-                  Board
-                </Button>
-              </Link>
-                <Button 
-                  variant="ghost" 
-                  className={`font-bold text-sm h-9 ${isActive('/') ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-                >
-                  Board
-                </Button>
-              </Link>
-              <Link href="/entries">
-                <Button 
-                  variant="ghost" 
-                  className={`font-bold text-sm h-9 ${isActive('/entries') ? 'bg-secondary text-foreground' : 'text-muted-foreground hover:text-foreground'}`}
-                >
-                  My Lineups
-                </Button>
-              </Link>
-            </nav>
-          </div>
-          <div className="flex items-center gap-4">
-            <ThemeToggle className="hidden sm:flex" />
-            
-            {isSignedIn ? (
-              <div className="flex items-center gap-4">
-                {me && (
-                  <div className="flex flex-col items-end mr-4">
-                    <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-bold">Balance</span>
-                    <span className="font-mono font-bold text-green-500 text-lg leading-none">${me.balance.toLocaleString()}</span>
-                  </div>
-                )}
-                <div className="flex items-center gap-2">
-                  <Link href="/account">
-                    <Button variant="ghost" size="sm">Account</Button>
-                  </Link>
-                  <UserButton afterSignOutUrl="/" />
-                </div>
-              </div>
-            ) : (
-              <SignInButton mode="modal">
-                <Button variant="default" className="font-bold shadow-lg shadow-primary/20">Login</Button>
-              </SignInButton>
-            )}
+      <div className="app-body">
+        {/* Main content */}
+        <main className="app-main">{children}</main>
+
+        {/* Desktop sidebar slip */}
+        <aside className="slip-sidebar">
+          <BetSlipV2 />
+        </aside>
+      </div>
+
+      {/* Mobile slip overlay */}
+      {mobileSlip && (
+        <div className="mobile-slip-overlay">
+          <div className="mobile-slip-backdrop" onClick={() => setMobileSlip(false)} />
+          <div className="mobile-slip-sheet">
+            <BetSlipV2 onClose={() => setMobileSlip(false)} />
           </div>
         </div>
-      </header>
-      
-      <main className="flex-1 w-full max-w-[1920px] mx-auto relative">
-         <div className="flex items-start gap-6 p-6">
-            {/* Main Content Area */}
-            <div className="flex-1 min-w-0">
-              {children}
-            </div>
-            
-            {/* Bet Slip Sidebar - Desktop */}
-            <div className="hidden xl:block w-[380px] flex-shrink-0 sticky top-[88px]">
-               <BetSlip />
-            </div>
-         </div>
-      </main>
-      
-      {/* Mobile/Tablet Fixed Toggle or Sheet would go here, but for now rendering hidden on mobile if not implemented */}
-      {/* We can rely on a mobile-specific floating button later if needed */}
-      </div>
+      )}
+
+      {/* Mobile FAB */}
+      {picks.length > 0 && !mobileSlip && (
+        <button
+          className="mobile-slip-fab"
+          onClick={() => setMobileSlip(true)}
+        >
+          <span style={{ display: 'flex', alignItems: 'center' }}><Crosshair size={16} /></span>
+          <span>{picks.length} Pick{picks.length !== 1 ? 's' : ''}</span>
+        </button>
+      )}
+
+      {/* Auth modal */}
+      {showAuth && !user && (
+        <AuthModal open={true} onClose={() => setShowAuth(false)} />
+      )}
+
+      {/* Toast */}
+      <KimiToast />
+    </div>
   );
 }
