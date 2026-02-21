@@ -26,12 +26,11 @@ export const useSlipStore = create<SlipStore>((set, get) => ({
   wager: 0,
 
   addPick: (propLine, direction) => {
-    set((state) => ({
-      picks: [
-        ...state.picks.filter((p) => p.propLine.id !== propLine.id),
-        { propLine, direction },
-      ],
-    }));
+    set((state) => {
+      const filtered = state.picks.filter((p) => p.propLine.id !== propLine.id);
+      if (filtered.length >= 6) return state; // Max 6 legs
+      return { picks: [...filtered, { propLine, direction }] };
+    });
   },
 
   removePick: (propLineId) => {

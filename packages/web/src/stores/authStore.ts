@@ -33,7 +33,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
       // The DB trigger auto-creates a users row, but set the username
       await supabase
         .from('users')
-        .upsert({ id: data.user.id, username, balance: 1000 });
+        .upsert({ id: data.user.id, username, balance: 10000 });
       await get().fetchProfile();
     }
   },

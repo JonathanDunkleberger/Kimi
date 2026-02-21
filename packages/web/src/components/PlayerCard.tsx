@@ -3,15 +3,16 @@
 import React, { useState } from 'react';
 import type { PropLine } from '@/types';
 import { useSlipStore } from '@/stores/slipStore';
-import { Brain, ChevronUp, ChevronDown } from 'lucide-react';
+import { Brain, ChevronUp, ChevronDown, Lock } from 'lucide-react';
 
 interface PlayerCardProps {
   propLines: PropLine[];
+  locked?: boolean;
 }
 
 const PRIMARY_STAT_KEYS = ['kills_m1m2', 'kills_m1m2m3'];
 
-export default function PlayerCard({ propLines }: PlayerCardProps) {
+export default function PlayerCard({ propLines, locked = false }: PlayerCardProps) {
   const { picks, togglePick } = useSlipStore();
   const [expanded, setExpanded] = useState(false);
 
@@ -71,22 +72,26 @@ export default function PlayerCard({ propLines }: PlayerCardProps) {
       <div className="pc-primary">
         <div className="pc-primary-label">{primaryName}</div>
         <div className="pc-primary-value">{primary.line_value}</div>
-        <div className="pc-primary-actions">
-          <button
-            className={`pc-ou-btn over ${primaryPick?.direction === 'over' ? 'active' : ''}`}
-            onClick={() => togglePick(primary, 'over')}
-          >
-            <ChevronUp size={14} strokeWidth={3} />
-            <span>Over</span>
-          </button>
-          <button
-            className={`pc-ou-btn under ${primaryPick?.direction === 'under' ? 'active' : ''}`}
-            onClick={() => togglePick(primary, 'under')}
-          >
-            <ChevronDown size={14} strokeWidth={3} />
-            <span>Under</span>
-          </button>
-        </div>
+        {locked ? (
+          <div className="pc-locked"><Lock size={12} /> Locked</div>
+        ) : (
+          <div className="pc-primary-actions">
+            <button
+              className={`pc-ou-btn over ${primaryPick?.direction === 'over' ? 'active' : ''}`}
+              onClick={() => togglePick(primary, 'over')}
+            >
+              <ChevronUp size={14} strokeWidth={3} />
+              <span>Over</span>
+            </button>
+            <button
+              className={`pc-ou-btn under ${primaryPick?.direction === 'under' ? 'active' : ''}`}
+              onClick={() => togglePick(primary, 'under')}
+            >
+              <ChevronDown size={14} strokeWidth={3} />
+              <span>Under</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Secondary Props Toggle */}
@@ -109,20 +114,26 @@ export default function PlayerCard({ propLines }: PlayerCardProps) {
                       <span className="pc-line-value">{pl.line_value}</span>
                     </div>
                     <div className="pc-line-actions">
-                      <button
-                        className={`pc-ou-btn compact over ${pick?.direction === 'over' ? 'active' : ''}`}
-                        onClick={() => togglePick(pl, 'over')}
-                      >
-                        <ChevronUp size={12} strokeWidth={3} />
-                        <span>O</span>
-                      </button>
-                      <button
-                        className={`pc-ou-btn compact under ${pick?.direction === 'under' ? 'active' : ''}`}
-                        onClick={() => togglePick(pl, 'under')}
-                      >
-                        <ChevronDown size={12} strokeWidth={3} />
-                        <span>U</span>
-                      </button>
+                      {locked ? (
+                        <span className="pc-locked-sm"><Lock size={10} /></span>
+                      ) : (
+                        <>
+                          <button
+                            className={`pc-ou-btn compact over ${pick?.direction === 'over' ? 'active' : ''}`}
+                            onClick={() => togglePick(pl, 'over')}
+                          >
+                            <ChevronUp size={12} strokeWidth={3} />
+                            <span>O</span>
+                          </button>
+                          <button
+                            className={`pc-ou-btn compact under ${pick?.direction === 'under' ? 'active' : ''}`}
+                            onClick={() => togglePick(pl, 'under')}
+                          >
+                            <ChevronDown size={12} strokeWidth={3} />
+                            <span>U</span>
+                          </button>
+                        </>
+                      )}
                     </div>
                   </div>
                 );

@@ -9,7 +9,9 @@ export async function placeEntry() {
 
   if (!user) throw new Error('Not logged in');
   if (picks.length < 2) throw new Error('Need at least 2 picks');
-  if (wager < 10) throw new Error('Minimum wager is 10 K-Coins');
+  if (picks.length > 6) throw new Error('Maximum 6 picks allowed');
+  if (wager < 50) throw new Error('Minimum wager is 50 K-Coins');
+  if (wager > 2000) throw new Error('Maximum wager is 2,000 K-Coins');
   if (wager > user.balance) throw new Error('Insufficient balance');
 
   const legs = picks.map((p) => ({

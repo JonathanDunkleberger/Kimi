@@ -6,7 +6,7 @@ import AuthModal from './AuthModal';
 import KimiToast from './KimiToast';
 import { useAuthStore } from '@/stores/authStore';
 import { useSlipStore } from '@/stores/slipStore';
-import { Crosshair } from 'lucide-react';
+import { Crosshair, Github } from 'lucide-react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -67,6 +67,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Toast */}
       <KimiToast />
+
+      {/* Footer */}
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <div className="footer-brand">
+            <span className="footer-brand-name">KIMI</span>
+            <span>Esports Props Platform</span>
+          </div>
+          <div className="footer-links">
+            <span>Play money only — not real gambling</span>
+            <span className="footer-dot">•</span>
+            <a href="https://github.com/JonathanDunkleberger/Kimi" target="_blank" rel="noopener noreferrer">
+              <Github size={12} style={{ display: 'inline', verticalAlign: -1, marginRight: 3 }} />
+              GitHub
+            </a>
+            <span className="footer-dot">•</span>
+            <span>Built by Jonathan Dunkleberger</span>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

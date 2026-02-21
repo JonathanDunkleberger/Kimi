@@ -3,7 +3,13 @@
 import React from 'react';
 import type { Match, PropLine } from '@/types';
 import PlayerCard from './PlayerCard';
-import { Radio, Clock, MapPin, Swords, Shield, Crosshair } from 'lucide-react';
+import { Radio, Clock, MapPin, Swords, Shield, Crosshair, Lock } from 'lucide-react';
+
+const LOCK_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+
+function isMatchLocked(startTime: string): boolean {
+  return new Date(startTime).getTime() - Date.now() < LOCK_WINDOW_MS;
+}
 
 interface MatchSectionProps {
   match: Match;
@@ -32,6 +38,7 @@ export default function MatchSection({ match, propLines }: MatchSectionProps) {
   const isToday = new Date().toDateString() === startTime.toDateString();
   const timeStr = `${isToday ? 'Today' : startTime.toLocaleDateString('en-US', { weekday: 'short' })} ${startTime.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })}`;
   const isLive = match.status === 'live';
+  const locked = isMatchLocked(match.start_time) || isLive;
 
   // Group prop lines by player
   const playerGroups = propLines.reduce<Record<string, PropLine[]>>((acc, pl) => {
@@ -66,6 +73,10 @@ export default function MatchSection({ match, propLines }: MatchSectionProps) {
               <span className="match-live-badge">
                 <Radio size={10} /> LIVE
               </span>
+            ) : locked ? (
+              <span className="match-locked-badge">
+                <Lock size={10} /> Locked
+              </span>
             ) : (
               <span className="match-time">
                 <Clock size={10} /> {timeStr}
@@ -90,7 +101,7 @@ export default function MatchSection({ match, propLines }: MatchSectionProps) {
 
       <div className="player-grid">
         {Object.entries(playerGroups).map(([playerId, pls]) => (
-          <PlayerCard key={playerId} propLines={pls} />
+          <PlayerCard key={playerId} propLines={pls} locked={locked} />
         ))}
       </div>
     </div>

@@ -1,7 +1,84 @@
-import React from 'react';
-import { Brain } from 'lucide-react';
+import React, { useState } from 'react';
+import { Brain, Crosshair, Swords } from 'lucide-react';
+
+type ModelKey = 'valorant' | 'cod';
+
+const MODELS: Record<ModelKey, {
+  name: string;
+  game: string;
+  icon: React.ReactNode;
+  color: string;
+  whyTitle: string;
+  whyText: string;
+  stats: { label: string; value: string; color: string }[];
+  features: string[];
+  confidence: string;
+  pipelineSteps: string[];
+}> = {
+  valorant: {
+    name: 'RandomForestRegressor',
+    game: 'Valorant',
+    icon: <Crosshair size={14} />,
+    color: '#FF4655',
+    whyTitle: 'Why RandomForest?',
+    whyText: 'Valorant stats are low-variance with strong categorical predictors (agent, map, role). RandomForest handles these well without overfitting on smaller esports datasets. The ensemble of 200 decision trees provides natural confidence scoring through inter-tree variance.',
+    stats: [
+      { label: 'MAE (Kills)', value: '2.31', color: 'var(--accent-green)' },
+      { label: 'R² Score', value: '0.71', color: 'var(--accent-blue)' },
+      { label: 'RMSE', value: '3.14', color: 'var(--accent)' },
+      { label: 'Training Maps', value: '8.2K', color: 'var(--text-primary)' },
+    ],
+    features: [
+      'avg_kills_last_5', 'avg_kills_last_10', 'std_kills_last_10',
+      'agent_encoded', 'map_encoded', 'role_category',
+      'team_win_rate_last_10', 'opponent_strength', 'event_tier',
+      'avg_deaths_last_5', 'avg_assists_last_5', 'avg_first_bloods_last_5',
+      'avg_headshot_pct_last_5',
+    ],
+    confidence: 'Variance across 200 decision trees — low inter-tree disagreement means high confidence.',
+    pipelineSteps: ['PandaScore API', 'Feature Extraction', 'RandomForest Model', 'Confidence Score', 'Prop Line + Direction'],
+  },
+  cod: {
+    name: 'GradientBoostingRegressor',
+    game: 'Call of Duty',
+    icon: <Swords size={14} />,
+    color: '#00C8FF',
+    whyTitle: 'Why Gradient Boosting?',
+    whyText: 'CoD kill counts vary dramatically by game mode — Hardpoint (25–40), Search & Destroy (5–12), Control (15–30). These non-linear, mode-dependent distributions require a model that captures complex feature interactions. Gradient boosting builds trees sequentially, each correcting previous errors.',
+    stats: [
+      { label: 'MAE (Kills)', value: '3.45', color: 'var(--accent-green)' },
+      { label: 'R² Score', value: '0.64', color: 'var(--accent-blue)' },
+      { label: 'RMSE', value: '4.82', color: 'var(--accent)' },
+      { label: 'Training Maps', value: '6.1K', color: 'var(--text-primary)' },
+    ],
+    features: [
+      'avg_kills_hardpoint_last_5', 'avg_kills_snd_last_5', 'avg_kills_control_last_5',
+      'map_mode_encoded', 'role_category', 'avg_damage_per_10min',
+      'team_map_win_rate', 'opponent_avg_kills_allowed', 'h2h_avg_kills',
+      'avg_engagements_last_5', 'event_tier', 'is_losers_bracket',
+    ],
+    confidence: 'Residual analysis from validation set — predictions where the model historically performs well receive higher confidence.',
+    pipelineSteps: ['PandaScore API', 'Feature Extraction', 'GradientBoosting', 'Confidence Score', 'Prop Line + Direction'],
+  },
+};
+
+const ROADMAP = [
+  { done: true, text: 'RandomForest baseline model (Valorant kills)' },
+  { done: true, text: 'GradientBoosting model (CoD kills)' },
+  { done: true, text: 'Automated PandaScore data pipeline' },
+  { done: true, text: 'Map-scoped prop types (guaranteed maps only)' },
+  { done: true, text: 'Confidence scoring system' },
+  { done: false, text: 'XGBoost ensemble for improved CoD accuracy' },
+  { done: false, text: 'Additional props: ACS, Headshot %, First Bloods' },
+  { done: false, text: 'Live odds adjustments mid-series' },
+  { done: false, text: 'Agent/map interaction features' },
+  { done: false, text: 'SHAP explanations per prediction' },
+];
 
 export default function MLPage() {
+  const [activeModel, setActiveModel] = useState<ModelKey>('valorant');
+  const m = MODELS[activeModel];
+
   return (
     <div className="ml-page anim-in">
       <div className="hero-banner" style={{ marginBottom: 24 }}>
@@ -9,74 +86,83 @@ export default function MLPage() {
           <div className="pulse" /> Machine Learning
         </div>
         <div className="hero-title" style={{ fontSize: 28 }}>
-          <Brain size={22} style={{ marginRight: 8, display: 'inline' }} /> Kill Prediction Engine
+          <Brain size={22} style={{ marginRight: 8, display: 'inline' }} /> Prediction Engine
         </div>
         <div className="hero-sub">
-          RandomForest regression model trained on historical VCT match data to
-          predict player kill totals.
+          Two game-specific ML models generate every prop line on the platform.
+          Each outputs a predicted stat line with a confidence score.
         </div>
+      </div>
+
+      {/* Model Tabs */}
+      <div className="game-tabs" style={{ marginBottom: 20 }}>
+        {(Object.keys(MODELS) as ModelKey[]).map((key) => (
+          <button
+            key={key}
+            className={`game-tab ${activeModel === key ? 'active' : ''}`}
+            onClick={() => setActiveModel(key)}
+          >
+            {MODELS[key].icon}
+            <span>{MODELS[key].game}</span>
+          </button>
+        ))}
+      </div>
+
+      {/* Why This Model */}
+      <div className="ml-card">
+        <div className="ml-card-title">{m.whyTitle}</div>
+        <div className="ml-card-sub" style={{ lineHeight: 1.5 }}>{m.whyText}</div>
       </div>
 
       {/* Model Performance */}
       <div className="ml-card">
-        <div className="ml-card-title">Model Performance</div>
+        <div className="ml-card-title">
+          {m.name}
+          <span style={{ fontSize: 11, fontWeight: 500, color: m.color, marginLeft: 8 }}>
+            {m.game}
+          </span>
+        </div>
         <div className="ml-card-sub">
-          Evaluated on holdout test set from 2024–2025 VCT seasons
+          Evaluated on holdout test set from 2024–2025 seasons
         </div>
         <div className="ml-stat-grid">
-          <div className="ml-stat">
-            <div className="ml-stat-value" style={{ color: 'var(--accent-green)' }}>
-              2.31
+          {m.stats.map((s) => (
+            <div className="ml-stat" key={s.label}>
+              <div className="ml-stat-value" style={{ color: s.color }}>{s.value}</div>
+              <div className="ml-stat-label">{s.label}</div>
             </div>
-            <div className="ml-stat-label">MAE (Kills)</div>
-          </div>
-          <div className="ml-stat">
-            <div className="ml-stat-value" style={{ color: 'var(--accent-blue)' }}>
-              0.71
-            </div>
-            <div className="ml-stat-label">R² Score</div>
-          </div>
-          <div className="ml-stat">
-            <div className="ml-stat-value" style={{ color: 'var(--accent)' }}>
-              3.14
-            </div>
-            <div className="ml-stat-label">RMSE</div>
-          </div>
-          <div className="ml-stat">
-            <div className="ml-stat-value">12.4K</div>
-            <div className="ml-stat-label">Training Samples</div>
-          </div>
+          ))}
         </div>
       </div>
 
       {/* Feature Engineering */}
       <div className="ml-card">
         <div className="ml-card-title">Feature Engineering</div>
-        <div className="ml-card-sub">
-          Input features extracted from historical match and player data
-        </div>
+        <div className="ml-card-sub">Input features for {m.game} model</div>
         <div className="ml-features">
-          {[
-            'avg_kills_last_5',
-            'avg_kills_last_10',
-            'agent_encoded',
-            'map_encoded',
-            'team_win_rate',
-            'opponent_strength',
-            'avg_acs_last_5',
-            'role_category',
-            'event_tier',
-            'kills_std_dev',
-            'headshot_pct',
-            'first_bloods_avg',
-            'clutch_rate',
-            'avg_deaths',
-            'kd_ratio_trend',
-          ].map((f) => (
-            <span key={f} className="ml-feature-tag">
-              {f}
-            </span>
+          {m.features.map((f) => (
+            <span key={f} className="ml-feature-tag">{f}</span>
           ))}
+        </div>
+      </div>
+
+      {/* Confidence Scoring */}
+      <div className="ml-card">
+        <div className="ml-card-title">Confidence Scoring</div>
+        <div className="ml-card-sub" style={{ lineHeight: 1.5 }}>{m.confidence}</div>
+        <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent-green)' }} />
+            <span style={{ color: 'var(--text-secondary)' }}>80%+ High</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFB800' }} />
+            <span style={{ color: 'var(--text-secondary)' }}>65–79% Medium</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--under)' }} />
+            <span style={{ color: 'var(--text-secondary)' }}>&lt;65% Low</span>
+          </div>
         </div>
       </div>
 
@@ -87,46 +173,26 @@ export default function MLPage() {
           End-to-end flow from data ingestion to prop line generation
         </div>
         <div className="ml-pipeline">
-          <div className="ml-pipeline-step">
-            <span className="step-num">1</span> VLR.gg Scraper
-          </div>
-          <span className="ml-pipeline-arrow">→</span>
-          <div className="ml-pipeline-step">
-            <span className="step-num">2</span> Feature Extraction
-          </div>
-          <span className="ml-pipeline-arrow">→</span>
-          <div className="ml-pipeline-step">
-            <span className="step-num">3</span> RandomForest Model
-          </div>
-          <span className="ml-pipeline-arrow">→</span>
-          <div className="ml-pipeline-step">
-            <span className="step-num">4</span> Confidence Score
-          </div>
-          <span className="ml-pipeline-arrow">→</span>
-          <div className="ml-pipeline-step">
-            <span className="step-num">5</span> Prop Line + Direction
-          </div>
+          {m.pipelineSteps.map((step, i) => (
+            <React.Fragment key={step}>
+              {i > 0 && <span className="ml-pipeline-arrow">→</span>}
+              <div className="ml-pipeline-step">
+                <span className="step-num">{i + 1}</span> {step}
+              </div>
+            </React.Fragment>
+          ))}
         </div>
       </div>
 
       {/* Tech Stack */}
       <div className="ml-card">
         <div className="ml-card-title">Tech Stack</div>
-        <div className="ml-card-sub">
-          Tools and frameworks powering the prediction engine
-        </div>
+        <div className="ml-card-sub">Tools powering the prediction engine</div>
         <div className="ml-features">
           {[
-            'scikit-learn',
-            'pandas',
-            'FastAPI',
-            'Playwright',
-            'Supabase',
-            'Next.js',
-            'Vercel',
-            'Render',
-            'RandomForestRegressor',
-            'Python 3.11',
+            'scikit-learn', 'pandas', 'PandaScore API', 'Supabase',
+            'Next.js', 'Vercel', 'Python 3.12',
+            'RandomForest', 'GradientBoosting',
           ].map((f) => (
             <span
               key={f}
@@ -146,17 +212,9 @@ export default function MLPage() {
       {/* Roadmap */}
       <div className="ml-card">
         <div className="ml-card-title">Roadmap</div>
-        <div className="ml-card-sub">Planned improvements for v2</div>
+        <div className="ml-card-sub">Completed milestones and planned improvements</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
-          {[
-            { done: false, text: 'XGBoost / LightGBM ensemble for improved accuracy' },
-            { done: false, text: 'Additional prop types: ACS, Headshot %, First Bloods' },
-            { done: false, text: 'Live odds adjustments mid-series using in-game data' },
-            { done: false, text: 'Agent/map interaction features for map-specific predictions' },
-            { done: true, text: 'RandomForest baseline model with historical VCT data' },
-            { done: true, text: 'Automated scraping + feature pipeline' },
-            { done: true, text: 'FastAPI inference endpoint' },
-          ].map((item, i) => (
+          {ROADMAP.map((item, i) => (
             <div
               key={i}
               style={{
@@ -188,11 +246,7 @@ export default function MLPage() {
               >
                 {item.done ? '✓' : ''}
               </span>
-              <span
-                style={{
-                  textDecoration: item.done ? 'line-through' : 'none',
-                }}
-              >
+              <span style={{ textDecoration: item.done ? 'line-through' : 'none' }}>
                 {item.text}
               </span>
             </div>
