@@ -6,7 +6,7 @@ import dayjs from 'dayjs';
 
 export default function Profile() {
   const { user } = useProfile();
-  const { entries, loading } = useMyEntries();
+  const { entries, loading } = useMyEntries(user?.id);
 
   if (!user) {
     return (

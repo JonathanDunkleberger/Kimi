@@ -9,7 +9,7 @@ type EntryFilter = 'all' | 'active' | 'won' | 'lost';
 
 export default function EntriesPage() {
   const { user } = useProfile();
-  const { entries, loading } = useMyEntries();
+  const { entries, loading } = useMyEntries(user?.id);
   const [filter, setFilter] = useState<EntryFilter>('all');
 
   const activeEntries = entries.filter((e) => e.status === 'pending');

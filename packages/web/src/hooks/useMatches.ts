@@ -108,12 +108,17 @@ export function useLeaderboard() {
   return { leaderboard, loading };
 }
 
-export function useMyEntries() {
+export function useMyEntries(userId: string | undefined) {
   const [entries, setEntries] = useState<Entry[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetch() {
+      if (!userId) {
+        setEntries([]);
+        setLoading(false);
+        return;
+      }
       const { data } = await supabase
         .from('entries')
         .select(`
@@ -127,13 +132,14 @@ export function useMyEntries() {
             )
           )
         `)
+        .eq('user_id', userId)
         .order('created_at', { ascending: false })
         .limit(50);
       setEntries((data as Entry[]) || []);
       setLoading(false);
     }
     fetch();
-  }, []);
+  }, [userId]);
 
   return { entries, loading };
 }
