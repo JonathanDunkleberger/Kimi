@@ -12,6 +12,28 @@ interface PlayerCardProps {
 
 const PRIMARY_STAT_KEYS = ['kills_m1m2', 'kills_m1m2m3'];
 
+const TEAM_PRIMARY_COLORS: Record<string, string> = {
+  // CDL 2026
+  'TOR': '#2b60de',
+  'MIN': '#7c3aed',
+  'OPT': '#16a34a',
+  'ATL': '#dc2626',
+  'LAT': '#9333ea',
+  'NYS': '#ea580c',
+  'MIA': '#f59e0b',
+  'SEA': '#0891b2',
+  'LV':  '#dc2626',
+  'CAR': '#2563eb',
+  'BOS': '#16a34a',
+  'PAR': '#e11d48',
+  // VCT
+  'SEN': '#dc2626',
+  'C9':  '#2563eb',
+  '100T': '#dc2626',
+  'NRG': '#f97316',
+  'LOUD': '#16a34a',
+};
+
 export default function PlayerCard({ propLines, locked = false }: PlayerCardProps) {
   const { picks, togglePick } = useSlipStore();
   const [expanded, setExpanded] = useState(false);
@@ -21,11 +43,11 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
   const first = propLines[0];
   const player = first.player;
   const team = player?.team;
-  const teamColor = team?.color || '#00e5a0';
-  const teamColorSecondary = teamColor + '40';
   const teamAbbrev = team?.abbrev || team?.name?.substring(0, 3).toUpperCase() || '???';
+  const teamColor = TEAM_PRIMARY_COLORS[teamAbbrev] || team?.color || '#00e5a0';
   const playerName = player?.ign || player?.name || 'Unknown';
   const role = player?.role || '';
+  const initials = playerName.substring(0, 2).toUpperCase();
 
   // Split into primary & secondary
   const primary = propLines.find((pl) =>
@@ -49,11 +71,21 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
   const hasPickInSlip = propLines.some((pl) => picks.some((p) => p.propLine.id === pl.id));
 
   return (
-    <div className={`player-card${hasPickInSlip ? ' selected' : ''}`} style={{ '--team-color': teamColor, '--team-color-secondary': teamColorSecondary } as React.CSSProperties}>
+    <div
+      className={`player-card${hasPickInSlip ? ' selected' : ''}`}
+      style={{
+        '--team-color': teamColor,
+        borderColor: hasPickInSlip ? `${teamColor}88` : `${teamColor}22`,
+        boxShadow: hasPickInSlip ? `0 0 20px ${teamColor}15` : undefined,
+      } as React.CSSProperties}
+    >
+      {/* Solid team color strip */}
+      <div className="pc-strip" style={{ backgroundColor: teamColor }} />
+
       {/* Header */}
       <div className="pc-header">
-        <div className="pc-avatar" style={{ borderColor: `${teamColor}60` }}>
-          {playerName.substring(0, 2).toUpperCase()}
+        <div className="pc-avatar" style={{ backgroundColor: teamColor }}>
+          {initials}
         </div>
         <div className="pc-info">
           <div className="pc-name">{playerName}</div>
@@ -107,32 +139,34 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
               {secondary.map((pl) => {
                 const pick = picks.find((p) => p.propLine.id === pl.id);
                 const propName = pl.prop_type?.name || 'Prop';
+                const conf = pl.ml_confidence;
                 return (
-                  <div key={pl.id} className="pc-line">
-                    <div className="pc-line-info">
-                      <span className="pc-prop-name">{propName}</span>
-                      <span className="pc-line-value">{pl.line_value}</span>
-                    </div>
-                    <div className="pc-line-actions">
-                      {locked ? (
-                        <span className="pc-locked-sm"><Lock size={10} /></span>
-                      ) : (
-                        <>
-                          <button
-                            className={`pc-ou-btn compact over ${pick?.direction === 'over' ? 'active' : ''}`}
-                            onClick={() => togglePick(pl, 'over')}
-                          >
-                            <ArrowUp size={11} /> O
-                          </button>
-                          <button
-                            className={`pc-ou-btn compact under ${pick?.direction === 'under' ? 'active' : ''}`}
-                            onClick={() => togglePick(pl, 'under')}
-                          >
-                            <ArrowDown size={11} /> U
-                          </button>
-                        </>
+                  <div key={pl.id} className="pc-exp-row">
+                    <div className="pc-exp-label">
+                      <span className="pc-exp-name">{propName}</span>
+                      {conf && (
+                        <span className="pc-exp-conf">{conf}% confidence</span>
                       )}
                     </div>
+                    <span className="pc-exp-value">{pl.line_value}</span>
+                    {locked ? (
+                      <span className="pc-locked-sm"><Lock size={10} /></span>
+                    ) : (
+                      <div className="pc-exp-actions">
+                        <button
+                          className={`pc-exp-btn over ${pick?.direction === 'over' ? 'active' : ''}`}
+                          onClick={() => togglePick(pl, 'over')}
+                        >
+                          <ArrowUp size={12} /> OVR
+                        </button>
+                        <button
+                          className={`pc-exp-btn under ${pick?.direction === 'under' ? 'active' : ''}`}
+                          onClick={() => togglePick(pl, 'under')}
+                        >
+                          <ArrowDown size={12} /> UND
+                        </button>
+                      </div>
+                    )}
                   </div>
                 );
               })}

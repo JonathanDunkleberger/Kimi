@@ -17,34 +17,9 @@ export default function BoardPage() {
 
   const loading = matchesLoading || propsLoading;
 
-  const liveCount = matches.filter((m) => m.status === 'live').length;
-
   return (
     <div className="anim-in">
-      {/* Hero */}
-      <div className="hero-banner">
-        <div className="hero-badge">
-          {liveCount > 0 ? (
-            <>
-              <div className="pulse" />
-              {liveCount} Live
-            </>
-          ) : (
-            <>
-              <CalendarOff size={12} />
-              Upcoming
-            </>
-          )}
-        </div>
-        <div className="hero-title">
-          {activeGame === 'cod' ? 'Call of Duty League' : 'VCT Championship'}
-        </div>
-        <div className="hero-sub">
-          Pick Over/Under on player stat lines. Build 2–6 leg entries. ML-powered projections.
-        </div>
-      </div>
-
-      {/* Game Tabs */}
+      {/* Game Tabs — start immediately below nav */}
       <div className="game-tabs">
         {GAMES.map((g) => (
           <button

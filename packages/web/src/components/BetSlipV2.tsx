@@ -6,7 +6,7 @@ import { useProfile } from '@/hooks/useProfile';
 import { useUser, SignInButton } from '@clerk/nextjs';
 import { placeEntry } from '@/actions/placeEntry';
 import { useToastStore } from '@/components/KimiToast';
-import { X, ArrowUp, ArrowDown } from 'lucide-react';
+import { X, ArrowUp, ArrowDown, LogIn } from 'lucide-react';
 import { CoinIcon } from '@/components/Nav';
 
 interface BetSlipV2Props {
@@ -133,31 +133,36 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
             <div className="slip-payout">
               <span className="slip-payout-label">Potential Payout</span>
               <span className="slip-payout-value">
-                {payout > 0 && <CoinIcon size={16} />}
+                <CoinIcon size={16} />
                 {payout > 0 ? payout.toLocaleString() : '—'}
               </span>
             </div>
 
-            {!isSignedIn ? (
+            {legCount === 1 ? (
+              <button className="slip-submit" disabled>
+                Add 1 more leg
+              </button>
+            ) : !isSignedIn ? (
               <SignInButton mode="modal">
-                <button className="slip-submit">
-                  Sign In to Place Entry
+                <button className="slip-submit slip-submit-signin">
+                  <LogIn size={14} />
+                  Sign in to place entry
                 </button>
               </SignInButton>
+            ) : wager < 50 ? (
+              <button className="slip-submit" disabled>
+                Set your wager
+              </button>
             ) : (
               <button
                 className="slip-submit"
-                disabled={submitting || legCount < 2 || legCount > 6 || wager < 50 || wager > 2000 || wager > balance}
+                disabled={submitting || legCount < 2 || legCount > 6 || wager > 2000 || wager > balance}
                 onClick={handleSubmit}
               >
                 {submitting
                   ? 'Placing...'
-                  : legCount < 2
-                  ? `Pick at least 2 (${legCount}/2)`
                   : legCount > 6
                   ? 'Max 6 picks'
-                  : wager < 50
-                  ? 'Min 50 K-Coins'
                   : wager > 2000
                   ? 'Max 2,000 K-Coins'
                   : wager > balance

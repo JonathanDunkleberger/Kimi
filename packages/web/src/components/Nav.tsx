@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { useProfile } from '@/hooks/useProfile';
-import { Crosshair, Layers, Target, Trophy, Brain, LogIn } from 'lucide-react';
+import { Crosshair, Layers, Target, Trophy, Brain, LogIn, UserPlus } from 'lucide-react';
 
 export function CoinIcon({ size = 16 }: { size?: number }) {
   return (
@@ -73,17 +73,17 @@ export default function Nav({ onSlipToggle }: NavProps) {
         })}
       </div>
 
-      <div className="nav-balance">
+      <div className="nav-auth">
         <SignedIn>
           <div className="balance-chip">
-            <CoinIcon size={16} />
-            {(user?.balance ?? 0).toLocaleString()}
+            <CoinIcon size={15} />
+            <span>{(user?.balance ?? 0).toLocaleString()}</span>
           </div>
           <UserButton
             afterSignOutUrl="/"
             appearance={{
               elements: {
-                avatarBox: 'w-9 h-9 rounded-full border-2 border-[#00e5a0]/30',
+                avatarBox: 'w-8 h-8 rounded-lg',
               },
             }}
           />
@@ -92,12 +92,13 @@ export default function Nav({ onSlipToggle }: NavProps) {
         <SignedOut>
           <SignInButton mode="modal">
             <button className="nav-login">
-              <LogIn size={14} />
+              <LogIn size={15} />
               Log in
             </button>
           </SignInButton>
           <SignUpButton mode="modal">
             <button className="nav-signin">
+              <UserPlus size={15} />
               Sign up
             </button>
           </SignUpButton>
