@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { create } from 'zustand';
+import { Check } from 'lucide-react';
 
 /* ---- tiny global toast store ---- */
 interface ToastState {
@@ -38,6 +39,7 @@ export default function KimiToast({ duration = 3500 }: { duration?: number }) {
 
   return (
     <div className={`kimi-toast ${visible ? 'show' : ''}`}>
+      <Check size={15} strokeWidth={3} />
       {text}
     </div>
   );

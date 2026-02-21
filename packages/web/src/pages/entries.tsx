@@ -2,21 +2,28 @@ import React, { useState } from 'react';
 import { useMyEntries } from '@/hooks/useMatches';
 import { useProfile } from '@/hooks/useProfile';
 import EntryCard from '@/components/EntryCard';
-import { Lock, ClipboardList, BarChart3 } from 'lucide-react';
+import { Lock, ClipboardList } from 'lucide-react';
+import { CoinIcon } from '@/components/Nav';
+
+type EntryFilter = 'all' | 'active' | 'won' | 'lost';
 
 export default function EntriesPage() {
   const { user } = useProfile();
   const { entries, loading } = useMyEntries();
-  const [tab, setTab] = useState<'live' | 'settled'>('live');
+  const [filter, setFilter] = useState<EntryFilter>('all');
 
-  const liveEntries = entries.filter(
-    (e) => e.status === 'pending'
-  );
-  const settledEntries = entries.filter(
-    (e) => e.status !== 'pending'
-  );
+  const activeEntries = entries.filter((e) => e.status === 'pending');
+  const wonEntries = entries.filter((e) => e.status === 'won');
+  const lostEntries = entries.filter((e) => e.status === 'lost');
+  const settledEntries = entries.filter((e) => e.status !== 'pending');
 
-  const display = tab === 'live' ? liveEntries : settledEntries;
+  const display = filter === 'all'
+    ? entries
+    : filter === 'active'
+    ? activeEntries
+    : filter === 'won'
+    ? wonEntries
+    : lostEntries;
 
   // P/L calc
   const totalWagered = settledEntries.reduce((s, e) => s + e.wager, 0);
@@ -38,12 +45,19 @@ export default function EntriesPage() {
     );
   }
 
+  const filters: { key: EntryFilter; label: string }[] = [
+    { key: 'all', label: `All (${entries.length})` },
+    { key: 'active', label: `Active (${activeEntries.length})` },
+    { key: 'won', label: `Won (${wonEntries.length})` },
+    { key: 'lost', label: `Lost (${lostEntries.length})` },
+  ];
+
   return (
     <div className="anim-in">
       {/* Header */}
       <div className="entries-header">
         <div>
-          <h2 style={{ margin: 0, fontSize: 20, fontWeight: 800, fontFamily: 'var(--font-heading)' }}>
+          <h2 style={{ margin: 0, fontSize: 20, fontWeight: 800, fontFamily: 'var(--font)' }}>
             My Lineups
           </h2>
           <div style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 2 }}>
@@ -55,29 +69,27 @@ export default function EntriesPage() {
             <span className="entries-pl-label">Net P/L</span>
             <span
               className="entries-pl-value"
-              style={{ color: net >= 0 ? 'var(--over)' : 'var(--under)' }}
+              style={{ color: net >= 0 ? 'var(--accent)' : 'var(--red)' }}
             >
+              <CoinIcon size={14} />
               {net >= 0 ? '+' : ''}
-              {net.toLocaleString()} K
+              {net.toLocaleString()}
             </span>
           </div>
         )}
       </div>
 
-      {/* Tabs */}
+      {/* Filter Tabs */}
       <div className="entries-tabs">
-        <button
-          className={`entries-tab ${tab === 'live' ? 'active' : ''}`}
-          onClick={() => setTab('live')}
-        >
-          Live ({liveEntries.length})
-        </button>
-        <button
-          className={`entries-tab ${tab === 'settled' ? 'active' : ''}`}
-          onClick={() => setTab('settled')}
-        >
-          Settled ({settledEntries.length})
-        </button>
+        {filters.map((f) => (
+          <button
+            key={f.key}
+            className={`entries-tab ${filter === f.key ? 'active' : ''}`}
+            onClick={() => setFilter(f.key)}
+          >
+            {f.label}
+          </button>
+        ))}
       </div>
 
       {loading ? (
@@ -87,15 +99,15 @@ export default function EntriesPage() {
       ) : display.length === 0 ? (
         <div className="entries-empty">
           <div style={{ marginBottom: 12 }}>
-            {tab === 'live' ? <ClipboardList size={28} /> : <BarChart3 size={28} />}
+            <ClipboardList size={28} />
           </div>
           <div style={{ fontSize: 15, fontWeight: 600 }}>
-            No {tab} entries yet
+            No {filter === 'all' ? '' : filter} entries {filter === 'all' ? 'yet' : ''}
           </div>
           <div style={{ fontSize: 13, marginTop: 4, color: 'var(--text-muted)' }}>
-            {tab === 'live'
+            {filter === 'active' || filter === 'all'
               ? 'Head to the Board and build your first lineup!'
-              : 'Your settled entries will appear here.'}
+              : `Your ${filter} entries will appear here.`}
           </div>
         </div>
       ) : (

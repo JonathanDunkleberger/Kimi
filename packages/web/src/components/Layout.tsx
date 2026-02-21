@@ -5,7 +5,7 @@ import Nav from './Nav';
 import BetSlipV2 from './BetSlipV2';
 import KimiToast from './KimiToast';
 import { useSlipStore } from '@/stores/slipStore';
-import { Crosshair, Github } from 'lucide-react';
+import { Crosshair, Github, Layers, Target, Trophy, Brain } from 'lucide-react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -64,6 +64,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Toast */}
       <KimiToast />
+
+      {/* Mobile Bottom Nav */}
+      <div className="nav-mobile-bar">
+        <a href="/" className={router.pathname === '/' ? 'active' : ''}>
+          <Layers size={18} />
+          Board
+        </a>
+        <a href="/entries" className={router.pathname === '/entries' ? 'active' : ''}>
+          <Target size={18} />
+          Lineups
+        </a>
+        <a href="/leaderboard" className={router.pathname === '/leaderboard' ? 'active' : ''}>
+          <Trophy size={18} />
+          Ranks
+        </a>
+        <a href="/ml" className={router.pathname === '/ml' ? 'active' : ''}>
+          <Brain size={18} />
+          Engine
+        </a>
+      </div>
 
       {/* Footer */}
       <footer className="site-footer">

@@ -1,12 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import { useMatches, useAllPropLines } from '@/hooks/useMatches';
 import MatchSection from '@/components/MatchSection';
-import { Crosshair, Swords, Loader2, CalendarOff, Target, Layers, Trophy } from 'lucide-react';
+import { Crosshair, Target as TargetIcon, CalendarOff } from 'lucide-react';
 import type { Game } from '@/types';
 
 const GAMES: { key: Game; label: string; icon: React.ReactNode }[] = [
-  { key: 'valorant', label: 'Valorant', icon: <Crosshair size={16} strokeWidth={2.5} /> },
-  { key: 'cod', label: 'Call of Duty', icon: <Swords size={16} strokeWidth={2.5} /> },
+  { key: 'valorant', label: 'VALORANT', icon: <Crosshair size={14} strokeWidth={2.5} /> },
+  { key: 'cod', label: 'CALL OF DUTY', icon: <TargetIcon size={14} strokeWidth={2.5} /> },
 ];
 
 export default function BoardPage() {
@@ -21,11 +21,6 @@ export default function BoardPage() {
 
   return (
     <div className="anim-in">
-      {/* Disclaimer */}
-      <div className="disclaimer-banner">
-        🎮 Play money only — No real currency. For entertainment and portfolio demonstration purposes.
-      </div>
-
       {/* Hero */}
       <div className="hero-banner">
         <div className="hero-badge">
@@ -45,27 +40,7 @@ export default function BoardPage() {
           {activeGame === 'cod' ? 'Call of Duty League' : 'VCT Championship'}
         </div>
         <div className="hero-sub">
-          Pick Over/Under on player stat lines. Build 2 &ndash; 6 leg entries.
-          ML-powered projections.
-        </div>
-      </div>
-
-      {/* How It Works */}
-      <div className="how-it-works">
-        <div className="hiw-step">
-          <div className="hiw-num">1</div>
-          <div className="hiw-title"><Target size={14} style={{ display: 'inline', verticalAlign: -2, marginRight: 4 }} />Pick Props</div>
-          <div className="hiw-desc">Choose Over or Under on ML-generated player stat lines.</div>
-        </div>
-        <div className="hiw-step">
-          <div className="hiw-num">2</div>
-          <div className="hiw-title"><Layers size={14} style={{ display: 'inline', verticalAlign: -2, marginRight: 4 }} />Build Entry</div>
-          <div className="hiw-desc">Add 2–6 legs to your slip. Set your wager (50–2,000 K).</div>
-        </div>
-        <div className="hiw-step">
-          <div className="hiw-num">3</div>
-          <div className="hiw-title"><Trophy size={14} style={{ display: 'inline', verticalAlign: -2, marginRight: 4 }} />Win K-Coins</div>
-          <div className="hiw-desc">All legs hit? Win up to 35x your wager. Push counts as a win.</div>
+          Pick Over/Under on player stat lines. Build 2–6 leg entries. ML-powered projections.
         </div>
       </div>
 

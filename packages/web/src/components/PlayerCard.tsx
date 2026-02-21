@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import type { PropLine } from '@/types';
 import { useSlipStore } from '@/stores/slipStore';
-import { ChevronUp, ChevronDown, Lock } from 'lucide-react';
+import { ChevronUp, ChevronDown, Lock, ArrowUp, ArrowDown } from 'lucide-react';
 
 interface PlayerCardProps {
   propLines: PropLine[];
@@ -21,7 +21,8 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
   const first = propLines[0];
   const player = first.player;
   const team = player?.team;
-  const teamColor = team?.color || '#FF4655';
+  const teamColor = team?.color || '#00e5a0';
+  const teamColorSecondary = teamColor + '40';
   const teamAbbrev = team?.abbrev || team?.name?.substring(0, 3).toUpperCase() || '???';
   const playerName = player?.ign || player?.name || 'Unknown';
   const role = player?.role || '';
@@ -48,7 +49,7 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
   const hasPickInSlip = propLines.some((pl) => picks.some((p) => p.propLine.id === pl.id));
 
   return (
-    <div className={`player-card${hasPickInSlip ? ' selected' : ''}`} style={{ '--team-color': teamColor } as React.CSSProperties}>
+    <div className={`player-card${hasPickInSlip ? ' selected' : ''}`} style={{ '--team-color': teamColor, '--team-color-secondary': teamColorSecondary } as React.CSSProperties}>
       {/* Header */}
       <div className="pc-header">
         <div className="pc-avatar" style={{ borderColor: `${teamColor}60` }}>
@@ -81,13 +82,13 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
               className={`pc-ou-btn over ${primaryPick?.direction === 'over' ? 'active' : ''}`}
               onClick={() => togglePick(primary, 'over')}
             >
-              <span>▲ Over</span>
+              <ArrowUp size={13} /> OVR
             </button>
             <button
               className={`pc-ou-btn under ${primaryPick?.direction === 'under' ? 'active' : ''}`}
               onClick={() => togglePick(primary, 'under')}
             >
-              <span>▼ Under</span>
+              <ArrowDown size={13} /> UND
             </button>
           </div>
         )}
@@ -121,13 +122,13 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
                             className={`pc-ou-btn compact over ${pick?.direction === 'over' ? 'active' : ''}`}
                             onClick={() => togglePick(pl, 'over')}
                           >
-                            <span>▲ O</span>
+                            <ArrowUp size={11} /> O
                           </button>
                           <button
                             className={`pc-ou-btn compact under ${pick?.direction === 'under' ? 'active' : ''}`}
                             onClick={() => togglePick(pl, 'under')}
                           >
-                            <span>▼ U</span>
+                            <ArrowDown size={11} /> U
                           </button>
                         </>
                       )}

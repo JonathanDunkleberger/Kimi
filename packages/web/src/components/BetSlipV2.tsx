@@ -6,7 +6,8 @@ import { useProfile } from '@/hooks/useProfile';
 import { useUser, SignInButton } from '@clerk/nextjs';
 import { placeEntry } from '@/actions/placeEntry';
 import { useToastStore } from '@/components/KimiToast';
-import { Crosshair } from 'lucide-react';
+import { X, ArrowUp, ArrowDown } from 'lucide-react';
+import { CoinIcon } from '@/components/Nav';
 
 interface BetSlipV2Props {
   onToast?: (msg: string) => void;
@@ -53,7 +54,7 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
 
       {legCount === 0 ? (
         <div className="slip-empty">
-          <div className="slip-empty-icon"><Crosshair size={28} /></div>
+          <div className="slip-empty-icon"><CoinIcon size={28} /></div>
           <div className="slip-empty-text">
             Select Over or Under on player props to build your entry
           </div>
@@ -70,12 +71,14 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
                 pl.player?.team?.abbrev ||
                 pl.player?.team?.name?.substring(0, 3).toUpperCase() ||
                 '';
+              const teamColor = pl.player?.team?.color || '#00e5a0';
               return (
                 <div
                   className="slip-leg"
                   key={pl.id}
                   style={{ animationDelay: `${i * 0.05}s` }}
                 >
+                  <div className="slip-leg-bar" style={{ background: teamColor }} />
                   <div className="slip-leg-info">
                     <div className="slip-leg-player">{playerName}</div>
                     <div className="slip-leg-detail">
@@ -83,13 +86,13 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
                     </div>
                   </div>
                   <div className={`slip-leg-pick ${pick.direction}`}>
-                    {pick.direction === 'over' ? '▲ OVER' : '▼ UNDER'}
+                    {pick.direction === 'over' ? 'OVR' : 'UND'}
                   </div>
                   <button
                     className="slip-remove"
                     onClick={() => removePick(pl.id)}
                   >
-                    ✕
+                    <X size={12} />
                   </button>
                 </div>
               );
@@ -106,7 +109,7 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
               {[50, 100, 250, 500].map((amt) => (
                 <button
                   key={amt}
-                  className="quick-amt"
+                  className={`quick-amt ${wager === amt ? 'active' : ''}`}
                   onClick={() => setWager(amt)}
                 >
                   {amt.toLocaleString()}
@@ -130,7 +133,8 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
             <div className="slip-payout">
               <span className="slip-payout-label">Potential Payout</span>
               <span className="slip-payout-value">
-                {payout > 0 ? `${payout.toLocaleString()} K` : '—'}
+                {payout > 0 && <CoinIcon size={16} />}
+                {payout > 0 ? payout.toLocaleString() : '—'}
               </span>
             </div>
 

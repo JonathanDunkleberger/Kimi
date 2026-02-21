@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Brain, Crosshair, Swords } from 'lucide-react';
+import { Brain, Crosshair, Target, Database, Percent, Activity, RefreshCw } from 'lucide-react';
 
 type ModelKey = 'valorant' | 'cod';
 
@@ -10,8 +10,9 @@ const MODELS: Record<ModelKey, {
   color: string;
   whyTitle: string;
   whyText: string;
-  stats: { label: string; value: string; color: string }[];
-  features: string[];
+  stats: { label: string; value: string; color: string; icon: React.ReactNode }[];
+  features: { name: string; importance: number }[];
+  featureTags: string[];
   confidence: string;
   pipelineSteps: string[];
 }> = {
@@ -19,16 +20,26 @@ const MODELS: Record<ModelKey, {
     name: 'RandomForestRegressor',
     game: 'Valorant',
     icon: <Crosshair size={14} />,
-    color: '#FF4655',
+    color: '#00e5a0',
     whyTitle: 'Why RandomForest?',
     whyText: 'Valorant stats are low-variance with strong categorical predictors (agent, map, role). RandomForest handles these well without overfitting on smaller esports datasets. The ensemble of 200 decision trees provides natural confidence scoring through inter-tree variance.',
     stats: [
-      { label: 'MAE (Kills)', value: '2.31', color: 'var(--green)' },
-      { label: 'R² Score', value: '0.71', color: 'var(--blue)' },
-      { label: 'RMSE', value: '3.14', color: 'var(--accent)' },
-      { label: 'Training Maps', value: '8.2K', color: 'var(--text-primary)' },
+      { label: 'MAE (Kills)', value: '2.31', color: 'var(--accent)', icon: <Database size={14} /> },
+      { label: 'R² Score', value: '0.71', color: 'var(--blue)', icon: <Percent size={14} /> },
+      { label: 'RMSE', value: '3.14', color: 'var(--purple)', icon: <Activity size={14} /> },
+      { label: 'Training Maps', value: '8.2K', color: 'var(--text)', icon: <RefreshCw size={14} /> },
     ],
     features: [
+      { name: 'avg_kills_last_5', importance: 92 },
+      { name: 'avg_kills_last_10', importance: 85 },
+      { name: 'map_encoded', importance: 72 },
+      { name: 'agent_encoded', importance: 68 },
+      { name: 'team_win_rate_last_10', importance: 61 },
+      { name: 'opponent_strength', importance: 54 },
+      { name: 'avg_deaths_last_5', importance: 45 },
+      { name: 'avg_first_bloods_last_5', importance: 38 },
+    ],
+    featureTags: [
       'avg_kills_last_5', 'avg_kills_last_10', 'std_kills_last_10',
       'agent_encoded', 'map_encoded', 'role_category',
       'team_win_rate_last_10', 'opponent_strength', 'event_tier',
@@ -41,17 +52,27 @@ const MODELS: Record<ModelKey, {
   cod: {
     name: 'GradientBoostingRegressor',
     game: 'Call of Duty',
-    icon: <Swords size={14} />,
-    color: '#00C8FF',
+    icon: <Target size={14} />,
+    color: '#4c8dff',
     whyTitle: 'Why Gradient Boosting?',
     whyText: 'CoD kill counts vary dramatically by game mode — Hardpoint (25–40), Search & Destroy (5–12), Control (15–30). These non-linear, mode-dependent distributions require a model that captures complex feature interactions. Gradient boosting builds trees sequentially, each correcting previous errors.',
     stats: [
-      { label: 'MAE (Kills)', value: '3.45', color: 'var(--green)' },
-      { label: 'R² Score', value: '0.64', color: 'var(--blue)' },
-      { label: 'RMSE', value: '4.82', color: 'var(--accent)' },
-      { label: 'Training Maps', value: '6.1K', color: 'var(--text-primary)' },
+      { label: 'MAE (Kills)', value: '3.45', color: 'var(--accent)', icon: <Database size={14} /> },
+      { label: 'R² Score', value: '0.64', color: 'var(--blue)', icon: <Percent size={14} /> },
+      { label: 'RMSE', value: '4.82', color: 'var(--purple)', icon: <Activity size={14} /> },
+      { label: 'Training Maps', value: '6.1K', color: 'var(--text)', icon: <RefreshCw size={14} /> },
     ],
     features: [
+      { name: 'avg_kills_hardpoint_last_5', importance: 89 },
+      { name: 'map_mode_encoded', importance: 82 },
+      { name: 'avg_kills_snd_last_5', importance: 74 },
+      { name: 'avg_damage_per_10min', importance: 67 },
+      { name: 'team_map_win_rate', importance: 58 },
+      { name: 'opponent_avg_kills_allowed', importance: 51 },
+      { name: 'avg_engagements_last_5', importance: 42 },
+      { name: 'is_losers_bracket', importance: 33 },
+    ],
+    featureTags: [
       'avg_kills_hardpoint_last_5', 'avg_kills_snd_last_5', 'avg_kills_control_last_5',
       'map_mode_encoded', 'role_category', 'avg_damage_per_10min',
       'team_map_win_rate', 'opponent_avg_kills_allowed', 'h2h_avg_kills',
@@ -128,8 +149,28 @@ export default function MLPage() {
         <div className="ml-stat-grid">
           {m.stats.map((s) => (
             <div className="ml-stat" key={s.label}>
+              <div className="ml-stat-icon">
+                {s.icon}
+                <span>{s.label}</span>
+              </div>
               <div className="ml-stat-value" style={{ color: s.color }}>{s.value}</div>
-              <div className="ml-stat-label">{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Feature Importance */}
+      <div className="ml-card">
+        <div className="ml-card-title">Feature Importance</div>
+        <div className="ml-card-sub">Top features ranked by model importance for {m.game}</div>
+        <div style={{ marginTop: 4 }}>
+          {m.features.map((f) => (
+            <div className="ml-feature-bar" key={f.name}>
+              <span className="ml-feature-name">{f.name}</span>
+              <div className="ml-feature-track">
+                <div className="ml-feature-fill" style={{ width: `${f.importance}%` }} />
+              </div>
+              <span className="ml-feature-pct">{f.importance}%</span>
             </div>
           ))}
         </div>
@@ -138,9 +179,9 @@ export default function MLPage() {
       {/* Feature Engineering */}
       <div className="ml-card">
         <div className="ml-card-title">Feature Engineering</div>
-        <div className="ml-card-sub">Input features for {m.game} model</div>
+        <div className="ml-card-sub">All input features for {m.game} model</div>
         <div className="ml-features">
-          {m.features.map((f) => (
+          {m.featureTags.map((f) => (
             <span key={f} className="ml-feature-tag">{f}</span>
           ))}
         </div>
@@ -152,15 +193,15 @@ export default function MLPage() {
         <div className="ml-card-sub" style={{ lineHeight: 1.5 }}>{m.confidence}</div>
         <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--green)' }} />
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent)' }} />
             <span style={{ color: 'var(--text-secondary)' }}>80%+ High</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#FFB800' }} />
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--gold)' }} />
             <span style={{ color: 'var(--text-secondary)' }}>65–79% Medium</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--under)' }} />
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--text-muted)' }} />
             <span style={{ color: 'var(--text-secondary)' }}>&lt;65% Low</span>
           </div>
         </div>
@@ -231,12 +272,12 @@ export default function MLPage() {
                   fontSize: 10,
                   flexShrink: 0,
                   background: item.done
-                    ? 'rgba(0,255,135,0.15)'
+                    ? 'var(--accent-soft)'
                     : 'rgba(255,255,255,0.05)',
                   border: `1px solid ${
-                    item.done ? 'rgba(0,255,135,0.3)' : 'var(--border)'
+                    item.done ? 'rgba(0,229,160,0.3)' : 'var(--border)'
                   }`,
-                  color: item.done ? 'var(--green)' : 'var(--text-muted)',
+                  color: item.done ? 'var(--accent)' : 'var(--text-muted)',
                 }}
               >
                 {item.done ? '✓' : ''}

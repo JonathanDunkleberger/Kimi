@@ -2,35 +2,24 @@
 
 import React from 'react';
 import type { Entry } from '@/types';
-import { Clock, CheckCircle2, XCircle, ChevronUp, ChevronDown } from 'lucide-react';
+import { Clock, CheckCircle2, XCircle, ArrowUp, ArrowDown } from 'lucide-react';
+import { CoinIcon } from '@/components/Nav';
 
 interface EntryCardProps {
   entry: Entry;
 }
 
 export default function EntryCard({ entry }: EntryCardProps) {
-  const statusConfig: Record<string, { color: string; label: string }> = {
-    pending: { color: '#FFB800', label: 'PENDING' },
-    won: { color: 'var(--over)', label: 'WON' },
-    lost: { color: 'var(--under)', label: 'LOST' },
-    void: { color: 'var(--text-muted)', label: 'VOID' },
-  };
-
-  const cfg = statusConfig[entry.status] || statusConfig.pending;
-
   return (
-    <div
-      className="entry-card"
-      style={{ borderLeft: `3px solid ${cfg.color}` }}
-    >
+    <div className="entry-card">
       <div className="entry-card-top">
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <span
             className={`entry-status ${entry.status.toUpperCase()}`}
           >
-            {cfg.label}
+            {entry.status.toUpperCase()}
           </span>
-          <span style={{ fontSize: 12, color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>
+          <span style={{ fontSize: 11, color: 'var(--text-muted)', fontFamily: 'var(--mono)', fontWeight: 600 }}>
             {new Date(entry.created_at).toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric',
@@ -42,16 +31,18 @@ export default function EntryCard({ entry }: EntryCardProps) {
         <div className="entry-amounts">
           <div>
             <div className="label">Wager</div>
-            <div className="value">{entry.wager.toLocaleString()} K</div>
-          </div>
-          <div style={{ color: 'var(--text-muted)' }}>→</div>
-          <div>
-            <div className="label">Payout</div>
-            <div className="value" style={{ color: 'var(--text-primary)' }}>
-              {entry.potential_payout.toLocaleString()} K
+            <div className="value" style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+              <CoinIcon size={13} /> {entry.wager.toLocaleString()}
             </div>
           </div>
-          <div style={{ fontSize: 10, color: 'var(--text-muted)', alignSelf: 'flex-end' }}>
+          <div style={{ color: 'var(--text-dim)', fontSize: 10 }}>→</div>
+          <div>
+            <div className="label">Payout</div>
+            <div className="value" style={{ color: 'var(--gold)', display: 'flex', alignItems: 'center', gap: 4 }}>
+              <CoinIcon size={13} /> {entry.potential_payout.toLocaleString()}
+            </div>
+          </div>
+          <div style={{ fontSize: 10, color: 'var(--accent)', fontFamily: 'var(--mono)', fontWeight: 700, alignSelf: 'flex-end' }}>
             {entry.multiplier}x
           </div>
         </div>
@@ -76,16 +67,16 @@ export default function EntryCard({ entry }: EntryCardProps) {
               </div>
               <span className={`entry-leg-pick ${leg.pick}`}>
                 {leg.pick === 'over' ? (
-                  <><ChevronUp size={10} strokeWidth={3} /> OVER</>
+                  <><ArrowUp size={10} strokeWidth={3} /> OVR</>
                 ) : (
-                  <><ChevronDown size={10} strokeWidth={3} /> UNDER</>
+                  <><ArrowDown size={10} strokeWidth={3} /> UND</>
                 )}
               </span>
               <span className="entry-leg-result">
                 {leg.result === 'won' ? (
-                  <CheckCircle2 size={16} style={{ color: 'var(--green)' }} />
+                  <CheckCircle2 size={16} style={{ color: 'var(--accent)' }} />
                 ) : leg.result === 'lost' ? (
-                  <XCircle size={16} style={{ color: 'var(--accent)' }} />
+                  <XCircle size={16} style={{ color: 'var(--red)' }} />
                 ) : (
                   <Clock size={14} style={{ color: 'var(--text-muted)' }} />
                 )}
