@@ -32,7 +32,7 @@ Esports fantasy props platform for **Valorant (VCT)** and **Call of Duty (CDL)**
 
 - **Dual-game support** — Valorant (VCT) and Call of Duty (CDL) with tab switching
 - **Real match data** — Upcoming and live matches from PandaScore, filtered to professional leagues only
-- **Player prop lines** — Kills, Deaths, Assists (VCT) and Kills, Damage, Map Kills (CDL) with ML confidence
+- **Player prop lines** — Map-scoped kills, assists, deaths, damage with ML confidence (no ambiguous totals)
 - **Parlay entries** — Build multi-leg over/under entries from the bet slip
 - **User accounts** — Sign up, track balance, view entry history, win/loss streaks
 - **Admin panel** — Manual match/team/player/prop creation
