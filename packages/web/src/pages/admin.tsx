@@ -1,7 +1,7 @@
 import React from "react";
 import { supabase } from "@/lib/supabase";
 import { useProfile } from "@/hooks/useProfile";
-import { Lock } from "lucide-react";
+import { Lock, Shield } from "lucide-react";
 
 type Team = { id: string; name: string };
 type Player = { id: string; name: string };
@@ -30,34 +30,33 @@ export default function Admin() {
 
   if (!user) {
     return (
-      <div className="container mx-auto p-6">
-        <div className="p-6 rounded-xl border border-white/10 bg-white/[0.03] shadow-sm space-y-4 text-center">
-          <Lock className="w-8 h-8 mx-auto text-[var(--text-muted)]" />
-          <h3 className="font-bold text-lg">You must be signed in to access Admin.</h3>
+      <div className="entries-empty anim-in">
+        <div style={{ marginBottom: 12 }}><Lock size={36} /></div>
+        <div style={{ fontSize: 16, fontWeight: 600 }}>Sign in to access Admin</div>
+        <div style={{ fontSize: 13, marginTop: 4, color: 'var(--text-muted)' }}>
+          You must be signed in to manage teams, players, and matches.
         </div>
       </div>
     );
   }
 
   return (
-    <div className="container mx-auto space-y-6">
-      <div className="p-6 rounded-xl border border-border bg-card shadow-sm">
-        <h2 className="text-2xl font-black tracking-tight mb-2">Admin</h2>
-        <p className="text-sm text-muted-foreground">Create teams, players, matches, and prop lines.</p>
+    <div className="admin-container anim-in">
+      <div style={{ marginBottom: 24 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+          <Shield size={20} style={{ color: 'var(--accent)' }} />
+          <h2 style={{ margin: 0, fontSize: 22, fontWeight: 900, fontFamily: 'var(--font)' }}>Admin</h2>
+        </div>
+        <div style={{ fontSize: 13, color: 'var(--text-muted)' }}>
+          Create teams, players, matches, and prop lines.
+        </div>
       </div>
 
-      {/* Create Team */}
       <CreateTeam onCreated={() => window.location.reload()} />
-
-        {/* Create Player */}
-        <CreatePlayer teams={teams} onCreated={() => window.location.reload()} />
-
-        {/* Create Match */}
-        <CreateMatch teams={teams} onCreated={() => window.location.reload()} />
-
-        {/* Create Prop Line */}
-        <CreatePropLine matches={matches} players={players} onCreated={() => window.location.reload()} />
-      </div>
+      <CreatePlayer teams={teams} onCreated={() => window.location.reload()} />
+      <CreateMatch teams={teams} onCreated={() => window.location.reload()} />
+      <CreatePropLine matches={matches} players={players} onCreated={() => window.location.reload()} />
+    </div>
   );
 }
 
@@ -70,11 +69,11 @@ function CreateTeam(props: { onCreated: () => void }) {
     setName(""); setLogo(""); props.onCreated();
   }
   return (
-    <form onSubmit={submit} className="card" style={{ padding: 16, display: "grid", gap: 8 }}>
-      <h3 style={{ margin: 0 }}>Create Team</h3>
-      <input className="input" placeholder="Team name" value={name} onChange={(e)=>setName(e.target.value)} required />
-      <input className="input" placeholder="Logo URL (optional)" value={logo} onChange={(e)=>setLogo(e.target.value)} />
-      <button className="btn primary" type="submit">Create Team</button>
+    <form onSubmit={submit} className="admin-card">
+      <h3>Create Team</h3>
+      <input className="admin-input" placeholder="Team name" value={name} onChange={(e)=>setName(e.target.value)} required />
+      <input className="admin-input" placeholder="Logo URL (optional)" value={logo} onChange={(e)=>setLogo(e.target.value)} />
+      <button className="admin-btn" type="submit">Create Team</button>
     </form>
   );
 }
@@ -88,14 +87,14 @@ function CreatePlayer(props: { teams: Team[]; onCreated: () => void }) {
     setName(""); setTeamId(""); props.onCreated();
   }
   return (
-    <form onSubmit={submit} className="card" style={{ padding: 16, display: "grid", gap: 8 }}>
-      <h3 style={{ margin: 0 }}>Create Player</h3>
-      <input className="input" placeholder="Player name" value={name} onChange={(e)=>setName(e.target.value)} required />
-      <select className="select" value={teamId} onChange={(e)=>setTeamId(e.target.value)}>
+    <form onSubmit={submit} className="admin-card">
+      <h3>Create Player</h3>
+      <input className="admin-input" placeholder="Player name" value={name} onChange={(e)=>setName(e.target.value)} required />
+      <select className="admin-select" value={teamId} onChange={(e)=>setTeamId(e.target.value)}>
         <option value="">— No team —</option>
         {props.teams.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
       </select>
-      <button className="btn primary" type="submit">Create Player</button>
+      <button className="admin-btn" type="submit">Create Player</button>
     </form>
   );
 }
@@ -110,20 +109,20 @@ function CreateMatch(props: { teams: Team[]; onCreated: () => void }) {
     setTeamA(""); setTeamB(""); setStart(""); props.onCreated();
   }
   return (
-    <form onSubmit={submit} className="card" style={{ padding: 16, display: "grid", gap: 8 }}>
-      <h3 style={{ margin: 0 }}>Create Match</h3>
+    <form onSubmit={submit} className="admin-card">
+      <h3>Create Match</h3>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-        <select className="select" value={teamA} onChange={(e)=>setTeamA(e.target.value)} required>
+        <select className="admin-select" value={teamA} onChange={(e)=>setTeamA(e.target.value)} required>
           <option value="">— Team A —</option>
           {props.teams.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
         </select>
-        <select className="select" value={teamB} onChange={(e)=>setTeamB(e.target.value)} required>
+        <select className="admin-select" value={teamB} onChange={(e)=>setTeamB(e.target.value)} required>
           <option value="">— Team B —</option>
           {props.teams.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
         </select>
       </div>
-      <input className="input" type="datetime-local" value={start} onChange={(e)=>setStart(e.target.value)} required />
-      <button className="btn primary" type="submit">Create Match</button>
+      <input className="admin-input" type="datetime-local" value={start} onChange={(e)=>setStart(e.target.value)} required />
+      <button className="admin-btn" type="submit">Create Match</button>
     </form>
   );
 }
@@ -143,23 +142,23 @@ function CreatePropLine(props: { matches: Match[]; players: Player[]; onCreated:
     setMatchId(""); setPlayerId(""); setPropType("Total Kills"); setValue(""); setOver("1.9"); setUnder("1.9"); props.onCreated();
   }
   return (
-    <form onSubmit={submit} className="card" style={{ padding: 16, display: "grid", gap: 8 }}>
-      <h3 style={{ margin: 0 }}>Create Prop Line</h3>
-      <select className="select" value={matchId} onChange={(e)=>setMatchId(e.target.value)} required>
+    <form onSubmit={submit} className="admin-card">
+      <h3>Create Prop Line</h3>
+      <select className="admin-select" value={matchId} onChange={(e)=>setMatchId(e.target.value)} required>
         <option value="">— Match —</option>
         {props.matches.map(m => <option key={m.id} value={m.id}>{new Date(m.start_time).toLocaleString()}</option>)}
       </select>
-      <select className="select" value={playerId} onChange={(e)=>setPlayerId(e.target.value)} required>
+      <select className="admin-select" value={playerId} onChange={(e)=>setPlayerId(e.target.value)} required>
         <option value="">— Player —</option>
         {props.players.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
       </select>
-      <input className="input" placeholder="Prop type (e.g., Total Kills)" value={propType} onChange={(e)=>setPropType(e.target.value)} required />
-      <input className="input" placeholder="Line value (e.g., 45.5)" value={value} onChange={(e)=>setValue(e.target.value)} required />
+      <input className="admin-input" placeholder="Prop type (e.g., Total Kills)" value={propType} onChange={(e)=>setPropType(e.target.value)} required />
+      <input className="admin-input" placeholder="Line value (e.g., 45.5)" value={value} onChange={(e)=>setValue(e.target.value)} required />
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-        <input className="input" placeholder="Over odds" value={over} onChange={(e)=>setOver(e.target.value)} />
-        <input className="input" placeholder="Under odds" value={under} onChange={(e)=>setUnder(e.target.value)} />
+        <input className="admin-input" placeholder="Over odds" value={over} onChange={(e)=>setOver(e.target.value)} />
+        <input className="admin-input" placeholder="Under odds" value={under} onChange={(e)=>setUnder(e.target.value)} />
       </div>
-      <button className="btn primary" type="submit">Create Prop Line</button>
+      <button className="admin-btn" type="submit">Create Prop Line</button>
     </form>
   );
 }
