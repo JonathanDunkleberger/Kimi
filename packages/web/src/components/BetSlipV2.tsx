@@ -26,9 +26,9 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
   const payout = getPotentialPayout();
   const balance = user?.balance ?? 0;
 
-  const showToast = (msg: string) => {
+  const showToast = (msg: string, variant: 'success' | 'error' = 'success') => {
     onToast?.(msg);
-    toast(msg);
+    toast(msg, variant);
   };
 
   const handleSubmit = async () => {
@@ -39,7 +39,7 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
       await placeEntry(user.id, refreshBalance);
       showToast(`Entry placed! ${legCount} legs @ ${wager.toLocaleString()} K — ${multiplier}x payout`);
     } catch (err: any) {
-      showToast(`Error: ${err.message}`);
+      showToast(`Error: ${err.message}`, 'error');
     } finally {
       setSubmitting(false);
     }

@@ -1,15 +1,8 @@
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { clerkMiddleware } from '@clerk/nextjs/server';
 
-// These routes require sign-in
-const isProtectedRoute = createRouteMatcher([
-  '/entries(.*)',  // My Lineups requires auth
-]);
-
-export default clerkMiddleware(async (auth, request) => {
-  if (isProtectedRoute(request)) {
-    await auth.protect();
-  }
-});
+// All routes are public — individual pages handle their own auth state
+// (showing sign-in prompts when needed instead of hard redirects)
+export default clerkMiddleware();
 
 export const config = {
   matcher: ['/((?!.*\\..*|_next).*)', '/', '/(api|trpc)(.*)'],
