@@ -34,7 +34,7 @@ export default function BetSlipV2({ onToast, onAuthRequired, onClose }: BetSlipV
       onAuthRequired?.();
       return;
     }
-    if (legCount < 2 || wager < 50 || wager > balance) return;
+    if (legCount < 2 || wager < 10 || wager > balance) return;
     setSubmitting(true);
     try {
       await placeEntry();
@@ -105,7 +105,7 @@ export default function BetSlipV2({ onToast, onAuthRequired, onClose }: BetSlipV
             </div>
 
             <div className="slip-quick-amounts">
-              {[100, 250, 500, 1000].map((amt) => (
+              {[10, 25, 50, 100].map((amt) => (
                 <button
                   key={amt}
                   className="quick-amt"
@@ -138,15 +138,15 @@ export default function BetSlipV2({ onToast, onAuthRequired, onClose }: BetSlipV
 
             <button
               className="slip-submit"
-              disabled={submitting || legCount < 2 || wager < 50 || wager > balance}
+              disabled={submitting || legCount < 2 || wager < 10 || wager > balance}
               onClick={handleSubmit}
             >
               {submitting
                 ? 'Placing...'
                 : legCount < 2
                 ? `Pick at least 2 (${legCount}/2)`
-                : wager < 50
-                ? 'Min 50 K-Coins'
+                : wager < 10
+                ? 'Min 10 K-Coins'
                 : wager > balance
                 ? 'Insufficient balance'
                 : `Place Entry — ${wager.toLocaleString()} K`}

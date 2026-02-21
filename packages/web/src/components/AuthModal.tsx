@@ -128,7 +128,7 @@ export default function AuthModal({ open, onClose }: AuthModalProps) {
 
         {mode === 'signup' && (
           <p className="auth-footer-text">
-            You&apos;ll receive 1,000,000 K-Coins to start.
+            You&apos;ll receive 1,000 K-Coins to start.
           </p>
         )}
       </div>
