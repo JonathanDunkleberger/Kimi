@@ -46,9 +46,11 @@ Think PrizePicks — but for esports, with a custom ML model generating every li
 ## Architecture
 
 <div align="center">
-  <img src="architecture.png" alt="KIMI System Architecture" width="800" />
-  <br />
-  <sub>Users → Frontend → Services → Data — full system diagram</sub>
+  <a href="architecture.png">
+    <img src="https://raw.githubusercontent.com/JonathanDunkleberger/Kimi/main/architecture.png" alt="KIMI System Architecture" width="820" />
+  </a>
+  <br /><br />
+  <sub>Users → Frontend → Services → Data · Click to view full resolution</sub>
 </div>
 
 ## Tech Stack
