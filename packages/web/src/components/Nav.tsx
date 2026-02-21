@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SignInButton, SignUpButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { useProfile } from '@/hooks/useProfile';
-import { Crosshair, Layers, Target, Trophy, Brain, LogIn, UserPlus } from 'lucide-react';
+import { Layers, Target, Trophy, Brain, LogIn, UserPlus } from 'lucide-react';
+import { KimiLogo } from '@/components/KimiLogo';
 
 export function CoinIcon({ size = 16 }: { size?: number }) {
   return (
@@ -51,9 +52,7 @@ export default function Nav({ onSlipToggle }: NavProps) {
   return (
     <nav className="nav">
       <Link href="/" className="nav-logo" style={{ textDecoration: 'none' }}>
-        <div className="nav-logo-icon">
-          <Crosshair size={18} color="#080a0f" strokeWidth={2.5} />
-        </div>
+        <KimiLogo size={32} />
         KIMI
       </Link>
 

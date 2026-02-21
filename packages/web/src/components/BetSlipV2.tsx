@@ -8,6 +8,7 @@ import { placeEntry } from '@/actions/placeEntry';
 import { useToastStore } from '@/components/KimiToast';
 import { X, ArrowUp, ArrowDown, LogIn } from 'lucide-react';
 import { CoinIcon } from '@/components/Nav';
+import { KimiLogo } from '@/components/KimiLogo';
 
 interface BetSlipV2Props {
   onToast?: (msg: string) => void;
@@ -54,7 +55,7 @@ export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
 
       {legCount === 0 ? (
         <div className="slip-empty">
-          <div className="slip-empty-icon"><CoinIcon size={28} /></div>
+          <div className="slip-empty-icon"><KimiLogo size={40} className="opacity-40" /></div>
           <div className="slip-empty-text">
             Select Over or Under on player props to build your entry
           </div>

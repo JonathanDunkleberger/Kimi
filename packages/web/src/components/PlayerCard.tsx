@@ -34,6 +34,20 @@ const TEAM_PRIMARY_COLORS: Record<string, string> = {
   'LOUD': '#16a34a',
 };
 
+const PROP_DISPLAY_NAMES: Record<string, string> = {
+  'total_kills_maps_1_3': 'M1-3 Kills',
+  'total_deaths_maps_1_3': 'M1-3 Deaths',
+  'total_damage_maps_1_3': 'M1-3 Damage',
+  'total_assists_maps_1_3': 'M1-3 Assists',
+  'map_1_kills': 'Map 1 Kills',
+  'map_2_kills': 'Map 2 Kills',
+  'map_3_kills': 'Map 3 Kills',
+  'total_kills_maps_1_2': 'M1-2 Kills',
+  'total_deaths_maps_1_2': 'M1-2 Deaths',
+  'total_assists_maps_1_2': 'M1-2 Assists',
+  'total_damage_maps_1_2': 'M1-2 Damage',
+};
+
 export default function PlayerCard({ propLines, locked = false }: PlayerCardProps) {
   const { picks, togglePick } = useSlipStore();
   const [expanded, setExpanded] = useState(false);
@@ -138,32 +152,56 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
             <div className="pc-secondary">
               {secondary.map((pl) => {
                 const pick = picks.find((p) => p.propLine.id === pl.id);
-                const propName = pl.prop_type?.name || 'Prop';
+                const statKey = pl.prop_type?.stat_key || '';
+                const propName = PROP_DISPLAY_NAMES[statKey] || pl.prop_type?.name || 'Prop';
                 const conf = pl.ml_confidence;
+                const isOver = pick?.direction === 'over';
+                const isUnder = pick?.direction === 'under';
                 return (
-                  <div key={pl.id} className="pc-exp-row">
-                    <div className="pc-exp-label">
-                      <span className="pc-exp-name">{propName}</span>
+                  <div key={pl.id} className="flex items-center gap-3 px-4 py-3 border-t border-[var(--border)]">
+                    {/* LEFT: Label + confidence */}
+                    <div className="flex flex-col min-w-[100px] max-w-[120px]">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] whitespace-nowrap overflow-hidden text-ellipsis">
+                        {propName}
+                      </span>
                       {conf && (
-                        <span className="pc-exp-conf">{conf}% confidence</span>
+                        <span className="text-[10px] font-mono text-[var(--text-dim)]">
+                          {conf}%
+                        </span>
                       )}
                     </div>
-                    <span className="pc-exp-value">{pl.line_value}</span>
+
+                    {/* CENTER: Line value */}
+                    <span className="text-xl font-extrabold text-[var(--text)] tabular-nums min-w-[60px] text-right">
+                      {pl.line_value}
+                    </span>
+
+                    {/* RIGHT: OVR / UND buttons */}
                     {locked ? (
-                      <span className="pc-locked-sm"><Lock size={10} /></span>
+                      <span className="ml-auto text-[var(--text-muted)] opacity-50"><Lock size={10} /></span>
                     ) : (
-                      <div className="pc-exp-actions">
+                      <div className="flex gap-1.5 ml-auto shrink-0">
                         <button
-                          className={`pc-exp-btn over ${pick?.direction === 'over' ? 'active' : ''}`}
                           onClick={() => togglePick(pl, 'over')}
+                          className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-[11px] font-bold transition-all border-none cursor-pointer
+                            ${isOver
+                              ? 'bg-[var(--accent)] text-[var(--bg)]'
+                              : 'bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
+                            }`}
                         >
-                          <ArrowUp size={12} /> OVR
+                          <ArrowUp size={11} />
+                          OVR
                         </button>
                         <button
-                          className={`pc-exp-btn under ${pick?.direction === 'under' ? 'active' : ''}`}
                           onClick={() => togglePick(pl, 'under')}
+                          className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-[11px] font-bold transition-all border-none cursor-pointer
+                            ${isUnder
+                              ? 'bg-[var(--red)] text-[var(--bg)]'
+                              : 'bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
+                            }`}
                         >
-                          <ArrowDown size={12} /> UND
+                          <ArrowDown size={11} />
+                          UND
                         </button>
                       </div>
                     )}
