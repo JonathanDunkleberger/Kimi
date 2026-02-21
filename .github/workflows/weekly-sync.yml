@@ -1,0 +1,27 @@
+name: Weekly Match Sync (VCT + CDL)
+
+on:
+  schedule:
+    # Every Monday at 06:00 UTC (1am EST / 10pm PST Sunday)
+    - cron: '0 6 * * 1'
+  workflow_dispatch: # Allow manual trigger from GitHub UI
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv supabase
+
+      - name: Run weekly sync
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          PANDA_SCORE_TOKEN: ${{ secrets.PANDA_SCORE_TOKEN }}
+        run: python ml/sync_matches.py
