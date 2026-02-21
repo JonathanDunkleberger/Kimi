@@ -1,20 +1,13 @@
 {
-  "name": "valorant-props-monorepo",
+  "name": "kimi",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "workspaces": [
-    "packages/web",
-    "packages/api"
+    "packages/web"
   ],
   "scripts": {
-    "dev:web": "npm --workspace @app/web run dev",
-    "dev:api": "npm --workspace @app/api run dev",
-    "build": "pnpm --filter @app/api build",
-    "start": "pnpm --filter @app/api start",
-    "build:api": "npm --workspace @app/api run build",
-    "prisma:generate": "npm --workspace @app/api run prisma:generate",
-    "prisma:push": "npm --workspace @app/api run prisma:push",
-    "build:verify": "pnpm --filter ./packages/web build && pnpm --filter ./packages/api build"
+    "dev": "pnpm --filter @app/web dev",
+    "build": "pnpm --filter @app/web build"
   },
   "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
   "engines": {
