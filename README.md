@@ -1,145 +1,176 @@
-# 🎯 Kimi — Valorant & CoD Esports Fantasy Props
+<div align="center">
 
-![Kimi](packages/web/Public/kimi-screenshot.png)
+# KIMI
 
-A full-stack fantasy esports platform where users bet play-money on player performance props (kills, damage, assists) powered by machine learning predictions.
+### ML-Powered Esports Player Props
 
-Think PrizePicks, but for Valorant and Call of Duty — with an ML engine that generates the lines.
+**[kimiprops.com](https://www.kimiprops.com)** · **[esportsprops.com](https://www.esportsprops.com)** · **[kimi-two.vercel.app](https://kimi-two.vercel.app)**
 
-🔗 **Live**: [kimi-two.vercel.app](https://kimi-two.vercel.app)
+Pick Over/Under on player stat lines. Build 2-6 leg entries. Win K-Coins.
 
-## What Makes This Interesting
+Play money only — no real currency.
 
-1. **ML-Powered Lines**: A RandomForest model (Valorant) and GradientBoosting model (CoD) trained on thousands of historical match stats generate every prop line. Each line includes a confidence score and directional signal.
+![Next.js](https://img.shields.io/badge/Next.js_14-000?style=flat-square&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed_on_Vercel-000?style=flat-square&logo=vercel&logoColor=white)
 
-2. **Real-Time Data Pipeline**: PandaScore API provides upcoming matches, enriches with rosters, generates predictions, and publishes map-scoped prop lines — all automated via cron jobs.
+</div>
 
-3. **Full Betting Engine**: Atomic credit deduction, parlay multipliers (2–6 legs), automatic settlement with per-map stat resolution, void/cancellation handling, 15-minute lock window.
+---
 
-4. **Security-First**: RLS on every table, all mutations through SECURITY DEFINER RPCs, rate limiting, zero PII exposure on public pages.
+## What is KIMI?
 
-## Architecture
+KIMI is a full-stack esports prop betting platform (play money) for Call of Duty League and Valorant Champions Tour. Users browse ML-generated player stat lines, pick Over or Under, build multi-leg entries, and compete on a global leaderboard.
 
-```
-┌──────────────┐     ┌──────────────────┐     ┌──────────────┐
-│   Vercel      │     │    Supabase       │     │  PandaScore  │
-│  (Next.js)    │────▶│  Postgres + Auth  │◀────│     API      │
-│  Frontend     │     │  RLS policies     │     │  (VCT + CDL) │
-└──────────────┘     └──────────────────┘     └──────────────┘
-                                                      ▲
-                                               ┌──────┴───────┐
-                                               │ GitHub Actions│
-                                               │ Weekly Cron   │
-                                               └──────────────┘
-```
-
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| Frontend | Next.js 14, React 18, Zustand | UI, auth, bet slip |
-| Database | Supabase (Postgres + RLS) | Teams, players, matches, prop lines, entries |
-| Auth | Supabase Auth | Sign up/in, profiles, balances |
-| Data Pipeline | Python + PandaScore API | Sync VCT + CDL matches, rosters, prop lines |
-| ML | RandomForest (Val), GradientBoosting (CoD) | Kill predictions, confidence scoring |
-| Hosting | Vercel | Frontend deployment |
-| Automation | GitHub Actions | Weekly match sync cron |
+Think PrizePicks — but for esports, with a custom ML model generating every line.
 
 ## Features
 
-- **Dual-game support** — Valorant (VCT) and Call of Duty (CDL) with tab switching
-- **Real match data** — Upcoming and live matches from PandaScore, filtered to professional leagues
-- **Map-scoped prop lines** — Kills, assists, deaths, damage scoped to guaranteed maps only (no ambiguous totals)
-- **ML confidence indicators** — Each prop line shows model confidence (%) and directional signal
-- **Parlay entries** — Build 2–6 leg over/under entries with multipliers up to 35x
-- **Lock window** — Props lock 15 minutes before match start
-- **User accounts** — Sign up, track balance, view entry history, win/loss streaks
-- **Leaderboard** — Top users by profit with podium display
-- **ML Engine page** — Tabbed model comparison for Valorant/CoD with feature lists and metrics
-- **Daily refill** — Users below 500 K-Coins get topped up to 1,000 daily
+**Board** — Browse upcoming CDL and VCT matches. Each player card shows ML-projected stat lines (kills, deaths, damage, assists) with confidence scores. Multiple props per player via expandable card sections.
 
-## 🔐 Security
+**Entry Slip** — Select Over or Under on 2-6 props to build an entry. Multipliers scale from 3x (2 legs) to 35x (6 legs). Wager 50-2,000 K-Coins per entry.
 
-- All database mutations run through PostgreSQL RPC functions with `SECURITY DEFINER`
-- Row Level Security (RLS) on every table — users can only access their own entries
-- Service role key is backend-only, never exposed to the client
-- Balance modifications only possible through validated server-side functions
-- Rate limiting on entry placement (5 per minute)
-- No PII exposed on public-facing pages (leaderboard shows usernames, not emails)
-- Input validation on all RPC parameters (positive amounts, valid prop line status, leg count limits, wager caps)
-- Lock window prevents entries on matches starting within 15 minutes
+**My Lineups** — Track all entries with status filters (Active, Won, Lost). Each entry expands to show individual leg results with visual hit/miss indicators.
 
-## Payout Structure
+**Leaderboard** — Global rankings by K-Coin balance, win rate, and entry volume. Podium display for top 3. Weekly, monthly, and all-time filters.
 
-| Legs | Multiplier | Description |
-|------|-----------|-------------|
-| 2 | 3x | Low risk |
-| 3 | 5x | Sweet spot |
-| 4 | 10x | Big swing |
-| 5 | 20x | High risk |
-| 6 | 35x | Lottery ticket |
+**ML Engine** — Transparency page showing model accuracy (73.2% on validation), feature importance breakdown, and live player projections with recent performance charts.
 
-- **All legs must hit to win.** Push (actual = line) counts as a win.
-- **Min wager**: 50 K-Coins / **Max wager**: 2,000 K-Coins
-- **Starting balance**: 10,000 K-Coins
+**Admin Panel** — Protected dashboard for managing teams, players, matches, and prop lines via API routes.
+
+**Auth** — Clerk-powered sign up/sign in with automatic Supabase user sync. New users start with 10,000 K-Coins.
+
+## Architecture
+
+> See `architecture.png` in the repo root for the full system diagram.
+
+```
+┌──────────────────────────────────────────────────────────┐
+│  CLIENT                                                   │
+│  kimiprops.com / esportsprops.com / kimi-two.vercel.app  │
+│  Next.js 14 · TypeScript · Tailwind · shadcn/ui          │
+├──────────────────────────────────────────────────────────┤
+│  FRONTEND                                                 │
+│  11 Pages · 6 API Routes · Custom React Hooks            │
+│  Clerk Auth · Team-branded UI · Lucide icons             │
+├──────────────────────────────────────────────────────────┤
+│  BACKEND                                                  │
+│  Supabase (Postgres) — users, teams, matches, entries    │
+│  place_entry() RPC — atomic wager + leg insertion        │
+│  Clerk webhooks — user.created → Supabase sync           │
+├──────────────────────────────────────────────────────────┤
+│  ML SERVICE                                               │
+│  Python · FastAPI · scikit-learn                          │
+│  RandomForest v2.4 · 12,847 training samples             │
+│  Features: historical avg, map type, opponent rating,    │
+│  recent form, home/away, days since last match           │
+├──────────────────────────────────────────────────────────┤
+│  DATA                                                     │
+│  CDL — 12 teams, 48 players, match schedules             │
+│  VCT — Americas teams, player stats                      │
+│  Training — player_stats.csv (kill/death/damage/assists) │
+└──────────────────────────────────────────────────────────┘
+```
+
+## Tech Stack
+
+| Layer | Technologies |
+|-------|-------------|
+| Frontend | Next.js 14, TypeScript, Tailwind CSS, shadcn/ui |
+| Styling | Manrope + Space Mono fonts, Lucide React icons, team-branded color system |
+| Auth | Clerk (sign up/in, session management, webhooks) |
+| Database | Supabase (PostgreSQL), Prisma ORM |
+| ML | Python, FastAPI, scikit-learn (RandomForest) |
+| Deployment | Vercel (frontend), Supabase (hosted DB) |
+| Monorepo | pnpm workspaces |
 
 ## Project Structure
 
 ```
-packages/web/           Next.js frontend (deployed to Vercel)
-  src/pages/              Pages (board, entries, profile, account, admin, leaderboard, ml)
-  src/components/         UI components (MatchSection, PlayerCard, BetSlipV2, Layout, etc.)
-  src/hooks/              Data hooks (useMatches, usePropLines, useLeaderboard)
-  src/stores/             Zustand stores (authStore, slipStore, toastStore)
-  src/actions/            Entry placement logic
-  src/lib/                Supabase client, utils
-  src/types/              TypeScript types
-
-ml/                     Python data pipeline
-  sync_matches.py         Weekly sync — VCT + CDL matches, rosters, map-scoped prop lines
-  settle_matches.py       Settle completed matches via PandaScore per-map results
-
-supabase/migrations/    Database schema & RPC functions
-  000_full_setup.sql      Core schema, RLS, seed data
-  009_scoped_prop_types.sql  Map-scoped prop types
-  010_payout_security.sql    Hardened RPCs, rate limiting, void handling
+Kimi/
+├── packages/
+│   └── web/                    # Next.js frontend
+│       ├── src/
+│       │   ├── pages/          # 11 routes (board, lineups, leaderboard, engine, admin, etc.)
+│       │   ├── components/     # PlayerCard, BetSlipV2, Nav, EntryCard, KimiLogo, etc.
+│       │   ├── hooks/          # useProfile, useMyEntries, usePropLines, usePlaceEntry
+│       │   ├── styles/         # globals.css (design tokens, component styles)
+│       │   └── lib/            # Supabase client, utilities
+│       └── public/             # Favicon, OG images
+├── ml/                         # Python ML service
+│   ├── model/                  # Trained RandomForest model
+│   ├── train.py                # Training pipeline
+│   └── api.py                  # FastAPI prediction endpoints
+├── prisma/                     # Database schema
+└── supabase/                   # Migrations, RPC functions
 ```
+
+## Design System
+
+- **Background**: `#080a0f` (deep black) with layered card surfaces
+- **Accent**: `#00e5a0` (emerald green) — primary actions, OVER picks, success states
+- **Red**: `#ff5c5c` — UNDER picks, losses
+- **Gold**: `#f5c542` — K-Coin values, payouts
+- **Team colors**: Each CDL/VCT team has a branded color applied to card accent bars, avatars, and selection states
+- **Typography**: Manrope (UI) + Space Mono (stats/numbers)
+- **Icons**: Lucide React — zero emojis
+
+## ML Model
+
+The prediction engine uses a RandomForest classifier trained on 12,847 historical match records.
+
+**Features**: Historical kill average (last 10 matches), map type, opponent strength rating, recent form (last 3), home/away indicator, days since last match.
+
+**Performance**: 73.2% accuracy on validation set, ±4.3 average kills deviation.
+
+**Output**: For each player in an upcoming match, the model produces a projected stat line and confidence score (displayed on player cards).
 
 ## Getting Started
 
 ### Prerequisites
-
-- Node.js 20+, pnpm 9+
-- Python 3.11+
-- Supabase project ([supabase.com](https://supabase.com))
-- PandaScore API token ([pandascore.co](https://pandascore.co))
+- Node.js 20+
+- pnpm 8+
+- Python 3.10+ (for ML service)
 
 ### Setup
 
 ```bash
+# Clone
 git clone https://github.com/JonathanDunkleberger/Kimi.git
-cd Kimi && pnpm install
+cd Kimi
 
-# Supabase: run migrations in order via SQL Editor
-# Configure .env files (see SETUP.md)
+# Install dependencies
+pnpm install
 
-pip install requests python-dotenv supabase
-python ml/sync_matches.py    # Sync this week's matches
+# Set up environment variables
+cp packages/web/.env.example packages/web/.env.local
+# Fill in: Clerk keys, Supabase URL/keys
 
-cd packages/web && pnpm dev  # http://localhost:3000
+# Run development server
+pnpm dev
 ```
 
-## Deployment
+### Environment Variables
 
-**Frontend** → Vercel (from `packages/web`)
-**Weekly sync** → GitHub Actions (every Monday 6am UTC)
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_...
+CLERK_SECRET_KEY=sk_...
+NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+SUPABASE_SERVICE_ROLE_KEY=eyJ...
+```
 
-Environment variables needed:
-- `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` (frontend)
-- `SUPABASE_SERVICE_ROLE_KEY` / `PANDA_SCORE_TOKEN` (backend/CI only)
+## Live Demo
+
+- **Primary**: [kimiprops.com](https://www.kimiprops.com)
+- **Alternate**: [esportsprops.com](https://www.esportsprops.com)
+- **Vercel**: [kimi-two.vercel.app](https://kimi-two.vercel.app)
+
+All three domains serve the same application.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
-
-## Disclaimer
-
-This platform uses play money only. Not affiliated with Riot Games, Activision, or any esports league. For entertainment and portfolio demonstration purposes.
+This project is for portfolio and educational purposes only. Not affiliated with the Call of Duty League, Activision, Riot Games, or any esports organization.
