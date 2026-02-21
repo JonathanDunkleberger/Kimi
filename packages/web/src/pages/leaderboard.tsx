@@ -1,26 +1,11 @@
 import React from 'react';
 import { useLeaderboard } from '@/hooks/useMatches';
-import { Trophy, Flame, Snowflake } from 'lucide-react';
+import { Trophy, Flame, Snowflake, Users } from 'lucide-react';
 
 export default function LeaderboardPage() {
   const { leaderboard, loading } = useLeaderboard();
 
-  // Fallback data for when DB is empty
-  const data =
-    leaderboard.length > 0
-      ? leaderboard
-      : [
-          { id: '1', username: 'xVaLkYrIe', avatar_emoji: 'VK', balance: 28450, wins: 47, losses: 18, current_streak: 5, profit: 18450, win_rate: 72.3, total_wagered: 0, total_won: 0 },
-          { id: '2', username: 'DunkMaster_J', avatar_emoji: 'DJ', balance: 22100, wins: 39, losses: 22, current_streak: 3, profit: 12100, win_rate: 63.9, total_wagered: 0, total_won: 0 },
-          { id: '3', username: 'phantomAce', avatar_emoji: 'PA', balance: 18300, wins: 35, losses: 26, current_streak: -2, profit: 8300, win_rate: 57.4, total_wagered: 0, total_won: 0 },
-          { id: '4', username: 'valorViper99', avatar_emoji: 'VV', balance: 15800, wins: 31, losses: 28, current_streak: 1, profit: 5800, win_rate: 52.5, total_wagered: 0, total_won: 0 },
-          { id: '5', username: 'cyph3r_main', avatar_emoji: 'CM', balance: 12200, wins: 28, losses: 31, current_streak: -4, profit: 2200, win_rate: 47.5, total_wagered: 0, total_won: 0 },
-          { id: '6', username: 'jettSetGo', avatar_emoji: 'JS', balance: 9400, wins: 24, losses: 33, current_streak: -1, profit: -600, win_rate: 42.1, total_wagered: 0, total_won: 0 },
-          { id: '7', username: 'sageHealer', avatar_emoji: 'SH', balance: 7100, wins: 20, losses: 37, current_streak: -6, profit: -2900, win_rate: 35.1, total_wagered: 0, total_won: 0 },
-          { id: '8', username: 'bottom_frag_andy', avatar_emoji: 'BF', balance: 3200, wins: 14, losses: 42, current_streak: -8, profit: -6800, win_rate: 25.0, total_wagered: 0, total_won: 0 },
-        ];
-
-  const sorted = [...data].sort((a, b) => b.balance - a.balance);
+  const sorted = [...leaderboard].sort((a, b) => b.balance - a.balance);
   const podiumOrder = sorted.length >= 3 ? [sorted[1], sorted[0], sorted[2]] : sorted;
 
   return (
@@ -40,6 +25,14 @@ export default function LeaderboardPage() {
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40, color: 'var(--text-muted)' }}>
           Loading...
+        </div>
+      ) : sorted.length === 0 ? (
+        <div style={{ textAlign: 'center', padding: '60px 0' }}>
+          <Users size={36} style={{ marginBottom: 12, color: 'var(--text-muted)' }} />
+          <div style={{ fontSize: 16, fontWeight: 600 }}>No players yet</div>
+          <div style={{ fontSize: 13, marginTop: 4, color: 'var(--text-muted)' }}>
+            Sign up and place your first entry to appear on the leaderboard.
+          </div>
         </div>
       ) : (
         <>
@@ -108,7 +101,9 @@ export default function LeaderboardPage() {
                 >
                   {u.current_streak > 0
                     ? <><Flame size={12} style={{ display: 'inline' }} /> {u.current_streak}W</>
-                    : <><Snowflake size={12} style={{ display: 'inline' }} /> {Math.abs(u.current_streak)}L</>}
+                    : u.current_streak < 0
+                    ? <><Snowflake size={12} style={{ display: 'inline' }} /> {Math.abs(u.current_streak)}L</>
+                    : '—'}
                 </div>
                 <div className="lb-balance">{u.balance.toLocaleString()} K</div>
               </div>

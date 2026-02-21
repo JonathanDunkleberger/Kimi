@@ -22,7 +22,7 @@ export default function BetSlipV2({ onToast, onAuthRequired, onClose }: BetSlipV
   const legCount = picks.length;
   const multiplier = getMultiplier();
   const payout = getPotentialPayout();
-  const balance = user?.balance ?? 10000;
+  const balance = user?.balance ?? 0;
 
   const showToast = (msg: string) => {
     onToast?.(msg);

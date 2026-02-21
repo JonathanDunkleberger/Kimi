@@ -33,7 +33,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
       // The DB trigger auto-creates a users row, but set the username
       await supabase
         .from('users')
-        .upsert({ id: data.user.id, username, balance: 10000 });
+        .upsert({ id: data.user.id, username, balance: 1000000 });
       await get().fetchProfile();
     }
   },
@@ -70,3 +70,14 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
     if (data) set({ user: { ...user, ...data } });
   },
 }));
+
+// Listen for auth state changes (login/logout/token refresh)
+if (typeof window !== 'undefined') {
+  supabase.auth.onAuthStateChange((event) => {
+    if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+      useAuthStore.getState().fetchProfile();
+    } else if (event === 'SIGNED_OUT') {
+      useAuthStore.setState({ user: null, loading: false });
+    }
+  });
+}

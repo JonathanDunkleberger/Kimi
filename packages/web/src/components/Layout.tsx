@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         {/* Desktop sidebar slip */}
         <aside className="slip-sidebar">
-          <BetSlipV2 />
+          <BetSlipV2 onAuthRequired={() => setShowAuth(true)} />
         </aside>
       </div>
 
@@ -35,7 +35,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <div className="mobile-slip-overlay">
           <div className="mobile-slip-backdrop" onClick={() => setMobileSlip(false)} />
           <div className="mobile-slip-sheet">
-            <BetSlipV2 onClose={() => setMobileSlip(false)} />
+            <BetSlipV2
+              onClose={() => setMobileSlip(false)}
+              onAuthRequired={() => { setMobileSlip(false); setShowAuth(true); }}
+            />
           </div>
         </div>
       )}
