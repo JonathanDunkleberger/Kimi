@@ -63,7 +63,7 @@ The platform is organized into four layers:
 
 **Users** — The board, auth flow, core feature pages (lineups, leaderboard, ML engine), and a protected admin panel.
 
-**Frontend** — Next.js 14 app with TypeScript and Tailwind CSS. API routes handle user sync, team/player/match/prop creation, and entry placement via Supabase RPC. Zustand manages bet slip state. SWR handles data fetching.
+**Frontend** — Next.js 14 app with TypeScript and Tailwind CSS. API routes handle user sync, team/player/match/prop creation, and entry placement via Supabase RPC. Zustand manages bet slip state.
 
 **Services** — Supabase (PostgreSQL + RPC) for all persistent data, a Python ML service (RandomForest) for player projections, and Clerk webhooks for user sync with automatic K-Coin provisioning.
 
@@ -73,8 +73,8 @@ The platform is organized into four layers:
 
 | Layer | Technologies |
 |-------|-------------|
-| Frontend | Next.js 14, React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI |
-| State & Data | Zustand (bet slip), SWR (data fetching), Framer Motion (animations) |
+| Frontend | Next.js 14, React 18, TypeScript, Tailwind CSS, shadcn/ui |
+| State | Zustand (bet slip) |
 | Styling | Manrope + Space Mono fonts, Lucide React icons, team-branded color system |
 | Auth | Clerk (sign up/in, session management, webhooks via Svix) |
 | Database | Supabase (PostgreSQL + RPC functions) |

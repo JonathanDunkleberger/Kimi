@@ -27,13 +27,5 @@ jobs:
       - name: Install deps
         run: pnpm install --no-frozen-lockfile
 
-      # If you already have a root script "build:verify", use that:
-      # - name: Build verify
-      #   run: pnpm -w run build:verify
-
-      # Otherwise, build both workspaces directly:
       - name: Build web
         run: pnpm -w --filter "./packages/web" build
-
-      - name: Build api
-        run: pnpm -w --filter "./packages/api" build
