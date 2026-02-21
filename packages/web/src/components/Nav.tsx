@@ -66,7 +66,7 @@ export default function Nav({ onSlipToggle }: NavProps) {
 
         <SignedOut>
           <SignInButton mode="modal">
-            <button className="nav-tab active">
+            <button className="nav-signin">
               Sign In
             </button>
           </SignInButton>

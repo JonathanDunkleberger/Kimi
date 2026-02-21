@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Head from 'next/head';
 import '../styles/globals.css';
 import '../styles/globals.tailwind.css';
 import { ClerkProvider } from '@clerk/nextjs';
@@ -7,7 +8,12 @@ import Layout from '@/components/Layout';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <ClerkProvider
+    <>
+      <Head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>Kimi — Esports Props</title>
+      </Head>
+      <ClerkProvider
       appearance={{
         baseTheme: dark,
         variables: {
@@ -43,5 +49,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Layout>
     </ClerkProvider>
+    </>
   );
 }

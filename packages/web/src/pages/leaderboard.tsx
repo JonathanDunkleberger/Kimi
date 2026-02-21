@@ -121,7 +121,7 @@ export default function LeaderboardPage() {
                       <Snowflake size={12} /> {Math.abs(u.current_streak)}L
                     </span>
                   ) : (
-                    <span style={{ color: 'var(--text-dim)' }}>—</span>
+                    <span style={{ color: 'var(--text-muted)' }}>—</span>
                   )}
                 </div>
                 <div className="lb-col lb-col-balance">

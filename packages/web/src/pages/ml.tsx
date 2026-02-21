@@ -23,8 +23,8 @@ const MODELS: Record<ModelKey, {
     whyTitle: 'Why RandomForest?',
     whyText: 'Valorant stats are low-variance with strong categorical predictors (agent, map, role). RandomForest handles these well without overfitting on smaller esports datasets. The ensemble of 200 decision trees provides natural confidence scoring through inter-tree variance.',
     stats: [
-      { label: 'MAE (Kills)', value: '2.31', color: 'var(--accent-green)' },
-      { label: 'R² Score', value: '0.71', color: 'var(--accent-blue)' },
+      { label: 'MAE (Kills)', value: '2.31', color: 'var(--green)' },
+      { label: 'R² Score', value: '0.71', color: 'var(--blue)' },
       { label: 'RMSE', value: '3.14', color: 'var(--accent)' },
       { label: 'Training Maps', value: '8.2K', color: 'var(--text-primary)' },
     ],
@@ -46,8 +46,8 @@ const MODELS: Record<ModelKey, {
     whyTitle: 'Why Gradient Boosting?',
     whyText: 'CoD kill counts vary dramatically by game mode — Hardpoint (25–40), Search & Destroy (5–12), Control (15–30). These non-linear, mode-dependent distributions require a model that captures complex feature interactions. Gradient boosting builds trees sequentially, each correcting previous errors.',
     stats: [
-      { label: 'MAE (Kills)', value: '3.45', color: 'var(--accent-green)' },
-      { label: 'R² Score', value: '0.64', color: 'var(--accent-blue)' },
+      { label: 'MAE (Kills)', value: '3.45', color: 'var(--green)' },
+      { label: 'R² Score', value: '0.64', color: 'var(--blue)' },
       { label: 'RMSE', value: '4.82', color: 'var(--accent)' },
       { label: 'Training Maps', value: '6.1K', color: 'var(--text-primary)' },
     ],
@@ -152,7 +152,7 @@ export default function MLPage() {
         <div className="ml-card-sub" style={{ lineHeight: 1.5 }}>{m.confidence}</div>
         <div style={{ display: 'flex', gap: 16, marginTop: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
-            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent-green)' }} />
+            <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--green)' }} />
             <span style={{ color: 'var(--text-secondary)' }}>80%+ High</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12 }}>
@@ -196,12 +196,7 @@ export default function MLPage() {
           ].map((f) => (
             <span
               key={f}
-              className="ml-feature-tag"
-              style={{
-                background: 'rgba(255,70,85,0.08)',
-                borderColor: 'rgba(255,70,85,0.15)',
-                color: 'var(--accent)',
-              }}
+              className="ml-tag"
             >
               {f}
             </span>
@@ -241,7 +236,7 @@ export default function MLPage() {
                   border: `1px solid ${
                     item.done ? 'rgba(0,255,135,0.3)' : 'var(--border)'
                   }`,
-                  color: item.done ? 'var(--accent-green)' : 'var(--text-muted)',
+                  color: item.done ? 'var(--green)' : 'var(--text-muted)',
                 }}
               >
                 {item.done ? '✓' : ''}

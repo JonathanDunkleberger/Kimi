@@ -44,14 +44,14 @@ export default function EntryCard({ entry }: EntryCardProps) {
             <div className="label">Wager</div>
             <div className="value">{entry.wager.toLocaleString()} K</div>
           </div>
-          <div style={{ color: 'var(--text-dim)' }}>→</div>
+          <div style={{ color: 'var(--text-muted)' }}>→</div>
           <div>
             <div className="label">Payout</div>
-            <div className="value" style={{ color: 'var(--accent)' }}>
+            <div className="value" style={{ color: 'var(--text-primary)' }}>
               {entry.potential_payout.toLocaleString()} K
             </div>
           </div>
-          <div style={{ fontSize: 10, color: 'var(--text-dim)', alignSelf: 'flex-end' }}>
+          <div style={{ fontSize: 10, color: 'var(--text-muted)', alignSelf: 'flex-end' }}>
             {entry.multiplier}x
           </div>
         </div>
@@ -83,11 +83,11 @@ export default function EntryCard({ entry }: EntryCardProps) {
               </span>
               <span className="entry-leg-result">
                 {leg.result === 'won' ? (
-                  <CheckCircle2 size={16} style={{ color: 'var(--over)' }} />
+                  <CheckCircle2 size={16} style={{ color: 'var(--green)' }} />
                 ) : leg.result === 'lost' ? (
-                  <XCircle size={16} style={{ color: 'var(--under)' }} />
+                  <XCircle size={16} style={{ color: 'var(--accent)' }} />
                 ) : (
-                  <Clock size={14} style={{ color: 'var(--text-dim)' }} />
+                  <Clock size={14} style={{ color: 'var(--text-muted)' }} />
                 )}
               </span>
             </div>

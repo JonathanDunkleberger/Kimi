@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import type { PropLine } from '@/types';
 import { useSlipStore } from '@/stores/slipStore';
-import { Brain, ChevronUp, ChevronDown, Lock } from 'lucide-react';
+import { ChevronUp, ChevronDown, Lock } from 'lucide-react';
 
 interface PlayerCardProps {
   propLines: PropLine[];
@@ -45,9 +45,10 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
 
   const primaryPick = picks.find((p) => p.propLine.id === primary.id);
   const primaryName = primary.prop_type?.name || 'Kills';
+  const hasPickInSlip = propLines.some((pl) => picks.some((p) => p.propLine.id === pl.id));
 
   return (
-    <div className="player-card" style={{ '--team-color': teamColor } as React.CSSProperties}>
+    <div className={`player-card${hasPickInSlip ? ' selected' : ''}`} style={{ '--team-color': teamColor } as React.CSSProperties}>
       {/* Header */}
       <div className="pc-header">
         <div className="pc-avatar" style={{ borderColor: `${teamColor}60` }}>
@@ -61,8 +62,8 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
           </div>
         </div>
         {bestMl.confidence && (
-          <div className={`pc-ml ${bestMl.confidence >= 75 ? 'high' : bestMl.confidence >= 65 ? 'mid' : 'low'}`}>
-            <Brain size={10} />
+          <div className={`pc-ml ${bestMl.confidence >= 80 ? 'high' : bestMl.confidence >= 65 ? 'mid' : 'low'}`}>
+            <span className="conf-dot" />
             <span>{bestMl.confidence}%</span>
           </div>
         )}
@@ -80,15 +81,13 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
               className={`pc-ou-btn over ${primaryPick?.direction === 'over' ? 'active' : ''}`}
               onClick={() => togglePick(primary, 'over')}
             >
-              <ChevronUp size={14} strokeWidth={3} />
-              <span>Over</span>
+              <span>▲ Over</span>
             </button>
             <button
               className={`pc-ou-btn under ${primaryPick?.direction === 'under' ? 'active' : ''}`}
               onClick={() => togglePick(primary, 'under')}
             >
-              <ChevronDown size={14} strokeWidth={3} />
-              <span>Under</span>
+              <span>▼ Under</span>
             </button>
           </div>
         )}
@@ -122,15 +121,13 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
                             className={`pc-ou-btn compact over ${pick?.direction === 'over' ? 'active' : ''}`}
                             onClick={() => togglePick(pl, 'over')}
                           >
-                            <ChevronUp size={12} strokeWidth={3} />
-                            <span>O</span>
+                            <span>▲ O</span>
                           </button>
                           <button
                             className={`pc-ou-btn compact under ${pick?.direction === 'under' ? 'active' : ''}`}
                             onClick={() => togglePick(pl, 'under')}
                           >
-                            <ChevronDown size={12} strokeWidth={3} />
-                            <span>U</span>
+                            <span>▼ U</span>
                           </button>
                         </>
                       )}
