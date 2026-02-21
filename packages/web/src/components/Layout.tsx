@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import Nav from './Nav';
 import BetSlipV2 from './BetSlipV2';
 import AuthModal from './AuthModal';
@@ -8,10 +9,13 @@ import { useSlipStore } from '@/stores/slipStore';
 import { Crosshair } from 'lucide-react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const [showAuth, setShowAuth] = useState(false);
   const [mobileSlip, setMobileSlip] = useState(false);
   const picks = useSlipStore((s) => s.picks);
   const user = useAuthStore((s) => s.user);
+
+  const isBoard = router.pathname === '/';
 
   return (
     <div className="app-shell">
@@ -20,18 +24,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         onSlipToggle={() => setMobileSlip((p) => !p)}
       />
 
-      <div className="app-body">
+      <div className={`app-body ${!isBoard ? 'app-body-full' : ''}`}>
         {/* Main content */}
         <main className="app-main">{children}</main>
 
-        {/* Desktop sidebar slip */}
-        <aside className="slip-sidebar">
-          <BetSlipV2 onAuthRequired={() => setShowAuth(true)} />
-        </aside>
+        {/* Desktop sidebar slip — only on Board */}
+        {isBoard && (
+          <aside className="slip-sidebar">
+            <BetSlipV2 onAuthRequired={() => setShowAuth(true)} />
+          </aside>
+        )}
       </div>
 
-      {/* Mobile slip overlay */}
-      {mobileSlip && (
+      {/* Mobile slip overlay — only on Board */}
+      {isBoard && mobileSlip && (
         <div className="mobile-slip-overlay">
           <div className="mobile-slip-backdrop" onClick={() => setMobileSlip(false)} />
           <div className="mobile-slip-sheet">
@@ -43,8 +49,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       )}
 
-      {/* Mobile FAB */}
-      {picks.length > 0 && !mobileSlip && (
+      {/* Mobile FAB — only on Board */}
+      {isBoard && picks.length > 0 && !mobileSlip && (
         <button
           className="mobile-slip-fab"
           onClick={() => setMobileSlip(true)}

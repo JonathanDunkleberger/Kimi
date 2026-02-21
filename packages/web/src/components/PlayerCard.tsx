@@ -34,7 +34,7 @@ export default function PlayerCard({ propLines }: PlayerCardProps) {
   );
 
   return (
-    <div className="player-card">
+    <div className="player-card" style={{ '--team-color': teamColor } as React.CSSProperties}>
       {/* Header */}
       <div className="pc-header">
         <div className="pc-avatar" style={{ borderColor: `${teamColor}60` }}>

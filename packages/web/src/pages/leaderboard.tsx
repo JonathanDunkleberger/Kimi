@@ -1,12 +1,24 @@
 import React from 'react';
 import { useLeaderboard } from '@/hooks/useMatches';
-import { Trophy, Flame, Snowflake, Users } from 'lucide-react';
+import { Trophy, Flame, Snowflake, Users, Medal } from 'lucide-react';
 
 export default function LeaderboardPage() {
   const { leaderboard, loading } = useLeaderboard();
 
   const sorted = [...leaderboard].sort((a, b) => b.balance - a.balance);
-  const podiumOrder = sorted.length >= 3 ? [sorted[1], sorted[0], sorted[2]] : sorted;
+  const podium = sorted.length >= 3
+    ? [
+        { user: sorted[1], place: 2, label: '2nd' },
+        { user: sorted[0], place: 1, label: '1st' },
+        { user: sorted[2], place: 3, label: '3rd' },
+      ]
+    : null;
+
+  const medalColors: Record<number, string> = {
+    1: 'var(--gold)',
+    2: 'var(--silver)',
+    3: 'var(--bronze)',
+  };
 
   return (
     <div className="lb-container anim-in">
@@ -36,76 +48,85 @@ export default function LeaderboardPage() {
         </div>
       ) : (
         <>
-          {podiumOrder.length >= 3 && (
+          {/* Podium */}
+          {podium && (
             <div className="lb-podium">
-              {podiumOrder.map((u) => (
-                <div className="lb-podium-item" key={u.id}>
-                  <div className="lb-podium-avatar">{u.avatar_emoji}</div>
-                  <div className="lb-podium-name">{u.username}</div>
+              {podium.map((p) => (
+                <div
+                  className={`lb-podium-card ${p.place === 1 ? 'first' : p.place === 2 ? 'second' : 'third'}`}
+                  key={p.user.id}
+                >
+                  <Medal
+                    size={28}
+                    style={{ color: medalColors[p.place] }}
+                  />
+                  <div className="lb-podium-rank">#{p.place}</div>
+                  <div className="lb-podium-name">{p.user.username}</div>
                   <div
                     className="lb-podium-profit"
                     style={{
-                      color: u.profit >= 0 ? 'var(--accent-green)' : 'var(--accent)',
+                      color: p.user.profit >= 0 ? 'var(--over)' : 'var(--under)',
                     }}
                   >
-                    {u.profit >= 0 ? '+' : ''}
-                    {u.profit.toLocaleString()} K
+                    {p.user.profit >= 0 ? '+' : ''}
+                    {p.user.profit.toLocaleString()} K
                   </div>
-                  <div className="lb-podium-rank">
-                    #{sorted.indexOf(u) + 1}
+                  <div className="lb-podium-balance">
+                    {p.user.balance.toLocaleString()} K
                   </div>
-                  <div className="lb-bar" />
                 </div>
               ))}
             </div>
           )}
 
+          {/* Table */}
           <div className="lb-table">
-            <div className="lb-row lb-row-head">
-              <div>#</div>
-              <div>Player</div>
-              <div>Record</div>
-              <div>Profit</div>
-              <div className="lb-streak">Streak</div>
-              <div className="lb-balance" style={{ textAlign: 'right' }}>
-                Balance
-              </div>
+            <div className="lb-row lb-header">
+              <div className="lb-col lb-col-rank">#</div>
+              <div className="lb-col lb-col-player">Player</div>
+              <div className="lb-col lb-col-record">Record</div>
+              <div className="lb-col lb-col-profit">Profit</div>
+              <div className="lb-col lb-col-streak">Streak</div>
+              <div className="lb-col lb-col-balance">Balance</div>
             </div>
             {sorted.map((u, i) => (
               <div className="lb-row" key={u.id}>
-                <div className="lb-rank">{i + 1}</div>
-                <div className="lb-user">
+                <div className="lb-col lb-col-rank">
+                  {i < 3 ? (
+                    <Medal size={14} style={{ color: medalColors[i + 1] }} />
+                  ) : (
+                    i + 1
+                  )}
+                </div>
+                <div className="lb-col lb-col-player">
                   <span className="lb-user-avatar">{u.avatar_emoji}</span>
                   <span className="lb-user-name">{u.username}</span>
                 </div>
-                <div className="lb-record">
+                <div className="lb-col lb-col-record">
                   {u.wins}W - {u.losses}L
                 </div>
                 <div
-                  className={
-                    u.profit >= 0 ? 'lb-profit-positive' : 'lb-profit-negative'
-                  }
-                  style={{
-                    fontFamily: "'Rajdhani', sans-serif",
-                    fontWeight: 700,
-                    fontSize: 15,
-                  }}
+                  className={`lb-col lb-col-profit ${u.profit >= 0 ? 'positive' : 'negative'}`}
                 >
                   {u.profit >= 0 ? '+' : ''}
                   {u.profit.toLocaleString()}
                 </div>
-                <div
-                  className={`lb-streak ${
-                    u.current_streak > 0 ? 'positive' : 'negative'
-                  }`}
-                >
-                  {u.current_streak > 0
-                    ? <><Flame size={12} style={{ display: 'inline' }} /> {u.current_streak}W</>
-                    : u.current_streak < 0
-                    ? <><Snowflake size={12} style={{ display: 'inline' }} /> {Math.abs(u.current_streak)}L</>
-                    : '—'}
+                <div className="lb-col lb-col-streak">
+                  {u.current_streak > 0 ? (
+                    <span className="lb-streak-badge hot">
+                      <Flame size={12} /> {u.current_streak}W
+                    </span>
+                  ) : u.current_streak < 0 ? (
+                    <span className="lb-streak-badge cold">
+                      <Snowflake size={12} /> {Math.abs(u.current_streak)}L
+                    </span>
+                  ) : (
+                    <span style={{ color: 'var(--text-dim)' }}>—</span>
+                  )}
                 </div>
-                <div className="lb-balance">{u.balance.toLocaleString()} K</div>
+                <div className="lb-col lb-col-balance">
+                  {u.balance.toLocaleString()} K
+                </div>
               </div>
             ))}
           </div>

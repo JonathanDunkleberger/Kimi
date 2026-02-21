@@ -2,42 +2,35 @@
 
 import React from 'react';
 import type { Entry } from '@/types';
-import { Clock } from 'lucide-react';
+import { Clock, CheckCircle2, XCircle, ChevronUp, ChevronDown } from 'lucide-react';
 
 interface EntryCardProps {
   entry: Entry;
 }
 
 export default function EntryCard({ entry }: EntryCardProps) {
-  const statusColors: Record<string, string> = {
-    pending: '#FFB800',
-    won: 'var(--accent-green)',
-    lost: 'var(--accent)',
-    void: 'var(--text-muted)',
+  const statusConfig: Record<string, { color: string; label: string }> = {
+    pending: { color: '#FFB800', label: 'PENDING' },
+    won: { color: 'var(--over)', label: 'WON' },
+    lost: { color: 'var(--under)', label: 'LOST' },
+    void: { color: 'var(--text-muted)', label: 'VOID' },
   };
 
-  const statusColor = statusColors[entry.status] || 'var(--text-muted)';
+  const cfg = statusConfig[entry.status] || statusConfig.pending;
 
   return (
-    <div className="ml-card" style={{ padding: 18 }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+    <div
+      className="entry-card"
+      style={{ borderLeft: `3px solid ${cfg.color}` }}
+    >
+      <div className="entry-card-top">
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <span
-            style={{
-              padding: '3px 10px',
-              borderRadius: 4,
-              fontSize: 11,
-              fontWeight: 700,
-              letterSpacing: '1.5px',
-              textTransform: 'uppercase' as const,
-              background: `${statusColor}20`,
-              color: statusColor,
-              border: `1px solid ${statusColor}40`,
-            }}
+            className={`entry-status ${entry.status.toUpperCase()}`}
           >
-            {entry.status}
+            {cfg.label}
           </span>
-          <span style={{ fontSize: 12, color: 'var(--text-muted)', fontFamily: "'Rajdhani', sans-serif", fontWeight: 600 }}>
+          <span style={{ fontSize: 12, color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', fontWeight: 600 }}>
             {new Date(entry.created_at).toLocaleDateString('en-US', {
               month: 'short',
               day: 'numeric',
@@ -46,70 +39,61 @@ export default function EntryCard({ entry }: EntryCardProps) {
             })}
           </span>
         </div>
-        <div style={{ textAlign: 'right' }}>
-          <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>
-            {entry.wager.toLocaleString()} K → {entry.potential_payout.toLocaleString()} K
+        <div className="entry-amounts">
+          <div>
+            <div className="label">Wager</div>
+            <div className="value">{entry.wager.toLocaleString()} K</div>
           </div>
-          <div style={{ fontSize: 11, color: 'var(--text-muted)' }}>
-            {entry.multiplier}x multiplier
+          <div style={{ color: 'var(--text-dim)' }}>→</div>
+          <div>
+            <div className="label">Payout</div>
+            <div className="value" style={{ color: 'var(--accent)' }}>
+              {entry.potential_payout.toLocaleString()} K
+            </div>
+          </div>
+          <div style={{ fontSize: 10, color: 'var(--text-dim)', alignSelf: 'flex-end' }}>
+            {entry.multiplier}x
           </div>
         </div>
       </div>
 
-      {entry.entry_legs?.map((leg) => {
-        const resultColor =
-          leg.result === 'won'
-            ? 'var(--accent-green)'
-            : leg.result === 'lost'
-            ? 'var(--accent)'
-            : 'var(--text-muted)';
+      <div className="entry-legs">
+        {entry.entry_legs?.map((leg) => {
+          const playerName =
+            (leg.prop_line?.player as any)?.ign ||
+            (leg.prop_line?.player as any)?.name ||
+            'Player';
+          const propTypeName =
+            (leg.prop_line?.prop_type as any)?.name || 'Total Kills';
 
-        const resultDisplay =
-          leg.result === 'won'
-            ? <span style={{ color: resultColor, fontWeight: 700, fontSize: 14 }}>✓</span>
-            : leg.result === 'lost'
-            ? <span style={{ color: resultColor, fontWeight: 700, fontSize: 14 }}>✕</span>
-            : <Clock size={12} style={{ color: resultColor }} />;
-
-        const playerName =
-          (leg.prop_line?.player as any)?.ign ||
-          (leg.prop_line?.player as any)?.name ||
-          'Player';
-        const propTypeName =
-          (leg.prop_line?.prop_type as any)?.name || 'Total Kills';
-
-        return (
-          <div
-            key={leg.id}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: '8px 0',
-              borderTop: '1px solid var(--border)',
-              fontSize: 13,
-            }}
-          >
-            <div>
-              <span style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, marginRight: 8 }}>
-                {playerName}
+          return (
+            <div className="entry-leg" key={leg.id}>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div className="entry-leg-player">{playerName}</div>
+                <div className="entry-leg-detail">
+                  {propTypeName} — {leg.prop_line?.line_value}
+                </div>
+              </div>
+              <span className={`entry-leg-pick ${leg.pick}`}>
+                {leg.pick === 'over' ? (
+                  <><ChevronUp size={10} strokeWidth={3} /> OVER</>
+                ) : (
+                  <><ChevronDown size={10} strokeWidth={3} /> UNDER</>
+                )}
               </span>
-              <span style={{ color: 'var(--text-muted)' }}>
-                {propTypeName} — {leg.prop_line?.line_value}
+              <span className="entry-leg-result">
+                {leg.result === 'won' ? (
+                  <CheckCircle2 size={16} style={{ color: 'var(--over)' }} />
+                ) : leg.result === 'lost' ? (
+                  <XCircle size={16} style={{ color: 'var(--under)' }} />
+                ) : (
+                  <Clock size={14} style={{ color: 'var(--text-dim)' }} />
+                )}
               </span>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-              <span
-                className={`slip-leg-pick ${leg.pick}`}
-                style={{ fontSize: 12 }}
-              >
-                {leg.pick === 'over' ? '▲ OVER' : '▼ UNDER'}
-              </span>
-              {resultDisplay}
-            </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }
