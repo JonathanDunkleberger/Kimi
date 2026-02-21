@@ -34,6 +34,7 @@ export interface Match {
   game: Game;
   game_mode: string | null;
   series_format: string | null;
+  best_of: number | null;
   event?: { id: string; name: string };
   team_a?: Team;
   team_b?: Team;
@@ -42,6 +43,7 @@ export interface Match {
 export interface PropType {
   id: string;
   name: string;
+  stat_key: string | null;
 }
 
 export interface PropLine {

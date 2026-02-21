@@ -72,19 +72,31 @@ DEFAULT_COLORS = {"valorant": "#FF4655", "cod": "#1E90FF"}
 
 # ── Stat templates for prop-line generation ─────────────────────────────────
 
+# ── Scoped stat templates for prop-line generation ──────────────────────────
+# Golden Rule: NEVER offer a prop on a map that might not be played.
+# Valorant Bo3: Maps 1-2 guaranteed  |  CoD Bo5: Maps 1-3 guaranteed
+
 STAT_TEMPLATES = {
     "valorant": [
-        {"prop": "Kills",   "mean": 17.0, "std": 3.5},
-        {"prop": "Deaths",  "mean": 14.0, "std": 2.5},
-        {"prop": "Assists", "mean": 4.5,  "std": 1.5},
+        # Primary prop (big display on card)
+        {"prop": "Maps 1–2 Kills",   "stat_key": "kills_m1m2",   "mean": 34.0,  "std": 6.0},
+        # Per-map kills
+        {"prop": "Map 1 Kills",      "stat_key": "kills_m1",     "mean": 17.0,  "std": 3.5},
+        {"prop": "Map 2 Kills",      "stat_key": "kills_m2",     "mean": 17.0,  "std": 3.5},
+        # Other combo stats
+        {"prop": "Maps 1–2 Assists", "stat_key": "assists_m1m2", "mean": 9.0,   "std": 2.5},
+        {"prop": "Maps 1–2 Deaths",  "stat_key": "deaths_m1m2",  "mean": 28.0,  "std": 4.0},
     ],
     "cod": [
-        {"prop": "Kills",              "mean": 24.0, "std": 4.0},
-        {"prop": "Total Series Kills", "mean": 105.0, "std": 15.0},
-        {"prop": "Map 1 Kills",        "mean": 8.5,  "std": 2.0},
-        {"prop": "Map 2 Kills",        "mean": 8.5,  "std": 2.0},
-        {"prop": "Map 3 Kills",        "mean": 8.5,  "std": 2.0},
-        {"prop": "Damage",             "mean": 3200.0, "std": 400.0},
+        # Primary prop (big display on card)
+        {"prop": "Maps 1–3 Kills",   "stat_key": "kills_m1m2m3", "mean": 72.0,  "std": 12.0},
+        # Per-map kills
+        {"prop": "Map 1 Kills",      "stat_key": "kills_m1",     "mean": 24.0,  "std": 4.0},
+        {"prop": "Map 2 Kills",      "stat_key": "kills_m2",     "mean": 8.5,   "std": 2.0},
+        {"prop": "Map 3 Kills",      "stat_key": "kills_m3",     "mean": 24.0,  "std": 4.0},
+        # Other combo stats
+        {"prop": "Maps 1–3 Damage",  "stat_key": "damage_m1m2m3","mean": 8500.0,"std": 1200.0},
+        {"prop": "Maps 1–3 Assists", "stat_key": "assists_m1m2m3","mean": 15.0, "std": 3.5},
     ],
 }
 
@@ -242,23 +254,39 @@ def upsert_match(m: dict, team_a: str, team_b: str,
     return res.data[0]["id"] if res.data else None
 
 
-def ensure_prop_type(name: str) -> str:
-    if name in _prop_type_cache:
-        return _prop_type_cache[name]
+def ensure_prop_type(name: str, stat_key: str = None) -> str:
+    cache_key = stat_key or name
+    if cache_key in _prop_type_cache:
+        return _prop_type_cache[cache_key]
+
+    # Try by stat_key first (most precise)
+    if stat_key:
+        row = sb.table("prop_types").select("id").eq("stat_key", stat_key).execute()
+        if row.data:
+            _prop_type_cache[cache_key] = row.data[0]["id"]
+            return _prop_type_cache[cache_key]
+
+    # Fallback to name
     row = sb.table("prop_types").select("id").eq("name", name).execute()
     if row.data:
-        _prop_type_cache[name] = row.data[0]["id"]
-        return _prop_type_cache[name]
-    res = sb.table("prop_types").insert({"name": name}).execute()
-    _prop_type_cache[name] = res.data[0]["id"]
-    return _prop_type_cache[name]
+        _prop_type_cache[cache_key] = row.data[0]["id"]
+        return _prop_type_cache[cache_key]
+
+    # Insert new
+    fields = {"name": name}
+    if stat_key:
+        fields["stat_key"] = stat_key
+    res = sb.table("prop_types").insert(fields).execute()
+    _prop_type_cache[cache_key] = res.data[0]["id"]
+    return _prop_type_cache[cache_key]
 
 
 def create_prop_lines(match_uuid: str, player_uuid: str, ign: str, game: str):
     templates = STAT_TEMPLATES.get(game, STAT_TEMPLATES["valorant"])
     for tmpl in templates:
         prop_name = tmpl["prop"]
-        pt_id = ensure_prop_type(prop_name)
+        stat_key = tmpl.get("stat_key")
+        pt_id = ensure_prop_type(prop_name, stat_key)
 
         exists = (
             sb.table("prop_lines").select("id")

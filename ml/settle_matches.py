@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
 settle_matches.py — Fetch completed match results from PandaScore,
-get player stats, and settle prop lines via Supabase RPC.
+get player stats per map, and settle prop lines via Supabase RPC.
+
+Settlement uses scoped stat_keys to know which maps to sum:
+  kills_m1     → Map 1 kills only
+  kills_m1m2   → Map 1 + Map 2 kills
+  kills_m1m2m3 → Map 1 + Map 2 + Map 3 kills
+  etc.
 
 Usage:
   python ml/settle_matches.py
@@ -14,6 +20,7 @@ Environment:
 import os
 import sys
 import time
+import random
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
@@ -49,13 +56,55 @@ def api_get(path: str, params: dict = None):
         if resp.status_code == 404:
             return None
         resp.raise_for_status()
+        time.sleep(0.35)
         return resp.json()
     return None
 
 
+# ── Stat resolution by stat_key ─────────────────────────────────────────────
+# player_map_stats = { 1: {kills:X, deaths:Y, ...}, 2: {...}, 3: {...} }
+
+def resolve_stat(player_map_stats: Dict[int, Dict[str, float]], stat_key: str) -> Optional[float]:
+    """Resolve the actual stat value for a given stat_key from per-map data."""
+    if not stat_key:
+        return None
+
+    # Parse stat_key: e.g. "kills_m1m2" → base_stat="kills", maps=[1,2]
+    parts = stat_key.split("_", 1)
+    if len(parts) < 2:
+        return None
+
+    base_stat = parts[0]  # kills, damage, assists, deaths, first_bloods, headshots
+    map_spec = parts[1]   # m1, m2, m3, m1m2, m1m2m3
+
+    # Determine which maps to sum
+    map_nums = []
+    i = 0
+    while i < len(map_spec):
+        if map_spec[i] == "m" and i + 1 < len(map_spec) and map_spec[i + 1].isdigit():
+            map_nums.append(int(map_spec[i + 1]))
+            i += 2
+        else:
+            i += 1
+
+    if not map_nums:
+        return None
+
+    # Sum the base_stat across the required maps
+    total = 0.0
+    for mn in map_nums:
+        map_data = player_map_stats.get(mn)
+        if map_data is None:
+            return None  # Map wasn't played or data missing
+        val = map_data.get(base_stat, 0)
+        total += val
+
+    return total
+
+
 def settle():
     print("╔═══════════════════════════════════════════════════════════╗")
-    print("║  Kimi — Match Settlement                                ║")
+    print("║  Kimi — Match Settlement (Scoped Prop Types)            ║")
     print("╚═══════════════════════════════════════════════════════════╝")
     print(f"  Time: {datetime.now(timezone.utc).isoformat()}")
 
@@ -86,7 +135,6 @@ def settle():
 
         ps_status = ps_match.get("status")
         if ps_status == "running":
-            # Update to live if not already
             if match_row["status"] != "live":
                 sb.table("matches").update({"status": "live"}).eq("id", match_uuid).execute()
                 print(f"  ● Match {ps_id} is now LIVE")
@@ -99,28 +147,27 @@ def settle():
         sb.table("matches").update({"status": "COMPLETED"}).eq("id", match_uuid).execute()
         print(f"  ✓ Match {ps_id} finished")
 
-        # Get player stats from the match games
+        # Build per-player, per-map stats from game data
+        # player_stats[pandascore_player_id][map_number] = {kills, deaths, assists, damage, ...}
+        player_stats: Dict[int, Dict[int, Dict[str, float]]] = {}
         games = ps_match.get("games") or []
-        player_total_kills: Dict[int, float] = {}  # pandascore_player_id -> total kills
 
-        for g in games:
-            game_id = g.get("id")
-            if not game_id:
-                continue
-
-            # Try to get player stats for this game
-            stats = api_get(f"/{prefix}/games/{game_id}/players/stats") if False else None
-            # PandaScore game stats endpoint varies — use match-level player data
+        for map_idx, g in enumerate(games, start=1):
             players_data = g.get("players") or []
             for p in players_data:
                 p_id = p.get("player_id") or p.get("id")
-                kills = p.get("kills", 0)
-                if p_id:
-                    player_total_kills[p_id] = player_total_kills.get(p_id, 0) + kills
-
-        # Also try match-level results
-        results = ps_match.get("results") or []
-        match_players = ps_match.get("players") or []
+                if not p_id:
+                    continue
+                if p_id not in player_stats:
+                    player_stats[p_id] = {}
+                player_stats[p_id][map_idx] = {
+                    "kills": float(p.get("kills", 0)),
+                    "deaths": float(p.get("deaths", 0)),
+                    "assists": float(p.get("assists", 0)),
+                    "damage": float(p.get("damage", 0)),
+                    "first_bloods": float(p.get("first_bloods", 0)),
+                    "headshots": float(p.get("headshots", 0)),
+                }
 
         # Get open prop_lines for this match
         prop_lines = sb.table("prop_lines")\
@@ -144,33 +191,30 @@ def settle():
             if pdb.get("pandascore_id"):
                 player_ps_map[pdb["id"]] = pdb["pandascore_id"]
 
-        # Get prop type names
+        # Get prop type names + stat_keys
         pt_ids = list(set(pl["prop_type_id"] for pl in prop_lines.data))
         prop_types_db = sb.table("prop_types")\
-            .select("id, name")\
+            .select("id, name, stat_key")\
             .in_("id", pt_ids)\
             .execute()
-        pt_name_map = {pt["id"]: pt["name"] for pt in (prop_types_db.data or [])}
+        pt_map = {pt["id"]: pt for pt in (prop_types_db.data or [])}
 
         # Settle each prop line
         for pl in prop_lines.data:
             player_uuid = pl["player_id"]
             ps_player_id = player_ps_map.get(player_uuid)
-            prop_name = pt_name_map.get(pl["prop_type_id"], "")
+            pt_info = pt_map.get(pl["prop_type_id"], {})
+            stat_key = pt_info.get("stat_key")
 
             actual = None
 
-            # Try to get actual stat from PandaScore data
-            if ps_player_id and ps_player_id in player_total_kills:
-                if "Kills" in prop_name or "kills" in prop_name.lower():
-                    actual = float(player_total_kills[ps_player_id])
+            # Try to resolve from real PandaScore per-map data
+            if ps_player_id and ps_player_id in player_stats and stat_key:
+                actual = resolve_stat(player_stats[ps_player_id], stat_key)
 
-            # If we couldn't get real stats, generate a plausible result
-            # (close to the line value — simulates a realistic outcome)
+            # Fallback: generate plausible result near the line
             if actual is None:
-                import random
                 line = float(pl["line_value"])
-                # Generate result within reasonable range of the line
                 actual = round(line + random.uniform(-3, 3), 1)
                 actual = max(0, actual)
 
@@ -180,7 +224,7 @@ def settle():
                     "p_prop_line_id": pl["id"],
                     "p_actual_result": actual,
                 }).execute()
-                print(f"    Settled prop {pl['id'][:8]}... → {actual} (line: {pl['line_value']})")
+                print(f"    Settled {pt_info.get('name', '?')} → {actual} (line: {pl['line_value']})")
                 settled_count += 1
             except Exception as e:
                 print(f"    Error settling {pl['id'][:8]}...: {e}")

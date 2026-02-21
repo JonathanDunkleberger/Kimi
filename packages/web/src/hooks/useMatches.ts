@@ -45,7 +45,7 @@ export function usePropLines(matchId: string | undefined) {
         .select(`
           *,
           player:players!inner(*, team:teams(*)),
-          prop_type:prop_types(*)
+          prop_type:prop_types(name, stat_key)
         `)
         .eq('match_id', matchId)
         .in('status', ['OPEN', 'open'])
@@ -75,7 +75,7 @@ export function useAllPropLines(matchIds: string[]) {
         .select(`
           *,
           player:players!inner(*, team:teams(*)),
-          prop_type:prop_types(*)
+          prop_type:prop_types(name, stat_key)
         `)
         .in('match_id', matchIds)
         .in('status', ['OPEN', 'open'])
@@ -123,7 +123,7 @@ export function useMyEntries() {
             prop_line:prop_lines(
               *,
               player:players(name, ign, team_id),
-              prop_type:prop_types(name)
+              prop_type:prop_types(name, stat_key)
             )
           )
         `)

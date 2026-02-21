@@ -1,16 +1,19 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import type { PropLine } from '@/types';
 import { useSlipStore } from '@/stores/slipStore';
-import { TrendingUp, TrendingDown, Brain, ChevronUp, ChevronDown } from 'lucide-react';
+import { Brain, ChevronUp, ChevronDown } from 'lucide-react';
 
 interface PlayerCardProps {
   propLines: PropLine[];
 }
 
+const PRIMARY_STAT_KEYS = ['kills_m1m2', 'kills_m1m2m3'];
+
 export default function PlayerCard({ propLines }: PlayerCardProps) {
   const { picks, togglePick } = useSlipStore();
+  const [expanded, setExpanded] = useState(false);
 
   if (propLines.length === 0) return null;
 
@@ -22,6 +25,12 @@ export default function PlayerCard({ propLines }: PlayerCardProps) {
   const playerName = player?.ign || player?.name || 'Unknown';
   const role = player?.role || '';
 
+  // Split into primary & secondary
+  const primary = propLines.find((pl) =>
+    PRIMARY_STAT_KEYS.includes(pl.prop_type?.stat_key || '')
+  ) || propLines[0];
+  const secondary = propLines.filter((pl) => pl.id !== primary.id);
+
   // Best ML confidence across all lines
   const bestMl = propLines.reduce<{ confidence: number | null; direction: string | null }>(
     (best, pl) => {
@@ -32,6 +41,9 @@ export default function PlayerCard({ propLines }: PlayerCardProps) {
     },
     { confidence: null, direction: null }
   );
+
+  const primaryPick = picks.find((p) => p.propLine.id === primary.id);
+  const primaryName = primary.prop_type?.name || 'Kills';
 
   return (
     <div className="player-card" style={{ '--team-color': teamColor } as React.CSSProperties}>
@@ -55,37 +67,70 @@ export default function PlayerCard({ propLines }: PlayerCardProps) {
         )}
       </div>
 
-      {/* Prop Lines */}
-      <div className="pc-lines">
-        {propLines.map((pl) => {
-          const pick = picks.find((p) => p.propLine.id === pl.id);
-          const propName = pl.prop_type?.name || 'Total Kills';
-          return (
-            <div key={pl.id} className="pc-line">
-              <div className="pc-line-info">
-                <span className="pc-prop-name">{propName}</span>
-                <span className="pc-line-value">{pl.line_value}</span>
-              </div>
-              <div className="pc-line-actions">
-                <button
-                  className={`pc-ou-btn over ${pick?.direction === 'over' ? 'active' : ''}`}
-                  onClick={() => togglePick(pl, 'over')}
-                >
-                  <ChevronUp size={14} strokeWidth={3} />
-                  <span>Over</span>
-                </button>
-                <button
-                  className={`pc-ou-btn under ${pick?.direction === 'under' ? 'active' : ''}`}
-                  onClick={() => togglePick(pl, 'under')}
-                >
-                  <ChevronDown size={14} strokeWidth={3} />
-                  <span>Under</span>
-                </button>
-              </div>
-            </div>
-          );
-        })}
+      {/* Primary Prop */}
+      <div className="pc-primary">
+        <div className="pc-primary-label">{primaryName}</div>
+        <div className="pc-primary-value">{primary.line_value}</div>
+        <div className="pc-primary-actions">
+          <button
+            className={`pc-ou-btn over ${primaryPick?.direction === 'over' ? 'active' : ''}`}
+            onClick={() => togglePick(primary, 'over')}
+          >
+            <ChevronUp size={14} strokeWidth={3} />
+            <span>Over</span>
+          </button>
+          <button
+            className={`pc-ou-btn under ${primaryPick?.direction === 'under' ? 'active' : ''}`}
+            onClick={() => togglePick(primary, 'under')}
+          >
+            <ChevronDown size={14} strokeWidth={3} />
+            <span>Under</span>
+          </button>
+        </div>
       </div>
+
+      {/* Secondary Props Toggle */}
+      {secondary.length > 0 && (
+        <>
+          <button className="pc-expand-btn" onClick={() => setExpanded(!expanded)}>
+            <span>{expanded ? 'Hide props' : `More props (${secondary.length})`}</span>
+            {expanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+          </button>
+
+          {expanded && (
+            <div className="pc-secondary">
+              {secondary.map((pl) => {
+                const pick = picks.find((p) => p.propLine.id === pl.id);
+                const propName = pl.prop_type?.name || 'Prop';
+                return (
+                  <div key={pl.id} className="pc-line">
+                    <div className="pc-line-info">
+                      <span className="pc-prop-name">{propName}</span>
+                      <span className="pc-line-value">{pl.line_value}</span>
+                    </div>
+                    <div className="pc-line-actions">
+                      <button
+                        className={`pc-ou-btn compact over ${pick?.direction === 'over' ? 'active' : ''}`}
+                        onClick={() => togglePick(pl, 'over')}
+                      >
+                        <ChevronUp size={12} strokeWidth={3} />
+                        <span>O</span>
+                      </button>
+                      <button
+                        className={`pc-ou-btn compact under ${pick?.direction === 'under' ? 'active' : ''}`}
+                        onClick={() => togglePick(pl, 'under')}
+                      >
+                        <ChevronDown size={12} strokeWidth={3} />
+                        <span>U</span>
+                      </button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 }
