@@ -48,6 +48,21 @@ const PROP_DISPLAY_NAMES: Record<string, string> = {
   'total_damage_maps_1_2': 'M1-2 Damage',
 };
 
+function formatPropName(name: string): string {
+  if (!name) return '';
+  return name
+    .replace(/Maps 1-3 Kills/gi, 'M1-3 Kills')
+    .replace(/Maps 1-3 Deaths/gi, 'M1-3 Deaths')
+    .replace(/Maps 1-3 Damage/gi, 'M1-3 Dmg')
+    .replace(/Maps 1-3 Assists/gi, 'M1-3 Ast')
+    .replace(/Maps 1-2 Kills/gi, 'M1-2 Kills')
+    .replace(/Maps 1-2 Deaths/gi, 'M1-2 Deaths')
+    .replace(/Maps 1-2 Assists/gi, 'M1-2 Ast')
+    .replace(/Maps 1-2 Damage/gi, 'M1-2 Dmg')
+    .replace(/Map (\d) Kills/gi, 'Map $1 Kills')
+    || name;
+}
+
 export default function PlayerCard({ propLines, locked = false }: PlayerCardProps) {
   const { picks, togglePick } = useSlipStore();
   const [expanded, setExpanded] = useState(false);
@@ -153,52 +168,51 @@ export default function PlayerCard({ propLines, locked = false }: PlayerCardProp
               {secondary.map((pl) => {
                 const pick = picks.find((p) => p.propLine.id === pl.id);
                 const statKey = pl.prop_type?.stat_key || '';
-                const propName = PROP_DISPLAY_NAMES[statKey] || pl.prop_type?.name || 'Prop';
+                const rawName = PROP_DISPLAY_NAMES[statKey] || pl.prop_type?.name || 'Prop';
+                const propName = formatPropName(rawName);
                 const conf = pl.ml_confidence;
                 const isOver = pick?.direction === 'over';
                 const isUnder = pick?.direction === 'under';
                 return (
-                  <div key={pl.id} className="flex items-center gap-3 px-4 py-3 border-t border-[var(--border)]">
-                    {/* LEFT: Label + confidence */}
-                    <div className="flex flex-col min-w-[100px] max-w-[120px]">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-[var(--text-muted)] whitespace-nowrap overflow-hidden text-ellipsis">
+                  <div key={pl.id} className="flex items-center px-4 py-2.5 border-t border-white/[0.06] gap-3">
+                    {/* Prop label + confidence — fixed width, single line */}
+                    <div className="w-[110px] shrink-0">
+                      <div className="text-[10px] font-semibold text-white/40 uppercase tracking-wider leading-tight whitespace-nowrap overflow-hidden text-ellipsis">
                         {propName}
-                      </span>
-                      {conf && (
-                        <span className="text-[10px] font-mono text-[var(--text-dim)]">
-                          {conf}%
-                        </span>
-                      )}
+                      </div>
+                      <div className="text-[10px] font-mono text-white/25 mt-0.5">
+                        {conf ?? '—'}%
+                      </div>
                     </div>
 
-                    {/* CENTER: Line value */}
-                    <span className="text-xl font-extrabold text-[var(--text)] tabular-nums min-w-[60px] text-right">
+                    {/* Line value */}
+                    <div className="text-lg font-extrabold text-white tabular-nums w-[70px] text-right shrink-0">
                       {pl.line_value}
-                    </span>
+                    </div>
 
-                    {/* RIGHT: OVR / UND buttons */}
+                    {/* OVR / UND buttons */}
                     {locked ? (
-                      <span className="ml-auto text-[var(--text-muted)] opacity-50"><Lock size={10} /></span>
+                      <span className="ml-auto text-white/30"><Lock size={10} /></span>
                     ) : (
                       <div className="flex gap-1.5 ml-auto shrink-0">
                         <button
-                          onClick={() => togglePick(pl, 'over')}
-                          className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-[11px] font-bold transition-all border-none cursor-pointer
-                            ${isOver
-                              ? 'bg-[var(--accent)] text-[var(--bg)]'
-                              : 'bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
-                            }`}
+                          onClick={(e) => { e.stopPropagation(); togglePick(pl, 'over'); }}
+                          className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-[11px] font-bold transition-all duration-150 border-none cursor-pointer ${
+                            isOver
+                              ? 'bg-[#00e5a0] text-[#080a0f]'
+                              : 'bg-white/[0.06] text-white/40 hover:text-white/60 hover:bg-white/[0.09]'
+                          }`}
                         >
                           <ArrowUp size={11} />
                           OVR
                         </button>
                         <button
-                          onClick={() => togglePick(pl, 'under')}
-                          className={`flex items-center gap-1 px-2.5 py-1.5 rounded-md text-[11px] font-bold transition-all border-none cursor-pointer
-                            ${isUnder
-                              ? 'bg-[var(--red)] text-[var(--bg)]'
-                              : 'bg-[var(--bg-elevated)] text-[var(--text-muted)] hover:text-[var(--text-secondary)]'
-                            }`}
+                          onClick={(e) => { e.stopPropagation(); togglePick(pl, 'under'); }}
+                          className={`flex items-center gap-1 px-3 py-1.5 rounded-md text-[11px] font-bold transition-all duration-150 border-none cursor-pointer ${
+                            isUnder
+                              ? 'bg-[#ff5c5c] text-[#080a0f]'
+                              : 'bg-white/[0.06] text-white/40 hover:text-white/60 hover:bg-white/[0.09]'
+                          }`}
                         >
                           <ArrowDown size={11} />
                           UND
