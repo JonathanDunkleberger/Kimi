@@ -17,6 +17,12 @@ Play money only — no real currency.
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Deployed_on_Vercel-000?style=flat-square&logo=vercel&logoColor=white)
 
+<br />
+
+<img src="packages/web/public/kimi-screenshot.png" alt="KIMI Board — player cards with ML-projected stat lines and entry slip" width="820" />
+
+<sub>Board view — CDL player cards with ML-projected stat lines and the entry slip builder</sub>
+
 </div>
 
 ---
@@ -46,22 +52,33 @@ Think PrizePicks — but for esports, with a custom ML model generating every li
 ## Architecture
 
 <div align="center">
-  <a href="architecture.png">
-    <img src="https://raw.githubusercontent.com/JonathanDunkleberger/Kimi/main/architecture.png" alt="KIMI System Architecture" width="820" />
-  </a>
+  <img src="architecture.jpg" alt="KIMI System Architecture" width="820" />
   <br /><br />
-  <sub>Users → Frontend → Services → Data · Click to view full resolution</sub>
+  <sub>System architecture — Users → Frontend → Services → Data</sub>
 </div>
+
+<br />
+
+The platform is organized into four layers:
+
+**Users** — The board, auth flow, core feature pages (lineups, leaderboard, ML engine), and a protected admin panel.
+
+**Frontend** — Next.js 14 app with TypeScript and Tailwind CSS. API routes handle user sync, team/player/match/prop creation, and entry placement via Supabase RPC. Zustand manages bet slip state. SWR handles data fetching.
+
+**Services** — Supabase (PostgreSQL + RPC) for all persistent data, a Python ML service (RandomForest) for player projections, and Clerk webhooks for user sync with automatic K-Coin provisioning.
+
+**Data** — CDL and VCT datasets (teams, players, schedules, historical stats), a training set of 12,847 match records, and the K-Coin economy (starting balance, wager limits, payout multipliers).
 
 ## Tech Stack
 
 | Layer | Technologies |
 |-------|-------------|
-| Frontend | Next.js 14, TypeScript, Tailwind CSS, shadcn/ui |
+| Frontend | Next.js 14, React 18, TypeScript, Tailwind CSS, shadcn/ui, Radix UI |
+| State & Data | Zustand (bet slip), SWR (data fetching), Framer Motion (animations) |
 | Styling | Manrope + Space Mono fonts, Lucide React icons, team-branded color system |
-| Auth | Clerk (sign up/in, session management, webhooks) |
-| Database | Supabase (PostgreSQL), Prisma ORM |
-| ML | Python, FastAPI, scikit-learn (RandomForest) |
+| Auth | Clerk (sign up/in, session management, webhooks via Svix) |
+| Database | Supabase (PostgreSQL + RPC functions) |
+| ML | Python, scikit-learn (RandomForest), pandas, NumPy |
 | Deployment | Vercel (frontend), Supabase (hosted DB) |
 | Monorepo | pnpm workspaces |
 
@@ -70,20 +87,31 @@ Think PrizePicks — but for esports, with a custom ML model generating every li
 ```
 Kimi/
 ├── packages/
-│   └── web/                    # Next.js frontend
+│   └── web/                       # Next.js frontend
 │       ├── src/
-│       │   ├── pages/          # 11 routes (board, lineups, leaderboard, engine, admin, etc.)
-│       │   ├── components/     # PlayerCard, BetSlipV2, Nav, EntryCard, KimiLogo, etc.
-│       │   ├── hooks/          # useProfile, useMyEntries, usePropLines, usePlaceEntry
-│       │   ├── styles/         # globals.css (design tokens, component styles)
-│       │   └── lib/            # Supabase client, utilities
-│       └── public/             # Favicon, OG images
-├── ml/                         # Python ML service
-│   ├── model/                  # Trained RandomForest model
-│   ├── train.py                # Training pipeline
-│   └── api.py                  # FastAPI prediction endpoints
-├── prisma/                     # Database schema
-└── supabase/                   # Migrations, RPC functions
+│       │   ├── pages/             # 9 pages + 6 API routes
+│       │   │   ├── index.tsx      # Board (main landing)
+│       │   │   ├── entries.tsx    # My Lineups
+│       │   │   ├── leaderboard.tsx
+│       │   │   ├── ml.tsx         # ML Engine transparency
+│       │   │   ├── admin.tsx      # Protected admin dashboard
+│       │   │   ├── account.tsx    # User account
+│       │   │   ├── profile.tsx    # User profile
+│       │   │   └── api/           # sync-user, webhooks, admin CRUD
+│       │   ├── components/        # PlayerCard, BetSlipV2, Nav, EntryCard, etc.
+│       │   ├── hooks/             # useMatches, useProfile
+│       │   ├── stores/            # slipStore (Zustand bet slip state)
+│       │   ├── actions/           # placeEntry (server action)
+│       │   ├── types/             # TypeScript type definitions
+│       │   ├── lib/               # Supabase client
+│       │   └── styles/            # globals.css (design tokens, component styles)
+│       └── public/                # Favicon, OG images, screenshot
+├── ml/                            # Python ML + data sync
+│   ├── sync_matches.py            # PandaScore match sync
+│   └── settle_matches.py          # Match result settlement
+├── supabase/                      # Database migrations
+│   └── migrations/                # 6 migration files (schema, RPC, auth)
+└── .github/workflows/             # CI + weekly data sync
 ```
 
 ## Design System
