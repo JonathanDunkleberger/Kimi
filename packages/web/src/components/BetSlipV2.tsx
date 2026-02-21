@@ -2,20 +2,21 @@
 
 import React from 'react';
 import { useSlipStore } from '@/stores/slipStore';
-import { useAuthStore } from '@/stores/authStore';
+import { useProfile } from '@/hooks/useProfile';
+import { useUser, SignInButton } from '@clerk/nextjs';
 import { placeEntry } from '@/actions/placeEntry';
 import { useToastStore } from '@/components/KimiToast';
 import { Crosshair } from 'lucide-react';
 
 interface BetSlipV2Props {
   onToast?: (msg: string) => void;
-  onAuthRequired?: () => void;
   onClose?: () => void;
 }
 
-export default function BetSlipV2({ onToast, onAuthRequired, onClose }: BetSlipV2Props = {}) {
+export default function BetSlipV2({ onToast, onClose }: BetSlipV2Props = {}) {
   const { picks, wager, setWager, clearSlip, removePick, getMultiplier, getPotentialPayout } = useSlipStore();
-  const { user } = useAuthStore();
+  const { user, refreshBalance } = useProfile();
+  const { isSignedIn } = useUser();
   const toast = useToastStore((s) => s.show);
   const [submitting, setSubmitting] = React.useState(false);
 
@@ -30,14 +31,11 @@ export default function BetSlipV2({ onToast, onAuthRequired, onClose }: BetSlipV
   };
 
   const handleSubmit = async () => {
-    if (!user) {
-      onAuthRequired?.();
-      return;
-    }
+    if (!isSignedIn || !user) return;
     if (legCount < 2 || wager < 50 || wager > 2000 || wager > balance) return;
     setSubmitting(true);
     try {
-      await placeEntry();
+      await placeEntry(user.id, refreshBalance);
       showToast(`Entry placed! ${legCount} legs @ ${wager.toLocaleString()} K — ${multiplier}x payout`);
     } catch (err: any) {
       showToast(`Error: ${err.message}`);
@@ -136,25 +134,33 @@ export default function BetSlipV2({ onToast, onAuthRequired, onClose }: BetSlipV
               </span>
             </div>
 
-            <button
-              className="slip-submit"
-              disabled={submitting || legCount < 2 || legCount > 6 || wager < 50 || wager > 2000 || wager > balance}
-              onClick={handleSubmit}
-            >
-              {submitting
-                ? 'Placing...'
-                : legCount < 2
-                ? `Pick at least 2 (${legCount}/2)`
-                : legCount > 6
-                ? 'Max 6 picks'
-                : wager < 50
-                ? 'Min 50 K-Coins'
-                : wager > 2000
-                ? 'Max 2,000 K-Coins'
-                : wager > balance
-                ? 'Insufficient balance'
-                : `Place Entry — ${wager.toLocaleString()} K`}
-            </button>
+            {!isSignedIn ? (
+              <SignInButton mode="modal">
+                <button className="slip-submit">
+                  Sign In to Place Entry
+                </button>
+              </SignInButton>
+            ) : (
+              <button
+                className="slip-submit"
+                disabled={submitting || legCount < 2 || legCount > 6 || wager < 50 || wager > 2000 || wager > balance}
+                onClick={handleSubmit}
+              >
+                {submitting
+                  ? 'Placing...'
+                  : legCount < 2
+                  ? `Pick at least 2 (${legCount}/2)`
+                  : legCount > 6
+                  ? 'Max 6 picks'
+                  : wager < 50
+                  ? 'Min 50 K-Coins'
+                  : wager > 2000
+                  ? 'Max 2,000 K-Coins'
+                  : wager > balance
+                  ? 'Insufficient balance'
+                  : `Place Entry — ${wager.toLocaleString()} K`}
+              </button>
+            )}
           </div>
         </>
       )}

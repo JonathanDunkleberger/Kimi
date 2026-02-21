@@ -1,10 +1,12 @@
 import React from 'react';
-import { useAuthStore } from '@/stores/authStore';
+import { useProfile } from '@/hooks/useProfile';
+import { useClerk } from '@clerk/nextjs';
 import { User, Wallet, History, LogOut, TrendingUp, TrendingDown, Flame } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Account() {
-  const { user, loading, signOut } = useAuthStore();
+  const { user, loading } = useProfile();
+  const { signOut } = useClerk();
 
   if (loading) {
     return (
@@ -35,7 +37,7 @@ export default function Account() {
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-black tracking-tight">Account</h1>
         <button
-          onClick={() => signOut()}
+          onClick={() => signOut({ redirectUrl: '/' })}
           className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-[var(--text-muted)] hover:text-white hover:bg-white/5 transition-colors"
         >
           <LogOut className="w-4 h-4" />

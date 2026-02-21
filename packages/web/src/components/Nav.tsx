@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useAuthStore } from '@/stores/authStore';
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { useProfile } from '@/hooks/useProfile';
 
 function CoinIcon() {
   return (
@@ -15,16 +16,12 @@ function CoinIcon() {
 }
 
 interface NavProps {
-  onLoginClick?: () => void;
   onSlipToggle?: () => void;
-  onAuthClick?: () => void;
 }
 
-export default function Nav({ onLoginClick, onSlipToggle, onAuthClick }: NavProps) {
+export default function Nav({ onSlipToggle }: NavProps) {
   const router = useRouter();
-  const { user } = useAuthStore();
-
-  const handleAuth = onLoginClick || onAuthClick || (() => {});
+  const { user } = useProfile();
 
   const tabs = [
     { key: '/', label: 'Board' },
@@ -52,25 +49,28 @@ export default function Nav({ onLoginClick, onSlipToggle, onAuthClick }: NavProp
       </div>
 
       <div className="nav-balance">
-        {user ? (
-          <>
-            <div className="balance-chip">
-              <CoinIcon />
-              {user.balance.toLocaleString()} K
-            </div>
-            <button
-              className="nav-tab"
-              onClick={() => useAuthStore.getState().signOut()}
-              style={{ fontSize: 11 }}
-            >
-              Logout
+        <SignedIn>
+          <div className="balance-chip">
+            <CoinIcon />
+            {(user?.balance ?? 0).toLocaleString()} K
+          </div>
+          <UserButton
+            afterSignOutUrl="/"
+            appearance={{
+              elements: {
+                avatarBox: 'w-9 h-9 rounded-full border-2 border-[#FF4655]/30',
+              },
+            }}
+          />
+        </SignedIn>
+
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className="nav-tab active">
+              Sign In
             </button>
-          </>
-        ) : (
-          <button className="nav-tab active" onClick={handleAuth}>
-            Login
-          </button>
-        )}
+          </SignInButton>
+        </SignedOut>
       </div>
     </nav>
   );

@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useUser } from '@clerk/nextjs';
 import Nav from './Nav';
 import BetSlipV2 from './BetSlipV2';
-import AuthModal from './AuthModal';
 import KimiToast from './KimiToast';
-import { useAuthStore } from '@/stores/authStore';
 import { useSlipStore } from '@/stores/slipStore';
 import { Crosshair, Github } from 'lucide-react';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const [showAuth, setShowAuth] = useState(false);
   const [mobileSlip, setMobileSlip] = useState(false);
   const picks = useSlipStore((s) => s.picks);
-  const user = useAuthStore((s) => s.user);
+  const { isSignedIn } = useUser();
 
   const isBoard = router.pathname === '/';
+  const isAuthPage = router.pathname.startsWith('/sign-in') || router.pathname.startsWith('/sign-up');
+
+  // Don't render layout chrome on auth pages
+  if (isAuthPage) {
+    return <>{children}</>;
+  }
 
   return (
     <div className="app-shell">
       <Nav
-        onLoginClick={() => setShowAuth(true)}
         onSlipToggle={() => setMobileSlip((p) => !p)}
       />
 
@@ -31,7 +34,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {/* Desktop sidebar slip — only on Board */}
         {isBoard && (
           <aside className="slip-sidebar">
-            <BetSlipV2 onAuthRequired={() => setShowAuth(true)} />
+            <BetSlipV2 />
           </aside>
         )}
       </div>
@@ -43,7 +46,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="mobile-slip-sheet">
             <BetSlipV2
               onClose={() => setMobileSlip(false)}
-              onAuthRequired={() => { setMobileSlip(false); setShowAuth(true); }}
             />
           </div>
         </div>
@@ -58,11 +60,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <span style={{ display: 'flex', alignItems: 'center' }}><Crosshair size={16} /></span>
           <span>{picks.length} Pick{picks.length !== 1 ? 's' : ''}</span>
         </button>
-      )}
-
-      {/* Auth modal */}
-      {showAuth && !user && (
-        <AuthModal open={true} onClose={() => setShowAuth(false)} />
       )}
 
       {/* Toast */}

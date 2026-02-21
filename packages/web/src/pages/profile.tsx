@@ -1,11 +1,11 @@
 import React from 'react';
-import { useAuthStore } from '@/stores/authStore';
+import { useProfile } from '@/hooks/useProfile';
 import { useMyEntries } from '@/hooks/useMatches';
 import { User, Lock, Clock, CheckCircle, XCircle } from 'lucide-react';
 import dayjs from 'dayjs';
 
 export default function Profile() {
-  const { user } = useAuthStore();
+  const { user } = useProfile();
   const { entries, loading } = useMyEntries();
 
   if (!user) {

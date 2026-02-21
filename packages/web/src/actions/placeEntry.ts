@@ -1,18 +1,15 @@
 import { supabase } from '@/lib/supabase';
 import { useSlipStore } from '@/stores/slipStore';
-import { useAuthStore } from '@/stores/authStore';
 
-export async function placeEntry() {
+export async function placeEntry(userId: string, refreshBalance: () => Promise<void>) {
   const { picks, wager, getMultiplier, getPotentialPayout, clearSlip } =
     useSlipStore.getState();
-  const { user, refreshBalance } = useAuthStore.getState();
 
-  if (!user) throw new Error('Not logged in');
+  if (!userId) throw new Error('Not logged in');
   if (picks.length < 2) throw new Error('Need at least 2 picks');
   if (picks.length > 6) throw new Error('Maximum 6 picks allowed');
   if (wager < 50) throw new Error('Minimum wager is 50 K-Coins');
   if (wager > 2000) throw new Error('Maximum wager is 2,000 K-Coins');
-  if (wager > user.balance) throw new Error('Insufficient balance');
 
   const legs = picks.map((p) => ({
     prop_line_id: p.propLine.id,
@@ -20,7 +17,7 @@ export async function placeEntry() {
   }));
 
   const { data, error } = await supabase.rpc('place_entry', {
-    p_user_id: user.id,
+    p_user_id: userId,
     p_legs: legs,
     p_wager: wager,
     p_multiplier: getMultiplier(),

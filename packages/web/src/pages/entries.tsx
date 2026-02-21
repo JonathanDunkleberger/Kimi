@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useMyEntries } from '@/hooks/useMatches';
-import { useAuthStore } from '@/stores/authStore';
+import { useProfile } from '@/hooks/useProfile';
 import EntryCard from '@/components/EntryCard';
 import { Lock, ClipboardList, BarChart3 } from 'lucide-react';
 
 export default function EntriesPage() {
-  const { user } = useAuthStore();
+  const { user } = useProfile();
   const { entries, loading } = useMyEntries();
   const [tab, setTab] = useState<'live' | 'settled'>('live');
 

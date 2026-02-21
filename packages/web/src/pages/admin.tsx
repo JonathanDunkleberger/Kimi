@@ -1,6 +1,6 @@
 import React from "react";
 import { supabase } from "@/lib/supabase";
-import { useAuthStore } from "@/stores/authStore";
+import { useProfile } from "@/hooks/useProfile";
 import { Lock } from "lucide-react";
 
 type Team = { id: string; name: string };
@@ -8,7 +8,7 @@ type Player = { id: string; name: string };
 type Match = { id: string; start_time: string };
 
 export default function Admin() {
-  const { user } = useAuthStore();
+  const { user } = useProfile();
 
   const [teams, setTeams] = React.useState<Team[]>([]);
   const [players, setPlayers] = React.useState<Player[]>([]);
