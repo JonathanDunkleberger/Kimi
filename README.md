@@ -45,35 +45,11 @@ Think PrizePicks — but for esports, with a custom ML model generating every li
 
 ## Architecture
 
-> See `architecture.png` in the repo root for the full system diagram.
-
-```
-┌──────────────────────────────────────────────────────────┐
-│  CLIENT                                                   │
-│  kimiprops.com / esportsprops.com / kimi-two.vercel.app  │
-│  Next.js 14 · TypeScript · Tailwind · shadcn/ui          │
-├──────────────────────────────────────────────────────────┤
-│  FRONTEND                                                 │
-│  11 Pages · 6 API Routes · Custom React Hooks            │
-│  Clerk Auth · Team-branded UI · Lucide icons             │
-├──────────────────────────────────────────────────────────┤
-│  BACKEND                                                  │
-│  Supabase (Postgres) — users, teams, matches, entries    │
-│  place_entry() RPC — atomic wager + leg insertion        │
-│  Clerk webhooks — user.created → Supabase sync           │
-├──────────────────────────────────────────────────────────┤
-│  ML SERVICE                                               │
-│  Python · FastAPI · scikit-learn                          │
-│  RandomForest v2.4 · 12,847 training samples             │
-│  Features: historical avg, map type, opponent rating,    │
-│  recent form, home/away, days since last match           │
-├──────────────────────────────────────────────────────────┤
-│  DATA                                                     │
-│  CDL — 12 teams, 48 players, match schedules             │
-│  VCT — Americas teams, player stats                      │
-│  Training — player_stats.csv (kill/death/damage/assists) │
-└──────────────────────────────────────────────────────────┘
-```
+<div align="center">
+  <img src="architecture.png" alt="KIMI System Architecture" width="800" />
+  <br />
+  <sub>Users → Frontend → Services → Data — full system diagram</sub>
+</div>
 
 ## Tech Stack
 
