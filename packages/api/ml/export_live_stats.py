@@ -230,9 +230,32 @@ def _merge_players(*groups: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     return players
 
 
+def _load_previous_history() -> List[Dict[str, Any]]:
+    """When VCT CSVs aren't in CI, keep prior vct_history rows from the last export."""
+    for path in (OUT_API, OUT_WEB_DEMO):
+        try:
+            if not path.exists():
+                continue
+            prev = json.loads(path.read_text(encoding="utf-8"))
+            rows = [
+                p
+                for p in (prev.get("players") or [])
+                if p.get("source") == "vct_history"
+                and (p.get("maps") or 0) > 0
+            ]
+            if rows:
+                print(f"[hist] preserved {len(rows)} rows from {path.name}", file=sys.stderr)
+                return rows
+        except Exception as e:
+            print(f"[hist] could not read previous export {path}: {e}", file=sys.stderr)
+    return []
+
+
 def export(skip_network: bool = False) -> Dict[str, Any]:
     sources: List[str] = []
     hist = load_vct_history()
+    if not hist:
+        hist = _load_previous_history()
     if hist:
         sources.append("vct_history")
 
@@ -250,7 +273,24 @@ def export(skip_network: bool = False) -> Dict[str, Any]:
             print(f"[export] vlr leaderboard failed: {e}", file=sys.stderr)
 
         try:
-            watch = get_watchlist_players()
+            # Watchlist is for avatars / id enrichment — drop empty stat stubs.
+            watch_raw = get_watchlist_players()
+            watch = []
+            for w in watch_raw:
+                if (w.get("maps") or 0) > 0 or (w.get("kills") or 0) > 0:
+                    watch.append(w)
+                elif w.get("imageUrl"):
+                    watch.append(
+                        {
+                            **w,
+                            # Keep as soft enrichment only; merge fills blanks onto real rows.
+                            "maps": 0,
+                            "kills": 0,
+                            "deaths": 0,
+                            "assists": 0,
+                            "rating": 0.0,
+                        }
+                    )
             if watch and "vlr" not in sources:
                 sources.append("vlr")
         except Exception as e:
@@ -264,6 +304,12 @@ def export(skip_network: bool = False) -> Dict[str, Any]:
             print(f"[export] bp failed: {e}", file=sys.stderr)
 
     players = _merge_players(hist, vlr_rows, watch, cod)
+    # Drop pure avatar stubs that never found a stats twin.
+    players = [
+        p
+        for p in players
+        if (p.get("maps") or 0) > 0 or (p.get("kills") or 0) > 0
+    ]
 
     # Strip helper fields
     clean = []
