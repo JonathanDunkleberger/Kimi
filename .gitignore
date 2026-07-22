@@ -84,4 +84,5 @@ prisma/*.db
 # Lock render build artifacts if any
 .render-build/
 .vercel
-.env*
+.env.local
+.env.*.local
