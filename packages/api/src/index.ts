@@ -44,11 +44,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-try {
-  const { clerkMiddleware } = await import('@clerk/express');
-  app.use(clerkMiddleware());
-} catch {
-  console.warn('[api] Clerk middleware skipped');
+const clerkPublishable =
+  process.env.CLERK_PUBLISHABLE_KEY || process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+if (process.env.CLERK_SECRET_KEY && clerkPublishable) {
+  try {
+    const { clerkMiddleware } = await import('@clerk/express');
+    app.use(clerkMiddleware());
+  } catch (e) {
+    console.warn('[api] Clerk middleware skipped', e);
+  }
+} else {
+  console.warn('[api] Clerk keys incomplete — guest auth only');
 }
 
 type MemEntry = {
