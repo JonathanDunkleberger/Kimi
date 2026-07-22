@@ -1,4 +1,4 @@
-name: Refresh Chronicle stats
+name: Refresh live stats
 
 on:
   schedule:
@@ -40,6 +40,6 @@ jobs:
           if git diff --staged --quiet; then
             echo "No stats changes"
           else
-            git commit -m "chore: refresh Chronicle live_stats.json"
+            git commit -m "chore: refresh live_stats.json"
             git push
           fi

@@ -131,13 +131,13 @@ Cron example (every 15 min):
 */15 * * * * /usr/bin/python /app/packages/api/ml/judge.py >> /var/log/judge.log 2>&1
 ```
 
-## Chronicle live stats export
+## Live stats export
 
-Script: `export_live_stats.py` builds `live_stats.json` for the Chronicle (`GET /stats`) from:
+Script: `export_live_stats.py` builds `live_stats.json` for the Stats page (`GET /stats`) from:
 
 - **VLR.gg** player leaderboard + watchlist avatars (`vlr_scraper.py`)
 - **Breaking Point.gg** COD season aggregates (`bp_scraper.py` via public tRPC)
-- **Local VCT archive** under `data/Val-historical-stats/` (Hall of Arms career rolls)
+- **Local VCT archive** under `data/Val-historical-stats/` (career averages)
 
 ```bash
 # from repo root (use your venv python)
