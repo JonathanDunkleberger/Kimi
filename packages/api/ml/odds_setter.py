@@ -68,7 +68,22 @@ MODELS_DIR = ROOT / 'models'
 DATA_CSV = ROOT / 'data' / 'player_features.csv'
 
 STAT_TYPE_DISPLAY = 'Kills'
-ESTIMATED_ROUNDS_PER_MATCH = 40  # Approx 2 maps * 20 rounds
+
+
+def expected_rounds(game: str = 'VALORANT', series_format: str = 'BO3', map_number: int | None = None) -> float:
+    """Bo-aware / game-aware expectancy used to scale KPR → total kills."""
+    game = (game or 'VALORANT').upper()
+    fmt = (series_format or 'BO3').upper()
+    if map_number and map_number > 0:
+        return 1.0 if game == 'COD' else 22.0
+    expected_maps = 1.0 if fmt == 'BO1' else 2.4 if fmt == 'BO3' else 3.6
+    if game == 'COD':
+        return expected_maps
+    return expected_maps * 22.0
+
+
+# Back-compat alias (series VAL Bo3 expectancy ≈ 52.8, not flat 40)
+ESTIMATED_ROUNDS_PER_MATCH = expected_rounds('VALORANT', 'BO3')
 
 
 def parse_args() -> argparse.Namespace:
@@ -361,10 +376,16 @@ def run_once(args, token, db_url, model, feature_cols, feature_cache):
                 skipped_players += 1
                 continue
 
-            # Convert rate (kills/round) to match total (kills/match)
-            # Model predicts kills_per_round (e.g. 0.75).
-            # We project for a full match (approx 40 rounds for Bo3).
-            projection_value = max(0.0, round(pred * ESTIMATED_ROUNDS_PER_MATCH, 1))
+            # Convert rate (kills/round) to series total — Bo-aware, not flat 40
+            series_fmt = str(m.get('number_of_games') or m.get('format') or 'BO3')
+            if series_fmt in ('1', 'bo1', 'BO1'):
+                series_fmt = 'BO1'
+            elif series_fmt in ('5', 'bo5', 'BO5'):
+                series_fmt = 'BO5'
+            else:
+                series_fmt = 'BO3'
+            rounds = expected_rounds('VALORANT', series_fmt)
+            projection_value = max(0.0, round(pred * rounds, 1))
             
             if args.verbose:
                 log(f'Predict {pname} match={match_id} rate={pred:.2f} val={projection_value}')

@@ -1,11 +1,22 @@
 generator client {
-  provider        = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
+}
+
+enum Game {
+  VALORANT
+  COD
+}
+
+enum SeriesFormat {
+  BO1
+  BO3
+  BO5
 }
 
 enum MatchStatus {
@@ -15,85 +26,176 @@ enum MatchStatus {
   CANCELED
 }
 
+enum MapStatus {
+  SCHEDULED
+  LIVE
+  COMPLETED
+  CANCELED
+  SKIPPED
+}
+
+enum PropScope {
+  SERIES
+  MAP
+}
+
+enum EntryStatus {
+  LOCKED
+  LIVE
+  SETTLED
+  VOID
+}
+
+enum LedgerReason {
+  STARTING_GRANT
+  ENTRY_WAGER
+  ENTRY_PAYOUT
+  ENTRY_REFUND
+  DAILY_DRIP
+  ADMIN_ADJUST
+}
+
 model User {
-  id          String    @id @unique
-  email       String    @unique
-  username    String?
-  balance     Float     @default(1000.00)
-  createdAt   DateTime  @default(now())
-  entries     Entry[]
+  id        String        @id
+  email     String        @unique
+  username  String?
+  balance   Float         @default(100000)
+  createdAt DateTime      @default(now())
+  entries   Entry[]
+  ledger    LedgerEntry[]
 }
 
 model Player {
-  id            String @id @unique
-  name          String
-  team          String
-  imageUrl      String? // Player portrait URL
-  projections   PlayerProjection[]
-  stats         PlayerMatchStat[]
-}
-
-model PlayerProjection {
-  id        String    @id @default(cuid())
-  playerId  String
-  player    Player    @relation(fields: [playerId], references: [id])
-  statType  String    // e.g., "Kills", "Headshot %"
-  value     Float     // The projected value, e.g., 18.5
-  matchId   String
-  match     Match?    @relation(fields: [matchId], references: [id])
-  createdAt DateTime  @default(now())
-  picks     Pick[]
-
-  @@unique([playerId, statType, matchId])
-}
-
-model Entry {
-  id          String    @id @default(cuid())
-  userId      String
-  user        User      @relation(fields: [userId], references: [id])
-  wager       Float
-  payout      Float
-  isWin       Boolean?
-  createdAt   DateTime  @default(now())
-  picks       Pick[]
-}
-
-model Pick {
-  id                  String            @id @default(cuid())
-  entryId             String
-  entry               Entry             @relation(fields: [entryId], references: [id], onDelete: Cascade)
-  playerProjectionId  String
-  playerProjection    PlayerProjection  @relation(fields: [playerProjectionId], references: [id])
-  pickType            String            // "MORE" or "LESS"
-  result              Float?
-  isWin               Boolean?
-}
-
-model PlayerMatchStat {
-  id         String   @id @default(cuid())
-  playerId   String
-  player     Player   @relation(fields: [playerId], references: [id])
-  matchId    String
-  match      Match?   @relation(fields: [matchId], references: [id])
-  kills      Float
-  createdAt  DateTime @default(now())
-
-  @@unique([playerId, matchId])
-}
-
-model Match {
-  id          String        @id @unique
-  scheduledAt DateTime
-  status      MatchStatus   @default(SCHEDULED)
-  map         String?
-  event       String?
-  teamA       String?
-  teamB       String?
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
+  id          String             @id
+  name        String
+  team        String
+  imageUrl    String?
+  game        Game               @default(VALORANT)
+  role        String?
   projections PlayerProjection[]
   stats       PlayerMatchStat[]
 
-  @@index([status, scheduledAt])
+  @@index([game, team])
+  @@index([name])
+}
+
+model Match {
+  id             String             @id
+  game           Game               @default(VALORANT)
+  format         SeriesFormat       @default(BO3)
+  scheduledAt    DateTime
+  status         MatchStatus        @default(SCHEDULED)
+  lockAt         DateTime?
+  event          String?
+  teamA          String?
+  teamB          String?
+  mapsCompleted  Int                @default(0)
+  scoreA         Int                @default(0)
+  scoreB         Int                @default(0)
+  createdAt      DateTime           @default(now())
+  updatedAt      DateTime           @updatedAt
+  maps           MatchMap[]
+  projections    PlayerProjection[]
+  stats          PlayerMatchStat[]
+
+  @@index([game, status, scheduledAt])
   @@index([scheduledAt])
+}
+
+model MatchMap {
+  id        String    @id @default(cuid())
+  matchId   String
+  match     Match     @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  mapNumber Int
+  name      String?
+  status    MapStatus @default(SCHEDULED)
+  scoreA    Int?
+  scoreB    Int?
+  winner    String?
+
+  @@unique([matchId, mapNumber])
+  @@index([matchId, status])
+}
+
+model PlayerProjection {
+  id           String    @id @default(cuid())
+  playerId     String
+  player       Player    @relation(fields: [playerId], references: [id])
+  matchId      String
+  match        Match     @relation(fields: [matchId], references: [id], onDelete: Cascade)
+  statType     String
+  value        Float
+  scope        PropScope @default(SERIES)
+  mapNumber    Int       @default(0) // 0 = series-level; 1..N = map props
+  modelVersion String?
+  sigma        Float?
+  isOpen       Boolean   @default(true)
+  createdAt    DateTime  @default(now())
+  picks        Pick[]
+
+  @@unique([playerId, statType, matchId, scope, mapNumber])
+  @@index([matchId, isOpen])
+  @@index([statType])
+}
+
+model Entry {
+  id        String      @id @default(cuid())
+  userId    String
+  user      User        @relation(fields: [userId], references: [id])
+  wager     Float
+  payout    Float
+  status    EntryStatus @default(LOCKED)
+  isWin     Boolean?
+  lockedAt  DateTime    @default(now())
+  settledAt DateTime?
+  createdAt DateTime    @default(now())
+  picks     Pick[]
+
+  @@index([userId, createdAt])
+  @@index([status])
+}
+
+model Pick {
+  id                 String           @id @default(cuid())
+  entryId            String
+  entry              Entry            @relation(fields: [entryId], references: [id], onDelete: Cascade)
+  playerProjectionId String
+  playerProjection   PlayerProjection @relation(fields: [playerProjectionId], references: [id])
+  pickType           String
+  lineAtLock         Float
+  result             Float?
+  isWin              Boolean?
+}
+
+model PlayerMatchStat {
+  id        String   @id @default(cuid())
+  playerId  String
+  player    Player   @relation(fields: [playerId], references: [id])
+  matchId   String
+  match     Match?   @relation(fields: [matchId], references: [id])
+  mapNumber Int?
+  kills     Float    @default(0)
+  deaths    Float?
+  assists   Float?
+  acs       Float?
+  adr       Float?
+  hsPercent Float?
+  damage    Float?
+  createdAt DateTime @default(now())
+
+  @@unique([playerId, matchId, mapNumber])
+  @@index([playerId])
+}
+
+model LedgerEntry {
+  id        String       @id @default(cuid())
+  userId    String
+  user      User         @relation(fields: [userId], references: [id])
+  delta     Float
+  balance   Float
+  reason    LedgerReason
+  refId     String?
+  createdAt DateTime     @default(now())
+
+  @@index([userId, createdAt])
 }

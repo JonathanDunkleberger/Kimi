@@ -26,6 +26,8 @@ const TEAM_COLORS: Record<string, string> = {
   'MIBR': '#000000',
   'G2': '#EE2D23', 'G2 ESPORTS': '#EE2D23',
   'EG': '#0C2340', 'EVIL GENIUSES': '#0C2340',
+  'OPTIC': '#99FF33', 'OPTIC TEXAS': '#99FF33', 'OPTC': '#99FF33',
+  'LAT': '#F15A29', 'LA THIEVES': '#F15A29', 'THIEVES': '#F15A29',
 
   // Pacific
   'PRX': '#8000FF', 'PAPER REX': '#8000FF',

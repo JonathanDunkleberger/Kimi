@@ -91,8 +91,13 @@ def select_features(df: pd.DataFrame, target_col: str) -> list[str]:
     feats = [c for c in NUMERIC_CANDIDATES if c in df.columns and c != target_col]
     # Remove high leakage columns if predicting kills_per_round (e.g., kills, deaths) -> keep context but not raw kills when target derived from kills?
     if target_col == 'kills_per_round':
-        # Remove raw kills to prevent trivial derivation
-        feats = [f for f in feats if f not in ('kills','deaths')]
+        # Remove same-match box score / rate stats (classic leakage → R²≈1.0)
+        leak = {
+            'kills', 'deaths', 'assists', 'kpr', 'apr', 'adr', 'acs', 'rating',
+            'first_kills', 'first_deaths', 'kdr', 'kad', 'fk_fd_diff',
+            'fkpr', 'fdpr', 'hs_rate', 'clutch_rate', 'rounds_played',
+        }
+        feats = [f for f in feats if f not in leak]
     return feats
 
 

@@ -1,6 +1,6 @@
 services:
   # --------------------------------------------------------------------------------
-  # 1. Web Service: Kimi API (Node.js)
+  # 1. Web Service: Esports Props API (Node.js)
   # --------------------------------------------------------------------------------
   - type: web
     name: kimi-api
@@ -14,6 +14,8 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
+      - key: USE_DEMO
+        value: "1"
       - key: DATABASE_URL
         sync: false
       - key: CLERK_SECRET_KEY
