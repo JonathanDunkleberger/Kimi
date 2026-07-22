@@ -1,16 +1,17 @@
 services:
   # --------------------------------------------------------------------------------
   # 1. Web Service: Esports Props API (Node.js)
+  #    Canonical service name after Blueprint: kimi-api-9avy
   # --------------------------------------------------------------------------------
   - type: web
     name: kimi-api
     env: node
     plan: free
+    region: oregon
     rootDir: .
-    # Build the API package specifically
     buildCommand: corepack enable && corepack prepare pnpm@9.12.3 --activate && pnpm install --filter @app/api... --prod=false && pnpm --filter @app/api build
-    # Start the compiled Node.js app
     startCommand: pnpm --filter @app/api start
+    healthCheckPath: /health
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
@@ -24,10 +25,11 @@ services:
         sync: false
       - key: ADMIN_TOKEN
         generateValue: true
+      - key: PANDA_SCORE_TOKEN
+        sync: false
 
   # --------------------------------------------------------------------------------
-  # 2. Cron Job: Judge (Python)
-  #    Runs every minute to settle bets.
+  # 2. Cron Job: Judge — settle completed props
   # --------------------------------------------------------------------------------
   - type: cron
     name: judge-job
@@ -35,24 +37,30 @@ services:
     plan: starter
     region: oregon
     rootDir: .
-    schedule: "*/1 * * * *"
+    schedule: "*/15 * * * *"
     buildCommand: pip install -r packages/api/ml/requirements.txt
     startCommand: python packages/api/ml/judge.py
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: USE_DEMO
+        value: "1"
+      - key: CRON_ENABLED
+        value: "1"
       - key: DATABASE_URL
         sync: false
       - key: PANDA_SCORE_TOKEN
         sync: false
       - key: ADMIN_TOKEN
-        sync: false
+        fromService:
+          type: web
+          name: kimi-api
+          envVarKey: ADMIN_TOKEN
       - key: INTERNAL_API_BASE
-        value: http://kimi-api:10000
+        value: https://kimi-api-9avy.onrender.com
 
   # --------------------------------------------------------------------------------
-  # 3. Cron Job: Odds Setter (Python)
-  #    Runs every 5 minutes to update projections.
+  # 3. Cron Job: Odds Setter — proprietary lines
   # --------------------------------------------------------------------------------
   - type: cron
     name: odds-setter-job
@@ -60,12 +68,16 @@ services:
     plan: starter
     region: oregon
     rootDir: .
-    schedule: "*/5 * * * *"
+    schedule: "*/30 * * * *"
     buildCommand: pip install -r packages/api/ml/requirements.txt
-    startCommand: python packages/api/ml/odds_setter.py
+    startCommand: python packages/api/ml/odds_setter.py --limit-matches 25
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: USE_DEMO
+        value: "1"
+      - key: CRON_ENABLED
+        value: "1"
       - key: DATABASE_URL
         sync: false
       - key: PANDA_SCORE_TOKEN

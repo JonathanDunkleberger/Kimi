@@ -407,14 +407,20 @@ def main():
     print("Starting odds_setter...")
     load_dotenv()  # optional .env
     args = parse_args()
+
+    # Demo / disabled mode: succeed quietly so Render doesn't page on missing live config.
+    if os.getenv('CRON_ENABLED', '1') == '0' or os.getenv('USE_DEMO') == '1':
+        log('Skipping odds_setter (CRON_ENABLED=0 or USE_DEMO=1)')
+        return
+
     token = args.token or os.getenv('PANDA_SCORE_TOKEN') or os.getenv('PANDASCORE_TOKEN')
     if not token:
-        log('Missing PandaScore token (--token or PANDA_SCORE_TOKEN env)', error=True)
-        sys.exit(1)
+        log('Missing PandaScore token — skipping run', error=True)
+        return
     db_url = os.getenv('DATABASE_URL')
     if not db_url:
-        log('DATABASE_URL not set in environment', error=True)
-        sys.exit(1)
+        log('DATABASE_URL not set — skipping run', error=True)
+        return
 
     try:
         model, feature_cols, meta = load_model(args.target)

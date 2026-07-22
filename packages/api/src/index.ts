@@ -1,16 +1,16 @@
 import 'dotenv/config';
 import express, { Request, Response } from 'express';
 import cors from 'cors';
-import { resolveAuth } from './lib/auth';
-import { getMultiplier, MIN_PICKS, MAX_PICKS, STARTING_BALANCE } from './lib/multipliers';
-import { availabilityLabel, isProjectionAvailable } from './lib/availability';
+import { resolveAuth } from './lib/auth.js';
+import { getMultiplier, MIN_PICKS, MAX_PICKS, STARTING_BALANCE } from './lib/multipliers.js';
+import { availabilityLabel, isProjectionAvailable } from './lib/availability.js';
 import {
   DEMO_PLAYERS,
   DEMO_MATCHES,
   DEMO_LEADERBOARD,
   buildDemoProjections,
   buildDemoStats,
-} from './demo/slate';
+} from './demo/slate.js';
 
 /**
  * Demo mode is the default for local/side-project velocity.

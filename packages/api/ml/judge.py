@@ -217,19 +217,25 @@ def run_once(args, token, admin_token, api_base, db_url):
 def main():
     load_dotenv()
     args = parse_args()
+
+    # Demo / disabled mode: succeed quietly so Render doesn't page on missing live config.
+    if os.getenv('CRON_ENABLED', '1') == '0' or os.getenv('USE_DEMO') == '1':
+        log('Skipping judge (CRON_ENABLED=0 or USE_DEMO=1)')
+        return
+
     token = os.getenv('PANDA_SCORE_TOKEN') or os.getenv('PANDASCORE_TOKEN')
     if not token:
-        log('Missing PandaScore token', error=True)
-        sys.exit(1)
+        log('Missing PandaScore token — skipping run', error=True)
+        return
     admin_token = os.getenv('ADMIN_TOKEN')
     if not admin_token:
-        log('Missing ADMIN_TOKEN for settlements auth', error=True)
-        sys.exit(1)
+        log('Missing ADMIN_TOKEN for settlements auth — skipping run', error=True)
+        return
     api_base = os.getenv('INTERNAL_API_BASE', 'http://localhost:4000')
     db_url = os.getenv('DATABASE_URL')
     if not db_url:
-        log('DATABASE_URL missing', error=True)
-        sys.exit(1)
+        log('DATABASE_URL missing — skipping run', error=True)
+        return
 
     if args.loop:
         log(f"Starting judge in loop mode (interval={args.interval}s)")
