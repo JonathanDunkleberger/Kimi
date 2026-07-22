@@ -1,67 +1,65 @@
 import { useLeaderboard } from "@/lib/api";
-import { formatCrowns } from "@/lib/multipliers";
+import { formatCredits } from "@/lib/multipliers";
 
 export default function LeaderboardPage() {
   const { rows, period, isLoading } = useLeaderboard();
 
   return (
-    <div className="animate-fade-rise space-y-6">
-      <section>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
-          Last {period || "7d"} · Credits won
-        </p>
-        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+    <div className="animate-fade space-y-3">
+      <div className="flex items-baseline gap-3">
+        <h1 className="font-display text-lg font-extrabold uppercase tracking-tight text-foreground">
           Leaderboard
         </h1>
-      </section>
+        <span className="text-[11px] font-semibold text-[var(--text-faint)]">
+          Last {period || "7d"} · Credits won
+        </span>
+      </div>
 
-      {isLoading && <p className="text-sm text-muted-foreground">Loading ranks…</p>}
+      {isLoading && (
+        <p className="text-sm text-[var(--text-muted)]">Loading ranks…</p>
+      )}
 
-      <div className="space-y-3">
+      <div className="overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--card)]">
         {rows.map((r) => (
           <div
             key={r.userId}
-            className={`flex items-center gap-4 rounded-2xl border border-border bg-[var(--panel)] px-4 py-4 ${
-              r.rank <= 3 ? "glow-gold" : ""
-            }`}
+            className="flex items-center gap-3 border-b border-[var(--line)]/50 px-3 py-2.5 last:border-0"
           >
             <div
-              className={`flex h-10 w-10 items-center justify-center rounded-full font-display text-lg font-extrabold ${
+              className={`num flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-black ${
                 r.rank === 1
-                  ? "bg-[var(--lime)] text-primary-foreground"
-                  : r.rank === 2
-                  ? "bg-white/80 text-[#10141c]"
-                  : r.rank === 3
-                  ? "bg-[var(--coral)]/80 text-white"
-                  : "bg-[var(--panel-2)] text-muted-foreground"
+                  ? "bg-[var(--accent)] text-[var(--accent-ink)]"
+                  : r.rank <= 3
+                  ? "bg-[var(--card-2)] text-foreground"
+                  : "bg-transparent text-[var(--text-faint)]"
               }`}
             >
               {r.rank}
             </div>
             <div className="min-w-0 flex-1">
-              <p className="truncate font-display text-lg font-bold text-foreground">
+              <p className="truncate text-[13px] font-bold text-foreground">
                 {r.username}
               </p>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-[11px] text-[var(--text-muted)]">
                 {r.entries} entries · {(r.winRate * 100).toFixed(0)}% hit rate
               </p>
             </div>
-            <div className="text-right">
-              <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-                Profit
-              </p>
-              <p className="font-display text-xl font-extrabold text-[var(--win)]">
-                +{formatCrowns(r.profit)}
-              </p>
-            </div>
+            <p className="num text-[15px] font-black text-[var(--win)]">
+              +{formatCredits(r.profit)}
+            </p>
           </div>
         ))}
       </div>
 
       {!isLoading && rows.length === 0 && (
-        <p className="py-16 text-center text-muted-foreground">
-          No ranks yet — submit a lineup to climb.
-        </p>
+        <div className="rounded-xl border border-[var(--line)] bg-[var(--card)] py-14 text-center">
+          <p className="font-display text-sm font-bold text-foreground">
+            No ranks yet
+          </p>
+          <p className="mt-1 text-xs text-[var(--text-muted)]">
+            Submit a lineup to climb.
+          </p>
+        </div>
       )}
     </div>
   );

@@ -1,89 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Syne:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&family=Figtree:wght@400;500;600;700;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 @plugin "tailwindcss-animate";
 
 /*
-  Esports Props — PrizePicks-inspired board
-  Cool slate + sharp lime/coral action colors.
-  No Tolkien greens, no purple AI sludge, no neon carnival.
+  Esports Props — DFS picks board.
+  Near-black surfaces, hairline borders, sharp lime action color.
+  Dark only. No gradients, no glow stacks, no serif anywhere.
 */
 
 :root {
-  --ink: #07090d;
-  --slate: #0e1118;
-  --panel: #151922;
-  --panel-2: #1c212c;
-  --line: rgba(255, 255, 255, 0.08);
-  --text: #f3f5f8;
-  --muted: #8b93a7;
-  --lime: #c8f135;
-  --lime-dim: #9bbb1f;
-  --coral: #ff5a5f;
-  --sky: #5ec8ff;
-  --live: #ff3b4a;
-  --win: #3dd68c;
+  color-scheme: dark;
 
-  --background: var(--ink);
+  /* Surfaces */
+  --bg: #0a0a0b;
+  --bg-elev: #101013;
+  --card: #17181c;
+  --card-2: #1f2026;
+  --line: rgba(255, 255, 255, 0.07);
+  --line-strong: rgba(255, 255, 255, 0.14);
+
+  /* Text */
+  --text: #f5f6f7;
+  --text-muted: #9ca0ab;
+  --text-faint: #63666f;
+
+  /* Action */
+  --accent: #c6ff3a;
+  --accent-hover: #d4ff66;
+  --accent-ink: #101400;
+  --less: #ff4d5a;
+  --less-ink: #ffffff;
+
+  /* Status */
+  --live: #ff3b4a;
+  --win: #26d07c;
+
+  /* shadcn token mapping */
+  --background: var(--bg);
   --foreground: var(--text);
-  --card: var(--panel);
   --card-foreground: var(--text);
-  --popover: var(--panel-2);
+  --popover: var(--card-2);
   --popover-foreground: var(--text);
-  --primary: var(--lime);
-  --primary-foreground: #10140a;
-  --secondary: var(--panel-2);
+  --primary: var(--accent);
+  --primary-foreground: var(--accent-ink);
+  --secondary: var(--card-2);
   --secondary-foreground: var(--text);
-  --muted: #121620;
-  --muted-foreground: var(--muted);
-  --accent: var(--panel-2);
-  --accent-foreground: var(--text);
-  --destructive: var(--coral);
+  --muted: #121316;
+  --muted-foreground: var(--text-muted);
+  --accent-token: var(--card-2);
+  --destructive: var(--less);
   --destructive-foreground: #fff;
   --border: var(--line);
   --input: rgba(255, 255, 255, 0.06);
-  --ring: var(--lime);
-  --radius: 1rem;
+  --ring: var(--accent);
+  --radius: 0.875rem;
 
-  /* Compat aliases used across older classnames */
-  --gold: var(--lime);
-  --gold-bright: #d8ff4a;
-  --leaf: #3dd68c;
-  --leaf-bright: #5aefa5;
-  --ember: var(--coral);
-  --frost: var(--sky);
-  --parchment: var(--text);
-  --forest: var(--slate);
-  --moss: var(--panel-2);
-  --blood: var(--live);
-
-  --font-display: 'Syne', system-ui, sans-serif;
-  --font-sans: 'Figtree', system-ui, sans-serif;
-  --font-serif: var(--font-sans);
-}
-
-.dark,
-[data-theme='dark'] {
-  color-scheme: dark;
-}
-
-[data-theme='light'] {
-  --ink: #f4f6fa;
-  --slate: #eef1f6;
-  --panel: #ffffff;
-  --panel-2: #f0f3f8;
-  --line: rgba(15, 20, 30, 0.1);
-  --text: #10141c;
-  --muted: #5c6578;
-  --background: #f4f6fa;
-  --foreground: #10141c;
-  --card: #ffffff;
-  --card-foreground: #10141c;
-  --muted-foreground: #5c6578;
-  --border: rgba(15, 20, 30, 0.1);
-  --primary-foreground: #10140a;
+  --ff-display: 'Archivo', 'Segoe UI', system-ui, sans-serif;
+  --ff-sans: 'Figtree', 'Segoe UI', system-ui, sans-serif;
 }
 
 @theme inline {
@@ -99,32 +73,18 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent-token);
+  --color-accent-foreground: var(--foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-gold: var(--gold);
-  --color-gold-bright: var(--gold-bright);
-  --color-leaf: var(--leaf);
-  --color-leaf-bright: var(--leaf-bright);
-  --color-ember: var(--ember);
-  --color-frost: var(--frost);
-  --color-parchment: var(--parchment);
-  --color-ink: var(--ink);
-  --color-forest: var(--forest);
-  --color-moss: var(--moss);
-  --color-lime: var(--lime);
-  --color-coral: var(--coral);
-  --color-sky: var(--sky);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  --font-display: var(--font-display);
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-display: var(--ff-display);
+  --font-sans: var(--ff-sans);
 }
 
 @layer base {
@@ -136,79 +96,72 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-sans);
-    background-image:
-      radial-gradient(ellipse 90% 55% at 0% -10%, rgba(200, 241, 53, 0.07), transparent 50%),
-      radial-gradient(ellipse 70% 45% at 100% 0%, rgba(94, 200, 255, 0.06), transparent 48%),
-      linear-gradient(180deg, #07090d 0%, #0b0e14 50%, #07090d 100%);
-    background-attachment: fixed;
+    font-family: var(--ff-sans);
     min-height: 100vh;
   }
   h1, h2, h3, .font-display {
-    font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    font-family: var(--ff-display);
+    letter-spacing: -0.01em;
   }
-  .font-serif {
-    font-family: var(--font-sans);
+  .num {
+    font-family: var(--ff-display);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
   }
 }
 
 @layer utilities {
-  .text-gold {
-    color: var(--gold-bright);
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  .bg-hearth {
-    background: linear-gradient(165deg, rgba(21, 25, 34, 0.98) 0%, rgba(28, 33, 44, 0.96) 100%);
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
-  .border-filigree {
+  .hairline {
     border: 1px solid var(--line);
-  }
-  .glow-gold {
-    box-shadow: 0 0 0 1px rgba(200, 241, 53, 0.25), 0 12px 40px rgba(0, 0, 0, 0.4);
-  }
-  .rune-rule {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(200, 241, 53, 0.45), transparent);
-  }
-  .surface-card {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
   }
 }
 
+/* Prop card select feedback */
 .prop-card {
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-}
-.prop-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(200, 241, 53, 0.35);
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .prop-card.is-selected {
-  border-color: rgba(200, 241, 53, 0.7);
-  box-shadow: 0 0 0 1px rgba(200, 241, 53, 0.35), 0 16px 40px rgba(0, 0, 0, 0.45);
+  border-color: var(--accent);
 }
-
-@keyframes stamp-in {
-  0% { transform: scale(1.15); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-.animate-stamp {
-  animation: stamp-in 0.35s ease both;
+.prop-card:active {
+  transform: scale(0.985);
 }
 
 @keyframes pulse-live {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  50% { opacity: 0.35; }
 }
 .live-dot {
   animation: pulse-live 1.2s ease-in-out infinite;
 }
 
-@keyframes fade-rise {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
-.animate-fade-rise {
-  animation: fade-rise 0.35s ease both;
+.animate-slide-up {
+  animation: slide-up 0.2s ease both;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 8px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+.animate-toast {
+  animation: toast-in 0.18s ease both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade {
+  animation: fade-in 0.25s ease both;
 }

@@ -39,7 +39,7 @@ function acsOrDmg(p: StatRow): number {
 }
 
 export default function StatsPage() {
-  const [game, setGame] = React.useState<"ALL" | "VALORANT" | "COD">("VALORANT");
+  const [game, setGame] = React.useState<"VALORANT" | "COD">("VALORANT");
   const [sortKey, setSortKey] = React.useState<SortKey>("rating");
   const [sortDir, setSortDir] = React.useState<"desc" | "asc">("desc");
   const { players, isLoading, updatedAt, sources } = useStats(game);
@@ -75,114 +75,121 @@ export default function StatsPage() {
       <button
         type="button"
         onClick={() => toggleSort(k)}
-        className={`inline-flex items-center gap-1 font-semibold uppercase tracking-[0.15em] ${
-          active ? "text-[var(--lime)]" : "text-muted-foreground"
+        className={`inline-flex items-center gap-0.5 text-[10px] font-bold uppercase tracking-wider ${
+          active ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
         }`}
       >
         {label}
-        {active ? (sortDir === "desc" ? " ↓" : " ↑") : ""}
+        {active ? (sortDir === "desc" ? "↓" : "↑") : ""}
       </button>
     );
   }
 
   return (
-    <div className="animate-fade-rise space-y-6">
-      <section>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
-          Player stats · {sourceLabel(sources)} · updated {formatUpdated(updatedAt)}
-        </p>
-        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+    <div className="animate-fade space-y-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <h1 className="mr-2 font-display text-lg font-extrabold uppercase tracking-tight text-foreground">
           Stats
         </h1>
-      </section>
-
-      <div className="grid grid-cols-3 gap-2 rounded-2xl border border-border bg-[var(--panel)] p-1.5 sm:max-w-md">
         {(
           [
             { id: "VALORANT" as const, label: "Valorant" },
-            { id: "COD" as const, label: "CoD" },
-            { id: "ALL" as const, label: "All" },
+            { id: "COD" as const, label: "Call of Duty" },
           ] as const
         ).map((tab) => (
           <button
             key={tab.id}
             type="button"
             onClick={() => setGame(tab.id)}
-            className={`rounded-xl px-3 py-2.5 text-xs font-extrabold uppercase tracking-wide transition ${
+            className={`h-9 rounded-lg px-4 font-display text-xs font-extrabold uppercase tracking-wide transition-colors ${
               game === tab.id
-                ? "bg-[var(--lime)] text-primary-foreground"
-                : "text-muted-foreground hover:text-foreground"
+                ? "bg-[var(--accent)] text-[var(--accent-ink)]"
+                : "bg-[var(--card)] text-[var(--text-muted)] hover:text-foreground"
             }`}
           >
             {tab.label}
           </button>
         ))}
+        <span className="ml-auto hidden text-[11px] text-[var(--text-faint)] sm:block">
+          {sourceLabel(sources)} · updated {formatUpdated(updatedAt)}
+        </span>
       </div>
 
-      {isLoading && <p className="text-sm text-muted-foreground">Loading stats…</p>}
-
-      {!isLoading && sorted.length === 0 && (
-        <p className="text-sm text-muted-foreground">No stats for this filter yet.</p>
+      {isLoading && (
+        <p className="text-sm text-[var(--text-muted)]">Loading stats…</p>
       )}
 
-      <div className="overflow-x-auto rounded-2xl border border-border bg-[var(--panel)]">
-        <table className="w-full min-w-[720px] text-left text-sm">
+      {!isLoading && sorted.length === 0 && (
+        <p className="text-sm text-[var(--text-muted)]">
+          No stats for this filter yet.
+        </p>
+      )}
+
+      <div className="overflow-x-auto rounded-xl border border-[var(--line)] bg-[var(--card)]">
+        <table className="w-full min-w-[640px] text-left text-sm">
           <thead>
-            <tr className="border-b border-border text-[10px] uppercase tracking-[0.15em]">
-              <th className="px-4 py-3 font-semibold text-muted-foreground">#</th>
-              <th className="px-4 py-3 font-semibold text-muted-foreground">Player</th>
-              <th className="px-4 py-3 font-semibold text-muted-foreground">Game</th>
-              <th className="px-4 py-3">
+            <tr className="border-b border-[var(--line)]">
+              <th className="px-3 py-2.5 text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                #
+              </th>
+              <th className="px-3 py-2.5 text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                Player
+              </th>
+              <th className="px-3 py-2.5">
                 <SortBtn label="Maps" k="maps" />
               </th>
-              <th className="px-4 py-3">
-                <SortBtn label="K / D" k="kd" />
+              <th className="px-3 py-2.5">
+                <SortBtn label="K/D" k="kd" />
               </th>
-              <th className="px-4 py-3">
+              <th className="px-3 py-2.5">
                 <SortBtn label="Rating" k="rating" />
               </th>
-              <th className="px-4 py-3">
-                <SortBtn label="ACS / DMG" k="acsDmg" />
+              <th className="px-3 py-2.5">
+                <SortBtn label={game === "COD" ? "DMG" : "ACS"} k="acsDmg" />
               </th>
-              <th className="px-4 py-3 font-semibold text-muted-foreground">HS%</th>
+              <th className="px-3 py-2.5 text-[10px] font-bold uppercase tracking-wider text-[var(--text-muted)]">
+                HS%
+              </th>
             </tr>
           </thead>
           <tbody>
             {sorted.map((p, i) => (
               <tr
                 key={p.playerId}
-                className="border-b border-border/40 transition hover:bg-white/[0.03]"
+                className="border-b border-[var(--line)]/50 transition-colors last:border-0 hover:bg-white/[0.02]"
               >
-                <td className="px-4 py-3 font-display text-[var(--lime)]">{i + 1}</td>
-                <td className="px-4 py-3">
-                  <div className="flex items-center gap-3">
+                <td className="num px-3 py-2 text-xs font-bold text-[var(--text-faint)]">
+                  {i + 1}
+                </td>
+                <td className="px-3 py-2">
+                  <div className="flex items-center gap-2.5">
                     <PlayerAvatar
                       name={p.name}
                       team={p.team}
                       imageUrl={p.imageUrl}
-                      size={40}
+                      size={32}
                     />
                     <div>
-                      <div className="font-semibold text-foreground">{p.name}</div>
-                      <div className="text-xs text-muted-foreground">{p.team}</div>
+                      <div className="text-[13px] font-bold leading-tight text-foreground">
+                        {p.name}
+                      </div>
+                      <div className="text-[11px] text-[var(--text-muted)]">
+                        {p.team}
+                      </div>
                     </div>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-xs font-bold uppercase text-[var(--sky)]">
-                  {p.game === "COD" ? "CoD" : "VAL"}
+                <td className="num px-3 py-2 text-[13px]">{p.maps}</td>
+                <td className="num px-3 py-2 text-[13px] text-[var(--text-muted)]">
+                  {kd(p).toFixed(2)}
                 </td>
-                <td className="px-4 py-3 tabular-nums">{p.maps}</td>
-                <td className="px-4 py-3 tabular-nums text-muted-foreground">
-                  {p.kills} / {p.deaths}
-                  <span className="ml-1 text-[10px] text-muted-foreground/80">
-                    ({kd(p).toFixed(2)})
-                  </span>
-                </td>
-                <td className="px-4 py-3 font-display font-bold text-[var(--lime)]">
+                <td className="num px-3 py-2 text-[13px] font-black text-[var(--accent)]">
                   {p.rating.toFixed(2)}
                 </td>
-                <td className="px-4 py-3 tabular-nums">{p.acs ?? p.damage ?? "—"}</td>
-                <td className="px-4 py-3 tabular-nums">
+                <td className="num px-3 py-2 text-[13px]">
+                  {p.acs ?? p.damage ?? "—"}
+                </td>
+                <td className="num px-3 py-2 text-[13px] text-[var(--text-muted)]">
                   {p.hsPercent != null ? p.hsPercent.toFixed(1) : "—"}
                 </td>
               </tr>

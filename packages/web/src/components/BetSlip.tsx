@@ -1,7 +1,5 @@
 import React from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { useBetSlip } from "@/store/betSlipStore";
+import { useBetSlip, type Selection } from "@/store/betSlipStore";
 import { useAuth } from "@/lib/authClient";
 import { createEntry } from "@/lib/api";
 import {
@@ -9,29 +7,90 @@ import {
   MIN_PICKS,
   MAX_PICKS,
   MULTIPLIERS,
-  formatCrowns,
+  formatCredits,
 } from "@/lib/multipliers";
 import { PlayerAvatar } from "@/components/ui/PlayerAvatar";
-import { Trash2, X } from "lucide-react";
+import { X } from "lucide-react";
+
+const QUICK_AMOUNTS = [100, 500, 1000, 5000];
+
+function Leg({
+  s,
+  onToggle,
+  onRemove,
+}: {
+  s: Selection;
+  onToggle: (pickType: "MORE" | "LESS") => void;
+  onRemove: () => void;
+}) {
+  return (
+    <div className="flex items-center gap-2.5 rounded-lg bg-[var(--card-2)] p-2 pr-1.5">
+      <PlayerAvatar name={s.player} team={s.team} imageUrl={s.imageUrl} size={38} />
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-[13px] font-bold leading-tight text-foreground">
+          {s.player}
+        </p>
+        <p className="truncate text-[11px] text-[var(--text-muted)]">
+          <span className="num font-bold text-foreground">{s.value}</span>{" "}
+          {s.statType}
+          {s.scope === "MAP" ? ` · Map ${s.mapNumber}` : ""}
+        </p>
+      </div>
+      <div className="flex overflow-hidden rounded-md border border-[var(--line-strong)]">
+        <button
+          type="button"
+          onClick={() => onToggle("LESS")}
+          className={`h-7 w-11 text-[10px] font-extrabold uppercase transition-colors ${
+            s.pickType === "LESS"
+              ? "bg-[var(--less)] text-white"
+              : "bg-transparent text-[var(--text-muted)] hover:text-foreground"
+          }`}
+        >
+          Less
+        </button>
+        <button
+          type="button"
+          onClick={() => onToggle("MORE")}
+          className={`h-7 w-11 border-l border-[var(--line-strong)] text-[10px] font-extrabold uppercase transition-colors ${
+            s.pickType === "MORE"
+              ? "bg-[var(--accent)] text-[var(--accent-ink)]"
+              : "bg-transparent text-[var(--text-muted)] hover:text-foreground"
+          }`}
+        >
+          More
+        </button>
+      </div>
+      <button
+        type="button"
+        onClick={onRemove}
+        aria-label={`Remove ${s.player}`}
+        className="flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[var(--text-faint)] transition-colors hover:bg-white/5 hover:text-foreground"
+      >
+        <X className="h-3.5 w-3.5" />
+      </button>
+    </div>
+  );
+}
 
 export default function BetSlip({ embedded = false }: { embedded?: boolean }) {
-  const { selections, remove, clear, toggle } = useBetSlip();
+  const { selections, remove, clear, toggle, setSlipOpen } = useBetSlip();
   const { getToken, isSignedIn } = useAuth();
   const [wager, setWager] = React.useState("1000");
   const [submitting, setSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [success, setSuccess] = React.useState(false);
 
-  const multiplier = getMultiplier(selections.length);
+  const count = selections.length;
+  const multiplier = getMultiplier(count);
   const stake = Number(wager) || 0;
   const toWin = stake * multiplier;
-  const canSubmit = selections.length >= MIN_PICKS && stake > 0 && !submitting;
+  const canSubmit = count >= MIN_PICKS && stake > 0 && !submitting;
 
   const place = async () => {
     setError(null);
     setSuccess(false);
     if (!canSubmit) {
-      setError(`Add at least ${MIN_PICKS} picks`);
+      setError(`Pick at least ${MIN_PICKS} projections`);
       return;
     }
     setSubmitting(true);
@@ -50,7 +109,10 @@ export default function BetSlip({ embedded = false }: { embedded?: boolean }) {
       clear();
       setSuccess(true);
       window.dispatchEvent(new Event("entry-placed"));
-      setTimeout(() => setSuccess(false), 2500);
+      setTimeout(() => {
+        setSuccess(false);
+        setSlipOpen(false);
+      }, 1800);
     } catch (e: any) {
       setError(e?.message || "Failed to submit lineup");
     } finally {
@@ -58,164 +120,162 @@ export default function BetSlip({ embedded = false }: { embedded?: boolean }) {
     }
   };
 
-  const slots = Array.from({ length: MAX_PICKS }, (_, i) => selections[i] || null);
-
   return (
     <div
-      className={`overflow-hidden rounded-2xl border border-border bg-[var(--panel)] ${
-        embedded ? "" : "shadow-[0_16px_48px_rgba(0,0,0,0.35)]"
+      className={`flex flex-col overflow-hidden bg-[var(--bg-elev)] ${
+        embedded ? "" : "rounded-xl border border-[var(--line)]"
       }`}
     >
-      <div className="flex items-center justify-between border-b border-border px-4 py-3">
-        <div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
-            Lineup
-          </p>
-          <h2 className="font-display text-xl font-extrabold text-foreground">
-            {selections.length}/{MAX_PICKS} picks
-          </h2>
-        </div>
-        {selections.length > 0 && (
-          <Button variant="ghost" size="sm" onClick={clear} className="text-muted-foreground">
-            <Trash2 className="h-4 w-4" />
-          </Button>
+      {/* Header */}
+      <div
+        className={`flex items-center justify-between px-4 pb-2 pt-3.5 ${
+          embedded ? "pr-12" : ""
+        }`}
+      >
+        <h2 className="font-display text-sm font-extrabold uppercase tracking-wide text-foreground">
+          Current Lineup
+          <span className="ml-2 rounded bg-[var(--card-2)] px-1.5 py-0.5 num text-xs font-bold text-[var(--text-muted)]">
+            {count}/{MAX_PICKS}
+          </span>
+        </h2>
+        {count > 0 && (
+          <button
+            type="button"
+            onClick={clear}
+            className="text-[11px] font-bold uppercase tracking-wide text-[var(--text-faint)] transition-colors hover:text-[var(--less)]"
+          >
+            Clear
+          </button>
         )}
       </div>
 
-      {/* Multiplier ladder */}
-      <div className="grid grid-cols-5 gap-1 border-b border-border px-3 py-2.5">
+      {/* Multiplier ladder — always visible */}
+      <div className="grid grid-cols-5 gap-1 px-3 pb-3">
         {[2, 3, 4, 5, 6].map((n) => {
-          const active = selections.length === n;
-          const unlocked = selections.length >= n;
+          const active = count === n;
           return (
             <div
               key={n}
-              className={`rounded-lg px-1 py-1.5 text-center ${
+              className={`rounded-md border py-1.5 text-center transition-colors ${
                 active
-                  ? "bg-[var(--lime)] text-primary-foreground"
-                  : unlocked
-                  ? "bg-[var(--panel-2)] text-foreground"
-                  : "bg-transparent text-muted-foreground/50"
+                  ? "border-[var(--accent)] bg-[var(--accent)]/10"
+                  : "border-[var(--line)] bg-transparent"
               }`}
             >
-              <div className="text-[9px] font-bold uppercase tracking-wide">{n} picks</div>
-              <div className="font-display text-sm font-extrabold">{MULTIPLIERS[n]}x</div>
+              <div
+                className={`num text-sm font-black leading-none ${
+                  active ? "text-[var(--accent)]" : "text-foreground/70"
+                }`}
+              >
+                {MULTIPLIERS[n]}x
+              </div>
+              <div className="mt-0.5 text-[8px] font-bold uppercase tracking-wider text-[var(--text-faint)]">
+                {n} picks
+              </div>
             </div>
           );
         })}
       </div>
 
-      {selections.length === 0 ? (
-        <div className="space-y-2 px-5 py-10 text-center">
-          <p className="font-display text-lg font-bold text-foreground">Empty lineup</p>
-          <p className="text-sm text-muted-foreground">
-            Tap More or Less on the board. Stack 2–{MAX_PICKS} picks to unlock
-            payouts — play-money Credits only.
+      {/* Legs */}
+      {count === 0 ? (
+        <div className="border-t border-[var(--line)] px-6 py-10 text-center">
+          <p className="font-display text-sm font-bold text-foreground">
+            No picks yet
+          </p>
+          <p className="mt-1 text-xs leading-relaxed text-[var(--text-muted)]">
+            Tap <span className="font-bold text-foreground">More</span> or{" "}
+            <span className="font-bold text-foreground">Less</span> on{" "}
+            {MIN_PICKS}–{MAX_PICKS} projections to build a lineup.
           </p>
         </div>
       ) : (
-        <div className="max-h-[380px] space-y-2 overflow-y-auto px-3 py-3">
-          {slots.map((s, i) =>
-            s ? (
-              <div
-                key={s.projectionId}
-                className="flex items-center gap-3 rounded-xl border border-border/70 bg-[var(--panel-2)] p-2.5"
-              >
-                <PlayerAvatar
-                  name={s.player}
-                  team={s.team}
-                  imageUrl={s.imageUrl}
-                  size={44}
-                />
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2">
-                    <span className="truncate font-semibold text-foreground">{s.player}</span>
-                    <button
-                      type="button"
-                      onClick={() =>
-                        toggle({
-                          ...s,
-                          pickType: s.pickType === "MORE" ? "LESS" : "MORE",
-                        })
-                      }
-                      className={`rounded px-1.5 py-0.5 text-[10px] font-extrabold uppercase ${
-                        s.pickType === "MORE"
-                          ? "bg-[var(--lime)]/20 text-[var(--lime)]"
-                          : "bg-[var(--coral)]/20 text-[var(--coral)]"
-                      }`}
-                    >
-                      {s.pickType}
-                    </button>
-                  </div>
-                  <p className="truncate text-[11px] text-muted-foreground">
-                    {s.statType} {s.value}
-                    {s.scope === "MAP" ? ` · M${s.mapNumber}` : " · Series"}
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => remove(s.projectionId)}
-                  className="text-muted-foreground hover:text-foreground"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-            ) : (
-              <div
-                key={`empty-${i}`}
-                className="flex h-[58px] items-center justify-center rounded-xl border border-dashed border-border/60 text-xs text-muted-foreground/60"
-              >
-                Pick {i + 1}
-              </div>
-            )
-          )}
+        <div className="max-h-[300px] space-y-1.5 overflow-y-auto border-t border-[var(--line)] px-3 py-2.5">
+          {selections.map((s) => (
+            <Leg
+              key={s.projectionId}
+              s={s}
+              onToggle={(pickType) => {
+                if (pickType !== s.pickType) toggle({ ...s, pickType });
+              }}
+              onRemove={() => remove(s.projectionId)}
+            />
+          ))}
         </div>
       )}
 
-      <div className="space-y-3 border-t border-border px-4 py-4">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-muted-foreground">Multiplier</span>
-          <span className="font-display text-2xl font-extrabold text-[var(--lime)]">
-            {multiplier ? `${multiplier}x` : "—"}
-          </span>
-        </div>
-        <div>
-          <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-            Entry (Credits)
-          </label>
-          <Input
-            type="number"
-            min={1}
-            value={wager}
-            onChange={(e) => setWager(e.target.value)}
-            className="border-border bg-[var(--panel-2)] font-mono text-foreground"
-          />
-        </div>
-        <div className="flex items-center justify-between rounded-xl border border-[var(--lime)]/30 bg-[var(--lime)]/10 px-3 py-2.5">
-          <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
-            To Win
-          </span>
-          <span className="font-display text-2xl font-extrabold text-[var(--lime)]">
-            {formatCrowns(toWin)}
-          </span>
+      {/* Entry + submit */}
+      <div className="space-y-2.5 border-t border-[var(--line)] px-3 py-3">
+        <div className="grid grid-cols-2 gap-2">
+          <div className="rounded-lg border border-[var(--line-strong)] bg-[var(--card)] px-3 py-2">
+            <label
+              htmlFor="entry-amount"
+              className="block text-[9px] font-bold uppercase tracking-wider text-[var(--text-faint)]"
+            >
+              Entry
+            </label>
+            <input
+              id="entry-amount"
+              type="number"
+              min={1}
+              inputMode="numeric"
+              value={wager}
+              onChange={(e) => setWager(e.target.value)}
+              className="num w-full bg-transparent text-lg font-black text-foreground outline-none"
+            />
+          </div>
+          <div className="rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2">
+            <span className="block text-[9px] font-bold uppercase tracking-wider text-[var(--text-faint)]">
+              To Win
+            </span>
+            <span className="num block text-lg font-black text-[var(--accent)]">
+              {multiplier ? formatCredits(toWin) : "—"}
+            </span>
+          </div>
         </div>
 
-        {error && <p className="text-xs text-destructive">{error}</p>}
+        <div className="flex gap-1.5">
+          {QUICK_AMOUNTS.map((a) => (
+            <button
+              key={a}
+              type="button"
+              onClick={() => setWager(String(a))}
+              className={`num h-7 flex-1 rounded-md text-[11px] font-bold transition-colors ${
+                stake === a
+                  ? "bg-foreground text-background"
+                  : "bg-[var(--card-2)] text-[var(--text-muted)] hover:text-foreground"
+              }`}
+            >
+              {formatCredits(a)}
+            </button>
+          ))}
+        </div>
+
+        {error && (
+          <p className="rounded-md bg-[var(--less)]/10 px-2.5 py-1.5 text-xs font-semibold text-[var(--less)]">
+            {error}
+          </p>
+        )}
         {success && (
-          <p className="animate-stamp text-center font-display text-sm font-bold text-[var(--win)]">
-            Lineup locked in.
+          <p className="rounded-md bg-[var(--win)]/10 px-2.5 py-1.5 text-center text-xs font-bold text-[var(--win)]">
+            Lineup submitted — track it in Lineups.
           </p>
         )}
 
-        <Button
+        <button
+          type="button"
           disabled={!canSubmit}
           onClick={place}
-          className="h-12 w-full bg-[var(--lime)] font-display text-base font-extrabold tracking-wide text-primary-foreground hover:bg-[var(--gold-bright)]"
+          className="h-12 w-full rounded-lg bg-[var(--accent)] font-display text-sm font-extrabold uppercase tracking-wide text-[var(--accent-ink)] transition-colors hover:bg-[var(--accent-hover)] disabled:cursor-not-allowed disabled:bg-[var(--card-2)] disabled:text-[var(--text-faint)]"
         >
-          {submitting ? "Submitting…" : "Submit Lineup"}
-        </Button>
-        <p className="text-center text-[10px] text-muted-foreground">
-          Power play · all picks must hit · 2→3x · 3→5x · 4→10x · 5→20x · 6→25x
+          {submitting
+            ? "Submitting…"
+            : count < MIN_PICKS
+            ? `Pick ${MIN_PICKS - count} more`
+            : `Submit · ${multiplier}x payout`}
+        </button>
+        <p className="text-center text-[10px] text-[var(--text-faint)]">
+          Power play — all picks must hit. Play-money Credits.
         </p>
       </div>
     </div>

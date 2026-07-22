@@ -15,6 +15,6 @@ export function getMultiplier(pickCount: number): number {
   return MULTIPLIERS[pickCount] ?? 0;
 }
 
-export function formatCrowns(n: number): string {
+export function formatCredits(n: number): string {
   return new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(n);
 }

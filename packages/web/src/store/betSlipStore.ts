@@ -18,6 +18,8 @@ export type Selection = {
 type BetSlipState = {
   selections: Selection[];
   slipOpen: boolean;
+  /** Bumped every time an add is blocked because the lineup is full — drives the toast. */
+  capNotice: number;
   setSlipOpen: (open: boolean) => void;
   toggle: (sel: Selection) => void;
   remove: (projectionId: string) => void;
@@ -27,15 +29,16 @@ type BetSlipState = {
 export const useBetSlip = create<BetSlipState>((set) => ({
   selections: [],
   slipOpen: false,
+  capNotice: 0,
   setSlipOpen: (open) => set({ slipOpen: open }),
   toggle: (sel) =>
     set((s) => {
       const existing = s.selections.find((x) => x.projectionId === sel.projectionId);
       if (!existing) {
         if (s.selections.length >= MAX_PICKS) {
-          return { slipOpen: true };
+          return { capNotice: s.capNotice + 1 };
         }
-        return { selections: [...s.selections, sel], slipOpen: true };
+        return { selections: [...s.selections, sel] };
       }
       if (existing.pickType === sel.pickType) {
         return {
@@ -46,7 +49,6 @@ export const useBetSlip = create<BetSlipState>((set) => ({
         selections: s.selections.map((x) =>
           x.projectionId === sel.projectionId ? sel : x
         ),
-        slipOpen: true,
       };
     }),
   remove: (id) =>

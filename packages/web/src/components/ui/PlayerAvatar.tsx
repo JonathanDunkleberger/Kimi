@@ -35,7 +35,7 @@ export function PlayerAvatar({
         width: size,
         height: size,
         borderRadius: radius,
-        background: `linear-gradient(160deg, ${color}bb, #0e1118)`,
+        background: `linear-gradient(160deg, ${color}bb, #1f2026)`,
       }}
     >
       {showImg ? (

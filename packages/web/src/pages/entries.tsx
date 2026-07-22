@@ -1,14 +1,15 @@
 import React from "react";
 import dayjs from "dayjs";
+import Link from "next/link";
 import { useAuth } from "@/lib/authClient";
 import { useEntries } from "@/lib/api";
-import { formatCrowns } from "@/lib/multipliers";
+import { formatCredits } from "@/lib/multipliers";
 import { PlayerAvatar } from "@/components/ui/PlayerAvatar";
 
 export default function EntriesPage() {
   const { isSignedIn, getToken } = useAuth();
   const [token, setToken] = React.useState<string | undefined>();
-  const [tab, setTab] = React.useState<"LIVE" | "PAST">("LIVE");
+  const [tab, setTab] = React.useState<"OPEN" | "PAST">("OPEN");
 
   React.useEffect(() => {
     if (isSignedIn) getToken().then((t) => setToken(t || undefined));
@@ -17,126 +18,137 @@ export default function EntriesPage() {
 
   const { entries, isLoading, refresh } = useEntries(token);
 
-  const live = entries.filter((e) => e.isWin === null || e.isWin === undefined);
+  const open = entries.filter((e) => e.isWin === null || e.isWin === undefined);
   const past = entries.filter((e) => e.isWin !== null && e.isWin !== undefined);
-  const list = tab === "LIVE" ? live : past;
+  const list = tab === "OPEN" ? open : past;
 
   const pnl = past.reduce((acc, e) => {
     if (e.isWin) return acc + (e.payout - e.wager);
     return acc - e.wager;
   }, 0);
 
-  return (
-    <div className="animate-fade-rise space-y-6">
-      <section>
-        <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
-          Track your entries
-        </p>
-        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
-          My Lineups
-        </h1>
-      </section>
+  const TabBtn = ({ id, label }: { id: "OPEN" | "PAST"; label: string }) => (
+    <button
+      type="button"
+      onClick={() => setTab(id)}
+      className={`h-8 rounded-full px-4 text-[11px] font-bold uppercase tracking-wide transition-colors ${
+        tab === id
+          ? "bg-foreground text-background"
+          : "bg-[var(--card)] text-[var(--text-muted)] hover:text-foreground"
+      }`}
+    >
+      {label}
+    </button>
+  );
 
-      <div className="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          onClick={() => setTab("LIVE")}
-          className={`rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wide ${
-            tab === "LIVE"
-              ? "border-[var(--lime)]/50 bg-[var(--lime)]/15 text-[var(--lime)]"
-              : "border-border text-muted-foreground"
-          }`}
-        >
-          Live ({live.length})
-        </button>
-        <button
-          type="button"
-          onClick={() => setTab("PAST")}
-          className={`rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wide ${
-            tab === "PAST"
-              ? "border-[var(--lime)]/50 bg-[var(--lime)]/15 text-[var(--lime)]"
-              : "border-border text-muted-foreground"
-          }`}
-        >
-          Past ({past.length})
-        </button>
+  return (
+    <div className="animate-fade space-y-3">
+      <div className="flex items-center gap-1.5">
+        <h1 className="mr-2 font-display text-lg font-extrabold uppercase tracking-tight text-foreground">
+          Lineups
+        </h1>
+        <TabBtn id="OPEN" label={`Open (${open.length})`} />
+        <TabBtn id="PAST" label={`Past (${past.length})`} />
         <button
           type="button"
           onClick={() => refresh()}
-          className="ml-auto text-xs font-semibold text-muted-foreground hover:text-[var(--lime)]"
+          className="ml-auto text-[11px] font-bold uppercase tracking-wide text-[var(--text-faint)] hover:text-foreground"
         >
           Refresh
         </button>
-        {tab === "PAST" && (
-          <div className="rounded-lg border border-border bg-[var(--panel)] px-3 py-1.5 text-sm">
-            P/L{" "}
-            <span className={pnl >= 0 ? "text-[var(--win)]" : "text-destructive"}>
-              {pnl >= 0 ? "+" : ""}
-              {formatCrowns(pnl)}
-            </span>
-          </div>
-        )}
       </div>
 
-      {isLoading && <p className="text-sm text-muted-foreground">Loading lineups…</p>}
+      {tab === "PAST" && past.length > 0 && (
+        <div className="flex items-center justify-between rounded-lg border border-[var(--line)] bg-[var(--card)] px-3 py-2 text-sm">
+          <span className="text-xs font-bold uppercase tracking-wide text-[var(--text-muted)]">
+            Total P/L
+          </span>
+          <span
+            className={`num font-black ${
+              pnl >= 0 ? "text-[var(--win)]" : "text-[var(--less)]"
+            }`}
+          >
+            {pnl >= 0 ? "+" : ""}
+            {formatCredits(pnl)}
+          </span>
+        </div>
+      )}
 
-      <div className="space-y-4">
+      {isLoading && (
+        <p className="text-sm text-[var(--text-muted)]">Loading lineups…</p>
+      )}
+
+      <div className="space-y-2.5">
         {list.map((e) => (
           <article
             key={e.id}
-            className="rounded-2xl border border-border bg-[var(--panel)] p-4"
+            className="overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--card)]"
           >
-            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center justify-between border-b border-[var(--line)] px-3 py-2.5">
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                  {dayjs(e.createdAt).format("MMM D · h:mm A")}
+                <p className="text-[10px] font-bold uppercase tracking-wider text-[var(--text-faint)]">
+                  {dayjs(e.createdAt).format("MMM D · h:mm A")} ·{" "}
+                  {e.picks.length} picks
                 </p>
-                <p className="font-display text-lg font-bold text-foreground">
-                  {formatCrowns(e.wager)} → {formatCrowns(e.payout)}
+                <p className="num text-[15px] font-black text-foreground">
+                  {formatCredits(e.wager)}{" "}
+                  <span className="text-[var(--text-faint)]">→</span>{" "}
+                  <span
+                    className={
+                      e.isWin === false
+                        ? "text-[var(--text-faint)] line-through"
+                        : "text-[var(--accent)]"
+                    }
+                  >
+                    {formatCredits(e.payout)}
+                  </span>
                 </p>
               </div>
               <span
-                className={`rounded-full px-3 py-1 text-xs font-bold uppercase ${
+                className={`rounded-md px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide ${
                   e.isWin === true
-                    ? "bg-[var(--win)]/20 text-[var(--win)]"
+                    ? "bg-[var(--win)]/15 text-[var(--win)]"
                     : e.isWin === false
-                    ? "bg-destructive/20 text-destructive"
-                    : "bg-[var(--lime)]/15 text-[var(--lime)]"
+                    ? "bg-[var(--less)]/15 text-[var(--less)]"
+                    : "bg-[var(--accent)]/15 text-[var(--accent)]"
                 }`}
               >
-                {e.isWin === true ? "Won" : e.isWin === false ? "Lost" : e.status || "Locked"}
+                {e.isWin === true ? "Won" : e.isWin === false ? "Lost" : "Open"}
               </span>
             </div>
-            <div className="space-y-2">
+            <div className="divide-y divide-[var(--line)]">
               {e.picks.map((pk) => (
-                <div
-                  key={pk.id}
-                  className="flex items-center gap-3 rounded-xl border border-border/50 bg-[var(--panel-2)] px-3 py-2"
-                >
+                <div key={pk.id} className="flex items-center gap-2.5 px-3 py-2">
                   <PlayerAvatar
                     name={pk.playerProjection.player.name}
                     team={pk.playerProjection.player.team}
                     imageUrl={pk.playerProjection.player.imageUrl}
-                    size={36}
+                    size={32}
                   />
-                  <div className="min-w-0 flex-1">
-                    <p className="truncate text-sm font-semibold">
-                      {pk.playerProjection.player.name}{" "}
-                      <span
-                        className={
-                          pk.pickType === "MORE"
-                            ? "text-[var(--lime)]"
-                            : "text-[var(--coral)]"
-                        }
-                      >
-                        {pk.pickType}
-                      </span>{" "}
-                      {pk.lineAtLock ?? pk.playerProjection.value}{" "}
+                  <p className="min-w-0 flex-1 truncate text-[13px] font-semibold text-foreground">
+                    {pk.playerProjection.player.name}{" "}
+                    <span
+                      className={`text-[11px] font-extrabold uppercase ${
+                        pk.pickType === "MORE"
+                          ? "text-[var(--accent)]"
+                          : "text-[var(--less)]"
+                      }`}
+                    >
+                      {pk.pickType}
+                    </span>{" "}
+                    <span className="num text-[var(--text-muted)]">
+                      {pk.lineAtLock ?? pk.playerProjection.value}
+                    </span>{" "}
+                    <span className="text-[11px] text-[var(--text-muted)]">
                       {pk.playerProjection.statType}
-                    </p>
-                  </div>
+                    </span>
+                  </p>
                   {pk.isWin != null && (
-                    <span className={pk.isWin ? "text-[var(--win)]" : "text-destructive"}>
+                    <span
+                      className={`text-sm font-black ${
+                        pk.isWin ? "text-[var(--win)]" : "text-[var(--less)]"
+                      }`}
+                    >
                       {pk.isWin ? "✓" : "✗"}
                     </span>
                   )}
@@ -148,11 +160,19 @@ export default function EntriesPage() {
       </div>
 
       {!isLoading && list.length === 0 && (
-        <p className="py-16 text-center text-muted-foreground">
-          {tab === "LIVE"
-            ? "No open lineups. Head to the Board and submit one."
-            : "No settled entries yet."}
-        </p>
+        <div className="rounded-xl border border-[var(--line)] bg-[var(--card)] py-14 text-center">
+          <p className="font-display text-sm font-bold text-foreground">
+            {tab === "OPEN" ? "No open lineups" : "No settled lineups yet"}
+          </p>
+          {tab === "OPEN" && (
+            <Link
+              href="/"
+              className="mt-1 inline-block text-xs font-bold text-[var(--accent)] no-underline"
+            >
+              Go to the Board →
+            </Link>
+          )}
+        </div>
       )}
     </div>
   );
