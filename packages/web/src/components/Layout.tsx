@@ -10,13 +10,13 @@ import { useMe } from "@/lib/api";
 import { formatCrowns } from "@/lib/multipliers";
 import { useBetSlip } from "@/store/betSlipStore";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { ScrollText, Swords, Trophy, BookOpen } from "lucide-react";
+import { LayoutGrid, ListChecks, BarChart3, Trophy } from "lucide-react";
 
 const NAV = [
-  { href: "/", label: "The Lists", icon: Swords },
-  { href: "/entries", label: "Quests", icon: ScrollText },
-  { href: "/stats", label: "Chronicle", icon: BookOpen },
-  { href: "/leaderboard", label: "Hall", icon: Trophy },
+  { href: "/", label: "Board", icon: LayoutGrid },
+  { href: "/entries", label: "Lineups", icon: ListChecks },
+  { href: "/stats", label: "Stats", icon: BarChart3 },
+  { href: "/leaderboard", label: "Leaderboard", icon: Trophy },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -49,24 +49,18 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col font-sans text-foreground">
       <Head>
-        <title>Esports Props — Inklings Club</title>
+        <title>Esports Props</title>
       </Head>
 
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden>
-        <div className="hearth-glow absolute -left-24 top-0 h-[420px] w-[420px] rounded-full" />
-        <div className="hearth-glow-gold absolute -right-16 top-24 h-[360px] w-[360px] rounded-full" />
-        <div className="inklings-mist absolute inset-x-0 bottom-0 h-48" />
-      </div>
-
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-ink/85 backdrop-blur-xl">
-        <div className="mx-auto flex h-[4.5rem] max-w-[1600px] items-center justify-between gap-4 px-4 md:px-6">
-          <div className="flex items-center gap-6 md:gap-10">
-            <Link href="/" className="group flex flex-col no-underline">
-              <span className="font-display text-xl font-black tracking-[0.08em] text-gold-bright transition group-hover:text-gold md:text-2xl">
-                ESPORTS PROPS
+      <header className="sticky top-0 z-40 border-b border-border/80 bg-[#07090d]/92 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 max-w-[1600px] items-center justify-between gap-4 px-4 md:px-6">
+          <div className="flex items-center gap-6 md:gap-8">
+            <Link href="/" className="group flex items-center gap-2.5 no-underline">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--lime)] font-display text-sm font-extrabold text-primary-foreground">
+                EP
               </span>
-              <span className="font-serif text-[11px] italic tracking-wide text-muted-foreground">
-                inklings club · val &amp; cod
+              <span className="font-display text-lg font-extrabold tracking-tight text-foreground md:text-xl">
+                Esports Props
               </span>
             </Link>
 
@@ -79,7 +73,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     <Button
                       variant={active ? "secondary" : "ghost"}
                       size="sm"
-                      className={`gap-2 font-semibold ${active ? "border border-gold/30 text-gold-bright" : "text-muted-foreground"}`}
+                      className={`gap-2 font-semibold ${
+                        active
+                          ? "bg-[var(--panel-2)] text-[var(--lime)]"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
                     >
                       <Icon className="h-3.5 w-3.5" />
                       {item.label}
@@ -93,11 +91,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-3 md:gap-4">
             <ThemeToggle className="hidden sm:flex" />
             {me && (
-              <div className="flex flex-col items-end rounded-lg border border-gold/20 bg-moss/40 px-3 py-1.5">
-                <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                  Crowns
+              <div className="flex flex-col items-end rounded-xl border border-border bg-[var(--panel)] px-3 py-1.5">
+                <span className="text-[9px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                  Credits
                 </span>
-                <span className="font-display text-lg leading-none text-gold-bright">
+                <span className="font-display text-lg leading-none text-[var(--lime)]">
                   {formatCrowns(me.balance)}
                 </span>
               </div>
@@ -113,21 +111,23 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             ) : (
               <SignInButton mode="modal">
-                <Button className="font-bold bg-gold text-primary-foreground hover:bg-gold-bright">
-                  Enter the Club
+                <Button className="font-bold bg-[var(--lime)] text-primary-foreground hover:bg-[var(--gold-bright)]">
+                  Sign in
                 </Button>
               </SignInButton>
             )}
           </div>
         </div>
 
-        <div className="flex gap-1 overflow-x-auto border-t border-border/40 px-2 py-2 lg:hidden">
+        <div className="flex gap-1 overflow-x-auto border-t border-border/50 px-2 py-2 lg:hidden">
           {NAV.map((item) => (
             <Link key={item.href} href={item.href} className="no-underline">
               <Button
                 variant={isActive(item.href) ? "secondary" : "ghost"}
                 size="sm"
-                className="whitespace-nowrap text-xs"
+                className={`whitespace-nowrap text-xs ${
+                  isActive(item.href) ? "text-[var(--lime)]" : ""
+                }`}
               >
                 {item.label}
               </Button>
@@ -139,19 +139,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main className="relative mx-auto w-full max-w-[1600px] flex-1">
         <div className="flex items-start gap-6 p-4 md:p-6">
           <div className="min-w-0 flex-1">{children}</div>
-          <div className="sticky top-[5.75rem] hidden w-[380px] shrink-0 xl:block">
+          <div className="sticky top-[5rem] hidden w-[360px] shrink-0 xl:block">
             <BetSlip />
           </div>
         </div>
       </main>
 
-      <footer className="mt-auto border-t border-border/50 bg-ink/60">
+      <footer className="mt-auto border-t border-border/60 bg-[#07090d]/80">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-2 px-4 py-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left md:px-6">
-          <p className="font-serif text-sm italic text-muted-foreground">
-            Crowns are play-money — for friends, not fortune. Statistically, real gambling is a terrible decision.
+          <p className="text-sm text-muted-foreground">
+            Credits are play-money for friends — not real gambling.
           </p>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-gold/70">
-            Esports Props · Inklings Club
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            esportsprops.com
           </p>
         </div>
       </footer>
@@ -159,20 +159,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <button
         type="button"
         onClick={() => setSlipOpen(true)}
-        className="fixed bottom-5 right-5 z-50 flex h-14 items-center gap-2 rounded-full border border-gold/40 bg-gold px-5 font-display text-sm font-bold text-primary-foreground shadow-lg xl:hidden"
+        className="fixed bottom-5 right-5 z-50 flex h-14 items-center gap-2 rounded-full bg-[var(--lime)] px-5 font-display text-sm font-extrabold text-primary-foreground shadow-lg xl:hidden"
       >
-        Slip
+        Lineup
         {selections.length > 0 && (
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink text-xs text-gold-bright">
+          <span className="flex h-6 min-w-6 items-center justify-center rounded-full bg-[#10140a] px-1.5 text-xs text-[var(--lime)]">
             {selections.length}
           </span>
         )}
       </button>
 
       <Sheet open={slipOpen} onOpenChange={setSlipOpen}>
-        <SheetContent side="right" className="w-full border-l border-gold/20 bg-ink p-0 sm:max-w-md">
+        <SheetContent side="right" className="w-full border-l border-border bg-[var(--ink)] p-0 sm:max-w-md">
           <SheetHeader className="border-b border-border px-4 py-4">
-            <SheetTitle className="font-display text-gold-bright">Your Parchment</SheetTitle>
+            <SheetTitle className="font-display text-foreground">Your Lineup</SheetTitle>
           </SheetHeader>
           <div className="p-4">
             <BetSlip embedded />

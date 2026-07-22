@@ -9,17 +9,16 @@ function sourceLabel(sources: string[]): string {
     vlr: "VLR",
     breakingpoint: "Breaking Point",
     vct_history: "VCT archive",
-    demo: "demo slate",
+    demo: "demo",
   };
   const parts = (sources.length ? sources : ["demo"]).map((s) => map[s] || s);
   return parts.join(" · ");
 }
 
 function formatUpdated(iso: string | null | undefined): string {
-  if (!iso) return "awaiting first illumination";
+  if (!iso) return "pending";
   try {
-    const d = new Date(iso);
-    return d.toLocaleString(undefined, {
+    return new Date(iso).toLocaleString(undefined, {
       month: "short",
       day: "numeric",
       hour: "numeric",
@@ -40,7 +39,7 @@ function acsOrDmg(p: StatRow): number {
 }
 
 export default function StatsPage() {
-  const [game, setGame] = React.useState<"ALL" | "VALORANT" | "COD">("ALL");
+  const [game, setGame] = React.useState<"ALL" | "VALORANT" | "COD">("VALORANT");
   const [sortKey, setSortKey] = React.useState<SortKey>("rating");
   const [sortDir, setSortDir] = React.useState<"desc" | "asc">("desc");
   const { players, isLoading, updatedAt, sources } = useStats(game);
@@ -70,20 +69,14 @@ export default function StatsPage() {
     }
   }
 
-  function SortBtn({
-    label,
-    k,
-  }: {
-    label: string;
-    k: SortKey;
-  }) {
+  function SortBtn({ label, k }: { label: string; k: SortKey }) {
     const active = sortKey === k;
     return (
       <button
         type="button"
         onClick={() => toggleSort(k)}
         className={`inline-flex items-center gap-1 font-semibold uppercase tracking-[0.15em] ${
-          active ? "text-gold-bright" : "text-muted-foreground"
+          active ? "text-[var(--lime)]" : "text-muted-foreground"
         }`}
       >
         {label}
@@ -94,47 +87,45 @@ export default function StatsPage() {
 
   return (
     <div className="animate-fade-rise space-y-6">
-      <section className="rounded-2xl border border-filigree bg-hearth px-5 py-6 md:px-7">
-        <p className="font-serif text-sm italic text-muted-foreground">
-          A cleaner chronicle than the ad-choked wilds — rolls kept for the club
+      <section>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+          Player stats · {sourceLabel(sources)} · updated {formatUpdated(updatedAt)}
         </p>
-        <h1 className="mt-1 font-display text-3xl font-black tracking-[0.08em] text-gold-bright md:text-4xl">
-          The Chronicle
+        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+          Stats
         </h1>
-        <p className="mt-3 text-xs uppercase tracking-[0.14em] text-muted-foreground">
-          Drawn from {sourceLabel(sources)} · updated {formatUpdated(updatedAt)}
-        </p>
-        <div className="rune-rule mt-4" />
       </section>
 
-      <div className="flex flex-wrap gap-2">
-        {(["ALL", "VALORANT", "COD"] as const).map((g) => (
+      <div className="grid grid-cols-3 gap-2 rounded-2xl border border-border bg-[var(--panel)] p-1.5 sm:max-w-md">
+        {(
+          [
+            { id: "VALORANT" as const, label: "Valorant" },
+            { id: "COD" as const, label: "CoD" },
+            { id: "ALL" as const, label: "All" },
+          ] as const
+        ).map((tab) => (
           <button
-            key={g}
+            key={tab.id}
             type="button"
-            onClick={() => setGame(g)}
-            className={`rounded-full border px-3 py-1.5 text-xs font-bold uppercase tracking-wide ${
-              game === g
-                ? "border-gold/50 bg-gold/15 text-gold-bright"
-                : "border-border text-muted-foreground"
+            onClick={() => setGame(tab.id)}
+            className={`rounded-xl px-3 py-2.5 text-xs font-extrabold uppercase tracking-wide transition ${
+              game === tab.id
+                ? "bg-[var(--lime)] text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground"
             }`}
           >
-            {g === "ALL" ? "All Realms" : g === "COD" ? "Call of Duty" : "Valorant"}
+            {tab.label}
           </button>
         ))}
       </div>
 
-      {isLoading && (
-        <p className="font-serif italic text-muted-foreground">Illuminating the rolls…</p>
-      )}
+      {isLoading && <p className="text-sm text-muted-foreground">Loading stats…</p>}
 
       {!isLoading && sorted.length === 0 && (
-        <p className="font-serif italic text-muted-foreground">
-          The chronicle is blank — the scribes have not yet returned.
-        </p>
+        <p className="text-sm text-muted-foreground">No stats for this filter yet.</p>
       )}
 
-      <div className="overflow-x-auto rounded-2xl border border-filigree bg-hearth">
+      <div className="overflow-x-auto rounded-2xl border border-border bg-[var(--panel)]">
         <table className="w-full min-w-[720px] text-left text-sm">
           <thead>
             <tr className="border-b border-border text-[10px] uppercase tracking-[0.15em]">
@@ -160,9 +151,9 @@ export default function StatsPage() {
             {sorted.map((p, i) => (
               <tr
                 key={p.playerId}
-                className="border-b border-border/40 transition hover:bg-moss/40"
+                className="border-b border-border/40 transition hover:bg-white/[0.03]"
               >
-                <td className="px-4 py-3 font-display text-gold">{i + 1}</td>
+                <td className="px-4 py-3 font-display text-[var(--lime)]">{i + 1}</td>
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-3">
                     <PlayerAvatar
@@ -172,12 +163,12 @@ export default function StatsPage() {
                       size={40}
                     />
                     <div>
-                      <div className="font-semibold text-parchment">{p.name}</div>
+                      <div className="font-semibold text-foreground">{p.name}</div>
                       <div className="text-xs text-muted-foreground">{p.team}</div>
                     </div>
                   </div>
                 </td>
-                <td className="px-4 py-3 text-xs font-bold uppercase text-leaf-bright">
+                <td className="px-4 py-3 text-xs font-bold uppercase text-[var(--sky)]">
                   {p.game === "COD" ? "CoD" : "VAL"}
                 </td>
                 <td className="px-4 py-3 tabular-nums">{p.maps}</td>
@@ -187,12 +178,10 @@ export default function StatsPage() {
                     ({kd(p).toFixed(2)})
                   </span>
                 </td>
-                <td className="px-4 py-3 font-display text-gold-bright">
+                <td className="px-4 py-3 font-display font-bold text-[var(--lime)]">
                   {p.rating.toFixed(2)}
                 </td>
-                <td className="px-4 py-3 tabular-nums">
-                  {p.acs ?? p.damage ?? "—"}
-                </td>
+                <td className="px-4 py-3 tabular-nums">{p.acs ?? p.damage ?? "—"}</td>
                 <td className="px-4 py-3 tabular-nums">
                   {p.hsPercent != null ? p.hsPercent.toFixed(1) : "—"}
                 </td>

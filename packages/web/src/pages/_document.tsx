@@ -6,9 +6,9 @@ export default function Document() {
       <Head>
         <meta
           name="description"
-          content="Esports Props — the Inklings Club for Valorant and Call of Duty player props. Play-money Crowns, proprietary lines, no real gambling."
+          content="Esports Props — Valorant and Call of Duty player props. Pick More or Less, stack up to 6 legs, play-money Credits only."
         />
-        <meta name="theme-color" content="#06110c" />
+        <meta name="theme-color" content="#07090d" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>

@@ -160,7 +160,7 @@ export function handleDemoApi(
       json: {
         id: userId,
         email: "guest@esportsprops.com",
-        username: "Club Guest",
+        username: "Guest",
         balance: balances().get(userId),
         createdAt: new Date().toISOString(),
         isGuest: true,
@@ -180,7 +180,7 @@ export function handleDemoApi(
       return { status: 400, json: { error: `Pick ${MIN_PICKS}–${MAX_PICKS} legs` } };
     }
     const bal = balances().get(userId) || 0;
-    if (wager > bal) return { status: 400, json: { error: "Insufficient Crowns" } };
+    if (wager > bal) return { status: 400, json: { error: "Insufficient Credits" } };
 
     const projections = buildDemoProjections().map(hydrateProjection);
     const byId = new Map(projections.map((p) => [p.id, p]));

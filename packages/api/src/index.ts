@@ -243,7 +243,7 @@ async function ensureUser(userId: string, email?: string | null) {
       id: userId,
       email: email || `${userId}@esportsprops.com`,
       balance: STARTING_BALANCE,
-      username: userId.startsWith('guest') ? 'Club Guest' : undefined,
+      username: userId.startsWith('guest') ? 'Guest' : undefined,
     },
   });
 }
@@ -283,7 +283,7 @@ app.post('/entries', async (req, res) => {
   try {
     if (!prisma) {
       const bal = memBalances.get(auth.userId)!;
-      if (bal < wager) return res.status(400).json({ error: 'Insufficient Crowns' });
+      if (bal < wager) return res.status(400).json({ error: 'Insufficient Credits' });
       memBalances.set(auth.userId, bal - wager);
       const entry: MemEntry = {
         id: `entry_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
@@ -313,7 +313,7 @@ app.post('/entries', async (req, res) => {
 
     const result = await prisma.$transaction(async (tx: any) => {
       const user = await tx.user.findUnique({ where: { id: auth.userId } });
-      if (!user || user.balance < wager) throw new Error('Insufficient Crowns');
+      if (!user || user.balance < wager) throw new Error('Insufficient Credits');
 
       const entry = await tx.entry.create({
         data: {
@@ -356,8 +356,8 @@ app.post('/entries', async (req, res) => {
     });
     res.json(result);
   } catch (e: any) {
-    if (e.message === 'Insufficient Crowns') {
-      return res.status(400).json({ error: 'Insufficient Crowns' });
+    if (e.message === 'Insufficient Credits') {
+      return res.status(400).json({ error: 'Insufficient Credits' });
     }
     console.error(e);
     res.status(500).json({ error: 'Failed to create entry' });

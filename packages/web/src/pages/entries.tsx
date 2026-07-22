@@ -28,14 +28,13 @@ export default function EntriesPage() {
 
   return (
     <div className="animate-fade-rise space-y-6">
-      <section className="rounded-2xl border border-filigree bg-hearth px-5 py-6 md:px-7">
-        <p className="font-serif text-sm italic text-muted-foreground">
-          Open quests and settled fortunes — Crowns only, friends only
+      <section>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+          Track your entries
         </p>
-        <h1 className="mt-1 font-display text-3xl font-black tracking-[0.08em] text-gold-bright md:text-4xl">
-          Your Quests
+        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl">
+          My Lineups
         </h1>
-        <div className="rune-rule mt-4" />
       </section>
 
       <div className="flex flex-wrap items-center gap-3">
@@ -44,7 +43,7 @@ export default function EntriesPage() {
           onClick={() => setTab("LIVE")}
           className={`rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wide ${
             tab === "LIVE"
-              ? "border-gold/50 bg-gold/15 text-gold-bright"
+              ? "border-[var(--lime)]/50 bg-[var(--lime)]/15 text-[var(--lime)]"
               : "border-border text-muted-foreground"
           }`}
         >
@@ -55,7 +54,7 @@ export default function EntriesPage() {
           onClick={() => setTab("PAST")}
           className={`rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wide ${
             tab === "PAST"
-              ? "border-gold/50 bg-gold/15 text-gold-bright"
+              ? "border-[var(--lime)]/50 bg-[var(--lime)]/15 text-[var(--lime)]"
               : "border-border text-muted-foreground"
           }`}
         >
@@ -64,14 +63,14 @@ export default function EntriesPage() {
         <button
           type="button"
           onClick={() => refresh()}
-          className="ml-auto text-xs font-semibold text-muted-foreground hover:text-gold"
+          className="ml-auto text-xs font-semibold text-muted-foreground hover:text-[var(--lime)]"
         >
           Refresh
         </button>
         {tab === "PAST" && (
-          <div className="rounded-lg border border-border bg-moss/40 px-3 py-1.5 text-sm">
+          <div className="rounded-lg border border-border bg-[var(--panel)] px-3 py-1.5 text-sm">
             P/L{" "}
-            <span className={pnl >= 0 ? "text-leaf-bright" : "text-destructive"}>
+            <span className={pnl >= 0 ? "text-[var(--win)]" : "text-destructive"}>
               {pnl >= 0 ? "+" : ""}
               {formatCrowns(pnl)}
             </span>
@@ -79,32 +78,30 @@ export default function EntriesPage() {
         )}
       </div>
 
-      {isLoading && (
-        <p className="font-serif italic text-muted-foreground">Consulting the ledger…</p>
-      )}
+      {isLoading && <p className="text-sm text-muted-foreground">Loading lineups…</p>}
 
       <div className="space-y-4">
         {list.map((e) => (
           <article
             key={e.id}
-            className="rounded-2xl border border-filigree bg-hearth p-4"
+            className="rounded-2xl border border-border bg-[var(--panel)] p-4"
           >
             <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                   {dayjs(e.createdAt).format("MMM D · h:mm A")}
                 </p>
-                <p className="font-display text-lg text-parchment">
+                <p className="font-display text-lg font-bold text-foreground">
                   {formatCrowns(e.wager)} → {formatCrowns(e.payout)}
                 </p>
               </div>
               <span
                 className={`rounded-full px-3 py-1 text-xs font-bold uppercase ${
                   e.isWin === true
-                    ? "bg-leaf/20 text-leaf-bright"
+                    ? "bg-[var(--win)]/20 text-[var(--win)]"
                     : e.isWin === false
                     ? "bg-destructive/20 text-destructive"
-                    : "bg-gold/15 text-gold-bright"
+                    : "bg-[var(--lime)]/15 text-[var(--lime)]"
                 }`}
               >
                 {e.isWin === true ? "Won" : e.isWin === false ? "Lost" : e.status || "Locked"}
@@ -114,7 +111,7 @@ export default function EntriesPage() {
               {e.picks.map((pk) => (
                 <div
                   key={pk.id}
-                  className="flex items-center gap-3 rounded-xl border border-border/50 bg-ink/40 px-3 py-2"
+                  className="flex items-center gap-3 rounded-xl border border-border/50 bg-[var(--panel-2)] px-3 py-2"
                 >
                   <PlayerAvatar
                     name={pk.playerProjection.player.name}
@@ -127,7 +124,9 @@ export default function EntriesPage() {
                       {pk.playerProjection.player.name}{" "}
                       <span
                         className={
-                          pk.pickType === "MORE" ? "text-ember" : "text-frost"
+                          pk.pickType === "MORE"
+                            ? "text-[var(--lime)]"
+                            : "text-[var(--coral)]"
                         }
                       >
                         {pk.pickType}
@@ -137,7 +136,7 @@ export default function EntriesPage() {
                     </p>
                   </div>
                   {pk.isWin != null && (
-                    <span className={pk.isWin ? "text-leaf-bright" : "text-destructive"}>
+                    <span className={pk.isWin ? "text-[var(--win)]" : "text-destructive"}>
                       {pk.isWin ? "✓" : "✗"}
                     </span>
                   )}
@@ -149,10 +148,10 @@ export default function EntriesPage() {
       </div>
 
       {!isLoading && list.length === 0 && (
-        <p className="py-16 text-center font-serif text-lg italic text-muted-foreground">
+        <p className="py-16 text-center text-muted-foreground">
           {tab === "LIVE"
-            ? "No open quests. Return to The Lists and seal a slip."
-            : "No settled entries yet — the Hall waits."}
+            ? "No open lineups. Head to the Board and submit one."
+            : "No settled entries yet."}
         </p>
       )}
     </div>

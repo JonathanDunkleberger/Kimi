@@ -8,8 +8,8 @@ const UPSTREAM =
   "";
 
 /**
- * Prefer the hosted Express API when awake; otherwise serve the Inklings
- * demo slate from Vercel so friends always see a live board.
+ * Prefer the hosted Express API when awake; otherwise serve the demo
+ * slate from Vercel so the board stays available.
  */
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const parts = req.query.path;

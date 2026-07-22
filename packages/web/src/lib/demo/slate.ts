@@ -3,6 +3,8 @@
  * Mix of Valorant Bo3 + CoD Bo5 with map-gate logic.
  */
 
+import liveStats from './live_stats.json';
+
 export type DemoPlayer = {
   id: string;
   name: string;
@@ -57,35 +59,42 @@ function hoursAgo(h: number) {
   return new Date(Date.now() - h * 3600_000).toISOString();
 }
 
-/** Distinct player portraits — DiceBear adventurer on ink/gold club colors */
+/** Fallback portrait when no scraped photo exists */
 export function avatar(seed: string) {
   const q = new URLSearchParams({
     seed,
-    backgroundColor: '0d2419',
-    radius: '12',
+    backgroundColor: '151922',
+    radius: '50',
   });
-  return `https://api.dicebear.com/9.x/adventurer/svg?${q.toString()}`;
+  return `https://api.dicebear.com/9.x/initials/svg?${q.toString()}`;
+}
+
+function photoFor(name: string, fallbackSeed: string): string {
+  const hit = (liveStats as { players?: { name?: string; imageUrl?: string }[] }).players?.find(
+    (p) => (p.name || '').toLowerCase() === name.toLowerCase() && p.imageUrl
+  );
+  return hit?.imageUrl || avatar(fallbackSeed);
 }
 
 export const DEMO_PLAYERS: DemoPlayer[] = [
-  { id: 'val-tenz', name: 'TenZ', team: 'Sentinels', game: 'VALORANT', role: 'Duelist', imageUrl: avatar('TenZ') },
-  { id: 'val-zekken', name: 'zekken', team: 'Sentinels', game: 'VALORANT', role: 'Duelist', imageUrl: avatar('zekken') },
-  { id: 'val-johnqt', name: 'johnqt', team: 'Sentinels', game: 'VALORANT', role: 'IGL', imageUrl: avatar('johnqt') },
-  { id: 'val-sacy', name: 'Sacy', team: 'Sentinels', game: 'VALORANT', role: 'Initiator', imageUrl: avatar('Sacy') },
-  { id: 'val-zellsis', name: 'Zellsis', team: 'Sentinels', game: 'VALORANT', role: 'Flex', imageUrl: avatar('Zellsis') },
-  { id: 'val-chronicle', name: 'Chronicle', team: 'Fnatic', game: 'VALORANT', role: 'Flex', imageUrl: avatar('Chronicle') },
-  { id: 'val-boaster', name: 'Boaster', team: 'Fnatic', game: 'VALORANT', role: 'IGL', imageUrl: avatar('Boaster') },
-  { id: 'val-alfajer', name: 'Alfajer', team: 'Fnatic', game: 'VALORANT', role: 'Duelist', imageUrl: avatar('Alfajer') },
-  { id: 'val-crashies', name: 'crashies', team: 'Fnatic', game: 'VALORANT', role: 'Initiator', imageUrl: avatar('crashies') },
-  { id: 'val-kaajak', name: 'kaajak', team: 'Fnatic', game: 'VALORANT', role: 'Duelist', imageUrl: avatar('kaajak') },
-  { id: 'cod-shotzzy', name: 'Shotzzy', team: 'OpTic Texas', game: 'COD', role: 'SMG', imageUrl: avatar('Shotzzy') },
-  { id: 'cod-dashy', name: 'Dashy', team: 'OpTic Texas', game: 'COD', role: 'AR', imageUrl: avatar('Dashy') },
-  { id: 'cod-kenny', name: 'Kenny', team: 'OpTic Texas', game: 'COD', role: 'AR', imageUrl: avatar('Kenny') },
-  { id: 'cod-antis', name: 'Ant', team: 'OpTic Texas', game: 'COD', role: 'SMG', imageUrl: avatar('Ant') },
-  { id: 'cod-envoy', name: 'Envoy', team: 'LA Thieves', game: 'COD', role: 'SMG', imageUrl: avatar('Envoy') },
-  { id: 'cod-octane', name: 'Octane', team: 'LA Thieves', game: 'COD', role: 'AR', imageUrl: avatar('Octane') },
-  { id: 'cod-ghosty', name: 'Ghosty', team: 'LA Thieves', game: 'COD', role: 'AR', imageUrl: avatar('Ghosty') },
-  { id: 'cod-kremp', name: 'Kremp', team: 'LA Thieves', game: 'COD', role: 'SMG', imageUrl: avatar('Kremp') },
+  { id: 'val-tenz', name: 'TenZ', team: 'Sentinels', game: 'VALORANT', role: 'Duelist', imageUrl: photoFor('TenZ', 'TenZ') },
+  { id: 'val-zekken', name: 'zekken', team: 'Sentinels', game: 'VALORANT', role: 'Duelist', imageUrl: photoFor('zekken', 'zekken') },
+  { id: 'val-johnqt', name: 'johnqt', team: 'Sentinels', game: 'VALORANT', role: 'IGL', imageUrl: photoFor('johnqt', 'johnqt') },
+  { id: 'val-sacy', name: 'Sacy', team: 'Sentinels', game: 'VALORANT', role: 'Initiator', imageUrl: photoFor('Sacy', 'Sacy') },
+  { id: 'val-zellsis', name: 'Zellsis', team: 'Sentinels', game: 'VALORANT', role: 'Flex', imageUrl: photoFor('Zellsis', 'Zellsis') },
+  { id: 'val-chronicle', name: 'Chronicle', team: 'Fnatic', game: 'VALORANT', role: 'Flex', imageUrl: photoFor('Chronicle', 'Chronicle') },
+  { id: 'val-boaster', name: 'Boaster', team: 'Fnatic', game: 'VALORANT', role: 'IGL', imageUrl: photoFor('Boaster', 'Boaster') },
+  { id: 'val-alfajer', name: 'Alfajer', team: 'Fnatic', game: 'VALORANT', role: 'Duelist', imageUrl: photoFor('Alfajer', 'Alfajer') },
+  { id: 'val-crashies', name: 'crashies', team: 'Fnatic', game: 'VALORANT', role: 'Initiator', imageUrl: photoFor('crashies', 'crashies') },
+  { id: 'val-kaajak', name: 'kaajak', team: 'Fnatic', game: 'VALORANT', role: 'Duelist', imageUrl: photoFor('kaajak', 'kaajak') },
+  { id: 'cod-shotzzy', name: 'Shotzzy', team: 'OpTic Texas', game: 'COD', role: 'SMG', imageUrl: photoFor('Shotzzy', 'Shotzzy') },
+  { id: 'cod-dashy', name: 'Dashy', team: 'OpTic Texas', game: 'COD', role: 'AR', imageUrl: photoFor('Dashy', 'Dashy') },
+  { id: 'cod-kenny', name: 'Kenny', team: 'OpTic Texas', game: 'COD', role: 'AR', imageUrl: photoFor('Kenny', 'Kenny') },
+  { id: 'cod-antis', name: 'Ant', team: 'OpTic Texas', game: 'COD', role: 'SMG', imageUrl: photoFor('Ant', 'Ant') },
+  { id: 'cod-envoy', name: 'Envoy', team: 'LA Thieves', game: 'COD', role: 'SMG', imageUrl: photoFor('Envoy', 'Envoy') },
+  { id: 'cod-octane', name: 'Octane', team: 'LA Thieves', game: 'COD', role: 'AR', imageUrl: photoFor('Octane', 'Octane') },
+  { id: 'cod-ghosty', name: 'Ghosty', team: 'LA Thieves', game: 'COD', role: 'AR', imageUrl: photoFor('Ghosty', 'Ghosty') },
+  { id: 'cod-kremp', name: 'Kremp', team: 'LA Thieves', game: 'COD', role: 'SMG', imageUrl: photoFor('Kremp', 'Kremp') },
 ];
 
 export const DEMO_MATCHES: DemoMatch[] = [
@@ -213,14 +222,14 @@ export type DemoLeaderboardRow = {
 };
 
 export const DEMO_LEADERBOARD: DemoLeaderboardRow[] = [
-  { rank: 1, userId: 'u1', username: 'MithrilMike', profit: 48200, entries: 34, winRate: 0.41 },
-  { rank: 2, userId: 'u2', username: 'RohanRunner', profit: 35100, entries: 28, winRate: 0.39 },
-  { rank: 3, userId: 'u3', username: 'SenecaSwipe', profit: 28950, entries: 41, winRate: 0.37 },
-  { rank: 4, userId: 'u4', username: 'LeafBlade', profit: 22100, entries: 19, winRate: 0.42 },
+  { rank: 1, userId: 'u1', username: 'optic_lock', profit: 48200, entries: 34, winRate: 0.41 },
+  { rank: 2, userId: 'u2', username: 'sen_stack', profit: 35100, entries: 28, winRate: 0.39 },
+  { rank: 3, userId: 'u3', username: 'faze_flex', profit: 28950, entries: 41, winRate: 0.37 },
+  { rank: 4, userId: 'u4', username: 'map2_merchant', profit: 22100, entries: 19, winRate: 0.42 },
   { rank: 5, userId: 'u5', username: 'guest_user_123', profit: 15400, entries: 22, winRate: 0.36 },
-  { rank: 6, userId: 'u6', username: 'EntwashEdda', profit: 9800, entries: 15, winRate: 0.33 },
-  { rank: 7, userId: 'u7', username: 'Goldberry', profit: 7200, entries: 12, winRate: 0.5 },
-  { rank: 8, userId: 'u8', username: 'WestronWhale', profit: 4100, entries: 30, winRate: 0.3 },
+  { rank: 6, userId: 'u6', username: 'kd_clerk', profit: 9800, entries: 15, winRate: 0.33 },
+  { rank: 7, userId: 'u7', username: 'six_leg_sam', profit: 7200, entries: 12, winRate: 0.5 },
+  { rank: 8, userId: 'u8', username: 'underdog_u', profit: 4100, entries: 30, winRate: 0.3 },
 ];
 
 export type DemoStatRow = {

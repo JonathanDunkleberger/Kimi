@@ -18,53 +18,51 @@ export default function AccountPage() {
 
   return (
     <div className="animate-fade-rise mx-auto max-w-lg space-y-6">
-      <section className="rounded-2xl border border-filigree bg-hearth px-5 py-6">
-        <p className="font-serif text-sm italic text-muted-foreground">
-          Your purse &amp; sigil at the Inklings Club
+      <section>
+        <p className="text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">
+          Profile &amp; balance
         </p>
-        <h1 className="mt-1 font-display text-3xl font-black tracking-[0.08em] text-gold-bright">
+        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight text-foreground">
           Account
         </h1>
-        <div className="rune-rule mt-4" />
       </section>
 
-      <div className="space-y-4 rounded-2xl border border-filigree bg-hearth p-6">
-        {isLoading && <p className="font-serif italic text-muted-foreground">Loading…</p>}
+      <div className="space-y-4 rounded-2xl border border-border bg-[var(--panel)] p-6">
+        {isLoading && <p className="text-sm text-muted-foreground">Loading…</p>}
         {me && (
           <>
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                Club Member
+                User
               </p>
-              <p className="font-display text-xl text-parchment">
+              <p className="font-display text-xl font-bold text-foreground">
                 {me.username || me.email || me.id}
               </p>
               {me.isGuest && (
-                <p className="mt-1 font-serif text-sm italic text-ember">
-                  Guest mode — enter the club to keep Crowns across devices.
+                <p className="mt-1 text-sm text-[var(--coral)]">
+                  Guest mode — sign in to keep Credits across devices.
                 </p>
               )}
             </div>
-            <div className="rounded-xl border border-gold/30 bg-gold/10 p-4">
+            <div className="rounded-xl border border-[var(--lime)]/30 bg-[var(--lime)]/10 p-4">
               <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
-                Crown Balance
+                Credit Balance
               </p>
-              <p className="font-display text-4xl text-gold-bright">
+              <p className="font-display text-4xl font-extrabold text-[var(--lime)]">
                 {formatCrowns(me.balance)}
               </p>
             </div>
-            <p className="font-serif text-sm text-muted-foreground">
-              Play-money only — for friends and the portfolio grind, never real stakes.
-              Starting grant: 100,000 Crowns. All legs must hit. Pushes count as losses.
-              Map props unlock as the series unfolds.
+            <p className="text-sm text-muted-foreground">
+              Play-money only. Starting grant: 100,000 Credits. All legs must hit.
+              Pushes count as losses. Map props unlock as the series unfolds.
             </p>
           </>
         )}
 
         {!isSignedIn && (
           <SignInButton mode="modal">
-            <Button className="w-full bg-gold font-bold text-primary-foreground hover:bg-gold-bright">
-              Enter the Club
+            <Button className="w-full bg-[var(--lime)] font-bold text-primary-foreground hover:bg-[var(--gold-bright)]">
+              Sign in
             </Button>
           </SignInButton>
         )}
