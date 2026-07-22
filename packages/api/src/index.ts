@@ -11,6 +11,7 @@ import {
   buildDemoProjections,
   buildDemoStats,
 } from './demo/slate.js';
+import { loadLiveStats } from './lib/liveStats.js';
 
 /**
  * Demo mode is the default for local/side-project velocity.
@@ -208,10 +209,16 @@ app.get('/projections', async (_req, res) => {
 
 app.get('/stats', async (req, res) => {
   const game = String(req.query.game || 'ALL').toUpperCase();
-  let rows = buildDemoStats();
+  const live = loadLiveStats();
+  let rows = live?.players?.length ? live.players : buildDemoStats();
   if (game === 'VALORANT' || game === 'COD') rows = rows.filter((r) => r.game === game);
-  rows.sort((a, b) => b.rating - a.rating);
-  res.json({ game, players: rows });
+  rows = [...rows].sort((a, b) => b.rating - a.rating);
+  res.json({
+    game,
+    players: rows,
+    updatedAt: live?.updatedAt ?? null,
+    sources: live?.sources ?? ['demo'],
+  });
 });
 
 app.get('/leaderboard', async (_req, res) => {

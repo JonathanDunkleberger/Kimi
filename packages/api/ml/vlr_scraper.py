@@ -5,11 +5,44 @@ import re
 import sys
 from fake_useragent import UserAgent
 
+try:
+    from http_util import get as http_get, session as http_session, DEFAULT_UA
+except ImportError:
+    from packages.api.ml.http_util import get as http_get, session as http_session, DEFAULT_UA  # type: ignore
+
+VLR_ORIGIN = "https://www.vlr.gg"
+DEFAULT_HEADERS = {
+    "User-Agent": DEFAULT_UA,
+}
+
+# Demo-slate / Chronicle watchlist — refresh images + recent form when possible.
+WATCHLIST_NAMES = [
+    "TenZ",
+    "zekken",
+    "johnqt",
+    "Sacy",
+    "Zellsis",
+    "Chronicle",
+    "Boaster",
+    "Alfajer",
+    "crashies",
+    "kaajak",
+]
+
+
+def _vlr_get(url: str):
+    try:
+        return http_get(url, timeout=20)
+    except Exception as e:
+        print(f"Error fetching {url}: {e}", file=sys.stderr)
+        return None
+
+
 def get_upcoming_matches():
     ua = UserAgent()
     headers = {'User-Agent': ua.random}
     # Fallback if random fails or is blocked, use the one that worked
-    headers['User-Agent'] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+    headers['User-Agent'] = DEFAULT_UA
     
     url = "https://www.vlr.gg/matches"
     try:
@@ -325,10 +358,227 @@ def get_player_stats(player_url):
     
     # HS% is often in the "Overview" or "Stats" tab but maybe not in this specific table.
     # We'll leave hs_rate and clutch_rate as 0.0 for now, or try to find them.
+
+    weighted_stats["kills"] = total_k
+    weighted_stats["deaths"] = total_d
+    weighted_stats["assists"] = total_a
+    weighted_stats["rounds"] = total_rounds
     
     return weighted_stats
 
+
+def _parse_pct(text: str):
+    text = (text or "").strip().replace("%", "")
+    if not text:
+        return None
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def _parse_num(text: str):
+    text = (text or "").strip().replace(",", "")
+    if not text or text == "-":
+        return None
+    try:
+        if "." in text:
+            return float(text)
+        return int(text)
+    except ValueError:
+        try:
+            return float(text)
+        except ValueError:
+            return None
+
+
+def get_stats_leaderboard(timespan: str = "90d", min_rounds: int = 100, limit: int = 100):
+    """
+    Scrape VLR.gg aggregate player stats table.
+    Returns DemoStatRow-compatible VALORANT dicts.
+    """
+    url = (
+        f"{VLR_ORIGIN}/stats/?event_group_id=all&event_id=all&region=all"
+        f"&country=all&min_rounds={min_rounds}&min_rating=1550&agent=all"
+        f"&map_id=all&timespan={timespan}"
+    )
+    resp = _vlr_get(url)
+    if resp is None:
+        # Fallback default stats landing page
+        resp = _vlr_get(f"{VLR_ORIGIN}/stats")
+    if resp is None:
+        return []
+
+    soup = BeautifulSoup(resp.text, "html.parser")
+    table = soup.find("table")
+    if not table:
+        print("[vlr] no stats table found", file=sys.stderr)
+        return []
+
+    out = []
+    for row in table.find_all("tr")[1:]:
+        tds = row.find_all("td")
+        if len(tds) < 21:
+            continue
+        link = tds[0].select_one('a[href*="/player/"]')
+        if not link:
+            continue
+        href = link.get("href") or ""
+        parts = href.strip("/").split("/")
+        # /player/{id}/{slug}
+        pid = parts[1] if len(parts) >= 2 else href
+        name_el = tds[0].select_one(".st-pl-name")
+        team_el = tds[0].select_one(".st-pl-country")
+        name = name_el.get_text(strip=True) if name_el else link.get_text(strip=True)
+        team = team_el.get_text(strip=True) if team_el else ""
+
+        maps = _parse_num(tds[2].get_text(strip=True)) or 0
+        rating = _parse_num(tds[4].get_text(strip=True)) or 0
+        acs = _parse_num(tds[5].get_text(strip=True))
+        hs = _parse_pct(tds[14].get_text(strip=True))
+        kills = _parse_num(tds[18].get_text(strip=True)) or 0
+        deaths = _parse_num(tds[19].get_text(strip=True)) or 0
+        assists = _parse_num(tds[20].get_text(strip=True)) or 0
+
+        out.append(
+            {
+                "playerId": f"val-{pid}",
+                "name": name,
+                "team": team or "VLR",
+                "game": "VALORANT",
+                "imageUrl": "",
+                "maps": int(maps),
+                "kills": int(kills),
+                "deaths": int(deaths),
+                "assists": int(assists),
+                "rating": round(float(rating), 3),
+                "acs": int(acs) if acs is not None else None,
+                "hsPercent": round(hs, 1) if hs is not None else None,
+                "source": "vlr",
+                "profileUrl": f"{VLR_ORIGIN}{href}" if href.startswith("/") else href,
+            }
+        )
+        if len(out) >= limit:
+            break
+
+    print(f"[vlr] leaderboard rows={len(out)}", file=sys.stderr)
+    return out
+
+
+def _player_id_from_href(href: str):
+    """Extract numeric VLR player id from /player/{id}/... or /search/r/player/{id}/idx."""
+    if not href:
+        return None
+    parts = href.strip("/").split("/")
+    for i, part in enumerate(parts):
+        if part == "player" and i + 1 < len(parts) and parts[i + 1].isdigit():
+            return parts[i + 1]
+    return None
+
+
+def search_player(name: str):
+    """Best-effort VLR player search. Returns {id, name, url} or None."""
+    from urllib.parse import quote
+
+    q = quote(name)
+    resp = _vlr_get(f"{VLR_ORIGIN}/search/?type=players&q={q}")
+    if resp is None:
+        return None
+    soup = BeautifulSoup(resp.text, "html.parser")
+    candidates = []
+    for a in soup.select('a[href*="/player/"]'):
+        href = a.get("href") or ""
+        pid = _player_id_from_href(href)
+        if not pid:
+            continue
+        text = a.get_text(" ", strip=True)
+        candidates.append((pid, text, href))
+
+    if not candidates:
+        return None
+
+    # Prefer exact name match (case-insensitive) on the first token / full text.
+    name_l = name.lower()
+    exact = [c for c in candidates if c[1].split()[0].lower() == name_l or c[1].lower() == name_l]
+    pick = exact[0] if exact else candidates[0]
+    pid = pick[0]
+    return {
+        "id": pid,
+        "name": name,
+        "url": f"{VLR_ORIGIN}/player/{pid}",
+    }
+
+
+def get_watchlist_players(names=None):
+    """
+    Resolve watchlist names to player pages and pull recent stats + avatars.
+    Fail-soft per player.
+    """
+    names = names or WATCHLIST_NAMES
+    rows = []
+    for name in names:
+        try:
+            hit = search_player(name)
+            if not hit:
+                print(f"[vlr] watchlist miss: {name}", file=sys.stderr)
+                continue
+            stats = get_player_stats(hit["url"]) or {}
+            image = stats.get("image_url") or ""
+            kills = int(stats.get("kills") or 0)
+            deaths = int(stats.get("deaths") or 0)
+            assists = int(stats.get("assists") or 0)
+            rounds = int(stats.get("rounds") or 0)
+            # Approximate maps from rounds (~20-26 per map); keep rounds/20.
+            maps = max(1, rounds // 22) if rounds else 0
+            rating = float(stats.get("kdr") or 0)
+            # Prefer ACS from weighted agent table
+            acs = stats.get("acs")
+            rows.append(
+                {
+                    "playerId": f"val-{hit['id']}",
+                    "name": name,
+                    "team": "",
+                    "game": "VALORANT",
+                    "imageUrl": image,
+                    "maps": maps,
+                    "kills": kills,
+                    "deaths": deaths,
+                    "assists": assists,
+                    "rating": round(rating, 3) if rating else 0.0,
+                    "acs": int(acs) if acs else None,
+                    "hsPercent": None,
+                    "source": "vlr",
+                    "profileUrl": hit["url"],
+                }
+            )
+        except Exception as e:
+            print(f"[vlr] watchlist error {name}: {e}", file=sys.stderr)
+            continue
+    print(f"[vlr] watchlist refreshed={len(rows)}", file=sys.stderr)
+    return rows
+
+
+def enrich_image_urls(players, max_fetch: int = 25):
+    """Fill missing imageUrl by visiting player profile pages (capped)."""
+    fetched = 0
+    for p in players:
+        if p.get("imageUrl"):
+            continue
+        if fetched >= max_fetch:
+            break
+        url = p.get("profileUrl")
+        if not url:
+            continue
+        try:
+            stats = get_player_stats(url) or {}
+            if stats.get("image_url"):
+                p["imageUrl"] = stats["image_url"]
+            fetched += 1
+        except Exception:
+            continue
+    return players
+
+
 if __name__ == "__main__":
-    matches = get_upcoming_matches()
-    for m in matches:
-        print(m)
+    for row in get_stats_leaderboard(limit=5):
+        print(row)

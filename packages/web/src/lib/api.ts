@@ -151,14 +151,29 @@ export type StatRow = {
   acs?: number;
   damage?: number;
   hsPercent?: number;
+  source?: string;
+};
+
+export type StatsResponse = {
+  game: string;
+  players: StatRow[];
+  updatedAt?: string | null;
+  sources?: string[];
 };
 
 export function useStats(game: 'ALL' | 'VALORANT' | 'COD' = 'ALL') {
-  const { data, error, isLoading, mutate } = useSWR<{ game: string; players: StatRow[] }>(
+  const { data, error, isLoading, mutate } = useSWR<StatsResponse>(
     `${API_BASE}/stats?game=${game}`,
-    (u: string) => jsonFetch<{ game: string; players: StatRow[] }>(u)
+    (u: string) => jsonFetch<StatsResponse>(u)
   );
-  return { players: data?.players || [], error, isLoading, refresh: mutate };
+  return {
+    players: data?.players || [],
+    updatedAt: data?.updatedAt ?? null,
+    sources: data?.sources || [],
+    error,
+    isLoading,
+    refresh: mutate,
+  };
 }
 
 export type LeaderboardRow = {

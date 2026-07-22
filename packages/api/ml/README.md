@@ -131,6 +131,30 @@ Cron example (every 15 min):
 */15 * * * * /usr/bin/python /app/packages/api/ml/judge.py >> /var/log/judge.log 2>&1
 ```
 
+## Chronicle live stats export
+
+Script: `export_live_stats.py` builds `live_stats.json` for the Chronicle (`GET /stats`) from:
+
+- **VLR.gg** player leaderboard + watchlist avatars (`vlr_scraper.py`)
+- **Breaking Point.gg** COD season aggregates (`bp_scraper.py` via public tRPC)
+- **Local VCT archive** under `data/Val-historical-stats/` (Hall of Arms career rolls)
+
+```bash
+# from repo root (use your venv python)
+python packages/api/ml/export_live_stats.py
+
+# history-only (no network)
+python packages/api/ml/export_live_stats.py --offline
+```
+
+Outputs (kept in sync):
+
+- `packages/api/ml/data/live_stats.json` — served by the API
+- `packages/web/src/lib/demo/live_stats.json` — Vercel demo proxy fallback
+- `packages/web/public/data/live_stats.json` — static mirror
+
+GitHub Action `.github/workflows/refresh-stats.yml` re-runs the export every 6 hours and commits when the JSON changes. Render PandaScore crons are not used for this surface.
+
 ---
 
 Maintained as part of the API ML workflow.

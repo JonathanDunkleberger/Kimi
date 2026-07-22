@@ -1,0 +1,45 @@
+name: Refresh Chronicle stats
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install scraper deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r packages/api/ml/requirements.txt
+
+      - name: Export live stats
+        run: python packages/api/ml/export_live_stats.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            packages/api/ml/data/live_stats.json \
+            packages/web/src/lib/demo/live_stats.json \
+            packages/web/public/data/live_stats.json
+          if git diff --staged --quiet; then
+            echo "No stats changes"
+          else
+            git commit -m "chore: refresh Chronicle live_stats.json"
+            git push
+          fi

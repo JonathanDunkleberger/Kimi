@@ -7,6 +7,7 @@ import {
 } from "./slate";
 import { availabilityLabel, isProjectionAvailable } from "./availability";
 import { getMultiplier, MIN_PICKS, MAX_PICKS, STARTING_BALANCE } from "./multipliers";
+import liveStats from "./live_stats.json";
 
 type MemEntry = {
   id: string;
@@ -120,12 +121,26 @@ export function handleDemoApi(
   }
 
   if (path === "stats" && method === "GET") {
-    const game = String(query.game || "ALL");
-    let players = buildDemoStats();
+    const game = String(query.game || "ALL").toUpperCase();
+    const livePlayers = Array.isArray((liveStats as any)?.players)
+      ? (liveStats as any).players
+      : [];
+    let players = livePlayers.length ? livePlayers : buildDemoStats();
     if (game === "VALORANT" || game === "COD") {
-      players = players.filter((p) => p.game === game);
+      players = players.filter((p: { game: string }) => p.game === game);
     }
-    return { status: 200, json: { game, players } };
+    players = [...players].sort(
+      (a: { rating: number }, b: { rating: number }) => b.rating - a.rating
+    );
+    return {
+      status: 200,
+      json: {
+        game,
+        players,
+        updatedAt: (liveStats as any)?.updatedAt ?? null,
+        sources: (liveStats as any)?.sources ?? ["demo"],
+      },
+    };
   }
 
   if (path === "leaderboard" && method === "GET") {
