@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T21:53:05.561154+00:00",
+  "updatedAt": "2026-07-23T00:32:05.726684+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -151,6 +151,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-5654",
+      "name": "Avez",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/63e4aecb51963.png",
+      "maps": 7,
+      "kills": 133,
+      "deaths": 101,
+      "assists": 47,
+      "rating": 1.22,
+      "acs": 231,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-11494",
       "name": "keiko",
       "team": "NRG",
@@ -228,6 +244,22 @@
       "acs": 226,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-20144",
+      "name": "LewN",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/680a9297edd81.png",
+      "maps": 7,
+      "kills": 156,
+      "deaths": 109,
+      "assists": 15,
+      "rating": 1.2,
+      "acs": 247,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -395,7 +427,7 @@
       "name": "primmie",
       "team": "FS",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6944047b31bc9.png",
+      "imageUrl": "",
       "maps": 8,
       "kills": 140,
       "deaths": 111,
@@ -459,7 +491,7 @@
       "name": "whzy",
       "team": "BLG",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/677fdfcb36dac.png",
+      "imageUrl": "",
       "maps": 13,
       "kills": 227,
       "deaths": 194,
@@ -555,7 +587,7 @@
       "name": "BeYN",
       "team": "KRX",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6360e2fa70458.png",
+      "imageUrl": "",
       "maps": 5,
       "kills": 75,
       "deaths": 64,
@@ -791,6 +823,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-36245",
+      "name": "N4RRATE",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 124,
+      "deaths": 103,
+      "assists": 46,
+      "rating": 1.13,
+      "acs": 219,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-9196",
       "name": "t3xture",
       "team": "DAMWON Gaming",
@@ -855,11 +903,11 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-cloud",
+      "playerId": "val-4181",
       "name": "Cloud",
       "team": "CrowСrowd",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/646bd06211000.png",
       "maps": 454,
       "kills": 7972,
       "deaths": 6968,
@@ -3175,6 +3223,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-16215",
+      "name": "dos9",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 100,
+      "deaths": 103,
+      "assists": 58,
+      "rating": 0.98,
+      "acs": 175,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-28948",
       "name": "NINJA",
       "team": "PCF",
@@ -3255,22 +3319,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-21216",
-      "name": "f4ngeer",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 156,
-      "deaths": 156,
-      "assists": 38,
-      "rating": 0.97,
-      "acs": 203,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-438",
       "name": "Boaster",
       "team": "FNATIC",
@@ -3301,54 +3349,6 @@
       "damage": 412390,
       "hsPercent": null,
       "source": "breakingpoint"
-    },
-    {
-      "playerId": "val-3028",
-      "name": "Life",
-      "team": "DRG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 285,
-      "deaths": 281,
-      "assists": 60,
-      "rating": 0.96,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 40.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-10698",
-      "name": "nephh",
-      "team": "BLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 258,
-      "deaths": 252,
-      "assists": 197,
-      "rating": 0.96,
-      "acs": 206,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-25494",
-      "name": "Shr1mp",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 259,
-      "deaths": 269,
-      "assists": 127,
-      "rating": 0.96,
-      "acs": 180,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
     },
     {
       "playerId": "cod-189",
