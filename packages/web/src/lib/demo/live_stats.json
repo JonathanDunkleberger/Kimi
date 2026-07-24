@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-24T00:29:04.278081+00:00",
+  "updatedAt": "2026-07-24T06:52:43.814052+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -3001,7 +3001,7 @@
     {
       "playerId": "cod-231",
       "name": "Traixx",
-      "team": "Telluride Bush Gaming",
+      "team": "Carolina Royal Ravens",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2026/m1/Traixx.webp",
       "maps": 150,
@@ -3833,7 +3833,7 @@
     {
       "playerId": "cod-36",
       "name": "Capsidal",
-      "team": "Telluride Bush Gaming",
+      "team": "CDL",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2025/Major%204/NY_CAPSIDAL.webp",
       "maps": 27,
