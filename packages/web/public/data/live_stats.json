@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-23T18:28:14.559175+00:00",
+  "updatedAt": "2026-07-24T00:29:04.278081+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -55,6 +55,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-10307",
+      "name": "marteen",
+      "team": "M8",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6977651551705.png",
+      "maps": 7,
+      "kills": 136,
+      "deaths": 100,
+      "assists": 47,
+      "rating": 1.33,
+      "acs": 264,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-46135",
       "name": "Zeus",
       "team": "TS",
@@ -87,22 +103,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-10307",
-      "name": "marteen",
-      "team": "M8",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6977651551705.png",
-      "maps": 5,
-      "kills": 93,
-      "deaths": 72,
-      "assists": 33,
-      "rating": 1.28,
-      "acs": 258,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-36685",
       "name": "splash",
       "team": "TYL",
@@ -132,6 +132,22 @@
       "acs": 213,
       "damage": null,
       "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29243",
+      "name": "Neon",
+      "team": "LEV",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69234b3d0a58d.png",
+      "maps": 28,
+      "kills": 442,
+      "deaths": 317,
+      "assists": 138,
+      "rating": 1.23,
+      "acs": 222,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -196,22 +212,6 @@
       "acs": 233,
       "damage": null,
       "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29243",
-      "name": "Neon",
-      "team": "LEV",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69234b3d0a58d.png",
-      "maps": 31,
-      "kills": 506,
-      "deaths": 372,
-      "assists": 156,
-      "rating": 1.22,
-      "acs": 221,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -340,6 +340,22 @@
       "acs": 225,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29867",
+      "name": "hiro",
+      "team": "NAVI",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 124,
+      "deaths": 104,
+      "assists": 36,
+      "rating": 1.18,
+      "acs": 237,
+      "damage": null,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -615,22 +631,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29867",
-      "name": "hiro",
-      "team": "NAVI",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 89,
-      "deaths": 75,
-      "assists": 29,
-      "rating": 1.14,
-      "acs": 243,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-39485",
       "name": "Scales",
       "team": "TYL",
@@ -839,22 +839,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-18677",
-      "name": "Ruxic",
-      "team": "NAVI",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 79,
-      "deaths": 69,
-      "assists": 37,
-      "rating": 1.13,
-      "acs": 215,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-36245",
       "name": "N4RRATE",
       "team": "KC",
@@ -996,6 +980,22 @@
       "acs": 168,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21659",
+      "name": "Sato",
+      "team": "LEV",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 28,
+      "kills": 443,
+      "deaths": 381,
+      "assists": 172,
+      "rating": 1.12,
+      "acs": 235,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1255,49 +1255,17 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-13258",
-      "name": "CyvOph",
-      "team": "NAVI",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 65,
-      "deaths": 64,
-      "assists": 45,
-      "rating": 1.1,
-      "acs": 181,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21251",
       "name": "blowz",
       "team": "LEV",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 31,
-      "kills": 403,
-      "deaths": 372,
-      "assists": 223,
-      "rating": 1.1,
-      "acs": 183,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21659",
-      "name": "Sato",
-      "team": "LEV",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 31,
-      "kills": 506,
-      "deaths": 446,
+      "maps": 28,
+      "kills": 351,
+      "deaths": 318,
       "assists": 198,
       "rating": 1.1,
-      "acs": 233,
+      "acs": 181,
       "damage": null,
       "hsPercent": 32.0,
       "source": "vlr"
@@ -1431,19 +1399,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-45494",
-      "name": "Proxh",
-      "team": "M8",
+      "playerId": "val-21661",
+      "name": "spike",
+      "team": "LEV",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 5,
-      "kills": 75,
-      "deaths": 65,
-      "assists": 40,
+      "maps": 28,
+      "kills": 449,
+      "deaths": 387,
+      "assists": 160,
       "rating": 1.09,
-      "acs": 196,
+      "acs": 230,
       "damage": null,
-      "hsPercent": 30.0,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -1719,6 +1687,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-18677",
+      "name": "Ruxic",
+      "team": "NAVI",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 111,
+      "deaths": 105,
+      "assists": 44,
+      "rating": 1.07,
+      "acs": 217,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-37927",
       "name": "happywei",
       "team": "XLG",
@@ -1943,22 +1927,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-23169",
-      "name": "Minny",
-      "team": "M8",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 83,
-      "deaths": 76,
-      "assists": 22,
-      "rating": 1.06,
-      "acs": 242,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-hist-asuna",
       "name": "Asuna",
       "team": "100 Thieves",
@@ -2116,6 +2084,22 @@
       "acs": 202,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-45494",
+      "name": "Proxh",
+      "team": "M8",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 100,
+      "deaths": 94,
+      "assists": 68,
+      "rating": 1.05,
+      "acs": 194,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -2311,19 +2295,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-21661",
-      "name": "spike",
-      "team": "LEV",
+      "playerId": "val-23169",
+      "name": "Minny",
+      "team": "M8",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 31,
-      "kills": 506,
-      "deaths": 459,
-      "assists": 171,
+      "maps": 7,
+      "kills": 117,
+      "deaths": 104,
+      "assists": 29,
       "rating": 1.04,
-      "acs": 227,
+      "acs": 234,
       "damage": null,
-      "hsPercent": 24.0,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -3031,6 +3015,22 @@
       "source": "breakingpoint"
     },
     {
+      "playerId": "val-13258",
+      "name": "CyvOph",
+      "team": "NAVI",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 83,
+      "deaths": 96,
+      "assists": 61,
+      "rating": 1.0,
+      "acs": 172,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "cod-758",
       "name": "Ethan",
       "team": "OMiT",
@@ -3561,7 +3561,7 @@
     {
       "playerId": "cod-42",
       "name": "Beans",
-      "team": "Project Notorious",
+      "team": "G2 Minnesota",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2026/m1/Beans.webp",
       "maps": 44,
@@ -3625,7 +3625,7 @@
     {
       "playerId": "cod-69",
       "name": "Fire",
-      "team": "Carolina Royal Ravens",
+      "team": "Telluride Bush Gaming",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2026/fire%20ravens.webp",
       "maps": 70,
@@ -3641,7 +3641,7 @@
     {
       "playerId": "cod-7",
       "name": "Cammy",
-      "team": "Telluride Bush Gaming",
+      "team": "Project Notorious",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2026/m1/Cammy.webp",
       "maps": 50,
@@ -3721,7 +3721,7 @@
     {
       "playerId": "cod-48",
       "name": "Standy",
-      "team": "Carolina Royal Ravens",
+      "team": "Stallions",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2024/Photos/Standy.webp?t=2024-01-23T22%3A11%3A19.338Z",
       "maps": 21,
@@ -3737,7 +3737,7 @@
     {
       "playerId": "cod-308",
       "name": "Renegade",
-      "team": "Huntsmen",
+      "team": "Telluride Bush Gaming",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2026/Renegade_Halo.webp",
       "maps": 8,
@@ -3753,7 +3753,7 @@
     {
       "playerId": "cod-101",
       "name": "Gwinn",
-      "team": "OMiT Brooklyn",
+      "team": "Cloud9 New York",
       "game": "COD",
       "imageUrl": "https://dfpiiufxcciujugzjvgx.supabase.co/storage/v1/object/public/players/2026/m1/Gwinn.webp",
       "maps": 105,
