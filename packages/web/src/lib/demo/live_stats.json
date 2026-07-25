@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T00:33:23.386386+00:00",
+  "updatedAt": "2026-07-25T06:48:07.365176+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -295,7 +295,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-cryocells",
+      "playerId": "val-4147",
       "name": "Cryocells",
       "team": "XSET",
       "game": "VALORANT",
@@ -405,6 +405,22 @@
       "damage": null,
       "hsPercent": 22.8,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-29893",
+      "name": "Timotino",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 91,
+      "deaths": 70,
+      "assists": 25,
+      "rating": 1.17,
+      "acs": 251,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-hist-yay",
@@ -1719,7 +1735,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-bang",
+      "playerId": "val-3880",
       "name": "bang",
       "team": "TSM",
       "game": "VALORANT",
@@ -2039,11 +2055,27 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-asuna",
+      "playerId": "val-20140",
+      "name": "vora",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 72,
+      "deaths": 64,
+      "assists": 34,
+      "rating": 1.06,
+      "acs": 189,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-601",
       "name": "Asuna",
       "team": "100 Thieves",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/69704e530cfac.png",
       "maps": 628,
       "kills": 10882,
       "deaths": 10216,
@@ -2853,70 +2885,6 @@
       "damage": null,
       "hsPercent": 27.8,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-5568",
-      "name": "sociablEE",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 25,
-      "kills": 355,
-      "deaths": 357,
-      "assists": 219,
-      "rating": 1.02,
-      "acs": 191,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-8369",
-      "name": "yetujey",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 25,
-      "kills": 366,
-      "deaths": 360,
-      "assists": 143,
-      "rating": 1.02,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-11704",
-      "name": "STYRON",
-      "team": "TS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 67,
-      "deaths": 69,
-      "assists": 33,
-      "rating": 1.02,
-      "acs": 196,
-      "damage": null,
-      "hsPercent": 20.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-22047",
-      "name": "Rarga",
-      "team": "XLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 28,
-      "kills": 444,
-      "deaths": 417,
-      "assists": 104,
-      "rating": 1.02,
-      "acs": 210,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
     },
     {
       "playerId": "cod-43",
