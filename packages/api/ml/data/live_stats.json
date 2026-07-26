@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-25T18:19:32.817474+00:00",
+  "updatedAt": "2026-07-26T00:34:47.964634+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -871,6 +871,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-41720",
+      "name": "Favian",
+      "team": "EF",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 133,
+      "deaths": 118,
+      "assists": 26,
+      "rating": 1.13,
+      "acs": 242,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-9196",
       "name": "t3xture",
       "team": "DAMWON Gaming",
@@ -1287,22 +1303,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-41720",
-      "name": "Favian",
-      "team": "EF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 103,
-      "deaths": 90,
-      "assists": 18,
-      "rating": 1.1,
-      "acs": 253,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-hist-k1ng",
       "name": "k1Ng",
       "team": "Vision Strikers",
@@ -1636,6 +1636,22 @@
       "acs": 232,
       "damage": null,
       "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-11332",
+      "name": "ara",
+      "team": "GX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 109,
+      "deaths": 95,
+      "assists": 18,
+      "rating": 1.08,
+      "acs": 252,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -2215,6 +2231,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-34684",
+      "name": "westside",
+      "team": "GX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 95,
+      "deaths": 88,
+      "assists": 36,
+      "rating": 1.05,
+      "acs": 209,
+      "damage": null,
+      "hsPercent": 44.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-45494",
       "name": "Proxh",
       "team": "M8",
@@ -2660,54 +2692,6 @@
       "acs": 213,
       "damage": null,
       "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-8226",
-      "name": "waddle",
-      "team": "PCF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 106,
-      "deaths": 116,
-      "assists": 44,
-      "rating": 1.03,
-      "acs": 205,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-34926",
-      "name": "oonzmlp",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 75,
-      "deaths": 81,
-      "assists": 59,
-      "rating": 1.03,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-54487",
-      "name": "Xlele",
-      "team": "FPX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 166,
-      "deaths": 183,
-      "assists": 30,
-      "rating": 1.03,
-      "acs": 188,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
