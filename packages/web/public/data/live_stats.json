@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26T00:34:47.964634+00:00",
+  "updatedAt": "2026-07-26T06:56:04.679486+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -100,6 +100,22 @@
       "acs": 248,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-5395",
+      "name": "cortezia",
+      "team": "SEN",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69741432dd5e2.png",
+      "maps": 5,
+      "kills": 91,
+      "deaths": 67,
+      "assists": 28,
+      "rating": 1.23,
+      "acs": 239,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -299,7 +315,7 @@
       "name": "coconut",
       "team": "FPX",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6782529707e67.png",
+      "imageUrl": "",
       "maps": 12,
       "kills": 161,
       "deaths": 152,
@@ -1175,6 +1191,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-28716",
+      "name": "lukxo",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 88,
+      "deaths": 73,
+      "assists": 22,
+      "rating": 1.11,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "cod-39",
       "name": "Huke",
       "team": "OpTic Texas",
@@ -1269,6 +1301,22 @@
       "damage": null,
       "hsPercent": 31.0,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-8419",
+      "name": "Reduxx",
+      "team": "SEN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 84,
+      "deaths": 72,
+      "assists": 36,
+      "rating": 1.1,
+      "acs": 201,
+      "damage": null,
+      "hsPercent": 40.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-13002",
@@ -2087,6 +2135,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-10557",
+      "name": "Darker",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 82,
+      "deaths": 73,
+      "assists": 31,
+      "rating": 1.06,
+      "acs": 205,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-20140",
       "name": "vora",
       "team": "100T",
@@ -2100,6 +2164,22 @@
       "acs": 189,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41224",
+      "name": "tkzin",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 88,
+      "deaths": 81,
+      "assists": 13,
+      "rating": 1.06,
+      "acs": 228,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2260,22 +2340,6 @@
       "acs": 194,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-46135",
-      "name": "Zeus",
-      "team": "TS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 111,
-      "deaths": 104,
-      "assists": 24,
-      "rating": 1.05,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -2471,38 +2535,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-5554",
-      "name": "PROFEK",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 284,
-      "deaths": 258,
-      "assists": 153,
-      "rating": 1.04,
-      "acs": 188,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-23169",
-      "name": "Minny",
-      "team": "M8",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 117,
-      "deaths": 104,
-      "assists": 29,
-      "rating": 1.04,
-      "acs": 234,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-hist-mrfalin",
       "name": "MrFaliN",
       "team": "FUT Esports",
@@ -2663,7 +2695,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-jonahp",
+      "playerId": "val-4581",
       "name": "JonahP",
       "team": "Complexity",
       "game": "VALORANT",
@@ -2677,22 +2709,6 @@
       "damage": null,
       "hsPercent": 25.3,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-4774",
-      "name": "Knight",
-      "team": "BLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 206,
-      "deaths": 186,
-      "assists": 81,
-      "rating": 1.03,
-      "acs": 213,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-hist-sushiboys",
