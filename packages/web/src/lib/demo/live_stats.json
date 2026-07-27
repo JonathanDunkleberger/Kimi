@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-27T00:34:28.347481+00:00",
+  "updatedAt": "2026-07-27T07:09:56.020755+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -151,6 +151,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 7,
+      "kills": 110,
+      "deaths": 87,
+      "assists": 48,
+      "rating": 1.23,
+      "acs": 220,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-46748",
       "name": "K1ra",
       "team": "AG",
@@ -183,7 +199,7 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-hist-aspas",
+      "playerId": "val-8480",
       "name": "aspas",
       "team": "SLICK",
       "game": "VALORANT",
@@ -283,7 +299,7 @@
       "name": "coconut",
       "team": "FPX",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6782529707e67.png",
+      "imageUrl": "",
       "maps": 14,
       "kills": 184,
       "deaths": 185,
@@ -452,22 +468,6 @@
       "acs": 222,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-37354",
-      "name": "basic",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 76,
-      "deaths": 69,
-      "assists": 50,
-      "rating": 1.16,
-      "acs": 214,
-      "damage": null,
-      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -1044,6 +1044,22 @@
       "acs": 236,
       "damage": null,
       "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37354",
+      "name": "basic",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 116,
+      "deaths": 105,
+      "assists": 61,
+      "rating": 1.12,
+      "acs": 211,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -2276,54 +2292,6 @@
       "acs": 188,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-34684",
-      "name": "westside",
-      "team": "GX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 95,
-      "deaths": 88,
-      "assists": 36,
-      "rating": 1.05,
-      "acs": 209,
-      "damage": null,
-      "hsPercent": 44.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-45494",
-      "name": "Proxh",
-      "team": "M8",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 100,
-      "deaths": 94,
-      "assists": 68,
-      "rating": 1.05,
-      "acs": 194,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-46135",
-      "name": "Zeus",
-      "team": "TS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 111,
-      "deaths": 104,
-      "assists": 24,
-      "rating": 1.05,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
