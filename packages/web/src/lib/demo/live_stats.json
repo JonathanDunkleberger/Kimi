@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-29T12:42:47.625493+00:00",
+  "updatedAt": "2026-07-29T18:22:13.907916+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -228,6 +228,22 @@
       "acs": 223,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 8,
+      "kills": 144,
+      "deaths": 112,
+      "assists": 44,
+      "rating": 1.21,
+      "acs": 259,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1175,7 +1191,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-nats",
+      "playerId": "val-457",
       "name": "nAts",
       "team": "Gambit Esports",
       "game": "VALORANT",
@@ -1511,22 +1527,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 101,
-      "deaths": 90,
-      "assists": 36,
-      "rating": 1.09,
-      "acs": 245,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29833",
       "name": "iZu",
       "team": "T1",
@@ -1540,6 +1540,22 @@
       "acs": 224,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-34684",
+      "name": "westside",
+      "team": "GX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 130,
+      "deaths": 118,
+      "assists": 44,
+      "rating": 1.09,
+      "acs": 221,
+      "damage": null,
+      "hsPercent": 45.0,
       "source": "vlr"
     },
     {
@@ -1684,22 +1700,6 @@
       "acs": 232,
       "damage": null,
       "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-11332",
-      "name": "ara",
-      "team": "GX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 109,
-      "deaths": 95,
-      "assists": 18,
-      "rating": 1.08,
-      "acs": 252,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -2276,22 +2276,6 @@
       "acs": 194,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-16215",
-      "name": "dos9",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 129,
-      "deaths": 119,
-      "assists": 71,
-      "rating": 1.05,
-      "acs": 188,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
