@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-29T18:22:13.907916+00:00",
+  "updatedAt": "2026-07-30T00:29:50.890786+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -60,14 +60,14 @@
       "team": "M8",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/6977651551705.png",
-      "maps": 7,
-      "kills": 136,
-      "deaths": 100,
-      "assists": 47,
-      "rating": 1.33,
-      "acs": 264,
+      "maps": 10,
+      "kills": 200,
+      "deaths": 153,
+      "assists": 68,
+      "rating": 1.3,
+      "acs": 263,
       "damage": null,
-      "hsPercent": 33.0,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -1415,6 +1415,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 359,
+      "deaths": 305,
+      "assists": 121,
+      "rating": 1.1,
+      "acs": 206,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-k1ng",
       "name": "k1Ng",
       "team": "Vision Strikers",
@@ -1700,22 +1716,6 @@
       "acs": 232,
       "damage": null,
       "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 302,
-      "deaths": 263,
-      "assists": 99,
-      "rating": 1.08,
-      "acs": 204,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
