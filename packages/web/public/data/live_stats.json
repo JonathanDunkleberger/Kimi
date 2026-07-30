@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T12:35:30.992853+00:00",
+  "updatedAt": "2026-07-30T18:31:21.593676+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -52,6 +52,22 @@
       "acs": 242,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-1960",
+      "name": "eKo",
+      "team": "ZETA",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6a3f3a9e662ce.png",
+      "maps": 7,
+      "kills": 139,
+      "deaths": 106,
+      "assists": 47,
+      "rating": 1.3,
+      "acs": 245,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -263,6 +279,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-25255",
+      "name": "primmie",
+      "team": "FS",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6944047b31bc9.png",
+      "maps": 13,
+      "kills": 241,
+      "deaths": 185,
+      "assists": 45,
+      "rating": 1.2,
+      "acs": 245,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-2168",
       "name": "trexx",
       "team": "KOI",
@@ -299,7 +331,7 @@
       "name": "keiko",
       "team": "NRG",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697406c5ecbcd.png",
+      "imageUrl": "",
       "maps": 13,
       "kills": 239,
       "deaths": 197,
@@ -679,19 +711,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-25255",
-      "name": "primmie",
-      "team": "FS",
+      "playerId": "val-29867",
+      "name": "hiro",
+      "team": "NAVI",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 10,
-      "kills": 168,
-      "deaths": 139,
-      "assists": 30,
+      "maps": 12,
+      "kills": 209,
+      "deaths": 177,
+      "assists": 52,
       "rating": 1.14,
-      "acs": 232,
+      "acs": 220,
       "damage": null,
-      "hsPercent": 31.0,
+      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
@@ -1831,6 +1863,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-12990",
+      "name": "SyouTa",
+      "team": "ZETA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 127,
+      "deaths": 118,
+      "assists": 34,
+      "rating": 1.07,
+      "acs": 224,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-37927",
       "name": "happywei",
       "team": "XLG",
@@ -2087,22 +2135,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-18677",
-      "name": "Ruxic",
-      "team": "NAVI",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 156,
-      "deaths": 147,
-      "assists": 66,
-      "rating": 1.06,
-      "acs": 213,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-20140",
       "name": "vora",
       "team": "100T",
@@ -2245,38 +2277,6 @@
       "damage": null,
       "hsPercent": 21.2,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-15559",
-      "name": "CHICHOO",
-      "team": "EDG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 26,
-      "kills": 388,
-      "deaths": 361,
-      "assists": 145,
-      "rating": 1.05,
-      "acs": 194,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-16215",
-      "name": "dos9",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 129,
-      "deaths": 119,
-      "assists": 71,
-      "rating": 1.05,
-      "acs": 188,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-hist-tuyz",
