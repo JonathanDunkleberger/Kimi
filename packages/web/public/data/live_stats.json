@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T12:39:30.323390+00:00",
+  "updatedAt": "2026-07-31T18:32:12.144460+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -596,22 +596,6 @@
       "acs": 246,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-48925",
-      "name": "Raxcal",
-      "team": "GEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 124,
-      "deaths": 109,
-      "assists": 57,
-      "rating": 1.15,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -1260,14 +1244,14 @@
       "team": "GEN",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 8,
-      "kills": 128,
-      "deaths": 113,
-      "assists": 66,
+      "maps": 11,
+      "kills": 180,
+      "deaths": 162,
+      "assists": 101,
       "rating": 1.11,
-      "acs": 202,
+      "acs": 203,
       "damage": null,
-      "hsPercent": 39.0,
+      "hsPercent": 41.0,
       "source": "vlr"
     },
     {
@@ -1687,6 +1671,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-48925",
+      "name": "Raxcal",
+      "team": "GEN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 166,
+      "deaths": 156,
+      "assists": 79,
+      "rating": 1.08,
+      "acs": 206,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-55085",
       "name": "Erv",
       "team": "TYL",
@@ -2069,22 +2069,6 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-5796",
-      "name": "Kr1stal",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 223,
-      "deaths": 203,
-      "assists": 76,
-      "rating": 1.06,
-      "acs": 187,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-10557",
@@ -2775,7 +2759,7 @@
       "source": "breakingpoint"
     },
     {
-      "playerId": "val-hist-tex",
+      "playerId": "val-1818",
       "name": "tex",
       "team": "NRG Esports",
       "game": "VALORANT",
