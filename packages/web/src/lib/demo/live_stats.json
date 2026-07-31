@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-31T07:00:21.306464+00:00",
+  "updatedAt": "2026-07-31T12:39:30.323390+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -267,7 +267,7 @@
       "name": "primmie",
       "team": "FS",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6944047b31bc9.png",
+      "imageUrl": "",
       "maps": 13,
       "kills": 241,
       "deaths": 185,
@@ -1003,7 +1003,7 @@
       "name": "something",
       "team": "Paper Rex",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/69735f396861f.png",
       "maps": 437,
       "kills": 7830,
       "deaths": 6588,
@@ -2276,6 +2276,38 @@
       "acs": 188,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-18677",
+      "name": "Ruxic",
+      "team": "NAVI",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 194,
+      "deaths": 186,
+      "assists": 79,
+      "rating": 1.05,
+      "acs": 213,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-34926",
+      "name": "oonzmlp",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 118,
+      "deaths": 121,
+      "assists": 80,
+      "rating": 1.05,
+      "acs": 195,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
