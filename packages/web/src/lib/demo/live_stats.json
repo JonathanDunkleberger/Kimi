@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T18:31:21.593676+00:00",
+  "updatedAt": "2026-07-31T00:33:21.522079+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -615,6 +615,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-41720",
+      "name": "Favian",
+      "team": "EF",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 10,
+      "kills": 176,
+      "deaths": 152,
+      "assists": 36,
+      "rating": 1.15,
+      "acs": 246,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-48925",
       "name": "Raxcal",
       "team": "GEN",
@@ -932,22 +948,6 @@
       "acs": 217,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41720",
-      "name": "Favian",
-      "team": "EF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 133,
-      "deaths": 118,
-      "assists": 26,
-      "rating": 1.13,
-      "acs": 242,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2277,6 +2277,22 @@
       "damage": null,
       "hsPercent": 21.2,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 186,
+      "deaths": 169,
+      "assists": 50,
+      "rating": 1.05,
+      "acs": 205,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-hist-tuyz",
