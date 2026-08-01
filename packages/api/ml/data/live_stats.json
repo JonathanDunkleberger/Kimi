@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T00:32:28.539280+00:00",
+  "updatedAt": "2026-08-01T06:51:46.115890+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -68,6 +68,22 @@
       "acs": 245,
       "damage": null,
       "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 9,
+      "kills": 149,
+      "deaths": 108,
+      "assists": 62,
+      "rating": 1.29,
+      "acs": 230,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -148,22 +164,6 @@
       "acs": 250,
       "damage": null,
       "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
-      "maps": 7,
-      "kills": 110,
-      "deaths": 87,
-      "assists": 48,
-      "rating": 1.23,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -1812,6 +1812,22 @@
       "acs": 235,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-34400",
+      "name": "bao",
+      "team": "EG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 80,
+      "deaths": 79,
+      "assists": 34,
+      "rating": 1.07,
+      "acs": 189,
+      "damage": null,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
