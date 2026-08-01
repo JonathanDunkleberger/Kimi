@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-01T12:22:38.764095+00:00",
+  "updatedAt": "2026-08-01T18:21:14.663831+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -263,27 +263,11 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-25255",
-      "name": "primmie",
-      "team": "FS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 241,
-      "deaths": 185,
-      "assists": 45,
-      "rating": 1.2,
-      "acs": 245,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-28716",
       "name": "lukxo",
       "team": "LOUD",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
       "maps": 8,
       "kills": 159,
       "deaths": 114,
@@ -437,6 +421,22 @@
       "damage": null,
       "hsPercent": 22.8,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-25255",
+      "name": "primmie",
+      "team": "FS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 16,
+      "kills": 282,
+      "deaths": 224,
+      "assists": 56,
+      "rating": 1.17,
+      "acs": 234,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-42733",
@@ -1372,12 +1372,12 @@
       "team": "VIT",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 24,
-      "kills": 359,
-      "deaths": 305,
-      "assists": 121,
+      "maps": 27,
+      "kills": 405,
+      "deaths": 341,
+      "assists": 143,
       "rating": 1.1,
-      "acs": 206,
+      "acs": 204,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
