@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T06:54:33.391696+00:00",
+  "updatedAt": "2026-08-02T12:24:04.151730+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -135,22 +135,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-11600",
-      "name": "Foxy9",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/676ba0170dbab.png",
-      "maps": 8,
-      "kills": 163,
-      "deaths": 123,
-      "assists": 32,
-      "rating": 1.23,
-      "acs": 250,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-46748",
       "name": "K1ra",
       "team": "AG",
@@ -197,6 +181,22 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-11600",
+      "name": "Foxy9",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/676ba0170dbab.png",
+      "maps": 11,
+      "kills": 212,
+      "deaths": 163,
+      "assists": 47,
+      "rating": 1.21,
+      "acs": 244,
+      "damage": null,
+      "hsPercent": 37.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-28716",
@@ -412,14 +412,14 @@
       "team": "VL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 8,
-      "kills": 134,
-      "deaths": 118,
-      "assists": 57,
+      "maps": 11,
+      "kills": 179,
+      "deaths": 157,
+      "assists": 79,
       "rating": 1.17,
-      "acs": 214,
+      "acs": 212,
       "damage": null,
-      "hsPercent": 34.0,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -2263,19 +2263,35 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-28400",
+      "name": "HYUNMIN",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 10,
+      "kills": 142,
+      "deaths": 144,
+      "assists": 65,
+      "rating": 1.05,
+      "acs": 220,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-34926",
       "name": "oonzmlp",
       "team": "VL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 8,
-      "kills": 118,
-      "deaths": 121,
-      "assists": 80,
+      "maps": 11,
+      "kills": 160,
+      "deaths": 162,
+      "assists": 101,
       "rating": 1.05,
       "acs": 195,
       "damage": null,
-      "hsPercent": 26.0,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -2469,22 +2485,6 @@
       "damage": null,
       "hsPercent": 28.2,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-5395",
-      "name": "cortezia",
-      "team": "SEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 121,
-      "deaths": 114,
-      "assists": 53,
-      "rating": 1.04,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-hist-mrfalin",
@@ -3063,7 +3063,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-klaus",
+      "playerId": "val-4426",
       "name": "Klaus",
       "team": "KRÜ Esports",
       "game": "VALORANT",
