@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-03T00:33:12.819024+00:00",
+  "updatedAt": "2026-08-03T07:08:59.371799+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1623,6 +1623,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 239,
+      "deaths": 212,
+      "assists": 59,
+      "rating": 1.08,
+      "acs": 204,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-29833",
       "name": "iZu",
       "team": "T1",
@@ -2197,22 +2213,6 @@
       "damage": null,
       "hsPercent": 21.2,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 186,
-      "deaths": 169,
-      "assists": 50,
-      "rating": 1.05,
-      "acs": 205,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-15559",
