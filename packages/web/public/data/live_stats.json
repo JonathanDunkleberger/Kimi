@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-07T06:25:43.710048+00:00",
+  "updatedAt": "2026-08-07T12:17:24.423703+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -100,22 +100,6 @@
       "acs": 263,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-46748",
-      "name": "K1ra",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/677fbe754983a.png",
-      "maps": 12,
-      "kills": 209,
-      "deaths": 182,
-      "assists": 89,
-      "rating": 1.23,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -226,6 +210,22 @@
       "assists": 86,
       "rating": 1.19,
       "acs": 188,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13002",
+      "name": "Akame",
+      "team": "DFM",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/674037c47365d.png",
+      "maps": 12,
+      "kills": 216,
+      "deaths": 181,
+      "assists": 84,
+      "rating": 1.19,
+      "acs": 231,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -421,22 +421,6 @@
       "damage": null,
       "hsPercent": 23.8,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-13002",
-      "name": "Akame",
-      "team": "DFM",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 181,
-      "deaths": 157,
-      "assists": 69,
-      "rating": 1.16,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-4462",
@@ -692,6 +676,22 @@
       "acs": 196,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-46748",
+      "name": "K1ra",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 254,
+      "deaths": 225,
+      "assists": 106,
+      "rating": 1.14,
+      "acs": 228,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -996,6 +996,22 @@
       "acs": 192,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21216",
+      "name": "f4ngeer",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 247,
+      "deaths": 221,
+      "assists": 53,
+      "rating": 1.12,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1620,22 +1636,6 @@
       "acs": 204,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-10821",
-      "name": "deLb",
-      "team": "TE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 234,
-      "deaths": 201,
-      "assists": 55,
-      "rating": 1.08,
-      "acs": 222,
-      "damage": null,
-      "hsPercent": 42.0,
       "source": "vlr"
     },
     {
