@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T06:16:06.816791+00:00",
+  "updatedAt": "2026-08-08T12:09:09.824598+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -267,7 +267,7 @@
       "name": "Neon",
       "team": "LEV",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69234b3d0a58d.png",
+      "imageUrl": "",
       "maps": 27,
       "kills": 424,
       "deaths": 311,
@@ -309,22 +309,6 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-14125",
-      "name": "Spring",
-      "team": "WOL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 301,
-      "deaths": 271,
-      "assists": 120,
-      "rating": 1.18,
-      "acs": 232,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-hist-nukkye",
@@ -532,6 +516,22 @@
       "acs": 237,
       "damage": null,
       "hsPercent": 21.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-14125",
+      "name": "Spring",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 346,
+      "deaths": 318,
+      "assists": 151,
+      "rating": 1.15,
+      "acs": 225,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -868,6 +868,22 @@
       "acs": 245,
       "damage": null,
       "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-28400",
+      "name": "HYUNMIN",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 187,
+      "deaths": 174,
+      "assists": 76,
+      "rating": 1.13,
+      "acs": 234,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1703,22 +1719,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 165,
-      "deaths": 143,
-      "assists": 56,
-      "rating": 1.08,
-      "acs": 227,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-37927",
       "name": "happywei",
       "team": "XLG",
@@ -2087,6 +2087,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29833",
+      "name": "iZu",
+      "team": "T1",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 190,
+      "deaths": 169,
+      "assists": 66,
+      "rating": 1.06,
+      "acs": 219,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-48925",
       "name": "Raxcal",
       "team": "GEN",
@@ -2279,19 +2295,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-28400",
-      "name": "HYUNMIN",
-      "team": "KRX",
+      "playerId": "val-8240",
+      "name": "Layla",
+      "team": "AT",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 10,
-      "kills": 142,
-      "deaths": 144,
-      "assists": 65,
+      "maps": 5,
+      "kills": 93,
+      "deaths": 84,
+      "assists": 24,
       "rating": 1.05,
-      "acs": 220,
+      "acs": 218,
       "damage": null,
-      "hsPercent": 30.0,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
