@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-09T06:16:38.609132+00:00",
+  "updatedAt": "2026-08-09T12:10:04.004985+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -103,6 +103,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-11600",
+      "name": "Foxy9",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/676ba0170dbab.png",
+      "maps": 13,
+      "kills": 259,
+      "deaths": 195,
+      "assists": 56,
+      "rating": 1.22,
+      "acs": 249,
+      "damage": null,
+      "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41054",
       "name": "GuanG",
       "team": "NOVA",
@@ -133,22 +149,6 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-11600",
-      "name": "Foxy9",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/676ba0170dbab.png",
-      "maps": 11,
-      "kills": 212,
-      "deaths": 163,
-      "assists": 47,
-      "rating": 1.21,
-      "acs": 244,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-63107",
@@ -295,6 +295,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-42733",
+      "name": "XuNa",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 216,
+      "deaths": 186,
+      "assists": 94,
+      "rating": 1.18,
+      "acs": 216,
+      "damage": null,
+      "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-nukkye",
       "name": "nukkye",
       "team": "G2 Esports",
@@ -340,22 +356,6 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42733",
-      "name": "XuNa",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 179,
-      "deaths": 157,
-      "assists": 79,
-      "rating": 1.17,
-      "acs": 212,
-      "damage": null,
-      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -484,22 +484,6 @@
       "acs": 237,
       "damage": null,
       "hsPercent": 21.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-14125",
-      "name": "Spring",
-      "team": "WOL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 346,
-      "deaths": 318,
-      "assists": 151,
-      "rating": 1.15,
-      "acs": 225,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -1303,6 +1287,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-15559",
+      "name": "CHICHOO",
+      "team": "EDG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 32,
+      "kills": 506,
+      "deaths": 448,
+      "assists": 182,
+      "rating": 1.11,
+      "acs": 204,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "cod-39",
       "name": "Huke",
       "team": "CDL",
@@ -1397,6 +1397,22 @@
       "damage": 576947,
       "hsPercent": null,
       "source": "breakingpoint"
+    },
+    {
+      "playerId": "val-14125",
+      "name": "Spring",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 382,
+      "deaths": 367,
+      "assists": 181,
+      "rating": 1.1,
+      "acs": 218,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-21251",
@@ -1863,6 +1879,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-6022",
+      "name": "yosemite",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 372,
+      "deaths": 364,
+      "assists": 117,
+      "rating": 1.07,
+      "acs": 203,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-12795",
       "name": "Crewen",
       "team": "BBL",
@@ -1876,22 +1908,6 @@
       "acs": 204,
       "damage": null,
       "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-15559",
-      "name": "CHICHOO",
-      "team": "EDG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 29,
-      "kills": 444,
-      "deaths": 404,
-      "assists": 165,
-      "rating": 1.07,
-      "acs": 197,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -2180,22 +2196,6 @@
       "acs": 215,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 190,
-      "deaths": 169,
-      "assists": 66,
-      "rating": 1.06,
-      "acs": 219,
-      "damage": null,
-      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
