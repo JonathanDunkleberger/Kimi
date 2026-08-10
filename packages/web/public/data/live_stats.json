@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T12:17:14.509603+00:00",
+  "updatedAt": "2026-08-10T18:18:05.003160+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -44,11 +44,11 @@
       "team": "DRG",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
-      "maps": 19,
-      "kills": 360,
-      "deaths": 276,
-      "assists": 103,
-      "rating": 1.31,
+      "maps": 22,
+      "kills": 408,
+      "deaths": 315,
+      "assists": 114,
+      "rating": 1.29,
       "acs": 235,
       "damage": null,
       "hsPercent": 32.0,
@@ -149,22 +149,6 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-63107",
-      "name": "ra1ny",
-      "team": "TEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 165,
-      "deaths": 171,
-      "assists": 30,
-      "rating": 1.21,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-28716",
@@ -363,7 +347,7 @@
       "name": "Avez",
       "team": "KC",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/63e4aecb51963.png",
       "maps": 12,
       "kills": 199,
       "deaths": 162,
@@ -388,6 +372,22 @@
       "acs": 219,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-63107",
+      "name": "ra1ny",
+      "team": "TEC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 216,
+      "deaths": 216,
+      "assists": 43,
+      "rating": 1.17,
+      "acs": 231,
+      "damage": null,
+      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
