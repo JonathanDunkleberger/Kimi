@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T00:17:39.460193+00:00",
+  "updatedAt": "2026-08-10T06:29:55.513889+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -52,22 +52,6 @@
       "acs": 235,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-28716",
-      "name": "lukxo",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
-      "maps": 10,
-      "kills": 204,
-      "deaths": 136,
-      "assists": 33,
-      "rating": 1.26,
-      "acs": 257,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -180,6 +164,22 @@
       "acs": 228,
       "damage": null,
       "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-28716",
+      "name": "lukxo",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
+      "maps": 12,
+      "kills": 236,
+      "deaths": 166,
+      "assists": 35,
+      "rating": 1.2,
+      "acs": 247,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
