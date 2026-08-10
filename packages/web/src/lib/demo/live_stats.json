@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T06:29:55.513889+00:00",
+  "updatedAt": "2026-08-10T12:17:14.509603+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -535,6 +535,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21216",
+      "name": "f4ngeer",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 287,
+      "deaths": 254,
+      "assists": 64,
+      "rating": 1.15,
+      "acs": 233,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-36245",
       "name": "N4RRATE",
       "team": "KC",
@@ -676,22 +692,6 @@
       "acs": 208,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-46748",
-      "name": "K1ra",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 254,
-      "deaths": 225,
-      "assists": 106,
-      "rating": 1.14,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1058,22 +1058,6 @@
       "assists": 105,
       "rating": 1.12,
       "acs": 168,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21216",
-      "name": "f4ngeer",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 247,
-      "deaths": 221,
-      "assists": 53,
-      "rating": 1.12,
-      "acs": 232,
       "damage": null,
       "hsPercent": 27.0,
       "source": "vlr"
@@ -1639,6 +1623,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-46748",
+      "name": "K1ra",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 286,
+      "deaths": 262,
+      "assists": 123,
+      "rating": 1.09,
+      "acs": 224,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-mwzera",
       "name": "mwzera",
       "team": "Gamelanders Blue",
@@ -1780,6 +1780,22 @@
       "acs": 231,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-25494",
+      "name": "Shr1mp",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 239,
+      "deaths": 239,
+      "assists": 96,
+      "rating": 1.08,
+      "acs": 188,
+      "damage": null,
+      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -2194,22 +2210,6 @@
       "assists": 66,
       "rating": 1.06,
       "acs": 219,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-48925",
-      "name": "Raxcal",
-      "team": "GEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 215,
-      "deaths": 200,
-      "assists": 92,
-      "rating": 1.06,
-      "acs": 201,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
