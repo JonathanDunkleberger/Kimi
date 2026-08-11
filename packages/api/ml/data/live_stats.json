@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T06:20:28.629595+00:00",
+  "updatedAt": "2026-08-11T12:17:26.274699+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1287,22 +1287,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-15559",
-      "name": "CHICHOO",
-      "team": "EDG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 32,
-      "kills": 506,
-      "deaths": 448,
-      "assists": 182,
-      "rating": 1.11,
-      "acs": 204,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "cod-55",
       "name": "JoeDeceives",
       "team": "CDL",
@@ -1780,6 +1764,22 @@
       "acs": 231,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-15559",
+      "name": "CHICHOO",
+      "team": "EDG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 34,
+      "kills": 524,
+      "deaths": 480,
+      "assists": 197,
+      "rating": 1.08,
+      "acs": 201,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
