@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T06:30:03.683800+00:00",
+  "updatedAt": "2026-08-12T12:18:05.139455+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -375,22 +375,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-63107",
-      "name": "ra1ny",
-      "team": "TEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 216,
-      "deaths": 216,
-      "assists": 43,
-      "rating": 1.17,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-hist-yay",
       "name": "yay",
       "team": "Andbox",
@@ -532,22 +516,6 @@
       "acs": 254,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21216",
-      "name": "f4ngeer",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 287,
-      "deaths": 254,
-      "assists": 64,
-      "rating": 1.15,
-      "acs": 233,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1079,6 +1047,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21216",
+      "name": "f4ngeer",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 349,
+      "deaths": 307,
+      "assists": 72,
+      "rating": 1.12,
+      "acs": 235,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21251",
       "name": "blowz",
       "team": "LEV",
@@ -1607,19 +1591,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-46748",
-      "name": "K1ra",
+      "playerId": "val-25494",
+      "name": "Shr1mp",
       "team": "AG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 17,
-      "kills": 286,
-      "deaths": 262,
-      "assists": 123,
+      "maps": 20,
+      "kills": 288,
+      "deaths": 279,
+      "assists": 109,
       "rating": 1.09,
-      "acs": 224,
+      "acs": 189,
       "damage": null,
-      "hsPercent": 27.0,
+      "hsPercent": 21.0,
       "source": "vlr"
     },
     {
@@ -1780,22 +1764,6 @@
       "acs": 201,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-25494",
-      "name": "Shr1mp",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 239,
-      "deaths": 239,
-      "assists": 96,
-      "rating": 1.08,
-      "acs": 188,
-      "damage": null,
-      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -2210,6 +2178,38 @@
       "assists": 66,
       "rating": 1.06,
       "acs": 219,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-47629",
+      "name": "Coco",
+      "team": "TEC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 365,
+      "deaths": 379,
+      "assists": 247,
+      "rating": 1.06,
+      "acs": 190,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-48925",
+      "name": "Raxcal",
+      "team": "GEN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 215,
+      "deaths": 200,
+      "assists": 92,
+      "rating": 1.06,
+      "acs": 201,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
