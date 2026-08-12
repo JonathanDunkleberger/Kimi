@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T12:18:05.139455+00:00",
+  "updatedAt": "2026-08-12T18:18:53.673574+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -55,22 +55,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-10307",
-      "name": "marteen",
-      "team": "M8",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6977651551705.png",
-      "maps": 14,
-      "kills": 266,
-      "deaths": 215,
-      "assists": 84,
-      "rating": 1.25,
-      "acs": 255,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-36685",
       "name": "splash",
       "team": "TYL",
@@ -84,6 +68,22 @@
       "acs": 263,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-10307",
+      "name": "marteen",
+      "team": "M8",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6977651551705.png",
+      "maps": 16,
+      "kills": 304,
+      "deaths": 248,
+      "assists": 94,
+      "rating": 1.23,
+      "acs": 252,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -343,11 +343,27 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-3127",
+      "name": "MONSTEERR",
+      "team": "SGE",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6a4be27c8214f.png",
+      "maps": 5,
+      "kills": 90,
+      "deaths": 75,
+      "assists": 27,
+      "rating": 1.17,
+      "acs": 234,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-5654",
       "name": "Avez",
       "team": "KC",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/63e4aecb51963.png",
+      "imageUrl": "",
       "maps": 12,
       "kills": 199,
       "deaths": 162,
@@ -855,6 +871,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-22047",
+      "name": "Rarga",
+      "team": "XLG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 323,
+      "deaths": 278,
+      "assists": 66,
+      "rating": 1.13,
+      "acs": 222,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-25255",
       "name": "primmie",
       "team": "FS",
@@ -1287,6 +1319,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-10821",
+      "name": "deLb",
+      "team": "TE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 392,
+      "deaths": 337,
+      "assists": 96,
+      "rating": 1.11,
+      "acs": 212,
+      "damage": null,
+      "hsPercent": 41.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "cod-55",
       "name": "JoeDeceives",
       "team": "CDL",
@@ -1381,6 +1429,22 @@
       "damage": 607655,
       "hsPercent": null,
       "source": "breakingpoint"
+    },
+    {
+      "playerId": "val-7660",
+      "name": "Fizzy",
+      "team": "SGE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 77,
+      "deaths": 70,
+      "assists": 33,
+      "rating": 1.1,
+      "acs": 183,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-12365",
@@ -1541,22 +1605,6 @@
       "damage": null,
       "hsPercent": 25.7,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-10821",
-      "name": "deLb",
-      "team": "TE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 357,
-      "deaths": 306,
-      "assists": 87,
-      "rating": 1.09,
-      "acs": 211,
-      "damage": null,
-      "hsPercent": 41.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-18677",
@@ -1751,22 +1799,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-15559",
-      "name": "CHICHOO",
-      "team": "EDG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 34,
-      "kills": 524,
-      "deaths": 480,
-      "assists": 197,
-      "rating": 1.08,
-      "acs": 201,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-55085",
       "name": "Erv",
       "team": "TYL",
@@ -1924,6 +1956,22 @@
       "acs": 204,
       "damage": null,
       "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-15559",
+      "name": "CHICHOO",
+      "team": "EDG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 31,
+      "kills": 483,
+      "deaths": 446,
+      "assists": 180,
+      "rating": 1.07,
+      "acs": 204,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -2164,54 +2212,6 @@
       "acs": 209,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 190,
-      "deaths": 169,
-      "assists": 66,
-      "rating": 1.06,
-      "acs": 219,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-47629",
-      "name": "Coco",
-      "team": "TEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 25,
-      "kills": 365,
-      "deaths": 379,
-      "assists": 247,
-      "rating": 1.06,
-      "acs": 190,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-48925",
-      "name": "Raxcal",
-      "team": "GEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 215,
-      "deaths": 200,
-      "assists": 92,
-      "rating": 1.06,
-      "acs": 201,
-      "damage": null,
-      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
