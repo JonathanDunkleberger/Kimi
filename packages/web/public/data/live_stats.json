@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T06:31:32.993875+00:00",
+  "updatedAt": "2026-08-13T12:18:30.770990+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -551,6 +551,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-28400",
+      "name": "HYUNMIN",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 226,
+      "deaths": 202,
+      "assists": 80,
+      "rating": 1.15,
+      "acs": 235,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-36245",
       "name": "N4RRATE",
       "team": "KC",
@@ -900,22 +916,6 @@
       "acs": 224,
       "damage": null,
       "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-28400",
-      "name": "HYUNMIN",
-      "team": "KRX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 187,
-      "deaths": 174,
-      "assists": 76,
-      "rating": 1.13,
-      "acs": 234,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
