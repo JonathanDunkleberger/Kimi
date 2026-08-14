@@ -1,27 +1,11 @@
 {
-  "updatedAt": "2026-08-14T06:30:29.522904+00:00",
+  "updatedAt": "2026-08-14T12:17:08.899945+00:00",
   "sources": [
     "vct_history",
     "vlr",
     "breakingpoint"
   ],
   "players": [
-    {
-      "playerId": "val-45492",
-      "name": "swagzor",
-      "team": "NOVA",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 265,
-      "deaths": 208,
-      "assists": 52,
-      "rating": 1.42,
-      "acs": 275,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
     {
       "playerId": "val-41739",
       "name": "slowly",
@@ -100,22 +84,6 @@
       "acs": 249,
       "damage": null,
       "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41054",
-      "name": "GuanG",
-      "team": "NOVA",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6780f1a2e0d06.png",
-      "maps": 13,
-      "kills": 229,
-      "deaths": 167,
-      "assists": 55,
-      "rating": 1.22,
-      "acs": 212,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -295,6 +263,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-45492",
+      "name": "swagzor",
+      "team": "NOVA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 294,
+      "deaths": 245,
+      "assists": 59,
+      "rating": 1.18,
+      "acs": 266,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-nukkye",
       "name": "nukkye",
       "team": "G2 Esports",
@@ -363,7 +347,7 @@
       "name": "keiko",
       "team": "NRG",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/697406c5ecbcd.png",
       "maps": 12,
       "kills": 204,
       "deaths": 168,
@@ -372,6 +356,22 @@
       "acs": 219,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-25255",
+      "name": "primmie",
+      "team": "FS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 301,
+      "deaths": 234,
+      "assists": 69,
+      "rating": 1.17,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -935,22 +935,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-25255",
-      "name": "primmie",
-      "team": "FS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 244,
-      "deaths": 200,
-      "assists": 53,
-      "rating": 1.13,
-      "acs": 224,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-9196",
       "name": "t3xture",
       "team": "DAMWON Gaming",
@@ -1175,38 +1159,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-39697",
-      "name": "cb",
-      "team": "NOVA",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 190,
-      "deaths": 179,
-      "assists": 100,
-      "rating": 1.12,
-      "acs": 201,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-46460",
-      "name": "Ezeir",
-      "team": "NOVA",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 202,
-      "deaths": 186,
-      "assists": 107,
-      "rating": 1.12,
-      "acs": 202,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-3520",
       "name": "ZmjjKK",
       "team": "CBT Gaming",
@@ -1332,6 +1284,22 @@
       "acs": 212,
       "damage": null,
       "hsPercent": 41.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-46460",
+      "name": "Ezeir",
+      "team": "NOVA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 233,
+      "deaths": 214,
+      "assists": 118,
+      "rating": 1.11,
+      "acs": 202,
+      "damage": null,
+      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -1991,6 +1959,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-39697",
+      "name": "cb",
+      "team": "NOVA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 216,
+      "deaths": 207,
+      "assists": 108,
+      "rating": 1.07,
+      "acs": 197,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-derrek",
       "name": "Derrek",
       "team": "Rise",
@@ -2181,6 +2165,22 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-1475",
+      "name": "kamyk",
+      "team": "JL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 139,
+      "deaths": 131,
+      "assists": 61,
+      "rating": 1.06,
+      "acs": 193,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-601",
