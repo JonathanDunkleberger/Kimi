@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T18:19:28.553228+00:00",
+  "updatedAt": "2026-08-14T00:22:58.870245+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1399,7 +1399,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-heat",
+      "playerId": "val-8673",
       "name": "heat",
       "team": "Liberty",
       "game": "VALORANT",
@@ -2181,22 +2181,6 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-1475",
-      "name": "kamyk",
-      "team": "JL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 139,
-      "deaths": 131,
-      "assists": 61,
-      "rating": 1.06,
-      "acs": 193,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-601",
