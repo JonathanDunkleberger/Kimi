@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-14T18:19:01.524824+00:00",
+  "updatedAt": "2026-08-15T00:12:07.990962+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -36,6 +36,22 @@
       "acs": 236,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37354",
+      "name": "basic",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
+      "maps": 15,
+      "kills": 270,
+      "deaths": 213,
+      "assists": 123,
+      "rating": 1.26,
+      "acs": 226,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -135,22 +151,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-37354",
-      "name": "basic",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
-      "maps": 12,
-      "kills": 205,
-      "deaths": 177,
-      "assists": 107,
-      "rating": 1.2,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-2168",
       "name": "trexx",
       "team": "KOI",
@@ -196,22 +196,6 @@
       "acs": 231,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21610",
-      "name": "runneR",
-      "team": "JL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/65e9ef0c3da3d.png",
-      "maps": 9,
-      "kills": 159,
-      "deaths": 141,
-      "assists": 64,
-      "rating": 1.19,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -711,6 +695,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-1475",
+      "name": "kamyk",
+      "team": "JL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 185,
+      "deaths": 160,
+      "assists": 77,
+      "rating": 1.14,
+      "acs": 208,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-11118",
       "name": "skuba",
       "team": "NRG",
@@ -1154,6 +1154,22 @@
       "assists": 72,
       "rating": 1.12,
       "acs": 235,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21610",
+      "name": "runneR",
+      "team": "JL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 188,
+      "deaths": 172,
+      "assists": 72,
+      "rating": 1.12,
+      "acs": 218,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -2167,19 +2183,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-1475",
-      "name": "kamyk",
-      "team": "JL",
+      "playerId": "val-5395",
+      "name": "cortezia",
+      "team": "SEN",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 9,
-      "kills": 139,
-      "deaths": 131,
-      "assists": 61,
+      "maps": 14,
+      "kills": 218,
+      "deaths": 196,
+      "assists": 74,
       "rating": 1.06,
-      "acs": 193,
+      "acs": 206,
       "damage": null,
-      "hsPercent": 26.0,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
