@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T00:12:07.990962+00:00",
+  "updatedAt": "2026-08-15T06:07:39.569677+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -437,6 +437,22 @@
       "damage": null,
       "hsPercent": 23.8,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-18796",
+      "name": "OXY",
+      "team": "C9",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 287,
+      "deaths": 236,
+      "assists": 51,
+      "rating": 1.16,
+      "acs": 261,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-33902",
@@ -1636,22 +1652,6 @@
       "acs": 225,
       "damage": null,
       "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-18796",
-      "name": "OXY",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 227,
-      "deaths": 198,
-      "assists": 39,
-      "rating": 1.09,
-      "acs": 245,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
