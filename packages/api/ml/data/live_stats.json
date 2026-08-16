@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T18:04:56.720697+00:00",
+  "updatedAt": "2026-08-16T00:12:09.746089+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -119,6 +119,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 13,
+      "kills": 208,
+      "deaths": 160,
+      "assists": 84,
+      "rating": 1.21,
+      "acs": 218,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-28716",
       "name": "lukxo",
       "team": "LOUD",
@@ -197,22 +213,6 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
-      "maps": 11,
-      "kills": 174,
-      "deaths": 140,
-      "assists": 74,
-      "rating": 1.18,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-42733",
@@ -580,22 +580,6 @@
       "acs": 257,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41720",
-      "name": "Favian",
-      "team": "EF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 240,
-      "deaths": 197,
-      "assists": 47,
-      "rating": 1.15,
-      "acs": 247,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1735,6 +1719,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-41720",
+      "name": "Favian",
+      "team": "EF",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 271,
+      "deaths": 239,
+      "assists": 55,
+      "rating": 1.09,
+      "acs": 236,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-mwzera",
       "name": "mwzera",
       "team": "Gamelanders Blue",
@@ -2021,6 +2021,22 @@
       "damage": null,
       "hsPercent": 24.9,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-6022",
+      "name": "yosemite",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 372,
+      "deaths": 364,
+      "assists": 117,
+      "rating": 1.07,
+      "acs": 203,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-hist-derrek",
