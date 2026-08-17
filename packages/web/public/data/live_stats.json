@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T00:11:11.960449+00:00",
+  "updatedAt": "2026-08-17T06:12:15.117618+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -44,14 +44,14 @@
       "team": "FUR",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
-      "maps": 15,
-      "kills": 270,
-      "deaths": 213,
-      "assists": 123,
-      "rating": 1.26,
-      "acs": 226,
+      "maps": 18,
+      "kills": 326,
+      "deaths": 257,
+      "assists": 144,
+      "rating": 1.24,
+      "acs": 225,
       "damage": null,
-      "hsPercent": 29.0,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -164,6 +164,22 @@
       "acs": 218,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-18796",
+      "name": "OXY",
+      "team": "C9",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
+      "maps": 18,
+      "kills": 354,
+      "deaths": 277,
+      "assists": 63,
+      "rating": 1.2,
+      "acs": 268,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -421,22 +437,6 @@
       "damage": null,
       "hsPercent": 23.8,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-18796",
-      "name": "OXY",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 287,
-      "deaths": 236,
-      "assists": 51,
-      "rating": 1.16,
-      "acs": 261,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-22047",
@@ -1623,22 +1623,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 193,
-      "deaths": 169,
-      "assists": 36,
-      "rating": 1.09,
-      "acs": 199,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-4885",
       "name": "whzy",
       "team": "BLG",
@@ -2229,6 +2213,22 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-7660",
+      "name": "Fizzy",
+      "team": "SGE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 135,
+      "deaths": 130,
+      "assists": 76,
+      "rating": 1.06,
+      "acs": 186,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-601",
