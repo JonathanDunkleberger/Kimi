@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T12:08:57.817424+00:00",
+  "updatedAt": "2026-08-20T18:08:44.375130+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -36,22 +36,6 @@
       "acs": 225,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-46460",
-      "name": "Ezeir",
-      "team": "NOVA",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6780f19ae199e.png",
-      "maps": 17,
-      "kills": 280,
-      "deaths": 236,
-      "assists": 139,
-      "rating": 1.24,
-      "acs": 212,
-      "damage": null,
-      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -151,22 +135,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6977a7018811e.png",
-      "maps": 13,
-      "kills": 218,
-      "deaths": 159,
-      "assists": 80,
-      "rating": 1.21,
-      "acs": 203,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-28716",
       "name": "lukxo",
       "team": "LOUD",
@@ -180,6 +148,22 @@
       "acs": 247,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-46460",
+      "name": "Ezeir",
+      "team": "NOVA",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6780f19ae199e.png",
+      "maps": 20,
+      "kills": 320,
+      "deaths": 273,
+      "assists": 157,
+      "rating": 1.2,
+      "acs": 213,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -245,6 +229,22 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6977a7018811e.png",
+      "maps": 16,
+      "kills": 258,
+      "deaths": 199,
+      "assists": 96,
+      "rating": 1.18,
+      "acs": 200,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-42733",
@@ -423,6 +423,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21659",
+      "name": "Sato",
+      "team": "LEV",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 192,
+      "deaths": 162,
+      "assists": 100,
+      "rating": 1.16,
+      "acs": 231,
+      "damage": null,
+      "hsPercent": 36.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-25255",
       "name": "primmie",
       "team": "FS",
@@ -436,22 +452,6 @@
       "acs": 230,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-55681",
-      "name": "kozzy",
-      "team": "EP",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 130,
-      "deaths": 107,
-      "assists": 31,
-      "rating": 1.16,
-      "acs": 233,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -583,6 +583,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-45492",
+      "name": "swagzor",
+      "team": "NOVA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 380,
+      "deaths": 318,
+      "assists": 77,
+      "rating": 1.15,
+      "acs": 259,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-5022",
       "name": "Derke",
       "team": "CrowСrowd",
@@ -684,14 +700,30 @@
       "team": "LEV",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 17,
-      "kills": 263,
-      "deaths": 204,
-      "assists": 77,
+      "maps": 12,
+      "kills": 184,
+      "deaths": 140,
+      "assists": 53,
       "rating": 1.14,
-      "acs": 204,
+      "acs": 197,
       "damage": null,
-      "hsPercent": 25.0,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41054",
+      "name": "GuanG",
+      "team": "NOVA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 329,
+      "deaths": 254,
+      "assists": 86,
+      "rating": 1.14,
+      "acs": 208,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -711,19 +743,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-45492",
-      "name": "swagzor",
-      "team": "NOVA",
+      "playerId": "val-55681",
+      "name": "kozzy",
+      "team": "EP",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 17,
-      "kills": 332,
-      "deaths": 278,
-      "assists": 67,
+      "maps": 10,
+      "kills": 187,
+      "deaths": 159,
+      "assists": 41,
       "rating": 1.14,
-      "acs": 260,
+      "acs": 246,
       "damage": null,
-      "hsPercent": 28.0,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1271,22 +1303,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-22047",
-      "name": "Rarga",
-      "team": "XLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 344,
-      "deaths": 302,
-      "assists": 75,
-      "rating": 1.11,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-36685",
       "name": "splash",
       "team": "TYL",
@@ -1300,6 +1316,22 @@
       "acs": 246,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41694",
+      "name": "endoist",
+      "team": "XIP",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 94,
+      "deaths": 81,
+      "assists": 21,
+      "rating": 1.11,
+      "acs": 250,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1447,22 +1479,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-21659",
-      "name": "Sato",
-      "team": "LEV",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 263,
-      "deaths": 235,
-      "assists": 134,
-      "rating": 1.1,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-55085",
       "name": "Erv",
       "team": "TYL",
@@ -1588,22 +1604,6 @@
       "acs": 199,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21251",
-      "name": "blowz",
-      "team": "LEV",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 225,
-      "deaths": 199,
-      "assists": 110,
-      "rating": 1.09,
-      "acs": 181,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
