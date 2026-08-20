@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T06:09:46.524345+00:00",
+  "updatedAt": "2026-08-20T12:08:57.817424+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -20,22 +20,6 @@
       "acs": 236,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41739",
-      "name": "slowly",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6848f4fd4ff85.png",
-      "maps": 19,
-      "kills": 349,
-      "deaths": 269,
-      "assists": 88,
-      "rating": 1.25,
-      "acs": 249,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -116,6 +100,22 @@
       "acs": 249,
       "damage": null,
       "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41739",
+      "name": "slowly",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6848f4fd4ff85.png",
+      "maps": 21,
+      "kills": 391,
+      "deaths": 304,
+      "assists": 99,
+      "rating": 1.22,
+      "acs": 249,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -407,19 +407,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-22047",
-      "name": "Rarga",
-      "team": "XLG",
+      "playerId": "val-4774",
+      "name": "Knight",
+      "team": "BLG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 20,
-      "kills": 344,
-      "deaths": 302,
-      "assists": 75,
+      "maps": 21,
+      "kills": 331,
+      "deaths": 303,
+      "assists": 154,
       "rating": 1.16,
-      "acs": 228,
+      "acs": 221,
       "damage": null,
-      "hsPercent": 34.0,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
@@ -517,6 +517,22 @@
       "damage": null,
       "hsPercent": 30.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-13002",
+      "name": "Akame",
+      "team": "DFM",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 316,
+      "deaths": 271,
+      "assists": 124,
+      "rating": 1.15,
+      "acs": 222,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-15559",
@@ -887,22 +903,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-13002",
-      "name": "Akame",
-      "team": "DFM",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 260,
-      "deaths": 229,
-      "assists": 96,
-      "rating": 1.13,
-      "acs": 221,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-14681",
       "name": "kamo",
       "team": "TL",
@@ -1079,6 +1079,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-4885",
+      "name": "whzy",
+      "team": "BLG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 379,
+      "deaths": 320,
+      "assists": 90,
+      "rating": 1.12,
+      "acs": 235,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-7754",
       "name": "xavi8k",
       "team": "GE",
@@ -1092,22 +1108,6 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-7849",
-      "name": "SiuFatBB",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 254,
-      "deaths": 232,
-      "assists": 130,
-      "rating": 1.12,
-      "acs": 172,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1271,51 +1271,35 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-21216",
-      "name": "f4ngeer",
-      "team": "AG",
+      "playerId": "val-22047",
+      "name": "Rarga",
+      "team": "XLG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 26,
-      "kills": 464,
-      "deaths": 403,
-      "assists": 89,
+      "maps": 20,
+      "kills": 344,
+      "deaths": 302,
+      "assists": 75,
       "rating": 1.11,
-      "acs": 234,
+      "acs": 228,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-36685",
+      "name": "splash",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 364,
+      "deaths": 324,
+      "assists": 124,
+      "rating": 1.11,
+      "acs": 246,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-39485",
-      "name": "Scales",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 274,
-      "deaths": 255,
-      "assists": 101,
-      "rating": 1.11,
-      "acs": 197,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-55085",
-      "name": "Erv",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 249,
-      "deaths": 253,
-      "assists": 153,
-      "rating": 1.11,
-      "acs": 184,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1479,19 +1463,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-37927",
-      "name": "happywei",
-      "team": "XLG",
+      "playerId": "val-55085",
+      "name": "Erv",
+      "team": "TYL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 20,
-      "kills": 286,
-      "deaths": 291,
-      "assists": 114,
+      "maps": 21,
+      "kills": 280,
+      "deaths": 283,
+      "assists": 174,
       "rating": 1.1,
-      "acs": 209,
+      "acs": 183,
       "damage": null,
-      "hsPercent": 33.0,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1607,22 +1591,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-4885",
-      "name": "whzy",
-      "team": "BLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 379,
-      "deaths": 320,
-      "assists": 90,
-      "rating": 1.09,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21251",
       "name": "blowz",
       "team": "LEV",
@@ -1668,6 +1636,22 @@
       "acs": 215,
       "damage": null,
       "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-33576",
+      "name": "margaret",
+      "team": "QTD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 98,
+      "deaths": 88,
+      "assists": 18,
+      "rating": 1.09,
+      "acs": 210,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1799,22 +1783,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-4774",
-      "name": "Knight",
-      "team": "BLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 331,
-      "deaths": 303,
-      "assists": 154,
-      "rating": 1.08,
-      "acs": 214,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-18677",
       "name": "Ruxic",
       "team": "NAVI",
@@ -1831,19 +1799,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-25494",
-      "name": "Shr1mp",
+      "playerId": "val-21216",
+      "name": "f4ngeer",
       "team": "AG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 26,
-      "kills": 369,
-      "deaths": 363,
-      "assists": 154,
+      "maps": 28,
+      "kills": 495,
+      "deaths": 442,
+      "assists": 97,
       "rating": 1.08,
-      "acs": 185,
+      "acs": 231,
       "damage": null,
-      "hsPercent": 21.0,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -2020,6 +1988,22 @@
       "acs": 204,
       "damage": null,
       "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-39485",
+      "name": "Scales",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 302,
+      "deaths": 288,
+      "assists": 121,
+      "rating": 1.07,
+      "acs": 195,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
