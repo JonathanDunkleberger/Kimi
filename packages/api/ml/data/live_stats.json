@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T06:10:45.535758+00:00",
+  "updatedAt": "2026-08-21T12:08:39.750933+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -412,12 +412,12 @@
       "team": "BLG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 21,
-      "kills": 331,
-      "deaths": 303,
-      "assists": 154,
+      "maps": 23,
+      "kills": 359,
+      "deaths": 328,
+      "assists": 167,
       "rating": 1.16,
-      "acs": 221,
+      "acs": 219,
       "damage": null,
       "hsPercent": 24.0,
       "source": "vlr"
@@ -967,38 +967,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-15897",
-      "name": "Apinya",
-      "team": "SP",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 105,
-      "deaths": 89,
-      "assists": 35,
-      "rating": 1.13,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-28400",
-      "name": "HYUNMIN",
-      "team": "KRX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 276,
-      "deaths": 247,
-      "assists": 90,
-      "rating": 1.13,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-9196",
       "name": "t3xture",
       "team": "DAMWON Gaming",
@@ -1125,22 +1093,6 @@
       "damage": null,
       "hsPercent": 23.5,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-4885",
-      "name": "whzy",
-      "team": "BLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 379,
-      "deaths": 320,
-      "assists": 90,
-      "rating": 1.12,
-      "acs": 235,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-7754",
@@ -1319,6 +1271,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-28400",
+      "name": "HYUNMIN",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 330,
+      "deaths": 297,
+      "assists": 105,
+      "rating": 1.11,
+      "acs": 229,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-36685",
       "name": "splash",
       "team": "TYL",
@@ -1332,6 +1300,22 @@
       "acs": 246,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-40511",
+      "name": "NIZ",
+      "team": "SP",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 143,
+      "deaths": 124,
+      "assists": 55,
+      "rating": 1.11,
+      "acs": 196,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1445,6 +1429,22 @@
       "damage": 607655,
       "hsPercent": null,
       "source": "breakingpoint"
+    },
+    {
+      "playerId": "val-4885",
+      "name": "whzy",
+      "team": "BLG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 23,
+      "kills": 407,
+      "deaths": 355,
+      "assists": 96,
+      "rating": 1.1,
+      "acs": 233,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-10821",
@@ -1831,22 +1831,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-40511",
-      "name": "NIZ",
-      "team": "SP",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 89,
-      "deaths": 80,
-      "assists": 41,
-      "rating": 1.08,
-      "acs": 187,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "cod-2",
       "name": "aBeZy",
       "team": "CDL",
@@ -2197,6 +2181,22 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-5395",
+      "name": "cortezia",
+      "team": "SEN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 270,
+      "deaths": 245,
+      "assists": 88,
+      "rating": 1.06,
+      "acs": 204,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-601",
