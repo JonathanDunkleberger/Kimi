@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T18:08:44.375130+00:00",
+  "updatedAt": "2026-08-21T00:12:50.701440+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -420,6 +420,38 @@
       "acs": 221,
       "damage": null,
       "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 244,
+      "deaths": 196,
+      "assists": 68,
+      "rating": 1.16,
+      "acs": 249,
+      "damage": null,
+      "hsPercent": 36.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-20240",
+      "name": "xenom",
+      "team": "2G",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 83,
+      "deaths": 71,
+      "assists": 36,
+      "rating": 1.16,
+      "acs": 213,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -932,22 +964,6 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 21.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 196,
-      "deaths": 164,
-      "assists": 63,
-      "rating": 1.13,
-      "acs": 245,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -1959,22 +1975,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-8369",
-      "name": "yetujey",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 271,
-      "deaths": 240,
-      "assists": 102,
-      "rating": 1.07,
-      "acs": 204,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-12795",
       "name": "Crewen",
       "team": "BBL",
@@ -2199,19 +2199,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-7660",
-      "name": "Fizzy",
-      "team": "SGE",
+      "playerId": "val-5395",
+      "name": "cortezia",
+      "team": "SEN",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 9,
-      "kills": 135,
-      "deaths": 130,
-      "assists": 76,
+      "maps": 18,
+      "kills": 270,
+      "deaths": 245,
+      "assists": 88,
       "rating": 1.06,
-      "acs": 186,
+      "acs": 204,
       "damage": null,
-      "hsPercent": 25.0,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
