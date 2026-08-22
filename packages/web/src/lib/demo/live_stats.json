@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T12:06:14.308916+00:00",
+  "updatedAt": "2026-08-22T18:04:49.618551+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -34,22 +34,6 @@
       "assists": 122,
       "rating": 1.24,
       "acs": 253,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-3127",
-      "name": "MONSTEERR",
-      "team": "SGE",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6a4be27c8214f.png",
-      "maps": 9,
-      "kills": 172,
-      "deaths": 132,
-      "assists": 47,
-      "rating": 1.23,
-      "acs": 236,
       "damage": null,
       "hsPercent": 33.0,
       "source": "vlr"
@@ -263,6 +247,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 16,
+      "kills": 292,
+      "deaths": 227,
+      "assists": 77,
+      "rating": 1.18,
+      "acs": 252,
+      "damage": null,
+      "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-33902",
       "name": "Sayonara",
       "team": "VIT",
@@ -327,22 +327,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-4629",
-      "name": "azury",
-      "team": "SGE",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6a4be26312ede.png",
-      "maps": 9,
-      "kills": 142,
-      "deaths": 120,
-      "assists": 79,
-      "rating": 1.17,
-      "acs": 209,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-4774",
       "name": "Knight",
       "team": "BLG",
@@ -363,7 +347,7 @@
       "name": "keiko",
       "team": "NRG",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/697406c5ecbcd.png",
       "maps": 12,
       "kills": 204,
       "deaths": 168,
@@ -453,22 +437,6 @@
       "damage": null,
       "hsPercent": 23.8,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 244,
-      "deaths": 196,
-      "assists": 68,
-      "rating": 1.16,
-      "acs": 249,
-      "damage": null,
-      "hsPercent": 36.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-20240",
@@ -1303,6 +1271,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-4629",
+      "name": "azury",
+      "team": "SGE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 172,
+      "deaths": 158,
+      "assists": 92,
+      "rating": 1.11,
+      "acs": 205,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-28400",
       "name": "HYUNMIN",
       "team": "KRX",
@@ -1445,6 +1429,22 @@
       "damage": 607655,
       "hsPercent": null,
       "source": "breakingpoint"
+    },
+    {
+      "playerId": "val-3127",
+      "name": "MONSTEERR",
+      "team": "SGE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 190,
+      "deaths": 171,
+      "assists": 63,
+      "rating": 1.1,
+      "acs": 209,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-10821",
@@ -2020,22 +2020,6 @@
       "acs": 230,
       "damage": null,
       "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-6022",
-      "name": "yosemite",
-      "team": "WOL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 372,
-      "deaths": 364,
-      "assists": 117,
-      "rating": 1.07,
-      "acs": 203,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
