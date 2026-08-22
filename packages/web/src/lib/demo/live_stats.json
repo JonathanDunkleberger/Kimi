@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T18:08:42.204379+00:00",
+  "updatedAt": "2026-08-22T00:11:33.754902+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -87,6 +87,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 16,
+      "kills": 252,
+      "deaths": 195,
+      "assists": 108,
+      "rating": 1.22,
+      "acs": 220,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41739",
       "name": "slowly",
       "team": "TYL",
@@ -117,22 +133,6 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
-      "maps": 13,
-      "kills": 208,
-      "deaths": 160,
-      "assists": 84,
-      "rating": 1.21,
-      "acs": 218,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-5654",
@@ -204,14 +204,14 @@
       "team": "BBL",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/697975c71d41b.png",
-      "maps": 13,
-      "kills": 232,
-      "deaths": 175,
-      "assists": 52,
+      "maps": 16,
+      "kills": 283,
+      "deaths": 215,
+      "assists": 56,
       "rating": 1.19,
       "acs": 235,
       "damage": null,
-      "hsPercent": 18.0,
+      "hsPercent": 19.0,
       "source": "vlr"
     },
     {
@@ -1100,14 +1100,14 @@
       "team": "BBL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 13,
-      "kills": 191,
-      "deaths": 171,
-      "assists": 132,
+      "maps": 16,
+      "kills": 234,
+      "deaths": 211,
+      "assists": 163,
       "rating": 1.12,
-      "acs": 196,
+      "acs": 200,
       "damage": null,
-      "hsPercent": 38.0,
+      "hsPercent": 39.0,
       "source": "vlr"
     },
     {
@@ -1815,6 +1815,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-39357",
+      "name": "s0pp",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 387,
+      "deaths": 344,
+      "assists": 96,
+      "rating": 1.08,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "cod-2",
       "name": "aBeZy",
       "team": "CDL",
@@ -1940,22 +1956,6 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-12795",
-      "name": "Crewen",
-      "team": "BBL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 207,
-      "deaths": 186,
-      "assists": 61,
-      "rating": 1.07,
-      "acs": 204,
-      "damage": null,
-      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
