@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T00:11:33.754902+00:00",
+  "updatedAt": "2026-08-22T06:08:14.050370+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -20,22 +20,6 @@
       "acs": 236,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-37354",
-      "name": "basic",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
-      "maps": 18,
-      "kills": 326,
-      "deaths": 257,
-      "assists": 144,
-      "rating": 1.24,
-      "acs": 225,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -68,6 +52,22 @@
       "acs": 252,
       "damage": null,
       "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37354",
+      "name": "basic",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
+      "maps": 21,
+      "kills": 374,
+      "deaths": 295,
+      "assists": 159,
+      "rating": 1.23,
+      "acs": 223,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
