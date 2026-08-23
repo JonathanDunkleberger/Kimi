@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T18:04:49.618551+00:00",
+  "updatedAt": "2026-08-23T00:11:48.577386+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -199,6 +199,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6977a7018811e.png",
+      "maps": 19,
+      "kills": 313,
+      "deaths": 239,
+      "assists": 110,
+      "rating": 1.19,
+      "acs": 201,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-40935",
       "name": "lovers rock",
       "team": "BBL",
@@ -215,19 +231,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-55694",
-      "name": "hezacoil",
+      "playerId": "val-58496",
+      "name": "Kachoww",
       "team": "FF",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69bea0e7ea395.png",
-      "maps": 9,
-      "kills": 138,
-      "deaths": 112,
-      "assists": 69,
+      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
+      "maps": 12,
+      "kills": 248,
+      "deaths": 191,
+      "assists": 56,
       "rating": 1.19,
-      "acs": 205,
+      "acs": 275,
       "damage": null,
-      "hsPercent": 37.0,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -260,22 +276,6 @@
       "acs": 252,
       "damage": null,
       "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6977a7018811e.png",
-      "maps": 16,
-      "kills": 258,
-      "deaths": 199,
-      "assists": 96,
-      "rating": 1.18,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -759,22 +759,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 174,
-      "deaths": 140,
-      "assists": 46,
-      "rating": 1.14,
-      "acs": 264,
-      "damage": null,
-      "hsPercent": 36.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-15500",
       "name": "trent",
       "team": "The Guard",
@@ -1156,6 +1140,22 @@
       "acs": 206,
       "damage": null,
       "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-55694",
+      "name": "hezacoil",
+      "team": "FF",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 174,
+      "deaths": 156,
+      "assists": 101,
+      "rating": 1.12,
+      "acs": 195,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
