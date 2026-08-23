@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T06:09:08.293382+00:00",
+  "updatedAt": "2026-08-23T12:06:38.481240+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -20,22 +20,6 @@
       "acs": 236,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41739",
-      "name": "slowly",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6848f4fd4ff85.png",
-      "maps": 26,
-      "kills": 502,
-      "deaths": 386,
-      "assists": 122,
-      "rating": 1.24,
-      "acs": 253,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -103,6 +87,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-41739",
+      "name": "slowly",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6848f4fd4ff85.png",
+      "maps": 30,
+      "kills": 568,
+      "deaths": 438,
+      "assists": 135,
+      "rating": 1.22,
+      "acs": 251,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-8480",
       "name": "aspas",
       "team": "SLICK",
@@ -151,22 +151,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-36685",
-      "name": "splash",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 26,
-      "kills": 481,
-      "deaths": 403,
-      "assists": 159,
-      "rating": 1.2,
-      "acs": 254,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-2168",
       "name": "trexx",
       "team": "KOI",
@@ -212,6 +196,22 @@
       "acs": 201,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-36685",
+      "name": "splash",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 30,
+      "kills": 542,
+      "deaths": 453,
+      "assists": 175,
+      "rating": 1.19,
+      "acs": 251,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -498,22 +498,6 @@
       "assists": 176,
       "rating": 1.16,
       "acs": 210,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-62291",
-      "name": "Xiesta",
-      "team": "GEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 111,
-      "deaths": 98,
-      "assists": 41,
-      "rating": 1.16,
-      "acs": 244,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -919,6 +903,38 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-60576",
+      "name": "Ray",
+      "team": "ONG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 156,
+      "deaths": 132,
+      "assists": 53,
+      "rating": 1.13,
+      "acs": 226,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-62291",
+      "name": "Xiesta",
+      "team": "GEN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 151,
+      "deaths": 136,
+      "assists": 57,
+      "rating": 1.13,
+      "acs": 230,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-9196",
       "name": "t3xture",
       "team": "DAMWON Gaming",
@@ -1303,22 +1319,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-40511",
-      "name": "NIZ",
-      "team": "SP",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 143,
-      "deaths": 124,
-      "assists": 55,
-      "rating": 1.11,
-      "acs": 196,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41694",
       "name": "endoist",
       "team": "XIP",
@@ -1516,10 +1516,10 @@
       "team": "TYL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 26,
-      "kills": 362,
-      "deaths": 356,
-      "assists": 226,
+      "maps": 30,
+      "kills": 413,
+      "deaths": 402,
+      "assists": 266,
       "rating": 1.1,
       "acs": 184,
       "damage": null,
@@ -1655,22 +1655,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-25053",
-      "name": "Wolverine",
-      "team": "ONG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 100,
-      "deaths": 90,
-      "assists": 31,
-      "rating": 1.09,
-      "acs": 215,
-      "damage": null,
-      "hsPercent": 20.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-33576",
       "name": "margaret",
       "team": "QTD",
@@ -1700,22 +1684,6 @@
       "acs": 255,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-60576",
-      "name": "Ray",
-      "team": "ONG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 103,
-      "deaths": 94,
-      "assists": 39,
-      "rating": 1.09,
-      "acs": 223,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1895,6 +1863,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-40511",
+      "name": "NIZ",
+      "team": "SP",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 182,
+      "deaths": 167,
+      "assists": 75,
+      "rating": 1.08,
+      "acs": 196,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "cod-2",
       "name": "aBeZy",
       "team": "CDL",
@@ -2020,6 +2004,22 @@
       "acs": 230,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-6022",
+      "name": "yosemite",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 372,
+      "deaths": 364,
+      "assists": 117,
+      "rating": 1.07,
+      "acs": 203,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
