@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T18:05:23.522725+00:00",
+  "updatedAt": "2026-08-24T00:11:25.510286+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -52,6 +52,22 @@
       "acs": 223,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-58496",
+      "name": "Kachoww",
+      "team": "FF",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
+      "maps": 14,
+      "kills": 297,
+      "deaths": 221,
+      "assists": 64,
+      "rating": 1.23,
+      "acs": 276,
+      "damage": null,
+      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
@@ -199,38 +215,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-40935",
-      "name": "lovers rock",
-      "team": "BBL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697975c71d41b.png",
-      "maps": 16,
-      "kills": 283,
-      "deaths": 215,
-      "assists": 56,
-      "rating": 1.19,
-      "acs": 235,
-      "damage": null,
-      "hsPercent": 19.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
-      "maps": 12,
-      "kills": 248,
-      "deaths": 191,
-      "assists": 56,
-      "rating": 1.19,
-      "acs": 275,
-      "damage": null,
-      "hsPercent": 36.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-4147",
       "name": "Cryocells",
       "team": "XSET",
@@ -347,7 +331,7 @@
       "name": "Akame",
       "team": "DFM",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/674037c47365d.png",
       "maps": 22,
       "kills": 378,
       "deaths": 316,
@@ -468,6 +452,22 @@
       "acs": 231,
       "damage": null,
       "hsPercent": 36.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-40935",
+      "name": "lovers rock",
+      "team": "BBL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 318,
+      "deaths": 251,
+      "assists": 69,
+      "rating": 1.16,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 20.0,
       "source": "vlr"
     },
     {
@@ -1100,12 +1100,12 @@
       "team": "BBL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 16,
-      "kills": 234,
-      "deaths": 211,
-      "assists": 163,
+      "maps": 18,
+      "kills": 266,
+      "deaths": 242,
+      "assists": 180,
       "rating": 1.12,
-      "acs": 200,
+      "acs": 198,
       "damage": null,
       "hsPercent": 39.0,
       "source": "vlr"
@@ -1156,22 +1156,6 @@
       "acs": 206,
       "damage": null,
       "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-55694",
-      "name": "hezacoil",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 174,
-      "deaths": 156,
-      "assists": 101,
-      "rating": 1.12,
-      "acs": 195,
-      "damage": null,
-      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -2004,6 +1988,22 @@
       "acs": 230,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-6022",
+      "name": "yosemite",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 372,
+      "deaths": 364,
+      "assists": 117,
+      "rating": 1.07,
+      "acs": 203,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
