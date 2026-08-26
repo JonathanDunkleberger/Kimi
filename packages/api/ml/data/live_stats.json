@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T06:11:05.538930+00:00",
+  "updatedAt": "2026-08-26T12:09:40.599261+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -347,7 +347,7 @@
       "name": "OXY",
       "team": "C9",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
       "maps": 20,
       "kills": 385,
       "deaths": 312,
@@ -468,22 +468,6 @@
       "acs": 232,
       "damage": null,
       "hsPercent": 20.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42772",
-      "name": "Xross",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 293,
-      "deaths": 251,
-      "assists": 130,
-      "rating": 1.16,
-      "acs": 210,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -722,6 +706,22 @@
       "assists": 53,
       "rating": 1.14,
       "acs": 197,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42772",
+      "name": "Xross",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 321,
+      "deaths": 279,
+      "assists": 141,
+      "rating": 1.14,
+      "acs": 208,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -1652,6 +1652,22 @@
       "acs": 216,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31828",
+      "name": "Francis",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 331,
+      "deaths": 304,
+      "assists": 144,
+      "rating": 1.09,
+      "acs": 220,
+      "damage": null,
+      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
