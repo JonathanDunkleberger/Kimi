@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T12:09:40.599261+00:00",
+  "updatedAt": "2026-08-26T18:39:02.396891+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -421,6 +421,22 @@
       "damage": null,
       "hsPercent": 23.8,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-7754",
+      "name": "xavi8k",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 246,
+      "deaths": 217,
+      "assists": 132,
+      "rating": 1.16,
+      "acs": 218,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-20240",
@@ -1079,22 +1095,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-7754",
-      "name": "xavi8k",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 190,
-      "deaths": 174,
-      "assists": 102,
-      "rating": 1.12,
-      "acs": 210,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-24344",
       "name": "Loita",
       "team": "BBL",
@@ -1287,22 +1287,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-28400",
-      "name": "HYUNMIN",
-      "team": "KRX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 330,
-      "deaths": 297,
-      "assists": 105,
-      "rating": 1.11,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41694",
       "name": "endoist",
       "team": "XIP",
@@ -1479,6 +1463,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-28400",
+      "name": "HYUNMIN",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 23,
+      "kills": 384,
+      "deaths": 343,
+      "assists": 113,
+      "rating": 1.1,
+      "acs": 228,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41054",
       "name": "GuanG",
       "team": "NOVA",
@@ -1636,6 +1636,22 @@
       "acs": 200,
       "damage": null,
       "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-4428",
+      "name": "UdoTan",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 268,
+      "deaths": 233,
+      "assists": 59,
+      "rating": 1.09,
+      "acs": 227,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1813,22 +1829,6 @@
       "damage": 444454,
       "hsPercent": null,
       "source": "breakingpoint"
-    },
-    {
-      "playerId": "val-4428",
-      "name": "UdoTan",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 217,
-      "deaths": 188,
-      "assists": 50,
-      "rating": 1.08,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-18677",
