@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-28T16:07:18.993066+00:00",
+  "updatedAt": "2026-08-28T21:23:50.293602+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -55,19 +55,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
+      "playerId": "val-36245",
+      "name": "N4RRATE",
+      "team": "KC",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
-      "maps": 14,
-      "kills": 297,
-      "deaths": 221,
-      "assists": 64,
-      "rating": 1.23,
-      "acs": 276,
+      "imageUrl": "https://owcdn.net/img/6974146682328.png",
+      "maps": 17,
+      "kills": 319,
+      "deaths": 238,
+      "assists": 80,
+      "rating": 1.22,
+      "acs": 239,
       "damage": null,
-      "hsPercent": 38.0,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -124,12 +124,12 @@
       "team": "KC",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/63e4aecb51963.png",
-      "maps": 15,
-      "kills": 254,
-      "deaths": 197,
-      "assists": 103,
+      "maps": 17,
+      "kills": 282,
+      "deaths": 223,
+      "assists": 117,
       "rating": 1.2,
-      "acs": 216,
+      "acs": 215,
       "damage": null,
       "hsPercent": 29.0,
       "source": "vlr"
@@ -229,22 +229,6 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 18,
-      "kills": 329,
-      "deaths": 259,
-      "assists": 88,
-      "rating": 1.18,
-      "acs": 254,
-      "damage": null,
-      "hsPercent": 36.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-29243",
@@ -359,19 +343,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-36245",
-      "name": "N4RRATE",
-      "team": "KC",
+      "playerId": "val-58496",
+      "name": "Kachoww",
+      "team": "FF",
       "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 273,
-      "deaths": 214,
-      "assists": 69,
+      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
+      "maps": 16,
+      "kills": 327,
+      "deaths": 257,
+      "assists": 74,
       "rating": 1.17,
-      "acs": 228,
+      "acs": 264,
       "damage": null,
-      "hsPercent": 28.0,
+      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -421,6 +405,22 @@
       "damage": null,
       "hsPercent": 23.8,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 359,
+      "deaths": 293,
+      "assists": 104,
+      "rating": 1.16,
+      "acs": 249,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-20240",
@@ -567,6 +567,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-20144",
+      "name": "LewN",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 335,
+      "deaths": 255,
+      "assists": 61,
+      "rating": 1.15,
+      "acs": 250,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-25255",
       "name": "primmie",
       "team": "FS",
@@ -676,22 +692,6 @@
       "acs": 195,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-20144",
-      "name": "LewN",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 298,
-      "deaths": 227,
-      "assists": 50,
-      "rating": 1.14,
-      "acs": 250,
-      "damage": null,
-      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -1847,22 +1847,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-39357",
-      "name": "s0pp",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 387,
-      "deaths": 344,
-      "assists": 96,
-      "rating": 1.08,
-      "acs": 232,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-40511",
       "name": "NIZ",
       "team": "SP",
@@ -2020,6 +2004,38 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-8369",
+      "name": "yetujey",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 376,
+      "deaths": 327,
+      "assists": 128,
+      "rating": 1.07,
+      "acs": 202,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-39357",
+      "name": "s0pp",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 417,
+      "deaths": 375,
+      "assists": 103,
+      "rating": 1.07,
+      "acs": 230,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -2213,22 +2229,6 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-8369",
-      "name": "yetujey",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 341,
-      "deaths": 301,
-      "assists": 120,
-      "rating": 1.06,
-      "acs": 196,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-601",
