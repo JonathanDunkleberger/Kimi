@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-28T09:09:43.660630+00:00",
+  "updatedAt": "2026-08-28T16:07:18.993066+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -583,6 +583,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-60576",
+      "name": "Ray",
+      "team": "ONG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 189,
+      "deaths": 162,
+      "assists": 67,
+      "rating": 1.15,
+      "acs": 227,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-5022",
       "name": "Derke",
       "team": "CrowСrowd",
@@ -935,35 +951,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-60576",
-      "name": "Ray",
-      "team": "ONG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 156,
-      "deaths": 132,
-      "assists": 53,
-      "rating": 1.13,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-62291",
       "name": "Xiesta",
       "team": "GEN",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 9,
-      "kills": 151,
-      "deaths": 136,
-      "assists": 57,
+      "maps": 11,
+      "kills": 189,
+      "deaths": 168,
+      "assists": 67,
       "rating": 1.13,
-      "acs": 230,
+      "acs": 237,
       "damage": null,
-      "hsPercent": 25.0,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
@@ -1108,22 +1108,6 @@
       "acs": 198,
       "damage": null,
       "hsPercent": 39.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 283,
-      "deaths": 235,
-      "assists": 98,
-      "rating": 1.12,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
@@ -1447,19 +1431,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-28400",
-      "name": "HYUNMIN",
-      "team": "KRX",
+      "playerId": "val-29833",
+      "name": "iZu",
+      "team": "T1",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 23,
-      "kills": 384,
-      "deaths": 343,
-      "assists": 113,
+      "maps": 19,
+      "kills": 308,
+      "deaths": 262,
+      "assists": 116,
       "rating": 1.1,
-      "acs": 228,
+      "acs": 211,
       "damage": null,
-      "hsPercent": 32.0,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -2455,7 +2439,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-stax",
+      "playerId": "val-485",
       "name": "stax",
       "team": "DRX",
       "game": "VALORANT",
