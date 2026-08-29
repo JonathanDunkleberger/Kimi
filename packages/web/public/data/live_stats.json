@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T06:13:12.894790+00:00",
+  "updatedAt": "2026-08-29T12:11:50.306217+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -395,7 +395,7 @@
       "name": "xenom",
       "team": "2G",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/65a6bddfe2c3a.png",
       "maps": 5,
       "kills": 83,
       "deaths": 71,
@@ -508,12 +508,12 @@
       "team": "VL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 15,
-      "kills": 285,
-      "deaths": 230,
-      "assists": 56,
+      "maps": 18,
+      "kills": 350,
+      "deaths": 284,
+      "assists": 67,
       "rating": 1.15,
-      "acs": 241,
+      "acs": 245,
       "damage": null,
       "hsPercent": 37.0,
       "source": "vlr"
@@ -676,22 +676,6 @@
       "acs": 226,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42733",
-      "name": "XuNa",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 242,
-      "deaths": 214,
-      "assists": 97,
-      "rating": 1.14,
-      "acs": 208,
-      "damage": null,
-      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -1140,6 +1124,22 @@
       "acs": 216,
       "damage": null,
       "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42733",
+      "name": "XuNa",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 293,
+      "deaths": 258,
+      "assists": 108,
+      "rating": 1.12,
+      "acs": 207,
+      "damage": null,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -2052,6 +2052,22 @@
       "acs": 202,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-39357",
+      "name": "s0pp",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 417,
+      "deaths": 375,
+      "assists": 103,
+      "rating": 1.07,
+      "acs": 230,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
