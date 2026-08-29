@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T00:20:54.502534+00:00",
+  "updatedAt": "2026-08-29T06:13:12.894790+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -119,22 +119,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-21659",
-      "name": "Sato",
-      "team": "LEV",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69234b72ce3db.png",
-      "maps": 14,
-      "kills": 233,
-      "deaths": 185,
-      "assists": 112,
-      "rating": 1.2,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 39.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-28716",
       "name": "lukxo",
       "team": "LOUD",
@@ -229,22 +213,6 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-29243",
-      "name": "Neon",
-      "team": "LEV",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69234b3d0a58d.png",
-      "maps": 14,
-      "kills": 215,
-      "deaths": 156,
-      "assists": 59,
-      "rating": 1.18,
-      "acs": 204,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-hist-nukkye",
@@ -411,7 +379,7 @@
       "name": "kamo",
       "team": "TL",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
       "maps": 20,
       "kills": 359,
       "deaths": 293,
@@ -580,6 +548,22 @@
       "acs": 250,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21659",
+      "name": "Sato",
+      "team": "LEV",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 16,
+      "kills": 252,
+      "deaths": 213,
+      "assists": 122,
+      "rating": 1.15,
+      "acs": 230,
+      "damage": null,
+      "hsPercent": 40.0,
       "source": "vlr"
     },
     {
@@ -932,6 +916,22 @@
       "acs": 211,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29243",
+      "name": "Neon",
+      "team": "LEV",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 16,
+      "kills": 237,
+      "deaths": 183,
+      "assists": 61,
+      "rating": 1.13,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1847,6 +1847,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-20140",
+      "name": "vora",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 209,
+      "deaths": 183,
+      "assists": 92,
+      "rating": 1.08,
+      "acs": 191,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21216",
       "name": "f4ngeer",
       "team": "AG",
@@ -2036,22 +2052,6 @@
       "acs": 202,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-39357",
-      "name": "s0pp",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 417,
-      "deaths": 375,
-      "assists": 103,
-      "rating": 1.07,
-      "acs": 230,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
