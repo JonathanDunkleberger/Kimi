@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T12:11:50.306217+00:00",
+  "updatedAt": "2026-08-29T18:09:39.335456+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -149,6 +149,22 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 23,
+      "kills": 428,
+      "deaths": 334,
+      "assists": 121,
+      "rating": 1.19,
+      "acs": 257,
+      "damage": null,
+      "hsPercent": 35.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-21668",
@@ -373,22 +389,6 @@
       "damage": null,
       "hsPercent": 23.8,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 20,
-      "kills": 359,
-      "deaths": 293,
-      "assists": 104,
-      "rating": 1.16,
-      "acs": 249,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-20240",
@@ -916,6 +916,22 @@
       "acs": 198,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29833",
+      "name": "iZu",
+      "team": "T1",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 340,
+      "deaths": 282,
+      "assists": 127,
+      "rating": 1.13,
+      "acs": 210,
+      "damage": null,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -1447,22 +1463,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 308,
-      "deaths": 262,
-      "assists": 116,
-      "rating": 1.1,
-      "acs": 211,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41054",
       "name": "GuanG",
       "team": "NOVA",
@@ -1684,22 +1684,6 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-34974",
-      "name": "Karon",
-      "team": "GEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 273,
-      "deaths": 254,
-      "assists": 149,
-      "rating": 1.09,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 39.0,
       "source": "vlr"
     },
     {
@@ -2036,38 +2020,6 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-8369",
-      "name": "yetujey",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 376,
-      "deaths": 327,
-      "assists": 128,
-      "rating": 1.07,
-      "acs": 202,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-39357",
-      "name": "s0pp",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 417,
-      "deaths": 375,
-      "assists": 103,
-      "rating": 1.07,
-      "acs": 230,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
