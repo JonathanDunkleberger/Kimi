@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T00:26:07.665398+00:00",
+  "updatedAt": "2026-08-30T06:13:38.040535+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -151,22 +151,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
-      "maps": 18,
-      "kills": 274,
-      "deaths": 221,
-      "assists": 114,
-      "rating": 1.19,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-33902",
       "name": "Sayonara",
       "team": "VIT",
@@ -213,6 +197,22 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 21,
+      "kills": 329,
+      "deaths": 267,
+      "assists": 132,
+      "rating": 1.18,
+      "acs": 217,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-37354",
