@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T18:09:39.335456+00:00",
+  "updatedAt": "2026-08-30T00:26:07.665398+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -36,22 +36,6 @@
       "acs": 252,
       "damage": null,
       "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-37354",
-      "name": "basic",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
-      "maps": 23,
-      "kills": 404,
-      "deaths": 325,
-      "assists": 172,
-      "rating": 1.23,
-      "acs": 223,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -231,6 +215,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-37354",
+      "name": "basic",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
+      "maps": 26,
+      "kills": 435,
+      "deaths": 372,
+      "assists": 192,
+      "rating": 1.18,
+      "acs": 217,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-nukkye",
       "name": "nukkye",
       "team": "G2 Esports",
@@ -395,7 +395,7 @@
       "name": "xenom",
       "team": "2G",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/65a6bddfe2c3a.png",
+      "imageUrl": "",
       "maps": 5,
       "kills": 83,
       "deaths": 71,
@@ -699,7 +699,7 @@
       "name": "trent",
       "team": "The Guard",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/65e466071ca19.png",
       "maps": 438,
       "kills": 6978,
       "deaths": 6244,
@@ -1399,6 +1399,22 @@
       "source": "breakingpoint"
     },
     {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 402,
+      "deaths": 353,
+      "assists": 90,
+      "rating": 1.1,
+      "acs": 201,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-3127",
       "name": "MONSTEERR",
       "team": "SGE",
@@ -1604,22 +1620,6 @@
       "acs": 199,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 355,
-      "deaths": 315,
-      "assists": 80,
-      "rating": 1.09,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -2020,6 +2020,22 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-24007",
+      "name": "Shyy",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 26,
+      "kills": 397,
+      "deaths": 361,
+      "assists": 128,
+      "rating": 1.07,
+      "acs": 201,
+      "damage": null,
+      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
