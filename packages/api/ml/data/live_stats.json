@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-31T00:26:27.204882+00:00",
+  "updatedAt": "2026-08-31T06:18:45.403870+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -87,22 +87,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-28716",
-      "name": "lukxo",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
-      "maps": 17,
-      "kills": 325,
-      "deaths": 231,
-      "assists": 44,
-      "rating": 1.2,
-      "acs": 244,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-2168",
       "name": "trexx",
       "team": "KOI",
@@ -117,6 +101,22 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-28716",
+      "name": "lukxo",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
+      "maps": 19,
+      "kills": 368,
+      "deaths": 265,
+      "assists": 50,
+      "rating": 1.19,
+      "acs": 245,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-33902",
@@ -165,22 +165,6 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
-      "maps": 21,
-      "kills": 329,
-      "deaths": 267,
-      "assists": 132,
-      "rating": 1.18,
-      "acs": 217,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-37354",
@@ -388,6 +372,22 @@
       "acs": 213,
       "damage": null,
       "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 23,
+      "kills": 357,
+      "deaths": 299,
+      "assists": 144,
+      "rating": 1.16,
+      "acs": 213,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
