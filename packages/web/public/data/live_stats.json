@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-02T00:24:23.004425+00:00",
+  "updatedAt": "2026-09-02T06:19:38.692036+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -17,7 +17,7 @@
       "deaths": 369,
       "assists": 131,
       "rating": 1.27,
-      "acs": 236,
+      "acs": 234,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -33,7 +33,7 @@
       "deaths": 248,
       "assists": 94,
       "rating": 1.23,
-      "acs": 252,
+      "acs": 254,
       "damage": null,
       "hsPercent": 34.0,
       "source": "vlr"
@@ -49,7 +49,7 @@
       "deaths": 438,
       "assists": 135,
       "rating": 1.22,
-      "acs": 251,
+      "acs": 250,
       "damage": null,
       "hsPercent": 32.0,
       "source": "vlr"
@@ -81,7 +81,7 @@
       "deaths": 288,
       "assists": 92,
       "rating": 1.21,
-      "acs": 237,
+      "acs": 235,
       "damage": null,
       "hsPercent": 27.0,
       "source": "vlr"
@@ -145,7 +145,7 @@
       "deaths": 453,
       "assists": 175,
       "rating": 1.19,
-      "acs": 251,
+      "acs": 247,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -177,7 +177,7 @@
       "deaths": 372,
       "assists": 192,
       "rating": 1.18,
-      "acs": 217,
+      "acs": 215,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -225,7 +225,7 @@
       "deaths": 197,
       "assists": 123,
       "rating": 1.17,
-      "acs": 218,
+      "acs": 216,
       "damage": null,
       "hsPercent": 23.0,
       "source": "vlr"
@@ -241,7 +241,7 @@
       "deaths": 376,
       "assists": 191,
       "rating": 1.17,
-      "acs": 219,
+      "acs": 220,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
@@ -257,7 +257,7 @@
       "deaths": 316,
       "assists": 144,
       "rating": 1.17,
-      "acs": 224,
+      "acs": 223,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -273,7 +273,7 @@
       "deaths": 395,
       "assists": 140,
       "rating": 1.17,
-      "acs": 252,
+      "acs": 248,
       "damage": null,
       "hsPercent": 34.0,
       "source": "vlr"
@@ -289,7 +289,7 @@
       "deaths": 312,
       "assists": 69,
       "rating": 1.17,
-      "acs": 262,
+      "acs": 261,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -305,7 +305,7 @@
       "deaths": 257,
       "assists": 74,
       "rating": 1.17,
-      "acs": 264,
+      "acs": 260,
       "damage": null,
       "hsPercent": 37.0,
       "source": "vlr"
@@ -369,7 +369,7 @@
       "deaths": 71,
       "assists": 36,
       "rating": 1.16,
-      "acs": 213,
+      "acs": 214,
       "damage": null,
       "hsPercent": 33.0,
       "source": "vlr"
@@ -385,7 +385,7 @@
       "deaths": 299,
       "assists": 144,
       "rating": 1.16,
-      "acs": 213,
+      "acs": 208,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -417,7 +417,7 @@
       "deaths": 307,
       "assists": 176,
       "rating": 1.16,
-      "acs": 210,
+      "acs": 209,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -513,7 +513,7 @@
       "deaths": 309,
       "assists": 123,
       "rating": 1.15,
-      "acs": 214,
+      "acs": 215,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -529,7 +529,7 @@
       "deaths": 336,
       "assists": 96,
       "rating": 1.15,
-      "acs": 229,
+      "acs": 235,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -545,7 +545,7 @@
       "deaths": 162,
       "assists": 67,
       "rating": 1.15,
-      "acs": 227,
+      "acs": 231,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -625,7 +625,7 @@
       "deaths": 275,
       "assists": 141,
       "rating": 1.14,
-      "acs": 203,
+      "acs": 200,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -641,7 +641,7 @@
       "deaths": 259,
       "assists": 71,
       "rating": 1.14,
-      "acs": 226,
+      "acs": 231,
       "damage": null,
       "hsPercent": 27.0,
       "source": "vlr"
@@ -657,7 +657,7 @@
       "deaths": 317,
       "assists": 161,
       "rating": 1.14,
-      "acs": 205,
+      "acs": 204,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -817,7 +817,7 @@
       "deaths": 362,
       "assists": 64,
       "rating": 1.13,
-      "acs": 246,
+      "acs": 244,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
@@ -833,7 +833,7 @@
       "deaths": 242,
       "assists": 145,
       "rating": 1.13,
-      "acs": 211,
+      "acs": 213,
       "damage": null,
       "hsPercent": 23.0,
       "source": "vlr"
@@ -849,7 +849,7 @@
       "deaths": 190,
       "assists": 113,
       "rating": 1.13,
-      "acs": 192,
+      "acs": 191,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -865,7 +865,7 @@
       "deaths": 209,
       "assists": 78,
       "rating": 1.13,
-      "acs": 211,
+      "acs": 208,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -881,7 +881,7 @@
       "deaths": 255,
       "assists": 136,
       "rating": 1.13,
-      "acs": 225,
+      "acs": 224,
       "damage": null,
       "hsPercent": 39.0,
       "source": "vlr"
@@ -897,7 +897,7 @@
       "deaths": 282,
       "assists": 127,
       "rating": 1.13,
-      "acs": 210,
+      "acs": 211,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
@@ -913,7 +913,7 @@
       "deaths": 239,
       "assists": 51,
       "rating": 1.13,
-      "acs": 243,
+      "acs": 245,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -1073,7 +1073,7 @@
       "deaths": 212,
       "assists": 83,
       "rating": 1.12,
-      "acs": 223,
+      "acs": 220,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -1105,7 +1105,7 @@
       "deaths": 275,
       "assists": 71,
       "rating": 1.12,
-      "acs": 216,
+      "acs": 221,
       "damage": null,
       "hsPercent": 38.0,
       "source": "vlr"
@@ -1121,7 +1121,7 @@
       "deaths": 258,
       "assists": 108,
       "rating": 1.12,
-      "acs": 207,
+      "acs": 206,
       "damage": null,
       "hsPercent": 36.0,
       "source": "vlr"
@@ -1249,7 +1249,7 @@
       "deaths": 158,
       "assists": 92,
       "rating": 1.11,
-      "acs": 205,
+      "acs": 208,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -1265,7 +1265,7 @@
       "deaths": 81,
       "assists": 21,
       "rating": 1.11,
-      "acs": 250,
+      "acs": 251,
       "damage": null,
       "hsPercent": 27.0,
       "source": "vlr"
@@ -1377,7 +1377,7 @@
       "deaths": 171,
       "assists": 63,
       "rating": 1.1,
-      "acs": 209,
+      "acs": 217,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -1393,7 +1393,7 @@
       "deaths": 439,
       "assists": 124,
       "rating": 1.1,
-      "acs": 211,
+      "acs": 214,
       "damage": null,
       "hsPercent": 40.0,
       "source": "vlr"
@@ -1409,7 +1409,7 @@
       "deaths": 285,
       "assists": 105,
       "rating": 1.1,
-      "acs": 188,
+      "acs": 185,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -1425,7 +1425,7 @@
       "deaths": 367,
       "assists": 181,
       "rating": 1.1,
-      "acs": 218,
+      "acs": 216,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -1441,7 +1441,7 @@
       "deaths": 316,
       "assists": 76,
       "rating": 1.1,
-      "acs": 241,
+      "acs": 239,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -1585,7 +1585,7 @@
       "deaths": 192,
       "assists": 91,
       "rating": 1.09,
-      "acs": 199,
+      "acs": 200,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -1601,7 +1601,7 @@
       "deaths": 261,
       "assists": 65,
       "rating": 1.09,
-      "acs": 225,
+      "acs": 228,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -1617,7 +1617,7 @@
       "deaths": 269,
       "assists": 109,
       "rating": 1.09,
-      "acs": 229,
+      "acs": 226,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -1649,7 +1649,7 @@
       "deaths": 227,
       "assists": 70,
       "rating": 1.09,
-      "acs": 194,
+      "acs": 193,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -1665,7 +1665,7 @@
       "deaths": 88,
       "assists": 18,
       "rating": 1.09,
-      "acs": 210,
+      "acs": 214,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -1681,7 +1681,7 @@
       "deaths": 353,
       "assists": 81,
       "rating": 1.09,
-      "acs": 255,
+      "acs": 253,
       "damage": null,
       "hsPercent": 29.0,
       "source": "vlr"
@@ -1809,7 +1809,7 @@
       "deaths": 395,
       "assists": 107,
       "rating": 1.08,
-      "acs": 198,
+      "acs": 199,
       "damage": null,
       "hsPercent": 23.0,
       "source": "vlr"
@@ -1825,7 +1825,7 @@
       "deaths": 281,
       "assists": 148,
       "rating": 1.08,
-      "acs": 212,
+      "acs": 211,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -1857,7 +1857,7 @@
       "deaths": 442,
       "assists": 97,
       "rating": 1.08,
-      "acs": 231,
+      "acs": 230,
       "damage": null,
       "hsPercent": 29.0,
       "source": "vlr"
@@ -1873,7 +1873,7 @@
       "deaths": 167,
       "assists": 75,
       "rating": 1.08,
-      "acs": 196,
+      "acs": 197,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -2001,7 +2001,7 @@
       "deaths": 414,
       "assists": 109,
       "rating": 1.07,
-      "acs": 230,
+      "acs": 229,
       "damage": null,
       "hsPercent": 22.0,
       "source": "vlr"
@@ -2017,7 +2017,7 @@
       "deaths": 364,
       "assists": 117,
       "rating": 1.07,
-      "acs": 203,
+      "acs": 202,
       "damage": null,
       "hsPercent": 29.0,
       "source": "vlr"
@@ -2033,7 +2033,7 @@
       "deaths": 361,
       "assists": 128,
       "rating": 1.07,
-      "acs": 201,
+      "acs": 200,
       "damage": null,
       "hsPercent": 23.0,
       "source": "vlr"
