@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T06:14:49.058147+00:00",
+  "updatedAt": "2026-09-04T12:13:17.468869+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -647,22 +647,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-42772",
-      "name": "Xross",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 364,
-      "deaths": 317,
-      "assists": 161,
-      "rating": 1.14,
-      "acs": 204,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-15500",
       "name": "trent",
       "team": "The Guard",
@@ -820,22 +804,6 @@
       "acs": 244,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-7754",
-      "name": "xavi8k",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 268,
-      "deaths": 242,
-      "assists": 145,
-      "rating": 1.13,
-      "acs": 213,
-      "damage": null,
-      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -1079,6 +1047,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-7754",
+      "name": "xavi8k",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 308,
+      "deaths": 286,
+      "assists": 166,
+      "rating": 1.12,
+      "acs": 207,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-24344",
       "name": "Loita",
       "team": "BBL",
@@ -1124,6 +1108,22 @@
       "acs": 206,
       "damage": null,
       "hsPercent": 36.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42772",
+      "name": "Xross",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 27,
+      "kills": 400,
+      "deaths": 352,
+      "assists": 171,
+      "rating": 1.12,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1588,38 +1588,6 @@
       "acs": 200,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-4428",
-      "name": "UdoTan",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 299,
-      "deaths": 261,
-      "assists": 65,
-      "rating": 1.09,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-13744",
-      "name": "PatMen",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 303,
-      "deaths": 269,
-      "assists": 109,
-      "rating": 1.09,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
