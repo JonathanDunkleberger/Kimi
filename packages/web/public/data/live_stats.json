@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-04T12:13:17.468869+00:00",
+  "updatedAt": "2026-09-04T18:10:41.710820+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -487,22 +487,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-11600",
-      "name": "Foxy9",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 350,
-      "deaths": 284,
-      "assists": 67,
-      "rating": 1.15,
-      "acs": 245,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-15559",
       "name": "CHICHOO",
       "team": "EDG",
@@ -860,12 +844,12 @@
       "team": "T1",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 21,
-      "kills": 340,
-      "deaths": 282,
-      "assists": 127,
+      "maps": 23,
+      "kills": 367,
+      "deaths": 306,
+      "assists": 138,
       "rating": 1.13,
-      "acs": 211,
+      "acs": 208,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
@@ -1063,6 +1047,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-11600",
+      "name": "Foxy9",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 374,
+      "deaths": 313,
+      "assists": 76,
+      "rating": 1.12,
+      "acs": 236,
+      "damage": null,
+      "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-24344",
       "name": "Loita",
       "team": "BBL",
@@ -1092,22 +1092,6 @@
       "acs": 221,
       "damage": null,
       "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42733",
-      "name": "XuNa",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 293,
-      "deaths": 258,
-      "assists": 108,
-      "rating": 1.12,
-      "acs": 206,
-      "damage": null,
-      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -1636,6 +1620,22 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42733",
+      "name": "XuNa",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 316,
+      "deaths": 289,
+      "assists": 115,
+      "rating": 1.09,
+      "acs": 203,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
