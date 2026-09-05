@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T06:13:08.013409+00:00",
+  "updatedAt": "2026-09-05T12:11:10.749248+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -807,22 +807,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 23,
-      "kills": 367,
-      "deaths": 306,
-      "assists": 138,
-      "rating": 1.13,
-      "acs": 208,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-55681",
       "name": "kozzy",
       "team": "EP",
@@ -988,10 +972,10 @@
       "team": "GE",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 20,
-      "kills": 308,
-      "deaths": 286,
-      "assists": 166,
+      "maps": 24,
+      "kills": 369,
+      "deaths": 335,
+      "assists": 198,
       "rating": 1.12,
       "acs": 207,
       "damage": null,
@@ -1415,6 +1399,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29833",
+      "name": "iZu",
+      "team": "T1",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 27,
+      "kills": 417,
+      "deaths": 365,
+      "assists": 154,
+      "rating": 1.1,
+      "acs": 204,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41054",
       "name": "GuanG",
       "team": "NOVA",
@@ -1556,6 +1556,22 @@
       "acs": 200,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13744",
+      "name": "PatMen",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 419,
+      "deaths": 374,
+      "assists": 150,
+      "rating": 1.09,
+      "acs": 226,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
