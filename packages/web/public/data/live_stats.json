@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T12:11:10.749248+00:00",
+  "updatedAt": "2026-09-05T18:09:27.525245+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1340,12 +1340,12 @@
       "team": "FPX",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 21,
-      "kills": 282,
-      "deaths": 285,
-      "assists": 105,
+      "maps": 22,
+      "kills": 303,
+      "deaths": 304,
+      "assists": 114,
       "rating": 1.1,
-      "acs": 185,
+      "acs": 189,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
