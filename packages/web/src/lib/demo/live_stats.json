@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T12:11:12.165212+00:00",
+  "updatedAt": "2026-09-06T18:09:32.053809+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -791,6 +791,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-7754",
+      "name": "xavi8k",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 29,
+      "kills": 448,
+      "deaths": 404,
+      "assists": 229,
+      "rating": 1.13,
+      "acs": 208,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21659",
       "name": "Sato",
       "team": "LEV",
@@ -967,22 +983,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-7754",
-      "name": "xavi8k",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 369,
-      "deaths": 335,
-      "assists": 198,
-      "rating": 1.12,
-      "acs": 207,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11600",
       "name": "Foxy9",
       "team": "VL",
@@ -1028,22 +1028,6 @@
       "acs": 221,
       "damage": null,
       "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42772",
-      "name": "Xross",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 27,
-      "kills": 400,
-      "deaths": 352,
-      "assists": 171,
-      "rating": 1.12,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1543,22 +1527,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-13744",
-      "name": "PatMen",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 419,
-      "deaths": 374,
-      "assists": 150,
-      "rating": 1.09,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21610",
       "name": "runneR",
       "team": "JL",
@@ -1620,6 +1588,22 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42772",
+      "name": "Xross",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 32,
+      "kills": 461,
+      "deaths": 423,
+      "assists": 203,
+      "rating": 1.09,
+      "acs": 194,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1972,6 +1956,22 @@
       "acs": 202,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13744",
+      "name": "PatMen",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 29,
+      "kills": 491,
+      "deaths": 448,
+      "assists": 179,
+      "rating": 1.07,
+      "acs": 221,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
