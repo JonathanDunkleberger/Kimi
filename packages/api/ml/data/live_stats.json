@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T18:09:32.053809+00:00",
+  "updatedAt": "2026-09-07T00:25:24.453724+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -263,22 +263,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-28716",
-      "name": "lukxo",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
-      "maps": 26,
-      "kills": 482,
-      "deaths": 359,
-      "assists": 68,
-      "rating": 1.17,
-      "acs": 241,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-58496",
       "name": "Kachoww",
       "team": "FF",
@@ -388,6 +372,22 @@
       "acs": 208,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-28716",
+      "name": "lukxo",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
+      "maps": 31,
+      "kills": 572,
+      "deaths": 436,
+      "assists": 78,
+      "rating": 1.16,
+      "acs": 238,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1335,22 +1335,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-20140",
-      "name": "vora",
-      "team": "100T",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 237,
-      "deaths": 200,
-      "assists": 101,
-      "rating": 1.1,
-      "acs": 191,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-20144",
       "name": "LewN",
       "team": "KC",
@@ -1991,6 +1975,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29242",
+      "name": "erde",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 31,
+      "kills": 455,
+      "deaths": 425,
+      "assists": 232,
+      "rating": 1.07,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-derrek",
       "name": "Derrek",
       "team": "Rise",
@@ -2196,6 +2196,22 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-16215",
+      "name": "dos9",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 303,
+      "deaths": 278,
+      "assists": 172,
+      "rating": 1.06,
+      "acs": 186,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
