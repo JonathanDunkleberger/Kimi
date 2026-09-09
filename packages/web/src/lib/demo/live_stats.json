@@ -1,27 +1,11 @@
 {
-  "updatedAt": "2026-09-09T06:15:13.225143+00:00",
+  "updatedAt": "2026-09-09T12:13:42.069584+00:00",
   "sources": [
     "vct_history",
     "vlr",
     "breakingpoint"
   ],
   "players": [
-    {
-      "playerId": "val-3741",
-      "name": "vo0kashu",
-      "team": "DRG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
-      "maps": 23,
-      "kills": 418,
-      "deaths": 337,
-      "assists": 120,
-      "rating": 1.25,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
     {
       "playerId": "val-10307",
       "name": "marteen",
@@ -39,6 +23,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-4774",
+      "name": "Knight",
+      "team": "BLG",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/677fdffe244c5.png",
+      "maps": 21,
+      "kills": 349,
+      "deaths": 303,
+      "assists": 168,
+      "rating": 1.22,
+      "acs": 226,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-8480",
       "name": "aspas",
       "team": "SLICK",
@@ -53,22 +53,6 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-4774",
-      "name": "Knight",
-      "team": "BLG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/677fdffe244c5.png",
-      "maps": 24,
-      "kills": 395,
-      "deaths": 339,
-      "assists": 179,
-      "rating": 1.21,
-      "acs": 225,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-36245",
@@ -117,6 +101,22 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-3741",
+      "name": "vo0kashu",
+      "team": "DRG",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
+      "maps": 20,
+      "kills": 356,
+      "deaths": 303,
+      "assists": 109,
+      "rating": 1.19,
+      "acs": 223,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-33902",
@@ -773,6 +773,22 @@
       "damage": null,
       "hsPercent": 26.9,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-6022",
+      "name": "yosemite",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 348,
+      "deaths": 334,
+      "assists": 97,
+      "rating": 1.13,
+      "acs": 208,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-6672",
@@ -1479,22 +1495,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-14125",
-      "name": "Spring",
-      "team": "WOL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 387,
-      "deaths": 378,
-      "assists": 178,
-      "rating": 1.09,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21610",
       "name": "runneR",
       "team": "JL",
@@ -1703,22 +1703,6 @@
       "source": "breakingpoint"
     },
     {
-      "playerId": "val-4885",
-      "name": "whzy",
-      "team": "BLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 429,
-      "deaths": 376,
-      "assists": 104,
-      "rating": 1.08,
-      "acs": 232,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11118",
       "name": "skuba",
       "team": "NRG",
@@ -1796,6 +1780,22 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-47629",
+      "name": "Coco",
+      "team": "TEC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 27,
+      "kills": 406,
+      "deaths": 415,
+      "assists": 253,
+      "rating": 1.08,
+      "acs": 196,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1911,22 +1911,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-6022",
-      "name": "yosemite",
-      "team": "WOL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 376,
-      "deaths": 374,
-      "assists": 118,
-      "rating": 1.07,
-      "acs": 202,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-13744",
       "name": "PatMen",
       "team": "GE",
@@ -1972,22 +1956,6 @@
       "acs": 198,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-47629",
-      "name": "Coco",
-      "team": "TEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 30,
-      "kills": 447,
-      "deaths": 462,
-      "assists": 285,
-      "rating": 1.07,
-      "acs": 193,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2212,6 +2180,38 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-16215",
+      "name": "dos9",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 303,
+      "deaths": 278,
+      "assists": 172,
+      "rating": 1.06,
+      "acs": 186,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-25494",
+      "name": "Shr1mp",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 28,
+      "kills": 396,
+      "deaths": 397,
+      "assists": 168,
+      "rating": 1.06,
+      "acs": 183,
+      "damage": null,
+      "hsPercent": 21.0,
       "source": "vlr"
     },
     {
