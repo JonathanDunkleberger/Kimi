@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T12:13:42.069584+00:00",
+  "updatedAt": "2026-09-09T18:11:18.095002+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1788,10 +1788,10 @@
       "team": "TEC",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 27,
-      "kills": 406,
-      "deaths": 415,
-      "assists": 253,
+      "maps": 30,
+      "kills": 440,
+      "deaths": 454,
+      "assists": 272,
       "rating": 1.08,
       "acs": 196,
       "damage": null,
