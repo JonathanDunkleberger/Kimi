@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T06:13:15.245569+00:00",
+  "updatedAt": "2026-09-12T12:11:35.368424+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -133,6 +133,22 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-6022",
+      "name": "yosemite",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6780cc7ef001a.png",
+      "maps": 19,
+      "kills": 322,
+      "deaths": 301,
+      "assists": 90,
+      "rating": 1.18,
+      "acs": 210,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-37354",
@@ -379,7 +395,7 @@
       "name": "Verno",
       "team": "MIBR",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "imageUrl": "",
       "maps": 23,
       "kills": 357,
       "deaths": 299,
@@ -789,22 +805,6 @@
       "damage": null,
       "hsPercent": 26.9,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-6022",
-      "name": "yosemite",
-      "team": "WOL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 348,
-      "deaths": 334,
-      "assists": 97,
-      "rating": 1.13,
-      "acs": 208,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-6672",
@@ -1511,6 +1511,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21216",
+      "name": "f4ngeer",
+      "team": "AG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 26,
+      "kills": 466,
+      "deaths": 416,
+      "assists": 90,
+      "rating": 1.09,
+      "acs": 228,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21610",
       "name": "runneR",
       "team": "JL",
@@ -1556,6 +1572,22 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37489",
+      "name": "Lysoar",
+      "team": "XLG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 309,
+      "deaths": 277,
+      "assists": 129,
+      "rating": 1.09,
+      "acs": 209,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -1751,22 +1783,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-21216",
-      "name": "f4ngeer",
-      "team": "AG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 28,
-      "kills": 495,
-      "deaths": 442,
-      "assists": 97,
-      "rating": 1.08,
-      "acs": 230,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-40511",
       "name": "NIZ",
       "team": "SP",
@@ -1796,22 +1812,6 @@
       "acs": 207,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-47629",
-      "name": "Coco",
-      "team": "TEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 30,
-      "kills": 440,
-      "deaths": 454,
-      "assists": 272,
-      "rating": 1.08,
-      "acs": 196,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1988,6 +1988,22 @@
       "acs": 198,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37927",
+      "name": "happywei",
+      "team": "XLG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 20,
+      "kills": 281,
+      "deaths": 283,
+      "assists": 105,
+      "rating": 1.07,
+      "acs": 206,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
