@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T12:11:52.094958+00:00",
+  "updatedAt": "2026-09-13T18:10:07.763968+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -151,6 +151,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 25,
+      "kills": 458,
+      "deaths": 364,
+      "assists": 133,
+      "rating": 1.18,
+      "acs": 249,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-37354",
       "name": "basic",
       "team": "FUR",
@@ -212,22 +228,6 @@
       "acs": 223,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 27,
-      "kills": 486,
-      "deaths": 395,
-      "assists": 140,
-      "rating": 1.17,
-      "acs": 248,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1063,22 +1063,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29867",
-      "name": "hiro",
-      "team": "NAVI",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 326,
-      "deaths": 275,
-      "assists": 71,
-      "rating": 1.12,
-      "acs": 221,
-      "damage": null,
-      "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-3520",
       "name": "ZmjjKK",
       "team": "CBT Gaming",
@@ -1575,6 +1559,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29867",
+      "name": "hiro",
+      "team": "NAVI",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 16,
+      "kills": 284,
+      "deaths": 250,
+      "assists": 57,
+      "rating": 1.09,
+      "acs": 214,
+      "damage": null,
+      "hsPercent": 39.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-33576",
       "name": "margaret",
       "team": "QTD",
@@ -1788,14 +1788,14 @@
       "team": "NAVI",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 18,
-      "kills": 295,
-      "deaths": 281,
-      "assists": 148,
+      "maps": 16,
+      "kills": 264,
+      "deaths": 252,
+      "assists": 128,
       "rating": 1.08,
       "acs": 211,
       "damage": null,
-      "hsPercent": 28.0,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
