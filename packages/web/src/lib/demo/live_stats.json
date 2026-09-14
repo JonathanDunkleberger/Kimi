@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-14T12:13:41.132512+00:00",
+  "updatedAt": "2026-09-14T18:10:12.764980+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -28,12 +28,12 @@
       "team": "M8",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/6977651551705.png",
-      "maps": 16,
-      "kills": 304,
-      "deaths": 248,
-      "assists": 94,
-      "rating": 1.23,
-      "acs": 254,
+      "maps": 13,
+      "kills": 259,
+      "deaths": 209,
+      "assists": 74,
+      "rating": 1.25,
+      "acs": 256,
       "damage": null,
       "hsPercent": 34.0,
       "source": "vlr"
@@ -85,22 +85,6 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-3741",
-      "name": "vo0kashu",
-      "team": "DRG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
-      "maps": 20,
-      "kills": 356,
-      "deaths": 303,
-      "assists": 109,
-      "rating": 1.19,
-      "acs": 223,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-33902",
@@ -487,6 +471,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-3741",
+      "name": "vo0kashu",
+      "team": "DRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 320,
+      "deaths": 273,
+      "assists": 97,
+      "rating": 1.15,
+      "acs": 217,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-10821",
       "name": "deLb",
       "team": "TE",
@@ -850,6 +850,22 @@
       "assists": 229,
       "rating": 1.13,
       "acs": 208,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-11524",
+      "name": "Nicc",
+      "team": "DRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 290,
+      "deaths": 274,
+      "assists": 191,
+      "rating": 1.13,
+      "acs": 195,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
@@ -1607,22 +1623,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-37489",
-      "name": "Lysoar",
-      "team": "XLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 309,
-      "deaths": 277,
-      "assists": 129,
-      "rating": 1.09,
-      "acs": 209,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-42772",
       "name": "Xross",
       "team": "NS",
@@ -2004,22 +2004,6 @@
       "acs": 198,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-37927",
-      "name": "happywei",
-      "team": "XLG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 281,
-      "deaths": 283,
-      "assists": 105,
-      "rating": 1.07,
-      "acs": 206,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
