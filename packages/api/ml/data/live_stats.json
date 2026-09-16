@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T12:13:28.047277+00:00",
+  "updatedAt": "2026-09-16T18:10:38.750888+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -23,22 +23,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-10307",
-      "name": "marteen",
-      "team": "M8",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6977651551705.png",
-      "maps": 13,
-      "kills": 259,
-      "deaths": 209,
-      "assists": 74,
-      "rating": 1.25,
-      "acs": 256,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-8480",
       "name": "aspas",
       "team": "SLICK",
@@ -53,6 +37,22 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-10307",
+      "name": "marteen",
+      "team": "M8",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6977651551705.png",
+      "maps": 11,
+      "kills": 211,
+      "deaths": 176,
+      "assists": 61,
+      "rating": 1.21,
+      "acs": 251,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-36245",
@@ -119,6 +119,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 23,
+      "kills": 419,
+      "deaths": 329,
+      "assists": 110,
+      "rating": 1.19,
+      "acs": 249,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-4147",
       "name": "Cryocells",
       "team": "XSET",
@@ -148,22 +164,6 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 25,
-      "kills": 458,
-      "deaths": 364,
-      "assists": 133,
-      "rating": 1.18,
-      "acs": 249,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -244,6 +244,22 @@
       "acs": 220,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21328",
+      "name": "Wo0t",
+      "team": "TH",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69778b5885054.png",
+      "maps": 16,
+      "kills": 269,
+      "deaths": 221,
+      "assists": 61,
+      "rating": 1.17,
+      "acs": 234,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -644,22 +660,6 @@
       "acs": 222,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21328",
-      "name": "Wo0t",
-      "team": "TH",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 306,
-      "deaths": 259,
-      "assists": 71,
-      "rating": 1.14,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1196,12 +1196,12 @@
       "team": "AG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 23,
-      "kills": 415,
-      "deaths": 362,
-      "assists": 78,
+      "maps": 22,
+      "kills": 405,
+      "deaths": 347,
+      "assists": 75,
       "rating": 1.11,
-      "acs": 231,
+      "acs": 236,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -1596,12 +1596,12 @@
       "team": "AG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 23,
-      "kills": 326,
-      "deaths": 323,
-      "assists": 136,
+      "maps": 22,
+      "kills": 316,
+      "deaths": 307,
+      "assists": 130,
       "rating": 1.09,
-      "acs": 183,
+      "acs": 186,
       "damage": null,
       "hsPercent": 22.0,
       "source": "vlr"
