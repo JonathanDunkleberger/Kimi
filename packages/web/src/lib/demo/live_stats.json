@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T06:15:14.902989+00:00",
+  "updatedAt": "2026-09-16T12:13:28.047277+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -12,12 +12,12 @@
       "team": "BLG",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/677fdffe244c5.png",
-      "maps": 18,
-      "kills": 296,
-      "deaths": 255,
-      "assists": 150,
+      "maps": 16,
+      "kills": 262,
+      "deaths": 224,
+      "assists": 130,
       "rating": 1.26,
-      "acs": 225,
+      "acs": 224,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -553,7 +553,7 @@
     {
       "playerId": "val-60576",
       "name": "Ray",
-      "team": "ONG",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 11,
@@ -839,22 +839,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-7754",
-      "name": "xavi8k",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 29,
-      "kills": 448,
-      "deaths": 404,
-      "assists": 229,
-      "rating": 1.13,
-      "acs": 208,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11524",
       "name": "Nicc",
       "team": "DRG",
@@ -1045,6 +1029,22 @@
       "damage": null,
       "hsPercent": 23.5,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-7754",
+      "name": "xavi8k",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 27,
+      "kills": 406,
+      "deaths": 372,
+      "assists": 210,
+      "rating": 1.12,
+      "acs": 206,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-24344",
@@ -1388,12 +1388,12 @@
       "team": "T1",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 27,
-      "kills": 417,
-      "deaths": 365,
-      "assists": 154,
+      "maps": 24,
+      "kills": 357,
+      "deaths": 309,
+      "assists": 131,
       "rating": 1.1,
-      "acs": 204,
+      "acs": 203,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -1783,6 +1783,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-13744",
+      "name": "PatMen",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 27,
+      "kills": 455,
+      "deaths": 412,
+      "assists": 157,
+      "rating": 1.08,
+      "acs": 224,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-24007",
       "name": "Shyy",
       "team": "FUR",
@@ -1973,22 +1989,6 @@
       "damage": null,
       "hsPercent": 24.9,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-13744",
-      "name": "PatMen",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 29,
-      "kills": 491,
-      "deaths": 448,
-      "assists": 179,
-      "rating": 1.07,
-      "acs": 221,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-49476",
@@ -2212,6 +2212,22 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-16215",
+      "name": "dos9",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 277,
+      "deaths": 251,
+      "assists": 155,
+      "rating": 1.06,
+      "acs": 189,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
