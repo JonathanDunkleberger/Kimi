@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T18:09:34.209585+00:00",
+  "updatedAt": "2026-09-16T00:22:39.449659+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -375,22 +375,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-28716",
-      "name": "lukxo",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
-      "maps": 31,
-      "kills": 572,
-      "deaths": 436,
-      "assists": 78,
-      "rating": 1.16,
-      "acs": 238,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-36685",
       "name": "splash",
       "team": "TYL",
@@ -548,6 +532,22 @@
       "acs": 208,
       "damage": null,
       "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-28716",
+      "name": "lukxo",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 28,
+      "kills": 508,
+      "deaths": 391,
+      "assists": 67,
+      "rating": 1.15,
+      "acs": 237,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -951,7 +951,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-less",
+      "playerId": "val-8447",
       "name": "Less",
       "team": "Jaguares Esports",
       "game": "VALORANT",
@@ -1204,6 +1204,22 @@
       "acs": 231,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29242",
+      "name": "erde",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 28,
+      "kills": 421,
+      "deaths": 376,
+      "assists": 203,
+      "rating": 1.11,
+      "acs": 205,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -1975,22 +1991,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29242",
-      "name": "erde",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 31,
-      "kills": 455,
-      "deaths": 425,
-      "assists": 232,
-      "rating": 1.07,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-49476",
       "name": "zhe",
       "team": "JDG",
@@ -2212,22 +2212,6 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-16215",
-      "name": "dos9",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 277,
-      "deaths": 251,
-      "assists": 155,
-      "rating": 1.06,
-      "acs": 189,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
