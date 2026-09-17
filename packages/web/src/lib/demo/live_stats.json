@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T18:10:38.750888+00:00",
+  "updatedAt": "2026-09-17T00:22:31.363224+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1991,6 +1991,38 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 27,
+      "kills": 415,
+      "deaths": 376,
+      "assists": 99,
+      "rating": 1.07,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-20140",
+      "name": "vora",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 253,
+      "deaths": 227,
+      "assists": 115,
+      "rating": 1.07,
+      "acs": 186,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-49476",
       "name": "zhe",
       "team": "JDG",
@@ -2197,38 +2229,6 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 30,
-      "kills": 460,
-      "deaths": 427,
-      "assists": 114,
-      "rating": 1.06,
-      "acs": 197,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-16215",
-      "name": "dos9",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 277,
-      "deaths": 251,
-      "assists": 155,
-      "rating": 1.06,
-      "acs": 189,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-601",
