@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-17T00:22:31.363224+00:00",
+  "updatedAt": "2026-09-17T06:15:37.436311+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -37,6 +37,22 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-2172",
+      "name": "brawk",
+      "team": "NRG",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697426e1f3308.png",
+      "maps": 19,
+      "kills": 297,
+      "deaths": 249,
+      "assists": 145,
+      "rating": 1.21,
+      "acs": 223,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-10307",
@@ -164,6 +180,22 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 20,
+      "kills": 316,
+      "deaths": 257,
+      "assists": 123,
+      "rating": 1.18,
+      "acs": 212,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -327,22 +359,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-2172",
-      "name": "brawk",
-      "team": "NRG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697426e1f3308.png",
-      "maps": 22,
-      "kills": 332,
-      "deaths": 292,
-      "assists": 176,
-      "rating": 1.16,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-5654",
       "name": "Avez",
       "team": "KC",
@@ -372,22 +388,6 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
-      "maps": 23,
-      "kills": 357,
-      "deaths": 299,
-      "assists": 144,
-      "rating": 1.16,
-      "acs": 208,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -1749,38 +1749,6 @@
       "damage": 444454,
       "hsPercent": null,
       "source": "breakingpoint"
-    },
-    {
-      "playerId": "val-11118",
-      "name": "skuba",
-      "team": "NRG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 305,
-      "deaths": 283,
-      "assists": 164,
-      "rating": 1.08,
-      "acs": 186,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-11494",
-      "name": "keiko",
-      "team": "NRG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 339,
-      "deaths": 309,
-      "assists": 110,
-      "rating": 1.08,
-      "acs": 201,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-13744",
