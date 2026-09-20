@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T06:13:14.965150+00:00",
+  "updatedAt": "2026-09-20T12:11:53.612164+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -188,14 +188,14 @@
       "team": "WOL",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/6780cc7ef001a.png",
-      "maps": 16,
-      "kills": 273,
-      "deaths": 256,
-      "assists": 72,
+      "maps": 13,
+      "kills": 234,
+      "deaths": 216,
+      "assists": 62,
       "rating": 1.18,
-      "acs": 210,
+      "acs": 215,
       "damage": null,
-      "hsPercent": 31.0,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
