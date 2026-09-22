@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-21T18:10:49.237625+00:00",
+  "updatedAt": "2026-09-22T00:23:20.944823+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -183,22 +183,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
-      "maps": 20,
-      "kills": 316,
-      "deaths": 257,
-      "assists": 123,
-      "rating": 1.18,
-      "acs": 212,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-46460",
       "name": "Ezeir",
       "team": "NOVA",
@@ -356,6 +340,22 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69742b3c25b7c.png",
+      "maps": 18,
+      "kills": 285,
+      "deaths": 238,
+      "assists": 109,
+      "rating": 1.16,
+      "acs": 207,
+      "damage": null,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -839,22 +839,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-21659",
-      "name": "Sato",
-      "team": "LEV",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 248,
-      "deaths": 208,
-      "assists": 116,
-      "rating": 1.13,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29833",
       "name": "iZu",
       "team": "T1",
@@ -1188,6 +1172,22 @@
       "acs": 239,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21659",
+      "name": "Sato",
+      "team": "LEV",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 217,
+      "deaths": 185,
+      "assists": 101,
+      "rating": 1.11,
+      "acs": 213,
+      "damage": null,
+      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
