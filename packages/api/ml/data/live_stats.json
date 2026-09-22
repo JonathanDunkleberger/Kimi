@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-22T12:12:50.144706+00:00",
+  "updatedAt": "2026-09-22T18:11:26.147653+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -164,6 +164,22 @@
       "acs": 206,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-40935",
+      "name": "lovers rock",
+      "team": "BBL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697975c71d41b.png",
+      "maps": 13,
+      "kills": 233,
+      "deaths": 177,
+      "assists": 51,
+      "rating": 1.19,
+      "acs": 237,
+      "damage": null,
+      "hsPercent": 20.0,
       "source": "vlr"
     },
     {
@@ -459,7 +475,7 @@
       "name": "vo0kashu",
       "team": "DRG",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
+      "imageUrl": "",
       "maps": 12,
       "kills": 236,
       "deaths": 184,
@@ -532,22 +548,6 @@
       "acs": 237,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-40935",
-      "name": "lovers rock",
-      "team": "BBL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 279,
-      "deaths": 221,
-      "assists": 60,
-      "rating": 1.15,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 20.0,
       "source": "vlr"
     },
     {
@@ -1191,22 +1191,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-24344",
-      "name": "Loita",
-      "team": "BBL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 230,
-      "deaths": 211,
-      "assists": 156,
-      "rating": 1.11,
-      "acs": 197,
-      "damage": null,
-      "hsPercent": 40.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29242",
       "name": "erde",
       "team": "LOUD",
@@ -1780,6 +1764,38 @@
       "acs": 200,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-24344",
+      "name": "Loita",
+      "team": "BBL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 181,
+      "deaths": 175,
+      "assists": 127,
+      "rating": 1.08,
+      "acs": 194,
+      "damage": null,
+      "hsPercent": 43.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-39357",
+      "name": "s0pp",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 300,
+      "deaths": 261,
+      "assists": 72,
+      "rating": 1.08,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
