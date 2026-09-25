@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-25T06:15:26.885178+00:00",
+  "updatedAt": "2026-09-25T12:13:23.042621+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -108,12 +108,12 @@
       "team": "NRG",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/697426e1f3308.png",
-      "maps": 17,
-      "kills": 263,
-      "deaths": 223,
-      "assists": 133,
+      "maps": 19,
+      "kills": 295,
+      "deaths": 246,
+      "assists": 145,
       "rating": 1.2,
-      "acs": 223,
+      "acs": 224,
       "damage": null,
       "hsPercent": 22.0,
       "source": "vlr"
@@ -1351,6 +1351,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-11118",
+      "name": "skuba",
+      "team": "NRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 260,
+      "deaths": 239,
+      "assists": 141,
+      "rating": 1.1,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-18677",
       "name": "Ruxic",
       "team": "NAVI",
@@ -1559,6 +1575,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-11494",
+      "name": "keiko",
+      "team": "NRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 286,
+      "deaths": 257,
+      "assists": 90,
+      "rating": 1.09,
+      "acs": 197,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21610",
       "name": "runneR",
       "team": "VLR",
@@ -1588,22 +1620,6 @@
       "acs": 189,
       "damage": null,
       "hsPercent": 21.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-31827",
-      "name": "Dambi",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 23,
-      "kills": 400,
-      "deaths": 352,
-      "assists": 132,
-      "rating": 1.09,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -1733,38 +1749,6 @@
       "damage": 444454,
       "hsPercent": null,
       "source": "breakingpoint"
-    },
-    {
-      "playerId": "val-11118",
-      "name": "skuba",
-      "team": "NRG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 230,
-      "deaths": 217,
-      "assists": 127,
-      "rating": 1.08,
-      "acs": 186,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-11494",
-      "name": "keiko",
-      "team": "NRG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 254,
-      "deaths": 233,
-      "assists": 80,
-      "rating": 1.08,
-      "acs": 195,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-13744",
@@ -2023,22 +2007,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-31828",
-      "name": "Francis",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 23,
-      "kills": 400,
-      "deaths": 364,
-      "assists": 121,
-      "rating": 1.07,
-      "acs": 230,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-49476",
       "name": "zhe",
       "team": "JDG",
@@ -2260,6 +2228,22 @@
       "acs": 220,
       "damage": null,
       "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-11600",
+      "name": "Foxy9",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 271,
+      "deaths": 237,
+      "assists": 56,
+      "rating": 1.06,
+      "acs": 231,
+      "damage": null,
+      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
