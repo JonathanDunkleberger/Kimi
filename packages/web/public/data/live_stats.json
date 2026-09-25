@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-25T12:13:23.042621+00:00",
+  "updatedAt": "2026-09-25T18:10:49.972859+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -12,14 +12,14 @@
       "team": "KC",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/6974146682328.png",
-      "maps": 12,
-      "kills": 234,
-      "deaths": 167,
-      "assists": 44,
-      "rating": 1.27,
-      "acs": 250,
+      "maps": 14,
+      "kills": 273,
+      "deaths": 186,
+      "assists": 55,
+      "rating": 1.31,
+      "acs": 257,
       "damage": null,
-      "hsPercent": 28.0,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1015,6 +1015,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-5654",
+      "name": "Avez",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 205,
+      "deaths": 175,
+      "assists": 93,
+      "rating": 1.12,
+      "acs": 195,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-28400",
       "name": "HYUNMIN",
       "team": "KRX",
@@ -1540,22 +1556,6 @@
       "acs": 225,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-5654",
-      "name": "Avez",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 172,
-      "deaths": 158,
-      "assists": 83,
-      "rating": 1.09,
-      "acs": 188,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
