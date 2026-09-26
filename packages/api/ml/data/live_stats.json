@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-26T06:14:27.761788+00:00",
+  "updatedAt": "2026-09-26T12:11:46.490600+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -475,7 +475,7 @@
       "name": "vo0kashu",
       "team": "DRG",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
       "maps": 9,
       "kills": 161,
       "deaths": 136,
@@ -532,22 +532,6 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 198,
-      "deaths": 158,
-      "assists": 74,
-      "rating": 1.15,
-      "acs": 203,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -807,22 +791,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-7754",
-      "name": "xavi8k",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 342,
-      "deaths": 312,
-      "assists": 180,
-      "rating": 1.13,
-      "acs": 206,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11524",
       "name": "Nicc",
       "team": "DRG",
@@ -1026,6 +994,22 @@
       "assists": 93,
       "rating": 1.12,
       "acs": 195,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-7754",
+      "name": "xavi8k",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 396,
+      "deaths": 361,
+      "assists": 206,
+      "rating": 1.12,
+      "acs": 205,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -1415,6 +1399,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 241,
+      "deaths": 203,
+      "assists": 86,
+      "rating": 1.1,
+      "acs": 196,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-44842",
       "name": "Jackk",
       "team": "C9",
@@ -1756,12 +1756,12 @@
       "team": "GE",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 22,
-      "kills": 376,
-      "deaths": 342,
-      "assists": 124,
+      "maps": 25,
+      "kills": 425,
+      "deaths": 394,
+      "assists": 152,
       "rating": 1.08,
-      "acs": 223,
+      "acs": 220,
       "damage": null,
       "hsPercent": 33.0,
       "source": "vlr"
