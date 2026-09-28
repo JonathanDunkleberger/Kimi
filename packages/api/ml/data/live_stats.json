@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T12:15:12.692924+00:00",
+  "updatedAt": "2026-09-28T18:12:07.641744+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -132,22 +132,6 @@
       "acs": 221,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29867",
-      "name": "hiro",
-      "team": "NAVI",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67925026116a0.png",
-      "maps": 8,
-      "kills": 171,
-      "deaths": 126,
-      "assists": 21,
-      "rating": 1.2,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 40.0,
       "source": "vlr"
     },
     {
@@ -475,7 +459,7 @@
       "name": "deLb",
       "team": "TE",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/677fbe994eb91.png",
       "maps": 18,
       "kills": 315,
       "deaths": 262,
@@ -581,6 +565,22 @@
       "damage": null,
       "hsPercent": 21.1,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-18677",
+      "name": "Ruxic",
+      "team": "NAVI",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 101,
+      "deaths": 95,
+      "assists": 69,
+      "rating": 1.14,
+      "acs": 207,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-29242",
@@ -1367,22 +1367,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-18677",
-      "name": "Ruxic",
-      "team": "NAVI",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 139,
-      "deaths": 134,
-      "assists": 82,
-      "rating": 1.1,
-      "acs": 209,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29833",
       "name": "iZu",
       "team": "T1",
@@ -1780,6 +1764,22 @@
       "acs": 209,
       "damage": null,
       "hsPercent": 39.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29867",
+      "name": "hiro",
+      "team": "NAVI",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 117,
+      "deaths": 98,
+      "assists": 19,
+      "rating": 1.08,
+      "acs": 214,
+      "damage": null,
+      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
