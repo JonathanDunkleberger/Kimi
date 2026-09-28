@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T06:21:09.715614+00:00",
+  "updatedAt": "2026-09-28T12:15:12.692924+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -87,22 +87,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-25255",
-      "name": "primmie",
-      "team": "FS",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6944047b31bc9.png",
-      "maps": 19,
-      "kills": 347,
-      "deaths": 265,
-      "assists": 80,
-      "rating": 1.21,
-      "acs": 247,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-2172",
       "name": "brawk",
       "team": "NRG",
@@ -116,6 +100,38 @@
       "acs": 224,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-6672",
+      "name": "Meiy",
+      "team": "DFM",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/674037871e878.png",
+      "maps": 14,
+      "kills": 280,
+      "deaths": 217,
+      "assists": 40,
+      "rating": 1.2,
+      "acs": 257,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13002",
+      "name": "Akame",
+      "team": "DFM",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/674037c47365d.png",
+      "maps": 14,
+      "kills": 235,
+      "deaths": 186,
+      "assists": 87,
+      "rating": 1.2,
+      "acs": 221,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -165,22 +181,6 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-13002",
-      "name": "Akame",
-      "team": "DFM",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/674037c47365d.png",
-      "maps": 17,
-      "kills": 289,
-      "deaths": 233,
-      "assists": 114,
-      "rating": 1.19,
-      "acs": 222,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-4147",
@@ -261,6 +261,22 @@
       "damage": null,
       "hsPercent": 22.8,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-25255",
+      "name": "primmie",
+      "team": "FS",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6944047b31bc9.png",
+      "maps": 16,
+      "kills": 274,
+      "deaths": 219,
+      "assists": 65,
+      "rating": 1.17,
+      "acs": 237,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-28716",
@@ -459,7 +475,7 @@
       "name": "deLb",
       "team": "TE",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/677fbe994eb91.png",
+      "imageUrl": "",
       "maps": 18,
       "kills": 315,
       "deaths": 262,
@@ -565,22 +581,6 @@
       "damage": null,
       "hsPercent": 21.1,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-6672",
-      "name": "Meiy",
-      "team": "DFM",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 329,
-      "deaths": 270,
-      "assists": 46,
-      "rating": 1.14,
-      "acs": 246,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-29242",
@@ -980,6 +980,22 @@
       "acs": 233,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13784",
+      "name": "Killua",
+      "team": "FS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 16,
+      "kills": 237,
+      "deaths": 221,
+      "assists": 121,
+      "rating": 1.12,
+      "acs": 213,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1783,22 +1799,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-42733",
-      "name": "XuNa",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 234,
-      "deaths": 214,
-      "assists": 79,
-      "rating": 1.08,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 36.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-55085",
       "name": "Erv",
       "team": "TYL",
@@ -2199,38 +2199,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-11600",
-      "name": "Foxy9",
-      "team": "VL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 271,
-      "deaths": 237,
-      "assists": 56,
-      "rating": 1.06,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-13784",
-      "name": "Killua",
-      "team": "FS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 283,
-      "deaths": 275,
-      "assists": 140,
-      "rating": 1.06,
-      "acs": 205,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-15559",
       "name": "CHICHOO",
       "team": "EDG",
@@ -2244,6 +2212,38 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-16215",
+      "name": "dos9",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 194,
+      "deaths": 175,
+      "assists": 120,
+      "rating": 1.06,
+      "acs": 182,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31827",
+      "name": "Dambi",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 418,
+      "deaths": 386,
+      "assists": 145,
+      "rating": 1.06,
+      "acs": 221,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
