@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T18:12:07.641744+00:00",
+  "updatedAt": "2026-09-29T00:25:06.305107+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -475,7 +475,7 @@
       "name": "AAAAY",
       "team": "FPX",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/6780cc68aef3a.png",
       "maps": 18,
       "kills": 274,
       "deaths": 249,
@@ -1751,6 +1751,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-20140",
+      "name": "vora",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 212,
+      "deaths": 192,
+      "assists": 103,
+      "rating": 1.08,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21659",
       "name": "Sato",
       "team": "LEV",
@@ -1925,22 +1941,6 @@
       "damage": null,
       "hsPercent": 24.9,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 27,
-      "kills": 414,
-      "deaths": 378,
-      "assists": 101,
-      "rating": 1.07,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-24344",
