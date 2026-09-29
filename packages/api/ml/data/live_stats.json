@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-29T06:15:34.078549+00:00",
+  "updatedAt": "2026-09-29T12:14:22.766453+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -743,6 +743,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-7754",
+      "name": "xavi8k",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 347,
+      "deaths": 311,
+      "assists": 171,
+      "rating": 1.13,
+      "acs": 205,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-11524",
       "name": "Nicc",
       "team": "DRG",
@@ -946,22 +962,6 @@
       "assists": 93,
       "rating": 1.12,
       "acs": 195,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-7754",
-      "name": "xavi8k",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 25,
-      "kills": 396,
-      "deaths": 361,
-      "assists": 206,
-      "rating": 1.12,
-      "acs": 205,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -1575,6 +1575,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-13744",
+      "name": "PatMen",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 371,
+      "deaths": 340,
+      "assists": 136,
+      "rating": 1.09,
+      "acs": 221,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21610",
       "name": "runneR",
       "team": "VLR",
@@ -1733,22 +1749,6 @@
       "damage": 444454,
       "hsPercent": null,
       "source": "breakingpoint"
-    },
-    {
-      "playerId": "val-13744",
-      "name": "PatMen",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 25,
-      "kills": 425,
-      "deaths": 394,
-      "assists": 152,
-      "rating": 1.08,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-20140",
