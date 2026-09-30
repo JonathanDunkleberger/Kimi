@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T12:14:49.338000+00:00",
+  "updatedAt": "2026-09-30T18:12:08.227705+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -827,7 +827,7 @@
       "name": "Less",
       "team": "Jaguares Esports",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/69e64fe599b45.png",
       "maps": 525,
       "kills": 8814,
       "deaths": 7394,
@@ -1159,6 +1159,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-39357",
+      "name": "s0pp",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 324,
+      "deaths": 262,
+      "assists": 67,
+      "rating": 1.11,
+      "acs": 239,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41694",
       "name": "endoist",
       "team": "XIP",
@@ -1303,6 +1319,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-8369",
+      "name": "yetujey",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 279,
+      "deaths": 232,
+      "assists": 75,
+      "rating": 1.1,
+      "acs": 199,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-29833",
       "name": "iZu",
       "team": "T1",
@@ -1316,22 +1348,6 @@
       "acs": 189,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-39357",
-      "name": "s0pp",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 341,
-      "deaths": 284,
-      "assists": 77,
-      "rating": 1.1,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -1692,12 +1708,12 @@
       "team": "100T",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 15,
-      "kills": 212,
-      "deaths": 192,
-      "assists": 103,
+      "maps": 17,
+      "kills": 240,
+      "deaths": 215,
+      "assists": 116,
       "rating": 1.08,
-      "acs": 187,
+      "acs": 186,
       "damage": null,
       "hsPercent": 22.0,
       "source": "vlr"
@@ -1748,22 +1764,6 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 226,
-      "deaths": 193,
-      "assists": 75,
-      "rating": 1.08,
-      "acs": 190,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1956,6 +1956,22 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 180,
+      "deaths": 157,
+      "assists": 53,
+      "rating": 1.07,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -2167,22 +2183,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-8369",
-      "name": "yetujey",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 284,
-      "deaths": 249,
-      "assists": 80,
-      "rating": 1.06,
-      "acs": 192,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-13784",
       "name": "Killua",
       "team": "FS",
@@ -2228,6 +2228,22 @@
       "acs": 175,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31827",
+      "name": "Dambi",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 418,
+      "deaths": 386,
+      "assists": 145,
+      "rating": 1.06,
+      "acs": 221,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
