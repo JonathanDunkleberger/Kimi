@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-30T00:26:08.475672+00:00",
+  "updatedAt": "2026-09-30T06:16:06.689258+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -756,22 +756,6 @@
       "acs": 196,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21668",
-      "name": "Verno",
-      "team": "MIBR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 247,
-      "deaths": 212,
-      "assists": 96,
-      "rating": 1.13,
-      "acs": 205,
-      "damage": null,
-      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
@@ -1927,6 +1911,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21668",
+      "name": "Verno",
+      "team": "MIBR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 208,
+      "deaths": 191,
+      "assists": 82,
+      "rating": 1.07,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-26171",
       "name": "Demon1",
       "team": "ENVY",
@@ -2212,6 +2212,22 @@
       "acs": 175,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31827",
+      "name": "Dambi",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 418,
+      "deaths": 386,
+      "assists": 145,
+      "rating": 1.06,
+      "acs": 221,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
