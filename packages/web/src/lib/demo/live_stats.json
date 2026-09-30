@@ -1,11 +1,27 @@
 {
-  "updatedAt": "2026-09-29T18:11:59.940556+00:00",
+  "updatedAt": "2026-09-30T00:26:08.475672+00:00",
   "sources": [
     "vct_history",
     "vlr",
     "breakingpoint"
   ],
   "players": [
+    {
+      "playerId": "val-18796",
+      "name": "OXY",
+      "team": "C9",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
+      "maps": 12,
+      "kills": 256,
+      "deaths": 178,
+      "assists": 46,
+      "rating": 1.32,
+      "acs": 285,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
     {
       "playerId": "val-4774",
       "name": "Knight",
@@ -20,22 +36,6 @@
       "acs": 227,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-18796",
-      "name": "OXY",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
-      "maps": 15,
-      "kills": 305,
-      "deaths": 230,
-      "assists": 57,
-      "rating": 1.24,
-      "acs": 273,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -69,22 +69,6 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-21328",
-      "name": "Wo0t",
-      "team": "TH",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69778b5885054.png",
-      "maps": 12,
-      "kills": 219,
-      "deaths": 170,
-      "assists": 47,
-      "rating": 1.21,
-      "acs": 238,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-6672",
@@ -199,6 +183,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21328",
+      "name": "Wo0t",
+      "team": "TH",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69778b5885054.png",
+      "maps": 10,
+      "kills": 179,
+      "deaths": 146,
+      "assists": 39,
+      "rating": 1.18,
+      "acs": 236,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-46460",
       "name": "Ezeir",
       "team": "NOVA",
@@ -260,22 +260,6 @@
       "acs": 237,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-28716",
-      "name": "lukxo",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
-      "maps": 28,
-      "kills": 510,
-      "deaths": 382,
-      "assists": 63,
-      "rating": 1.17,
-      "acs": 236,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -471,6 +455,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29242",
+      "name": "erde",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 386,
+      "deaths": 324,
+      "assists": 187,
+      "rating": 1.15,
+      "acs": 210,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-60576",
       "name": "Ray",
       "team": "VLR",
@@ -567,19 +567,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29242",
-      "name": "erde",
+      "playerId": "val-28716",
+      "name": "lukxo",
       "team": "LOUD",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 28,
-      "kills": 426,
-      "deaths": 364,
-      "assists": 206,
+      "maps": 25,
+      "kills": 439,
+      "deaths": 341,
+      "assists": 55,
       "rating": 1.14,
-      "acs": 207,
+      "acs": 230,
       "damage": null,
-      "hsPercent": 27.0,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -1351,22 +1351,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-44842",
-      "name": "Jackk",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 202,
-      "deaths": 187,
-      "assists": 116,
-      "rating": 1.1,
-      "acs": 179,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-hist-k1ng",
       "name": "k1Ng",
       "team": "Vision Strikers",
@@ -1959,6 +1943,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-44842",
+      "name": "Jackk",
+      "team": "C9",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 157,
+      "deaths": 144,
+      "assists": 94,
+      "rating": 1.07,
+      "acs": 173,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-derrek",
       "name": "Derrek",
       "team": "Rise",
@@ -2212,38 +2212,6 @@
       "acs": 175,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-31827",
-      "name": "Dambi",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 25,
-      "kills": 418,
-      "deaths": 386,
-      "assists": 145,
-      "rating": 1.06,
-      "acs": 221,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 184,
-      "deaths": 161,
-      "assists": 64,
-      "rating": 1.06,
-      "acs": 191,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
