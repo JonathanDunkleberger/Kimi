@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T12:14:36.185065+00:00",
+  "updatedAt": "2026-10-01T18:12:34.077199+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -807,22 +807,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-40935",
-      "name": "lovers rock",
-      "team": "BBL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 137,
-      "deaths": 112,
-      "assists": 28,
-      "rating": 1.13,
-      "acs": 223,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-55681",
       "name": "kozzy",
       "team": "BRAT",
@@ -981,6 +965,22 @@
       "damage": null,
       "hsPercent": 23.5,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-8226",
+      "name": "waddle",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 81,
+      "deaths": 70,
+      "assists": 32,
+      "rating": 1.12,
+      "acs": 226,
+      "damage": null,
+      "hsPercent": 36.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-29242",
@@ -1175,6 +1175,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-24344",
+      "name": "Loita",
+      "team": "BBL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 75,
+      "deaths": 71,
+      "assists": 48,
+      "rating": 1.11,
+      "acs": 203,
+      "damage": null,
+      "hsPercent": 42.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-39357",
       "name": "s0pp",
       "team": "FUT",
@@ -1348,6 +1364,22 @@
       "acs": 189,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-40935",
+      "name": "lovers rock",
+      "team": "BBL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 86,
+      "deaths": 76,
+      "assists": 17,
+      "rating": 1.1,
+      "acs": 225,
+      "damage": null,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -1575,6 +1607,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-31828",
+      "name": "Francis",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 436,
+      "deaths": 381,
+      "assists": 111,
+      "rating": 1.09,
+      "acs": 239,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-33576",
       "name": "margaret",
       "team": "QTD",
@@ -1716,22 +1764,6 @@
       "acs": 186,
       "damage": null,
       "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-24344",
-      "name": "Loita",
-      "team": "BBL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 116,
-      "deaths": 112,
-      "assists": 77,
-      "rating": 1.08,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 44.0,
       "source": "vlr"
     },
     {
@@ -1927,22 +1959,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-31827",
-      "name": "Dambi",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 369,
-      "deaths": 342,
-      "assists": 128,
-      "rating": 1.07,
-      "acs": 222,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-33902",
       "name": "Sayonara",
       "team": "VIT",
@@ -1956,6 +1972,22 @@
       "acs": 187,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42772",
+      "name": "Xross",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 342,
+      "deaths": 327,
+      "assists": 153,
+      "rating": 1.07,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -2228,22 +2260,6 @@
       "acs": 190,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-31828",
-      "name": "Francis",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 386,
-      "deaths": 350,
-      "assists": 104,
-      "rating": 1.06,
-      "acs": 234,
-      "damage": null,
-      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
