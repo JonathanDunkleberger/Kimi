@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T06:16:28.785606+00:00",
+  "updatedAt": "2026-10-01T12:14:36.185065+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -263,6 +263,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 22,
+      "kills": 392,
+      "deaths": 315,
+      "assists": 94,
+      "rating": 1.17,
+      "acs": 252,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-58496",
       "name": "Kachoww",
       "team": "FF",
@@ -455,22 +471,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 19,
-      "kills": 339,
-      "deaths": 281,
-      "assists": 87,
-      "rating": 1.15,
-      "acs": 250,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-19530",
       "name": "AAAAY",
       "team": "FPX",
@@ -491,7 +491,7 @@
       "name": "Shyy",
       "team": "FUR",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/687bfb9a9e913.png",
       "maps": 16,
       "kills": 251,
       "deaths": 211,
@@ -596,6 +596,22 @@
       "acs": 207,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-50813",
+      "name": "GSR",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 93,
+      "deaths": 78,
+      "assists": 23,
+      "rating": 1.14,
+      "acs": 225,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -967,22 +983,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-28400",
-      "name": "HYUNMIN",
-      "team": "KRX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 325,
-      "deaths": 279,
-      "assists": 74,
-      "rating": 1.12,
-      "acs": 235,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29242",
       "name": "erde",
       "team": "LOUD",
@@ -1175,22 +1175,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-36685",
-      "name": "splash",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 310,
-      "deaths": 274,
-      "assists": 115,
-      "rating": 1.11,
-      "acs": 235,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-39357",
       "name": "s0pp",
       "team": "FUT",
@@ -1220,22 +1204,6 @@
       "acs": 251,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41739",
-      "name": "slowly",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 333,
-      "deaths": 277,
-      "assists": 68,
-      "rating": 1.11,
-      "acs": 248,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1380,6 +1348,22 @@
       "acs": 189,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41739",
+      "name": "slowly",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 378,
+      "deaths": 320,
+      "assists": 72,
+      "rating": 1.1,
+      "acs": 245,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1767,6 +1751,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-36685",
+      "name": "splash",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 346,
+      "deaths": 320,
+      "assists": 126,
+      "rating": 1.08,
+      "acs": 231,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-40511",
       "name": "NIZ",
       "team": "SP",
@@ -1780,22 +1780,6 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-55085",
-      "name": "Erv",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 258,
-      "deaths": 236,
-      "assists": 152,
-      "rating": 1.08,
-      "acs": 186,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1922,6 +1906,38 @@
       "assists": 82,
       "rating": 1.07,
       "acs": 198,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-28400",
+      "name": "HYUNMIN",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 264,
+      "deaths": 235,
+      "assists": 56,
+      "rating": 1.07,
+      "acs": 225,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31827",
+      "name": "Dambi",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 369,
+      "deaths": 342,
+      "assists": 128,
+      "rating": 1.07,
+      "acs": 222,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -2215,19 +2231,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-31827",
-      "name": "Dambi",
+      "playerId": "val-31828",
+      "name": "Francis",
       "team": "NS",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 25,
-      "kills": 418,
-      "deaths": 386,
-      "assists": 145,
+      "maps": 22,
+      "kills": 386,
+      "deaths": 350,
+      "assists": 104,
       "rating": 1.06,
-      "acs": 221,
+      "acs": 234,
       "damage": null,
-      "hsPercent": 26.0,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
