@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T06:15:27.034437+00:00",
+  "updatedAt": "2026-10-02T12:14:08.882285+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -748,10 +748,10 @@
       "team": "GE",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 22,
-      "kills": 347,
-      "deaths": 311,
-      "assists": 171,
+      "maps": 24,
+      "kills": 373,
+      "deaths": 332,
+      "assists": 181,
       "rating": 1.13,
       "acs": 205,
       "damage": null,
@@ -1367,6 +1367,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-13744",
+      "name": "PatMen",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 405,
+      "deaths": 364,
+      "assists": 151,
+      "rating": 1.1,
+      "acs": 224,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-29833",
       "name": "iZu",
       "team": "T1",
@@ -1572,22 +1588,6 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-13744",
-      "name": "PatMen",
-      "team": "GE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 371,
-      "deaths": 340,
-      "assists": 136,
-      "rating": 1.09,
-      "acs": 221,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2231,6 +2231,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-5796",
+      "name": "Kr1stal",
+      "team": "GE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 24,
+      "kills": 333,
+      "deaths": 330,
+      "assists": 158,
+      "rating": 1.06,
+      "acs": 189,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-13784",
       "name": "Killua",
       "team": "FS",
@@ -2244,22 +2260,6 @@
       "acs": 200,
       "damage": null,
       "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-15559",
-      "name": "CHICHOO",
-      "team": "EDG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 153,
-      "deaths": 146,
-      "assists": 58,
-      "rating": 1.06,
-      "acs": 210,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
