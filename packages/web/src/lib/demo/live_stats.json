@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T12:14:08.882285+00:00",
+  "updatedAt": "2026-10-02T18:12:11.293344+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1383,22 +1383,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 278,
-      "deaths": 249,
-      "assists": 109,
-      "rating": 1.1,
-      "acs": 189,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-40935",
       "name": "lovers rock",
       "team": "BBL",
@@ -1988,6 +1972,22 @@
       "acs": 225,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29833",
+      "name": "iZu",
+      "team": "T1",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 23,
+      "kills": 306,
+      "deaths": 287,
+      "assists": 124,
+      "rating": 1.07,
+      "acs": 184,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
