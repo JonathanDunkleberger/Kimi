@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T18:12:34.077199+00:00",
+  "updatedAt": "2026-10-02T00:25:26.194886+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -12,14 +12,14 @@
       "team": "C9",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
-      "maps": 12,
-      "kills": 256,
-      "deaths": 178,
-      "assists": 46,
-      "rating": 1.32,
-      "acs": 285,
+      "maps": 10,
+      "kills": 209,
+      "deaths": 151,
+      "assists": 41,
+      "rating": 1.29,
+      "acs": 278,
       "damage": null,
-      "hsPercent": 28.0,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -180,22 +180,6 @@
       "acs": 216,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-21328",
-      "name": "Wo0t",
-      "team": "TH",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69778b5885054.png",
-      "maps": 10,
-      "kills": 179,
-      "deaths": 146,
-      "assists": 39,
-      "rating": 1.18,
-      "acs": 236,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -791,6 +775,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-21328",
+      "name": "Wo0t",
+      "team": "TH",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 142,
+      "deaths": 124,
+      "assists": 33,
+      "rating": 1.13,
+      "acs": 229,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21659",
       "name": "Sato",
       "team": "LEV",
@@ -1156,6 +1156,22 @@
       "acs": 200,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-9554",
+      "name": "kaajak",
+      "team": "FNC",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/687e2c5192fe5.png",
+      "maps": 7,
+      "kills": 121,
+      "deaths": 101,
+      "assists": 34,
+      "rating": 1.11,
+      "acs": 226,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1625,7 +1641,7 @@
     {
       "playerId": "val-33576",
       "name": "margaret",
-      "team": "QTD",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 6,
@@ -1639,7 +1655,7 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-hist-mwzera",
+      "playerId": "val-939",
       "name": "mwzera",
       "team": "Gamelanders Blue",
       "game": "VALORANT",
@@ -1812,6 +1828,22 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-44842",
+      "name": "Jackk",
+      "team": "C9",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 10,
+      "kills": 137,
+      "deaths": 123,
+      "assists": 76,
+      "rating": 1.08,
+      "acs": 178,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -1988,22 +2020,6 @@
       "acs": 187,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-44842",
-      "name": "Jackk",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 157,
-      "deaths": 144,
-      "assists": 94,
-      "rating": 1.07,
-      "acs": 173,
-      "damage": null,
-      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -2197,6 +2213,22 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-5395",
+      "name": "cortezia",
+      "team": "SEN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 123,
+      "deaths": 115,
+      "assists": 28,
+      "rating": 1.06,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 38.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-13784",
