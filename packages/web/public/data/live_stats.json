@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T13:42:39.255804+00:00",
+  "updatedAt": "2026-10-03T18:38:57.624748+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -55,22 +55,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-36245",
-      "name": "N4RRATE",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6974146682328.png",
-      "maps": 14,
-      "kills": 249,
-      "deaths": 189,
-      "assists": 64,
-      "rating": 1.23,
-      "acs": 247,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-8480",
       "name": "aspas",
       "team": "SLICK",
@@ -116,6 +100,22 @@
       "acs": 248,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-36245",
+      "name": "N4RRATE",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6974146682328.png",
+      "maps": 17,
+      "kills": 299,
+      "deaths": 229,
+      "assists": 70,
+      "rating": 1.21,
+      "acs": 244,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1127,22 +1127,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5654",
-      "name": "Avez",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 205,
-      "deaths": 174,
-      "assists": 84,
-      "rating": 1.11,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-9554",
       "name": "kaajak",
       "team": "FNC",
@@ -1591,22 +1575,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-31828",
-      "name": "Francis",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 436,
-      "deaths": 381,
-      "assists": 111,
-      "rating": 1.09,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-33576",
       "name": "margaret",
       "team": "VLR",
@@ -1996,12 +1964,12 @@
       "team": "NS",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 24,
-      "kills": 342,
-      "deaths": 327,
-      "assists": 153,
+      "maps": 27,
+      "kills": 387,
+      "deaths": 367,
+      "assists": 164,
       "rating": 1.07,
-      "acs": 187,
+      "acs": 190,
       "damage": null,
       "hsPercent": 29.0,
       "source": "vlr"
@@ -2215,6 +2183,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-5654",
+      "name": "Avez",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 242,
+      "deaths": 221,
+      "assists": 99,
+      "rating": 1.06,
+      "acs": 197,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-5796",
       "name": "Kr1stal",
       "team": "GE",
@@ -2247,22 +2231,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-16215",
-      "name": "dos9",
-      "team": "KC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 175,
-      "deaths": 162,
-      "assists": 111,
-      "rating": 1.06,
-      "acs": 170,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29243",
       "name": "Neon",
       "team": "LEV",
@@ -2276,6 +2244,22 @@
       "acs": 190,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31828",
+      "name": "Francis",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 27,
+      "kills": 471,
+      "deaths": 426,
+      "assists": 122,
+      "rating": 1.06,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
