@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-03T06:16:47.632074+00:00",
+  "updatedAt": "2026-10-03T13:42:39.255804+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -252,12 +252,12 @@
       "team": "TL",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 22,
-      "kills": 392,
-      "deaths": 315,
-      "assists": 94,
+      "maps": 24,
+      "kills": 426,
+      "deaths": 347,
+      "assists": 107,
       "rating": 1.17,
-      "acs": 252,
+      "acs": 249,
       "damage": null,
       "hsPercent": 31.0,
       "source": "vlr"
@@ -580,22 +580,6 @@
       "acs": 207,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-50813",
-      "name": "GSR",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 93,
-      "deaths": 78,
-      "assists": 23,
-      "rating": 1.14,
-      "acs": 225,
-      "damage": null,
-      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
