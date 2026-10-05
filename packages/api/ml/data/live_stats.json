@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T06:24:36.500372+00:00",
+  "updatedAt": "2026-10-05T12:14:42.251881+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -52,6 +52,22 @@
       "acs": 227,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-6022",
+      "name": "yosemite",
+      "team": "WOL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6780cc7ef001a.png",
+      "maps": 8,
+      "kills": 158,
+      "deaths": 132,
+      "assists": 39,
+      "rating": 1.25,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -135,6 +151,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-3741",
+      "name": "vo0kashu",
+      "team": "DRG",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
+      "maps": 6,
+      "kills": 112,
+      "deaths": 93,
+      "assists": 28,
+      "rating": 1.19,
+      "acs": 238,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-4147",
       "name": "Cryocells",
       "team": "XSET",
@@ -149,22 +181,6 @@
       "damage": null,
       "hsPercent": 24.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-6022",
-      "name": "yosemite",
-      "team": "WOL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6780cc7ef001a.png",
-      "maps": 11,
-      "kills": 206,
-      "deaths": 181,
-      "assists": 52,
-      "rating": 1.18,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-13002",
@@ -439,38 +455,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-3741",
-      "name": "vo0kashu",
-      "team": "DRG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67826114df9ea.png",
-      "maps": 9,
-      "kills": 161,
-      "deaths": 136,
-      "assists": 38,
-      "rating": 1.15,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-19530",
-      "name": "AAAAY",
-      "team": "FPX",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6780cc68aef3a.png",
-      "maps": 18,
-      "kills": 274,
-      "deaths": 249,
-      "assists": 83,
-      "rating": 1.15,
-      "acs": 202,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-24007",
       "name": "Shyy",
       "team": "FUR",
@@ -596,6 +580,22 @@
       "acs": 207,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-19530",
+      "name": "AAAAY",
+      "team": "FPX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 228,
+      "deaths": 214,
+      "assists": 69,
+      "rating": 1.14,
+      "acs": 200,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -741,22 +741,6 @@
       "damage": null,
       "hsPercent": 26.9,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-11524",
-      "name": "Nicc",
-      "team": "DRG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 159,
-      "deaths": 138,
-      "assists": 78,
-      "rating": 1.13,
-      "acs": 196,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-21328",
@@ -1543,22 +1527,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-7987",
-      "name": "KovaQ",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 99,
-      "deaths": 92,
-      "assists": 48,
-      "rating": 1.09,
-      "acs": 201,
-      "damage": null,
-      "hsPercent": 36.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11494",
       "name": "keiko",
       "team": "NRG",
@@ -1572,6 +1540,22 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-11524",
+      "name": "Nicc",
+      "team": "DRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 116,
+      "deaths": 104,
+      "assists": 47,
+      "rating": 1.09,
+      "acs": 206,
+      "damage": null,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
