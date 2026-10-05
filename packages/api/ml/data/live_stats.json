@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T12:14:42.251881+00:00",
+  "updatedAt": "2026-10-05T18:11:59.543044+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -100,6 +100,22 @@
       "acs": 225,
       "damage": null,
       "hsPercent": 20.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-4629",
+      "name": "azury",
+      "team": "SGE",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6a4be26312ede.png",
+      "maps": 9,
+      "kills": 140,
+      "deaths": 116,
+      "assists": 70,
+      "rating": 1.21,
+      "acs": 226,
+      "damage": null,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -1095,22 +1111,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-4629",
-      "name": "azury",
-      "team": "SGE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 172,
-      "deaths": 158,
-      "assists": 92,
-      "rating": 1.11,
-      "acs": 208,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-9554",
       "name": "kaajak",
       "team": "FNC",
@@ -1317,22 +1317,6 @@
       "damage": 607655,
       "hsPercent": null,
       "source": "breakingpoint"
-    },
-    {
-      "playerId": "val-3127",
-      "name": "MONSTEERR",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 190,
-      "deaths": 171,
-      "assists": 63,
-      "rating": 1.1,
-      "acs": 217,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-4770",
@@ -2183,6 +2167,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-3127",
+      "name": "MONSTEERR",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 135,
+      "deaths": 127,
+      "assists": 51,
+      "rating": 1.06,
+      "acs": 205,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-5395",
       "name": "cortezia",
       "team": "SEN",
@@ -2212,6 +2212,22 @@
       "acs": 197,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-7660",
+      "name": "Fizzy",
+      "team": "BRAT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 124,
+      "deaths": 123,
+      "assists": 75,
+      "rating": 1.06,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
