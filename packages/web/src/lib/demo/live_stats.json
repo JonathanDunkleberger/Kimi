@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T12:13:29.373599+00:00",
+  "updatedAt": "2026-10-06T18:11:40.767759+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -167,6 +167,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-58496",
+      "name": "Kachoww",
+      "team": "FF",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
+      "maps": 14,
+      "kills": 292,
+      "deaths": 229,
+      "assists": 69,
+      "rating": 1.19,
+      "acs": 262,
+      "damage": null,
+      "hsPercent": 36.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-4147",
       "name": "Cryocells",
       "team": "XSET",
@@ -292,22 +308,6 @@
       "acs": 243,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
-      "maps": 16,
-      "kills": 327,
-      "deaths": 257,
-      "assists": 74,
-      "rating": 1.17,
-      "acs": 260,
-      "damage": null,
-      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -484,6 +484,22 @@
       "acs": 213,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-55681",
+      "name": "kozzy",
+      "team": "BRAT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 231,
+      "deaths": 194,
+      "assists": 40,
+      "rating": 1.15,
+      "acs": 252,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -791,22 +807,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-55681",
-      "name": "kozzy",
-      "team": "BRAT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 278,
-      "deaths": 239,
-      "assists": 51,
-      "rating": 1.13,
-      "acs": 245,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-62291",
       "name": "Xiesta",
       "team": "GEN",
@@ -967,22 +967,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-8226",
-      "name": "waddle",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 81,
-      "deaths": 70,
-      "assists": 32,
-      "rating": 1.12,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 36.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-3520",
       "name": "ZmjjKK",
       "team": "CBT Gaming",
@@ -1140,22 +1124,6 @@
       "acs": 226,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-9554",
-      "name": "kaajak",
-      "team": "FNC",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/687e2c5192fe5.png",
-      "maps": 7,
-      "kills": 121,
-      "deaths": 101,
-      "assists": 34,
-      "rating": 1.11,
-      "acs": 226,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -2405,6 +2373,22 @@
       "damage": null,
       "hsPercent": 21.2,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-5957",
+      "name": "artzin",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 198,
+      "deaths": 188,
+      "assists": 144,
+      "rating": 1.05,
+      "acs": 192,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
     },
     {
       "playerId": "cod-8",
