@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T12:14:48.367473+00:00",
+  "updatedAt": "2026-10-07T18:11:52.824948+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -295,6 +295,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29242",
+      "name": "erde",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 29,
+      "kills": 476,
+      "deaths": 393,
+      "assists": 230,
+      "rating": 1.17,
+      "acs": 215,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-yay",
       "name": "yay",
       "team": "Andbox",
@@ -356,22 +372,6 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29242",
-      "name": "erde",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 27,
-      "kills": 436,
-      "deaths": 365,
-      "assists": 213,
-      "rating": 1.16,
-      "acs": 215,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -583,6 +583,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-28716",
+      "name": "lukxo",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 29,
+      "kills": 537,
+      "deaths": 421,
+      "assists": 70,
+      "rating": 1.14,
+      "acs": 235,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-15500",
       "name": "trent",
       "team": "The Guard",
@@ -759,22 +775,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-28716",
-      "name": "lukxo",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 27,
-      "kills": 485,
-      "deaths": 386,
-      "assists": 65,
-      "rating": 1.13,
-      "acs": 230,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-62291",
       "name": "Xiesta",
       "team": "GEN",
@@ -935,6 +935,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-24424",
+      "name": "Pa1ze",
+      "team": "Aest",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 135,
+      "deaths": 116,
+      "assists": 28,
+      "rating": 1.12,
+      "acs": 266,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-44842",
       "name": "Jackk",
       "team": "C9",
@@ -1092,22 +1108,6 @@
       "acs": 228,
       "damage": null,
       "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-1475",
-      "name": "kamyk",
-      "team": "JL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 155,
-      "deaths": 143,
-      "assists": 67,
-      "rating": 1.11,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1285,22 +1285,6 @@
       "damage": 607655,
       "hsPercent": null,
       "source": "breakingpoint"
-    },
-    {
-      "playerId": "val-8369",
-      "name": "yetujey",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 314,
-      "deaths": 265,
-      "assists": 80,
-      "rating": 1.1,
-      "acs": 199,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-11494",
@@ -1655,22 +1639,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-39357",
-      "name": "s0pp",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 358,
-      "deaths": 302,
-      "assists": 80,
-      "rating": 1.08,
-      "acs": 238,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-40511",
       "name": "NIZ",
       "team": "SP",
@@ -1813,6 +1781,22 @@
       "damage": null,
       "hsPercent": 24.9,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-1475",
+      "name": "kamyk",
+      "team": "JL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 101,
+      "deaths": 100,
+      "assists": 48,
+      "rating": 1.07,
+      "acs": 190,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-21668",
@@ -2135,6 +2119,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-8369",
+      "name": "yetujey",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 275,
+      "deaths": 244,
+      "assists": 74,
+      "rating": 1.06,
+      "acs": 196,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-21216",
       "name": "f4ngeer",
       "team": "AG",
@@ -2148,22 +2148,6 @@
       "acs": 229,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-24424",
-      "name": "Pa1ze",
-      "team": "Aest",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 180,
-      "deaths": 164,
-      "assists": 41,
-      "rating": 1.06,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -2372,6 +2356,38 @@
       "acs": 223,
       "damage": null,
       "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-5957",
+      "name": "artzin",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 198,
+      "deaths": 188,
+      "assists": 144,
+      "rating": 1.05,
+      "acs": 192,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-8419",
+      "name": "Reduxx",
+      "team": "SEN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 130,
+      "deaths": 127,
+      "assists": 59,
+      "rating": 1.05,
+      "acs": 211,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
