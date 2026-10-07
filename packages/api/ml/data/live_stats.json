@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T06:14:46.208310+00:00",
+  "updatedAt": "2026-10-07T12:14:48.367473+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -44,14 +44,14 @@
       "team": "WOL",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/6780cc7ef001a.png",
-      "maps": 8,
-      "kills": 158,
-      "deaths": 132,
-      "assists": 39,
+      "maps": 5,
+      "kills": 91,
+      "deaths": 81,
+      "assists": 25,
       "rating": 1.25,
-      "acs": 232,
+      "acs": 224,
       "damage": null,
-      "hsPercent": 33.0,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -68,6 +68,22 @@
       "acs": 260,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-2172",
+      "name": "brawk",
+      "team": "NRG",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697426e1f3308.png",
+      "maps": 19,
+      "kills": 292,
+      "deaths": 238,
+      "assists": 142,
+      "rating": 1.22,
+      "acs": 225,
+      "damage": null,
+      "hsPercent": 20.0,
       "source": "vlr"
     },
     {
@@ -133,22 +149,6 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-2172",
-      "name": "brawk",
-      "team": "NRG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697426e1f3308.png",
-      "maps": 17,
-      "kills": 253,
-      "deaths": 217,
-      "assists": 128,
-      "rating": 1.19,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 21.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-3741",
@@ -228,22 +228,6 @@
       "acs": 220,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-51250",
-      "name": "Ying",
-      "team": "KBG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 232,
-      "deaths": 218,
-      "assists": 91,
-      "rating": 1.18,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -475,7 +459,7 @@
       "name": "kozzy",
       "team": "BRAT",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/6a350de1f252b.png",
       "maps": 12,
       "kills": 231,
       "deaths": 194,
@@ -596,22 +580,6 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-19530",
-      "name": "AAAAY",
-      "team": "FPX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 228,
-      "deaths": 214,
-      "assists": 69,
-      "rating": 1.14,
-      "acs": 200,
-      "damage": null,
-      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -956,10 +924,10 @@
       "team": "GE",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 26,
-      "kills": 398,
-      "deaths": 363,
-      "assists": 194,
+      "maps": 24,
+      "kills": 363,
+      "deaths": 331,
+      "assists": 176,
       "rating": 1.12,
       "acs": 203,
       "damage": null,
@@ -980,6 +948,22 @@
       "acs": 184,
       "damage": null,
       "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-51238",
+      "name": "yong",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 225,
+      "deaths": 191,
+      "assists": 63,
+      "rating": 1.12,
+      "acs": 224,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -1148,12 +1132,12 @@
       "team": "GE",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 26,
-      "kills": 450,
-      "deaths": 397,
-      "assists": 156,
+      "maps": 24,
+      "kills": 405,
+      "deaths": 360,
+      "assists": 144,
       "rating": 1.11,
-      "acs": 227,
+      "acs": 222,
       "damage": null,
       "hsPercent": 34.0,
       "source": "vlr"
@@ -1191,22 +1175,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 25,
-      "kills": 352,
-      "deaths": 314,
-      "assists": 136,
-      "rating": 1.11,
-      "acs": 191,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41694",
       "name": "endoist",
       "team": "XIP",
@@ -1220,22 +1188,6 @@
       "acs": 251,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58008",
-      "name": "Tonk",
-      "team": "KBG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 234,
-      "deaths": 198,
-      "assists": 65,
-      "rating": 1.11,
-      "acs": 211,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1348,6 +1300,22 @@
       "acs": 199,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-11494",
+      "name": "keiko",
+      "team": "NRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 278,
+      "deaths": 247,
+      "assists": 108,
+      "rating": 1.1,
+      "acs": 196,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -1508,6 +1476,22 @@
       "acs": 206,
       "damage": null,
       "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29833",
+      "name": "iZu",
+      "team": "T1",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 353,
+      "deaths": 317,
+      "assists": 131,
+      "rating": 1.09,
+      "acs": 189,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1831,22 +1815,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-11494",
-      "name": "keiko",
-      "team": "NRG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 244,
-      "deaths": 224,
-      "assists": 85,
-      "rating": 1.07,
-      "acs": 194,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21668",
       "name": "Verno",
       "team": "MIBR",
@@ -1876,22 +1844,6 @@
       "acs": 183,
       "damage": null,
       "hsPercent": 20.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-28400",
-      "name": "HYUNMIN",
-      "team": "KRX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 264,
-      "deaths": 235,
-      "assists": 56,
-      "rating": 1.07,
-      "acs": 225,
-      "damage": null,
-      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -2389,6 +2341,38 @@
       "damage": null,
       "hsPercent": 21.2,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 380,
+      "deaths": 353,
+      "assists": 98,
+      "rating": 1.05,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-5132",
+      "name": "mada",
+      "team": "NRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 296,
+      "deaths": 271,
+      "assists": 97,
+      "rating": 1.05,
+      "acs": 223,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
     },
     {
       "playerId": "cod-8",
