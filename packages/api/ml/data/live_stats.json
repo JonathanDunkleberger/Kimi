@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T12:13:49.859149+00:00",
+  "updatedAt": "2026-10-08T18:11:23.242526+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -36,6 +36,22 @@
       "acs": 227,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-21328",
+      "name": "Wo0t",
+      "team": "TH",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69778b5885054.png",
+      "maps": 5,
+      "kills": 106,
+      "deaths": 84,
+      "assists": 18,
+      "rating": 1.25,
+      "acs": 256,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -148,22 +164,6 @@
       "acs": 238,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
-      "maps": 14,
-      "kills": 292,
-      "deaths": 229,
-      "assists": 69,
-      "rating": 1.19,
-      "acs": 262,
-      "damage": null,
-      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -471,6 +471,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-58496",
+      "name": "Kachoww",
+      "team": "FF",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
+      "maps": 11,
+      "kills": 228,
+      "deaths": 187,
+      "assists": 51,
+      "rating": 1.15,
+      "acs": 252,
+      "damage": null,
+      "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-60576",
       "name": "Ray",
       "team": "VLR",
@@ -725,22 +741,6 @@
       "damage": null,
       "hsPercent": 26.9,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-21328",
-      "name": "Wo0t",
-      "team": "TH",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 142,
-      "deaths": 124,
-      "assists": 33,
-      "rating": 1.13,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-21668",
@@ -1124,6 +1124,22 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 42.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 231,
+      "deaths": 190,
+      "assists": 70,
+      "rating": 1.11,
+      "acs": 193,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1815,38 +1831,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-31827",
-      "name": "Dambi",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 403,
-      "deaths": 370,
-      "assists": 142,
-      "rating": 1.07,
-      "acs": 227,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 180,
-      "deaths": 157,
-      "assists": 53,
-      "rating": 1.07,
-      "acs": 187,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-hist-derrek",
       "name": "Derrek",
       "team": "Rise",
@@ -2135,22 +2119,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-42772",
-      "name": "Xross",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 337,
-      "deaths": 314,
-      "assists": 131,
-      "rating": 1.06,
-      "acs": 187,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-58959",
       "name": "iamgrq",
       "team": "AG",
@@ -2359,19 +2327,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-55694",
-      "name": "hezacoil",
-      "team": "FF",
+      "playerId": "val-42772",
+      "name": "Xross",
+      "team": "NS",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 14,
-      "kills": 201,
-      "deaths": 194,
-      "assists": 103,
+      "maps": 27,
+      "kills": 372,
+      "deaths": 352,
+      "assists": 146,
       "rating": 1.05,
-      "acs": 185,
+      "acs": 182,
       "damage": null,
-      "hsPercent": 34.0,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -2565,6 +2533,38 @@
       "damage": null,
       "hsPercent": 28.2,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-3828",
+      "name": "Tacolilla",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 106,
+      "deaths": 95,
+      "assists": 25,
+      "rating": 1.04,
+      "acs": 217,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-4678",
+      "name": "BeYN",
+      "team": "KRX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 191,
+      "deaths": 190,
+      "assists": 77,
+      "rating": 1.04,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-hist-mrfalin",
