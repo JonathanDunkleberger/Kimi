@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-07T18:11:52.824948+00:00",
+  "updatedAt": "2026-10-08T00:24:34.317361+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -2071,22 +2071,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5395",
-      "name": "cortezia",
-      "team": "SEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 123,
-      "deaths": 115,
-      "assists": 28,
-      "rating": 1.06,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-5654",
       "name": "Avez",
       "team": "KC",
@@ -2372,22 +2356,6 @@
       "acs": 192,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-8419",
-      "name": "Reduxx",
-      "team": "SEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 130,
-      "deaths": 127,
-      "assists": 59,
-      "rating": 1.05,
-      "acs": 211,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
