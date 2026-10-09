@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T12:13:17.718394+00:00",
+  "updatedAt": "2026-10-09T18:11:12.190289+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1687,22 +1687,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29893",
-      "name": "Timotino",
-      "team": "100T",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 252,
-      "deaths": 209,
-      "assists": 70,
-      "rating": 1.08,
-      "acs": 235,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-36685",
       "name": "splash",
       "team": "TYL",
@@ -1895,22 +1879,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-20140",
-      "name": "vora",
-      "team": "100T",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 202,
-      "deaths": 183,
-      "assists": 97,
-      "rating": 1.07,
-      "acs": 186,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21659",
       "name": "Sato",
       "team": "LEV",
@@ -1924,6 +1892,22 @@
       "acs": 217,
       "damage": null,
       "hsPercent": 44.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29893",
+      "name": "Timotino",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 293,
+      "deaths": 248,
+      "assists": 87,
+      "rating": 1.07,
+      "acs": 233,
+      "damage": null,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
@@ -2372,6 +2356,38 @@
       "acs": 189,
       "damage": null,
       "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-8873",
+      "name": "dgzin",
+      "team": "EG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 218,
+      "deaths": 197,
+      "assists": 46,
+      "rating": 1.05,
+      "acs": 234,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-20140",
+      "name": "vora",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 232,
+      "deaths": 214,
+      "assists": 121,
+      "rating": 1.05,
+      "acs": 184,
+      "damage": null,
+      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
