@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T12:12:48.819829+00:00",
+  "updatedAt": "2026-10-10T18:10:59.455737+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1223,22 +1223,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 231,
-      "deaths": 190,
-      "assists": 70,
-      "rating": 1.11,
-      "acs": 193,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41694",
       "name": "endoist",
       "team": "XIP",
@@ -1556,6 +1540,22 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 16,
+      "kills": 257,
+      "deaths": 219,
+      "assists": 86,
+      "rating": 1.09,
+      "acs": 192,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -2119,6 +2119,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 29,
+      "kills": 443,
+      "deaths": 411,
+      "assists": 121,
+      "rating": 1.06,
+      "acs": 201,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-3127",
       "name": "MONSTEERR",
       "team": "VLR",
@@ -2311,22 +2327,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 27,
-      "kills": 410,
-      "deaths": 381,
-      "assists": 111,
-      "rating": 1.05,
-      "acs": 199,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-5957",
       "name": "artzin",
       "team": "FUR",
@@ -2404,6 +2404,22 @@
       "acs": 234,
       "damage": null,
       "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41054",
+      "name": "GuanG",
+      "team": "NOVA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 131,
+      "deaths": 119,
+      "assists": 38,
+      "rating": 1.05,
+      "acs": 201,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
