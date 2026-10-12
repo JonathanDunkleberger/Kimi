@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T12:19:09.926775+00:00",
+  "updatedAt": "2026-10-12T18:10:54.685635+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -999,22 +999,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-24424",
-      "name": "Pa1ze",
-      "team": "Aest",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 135,
-      "deaths": 116,
-      "assists": 28,
-      "rating": 1.12,
-      "acs": 266,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-44842",
       "name": "Jackk",
       "team": "C9",
@@ -1815,22 +1799,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-1475",
-      "name": "kamyk",
-      "team": "JL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 101,
-      "deaths": 100,
-      "assists": 48,
-      "rating": 1.07,
-      "acs": 190,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-10821",
       "name": "deLb",
       "team": "TE",
@@ -2628,6 +2596,22 @@
       "acs": 187,
       "damage": null,
       "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-12872",
+      "name": "david",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 93,
+      "deaths": 88,
+      "assists": 20,
+      "rating": 1.04,
+      "acs": 194,
+      "damage": null,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
