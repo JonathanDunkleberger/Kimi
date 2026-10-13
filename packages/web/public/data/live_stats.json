@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T12:14:59.470444+00:00",
+  "updatedAt": "2026-10-13T18:13:06.187156+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -343,22 +343,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-4629",
-      "name": "azury",
-      "team": "SGE",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6a4be26312ede.png",
-      "maps": 7,
-      "kills": 100,
-      "deaths": 89,
-      "assists": 48,
-      "rating": 1.17,
-      "acs": 219,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-14681",
       "name": "kamo",
       "team": "TL",
@@ -372,22 +356,6 @@
       "acs": 249,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-23365",
-      "name": "koshmaras",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 114,
-      "deaths": 92,
-      "assists": 50,
-      "rating": 1.17,
-      "acs": 248,
-      "damage": null,
-      "hsPercent": 18.0,
       "source": "vlr"
     },
     {
@@ -443,7 +411,7 @@
       "name": "xenom",
       "team": "2G",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/65a6bddfe2c3a.png",
       "maps": 5,
       "kills": 83,
       "deaths": 71,
@@ -459,7 +427,7 @@
       "name": "basic",
       "team": "FUR",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
       "maps": 14,
       "kills": 230,
       "deaths": 195,
@@ -2215,22 +2183,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-3127",
-      "name": "MONSTEERR",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 100,
-      "deaths": 96,
-      "assists": 36,
-      "rating": 1.05,
-      "acs": 203,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-5957",
       "name": "artzin",
       "team": "FUR",
@@ -2324,22 +2276,6 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 21.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-57336",
-      "name": "Jamelinho213",
-      "team": "SGE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 107,
-      "deaths": 102,
-      "assists": 28,
-      "rating": 1.05,
-      "acs": 224,
-      "damage": null,
-      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
@@ -2612,6 +2548,22 @@
       "acs": 198,
       "damage": null,
       "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42772",
+      "name": "Xross",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 30,
+      "kills": 401,
+      "deaths": 394,
+      "assists": 160,
+      "rating": 1.04,
+      "acs": 181,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
