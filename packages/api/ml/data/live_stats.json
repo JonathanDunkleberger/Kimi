@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T18:10:54.685635+00:00",
+  "updatedAt": "2026-10-13T00:27:27.937686+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -2551,19 +2551,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-3828",
-      "name": "Tacolilla",
-      "team": "VLR",
+      "playerId": "val-1129",
+      "name": "Rossy",
+      "team": "ENVY",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 7,
-      "kills": 106,
-      "deaths": 95,
-      "assists": 25,
+      "maps": 8,
+      "kills": 103,
+      "deaths": 102,
+      "assists": 52,
       "rating": 1.04,
-      "acs": 217,
+      "acs": 170,
       "damage": null,
-      "hsPercent": 25.0,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -2599,19 +2599,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-12872",
-      "name": "david",
-      "team": "VLR",
+      "playerId": "val-14048",
+      "name": "zerona",
+      "team": "EG",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 7,
-      "kills": 93,
-      "deaths": 88,
-      "assists": 20,
+      "maps": 12,
+      "kills": 195,
+      "deaths": 185,
+      "assists": 75,
       "rating": 1.04,
-      "acs": 194,
+      "acs": 216,
       "damage": null,
-      "hsPercent": 36.0,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
