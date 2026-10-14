@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T12:13:13.732204+00:00",
+  "updatedAt": "2026-10-14T18:11:06.540328+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -343,6 +343,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-58496",
+      "name": "Kachoww",
+      "team": "FF",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
+      "maps": 9,
+      "kills": 190,
+      "deaths": 149,
+      "assists": 41,
+      "rating": 1.18,
+      "acs": 263,
+      "damage": null,
+      "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-nukkye",
       "name": "nukkye",
       "team": "G2 Esports",
@@ -517,22 +533,6 @@
       "damage": null,
       "hsPercent": 30.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 228,
-      "deaths": 187,
-      "assists": 51,
-      "rating": 1.15,
-      "acs": 252,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-58959",
@@ -1255,6 +1255,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-55681",
+      "name": "kozzy",
+      "team": "BRAT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 148,
+      "deaths": 132,
+      "assists": 20,
+      "rating": 1.1,
+      "acs": 254,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-k1ng",
       "name": "k1Ng",
       "team": "Vision Strikers",
@@ -1540,22 +1556,6 @@
       "acs": 242,
       "damage": null,
       "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-55681",
-      "name": "kozzy",
-      "team": "BRAT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 188,
-      "deaths": 170,
-      "assists": 29,
-      "rating": 1.08,
-      "acs": 246,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1975,22 +1975,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-8369",
-      "name": "yetujey",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 275,
-      "deaths": 244,
-      "assists": 74,
-      "rating": 1.06,
-      "acs": 196,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-13784",
       "name": "Killua",
       "team": "FS",
@@ -2215,22 +2199,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-39357",
-      "name": "s0pp",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 318,
-      "deaths": 277,
-      "assists": 69,
-      "rating": 1.05,
-      "acs": 234,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-39697",
       "name": "cb",
       "team": "NOVA",
@@ -2244,6 +2212,22 @@
       "acs": 210,
       "damage": null,
       "hsPercent": 21.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-55694",
+      "name": "hezacoil",
+      "team": "FF",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 132,
+      "deaths": 125,
+      "assists": 68,
+      "rating": 1.05,
+      "acs": 185,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2740,6 +2724,22 @@
       "acs": 224,
       "damage": null,
       "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-8369",
+      "name": "yetujey",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 16,
+      "kills": 230,
+      "deaths": 213,
+      "assists": 56,
+      "rating": 1.03,
+      "acs": 188,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
