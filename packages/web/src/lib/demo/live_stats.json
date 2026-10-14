@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T00:21:34.278655+00:00",
+  "updatedAt": "2026-10-14T06:14:33.015064+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -36,22 +36,6 @@
       "acs": 234,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-18796",
-      "name": "OXY",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
-      "maps": 8,
-      "kills": 158,
-      "deaths": 114,
-      "assists": 30,
-      "rating": 1.3,
-      "acs": 282,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -149,6 +133,22 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-18796",
+      "name": "OXY",
+      "team": "C9",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
+      "maps": 5,
+      "kills": 98,
+      "deaths": 76,
+      "assists": 18,
+      "rating": 1.21,
+      "acs": 263,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-29242",
@@ -932,22 +932,6 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-44842",
-      "name": "Jackk",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 108,
-      "deaths": 95,
-      "assists": 61,
-      "rating": 1.12,
-      "acs": 184,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2544,6 +2528,22 @@
       "kills": 401,
       "deaths": 394,
       "assists": 160,
+      "rating": 1.04,
+      "acs": 181,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-44842",
+      "name": "Jackk",
+      "team": "C9",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 69,
+      "deaths": 68,
+      "assists": 30,
       "rating": 1.04,
       "acs": 181,
       "damage": null,
