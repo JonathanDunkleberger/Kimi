@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-13T18:13:06.187156+00:00",
+  "updatedAt": "2026-10-14T00:21:34.278655+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -247,6 +247,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-24007",
+      "name": "Shyy",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/687bfb9a9e913.png",
+      "maps": 11,
+      "kills": 176,
+      "deaths": 142,
+      "assists": 57,
+      "rating": 1.19,
+      "acs": 217,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-28716",
       "name": "lukxo",
       "team": "LOUD",
@@ -292,22 +308,6 @@
       "acs": 205,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-24007",
-      "name": "Shyy",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/687bfb9a9e913.png",
-      "maps": 14,
-      "kills": 229,
-      "deaths": 184,
-      "assists": 73,
-      "rating": 1.18,
-      "acs": 217,
-      "damage": null,
-      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -407,43 +407,11 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-20240",
-      "name": "xenom",
-      "team": "2G",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/65a6bddfe2c3a.png",
-      "maps": 5,
-      "kills": 83,
-      "deaths": 71,
-      "assists": 36,
-      "rating": 1.16,
-      "acs": 214,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-37354",
-      "name": "basic",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67ae72c12777e.png",
-      "maps": 14,
-      "kills": 230,
-      "deaths": 195,
-      "assists": 85,
-      "rating": 1.16,
-      "acs": 218,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41054",
       "name": "GuanG",
       "team": "NOVA",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/6780f1a2e0d06.png",
       "maps": 7,
       "kills": 112,
       "deaths": 89,
@@ -2007,6 +1975,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-5957",
+      "name": "artzin",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 155,
+      "deaths": 148,
+      "assists": 112,
+      "rating": 1.06,
+      "acs": 193,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-8369",
       "name": "yetujey",
       "team": "FUT",
@@ -2183,22 +2167,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5957",
-      "name": "artzin",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 198,
-      "deaths": 188,
-      "assists": 144,
-      "rating": 1.05,
-      "acs": 192,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-7857",
       "name": "BerLIN",
       "team": "JDG",
@@ -2242,6 +2210,22 @@
       "assists": 108,
       "rating": 1.05,
       "acs": 195,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37354",
+      "name": "basic",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 165,
+      "deaths": 159,
+      "assists": 69,
+      "rating": 1.05,
+      "acs": 205,
       "damage": null,
       "hsPercent": 27.0,
       "source": "vlr"
@@ -2741,6 +2725,22 @@
       "damage": null,
       "hsPercent": 25.3,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-9558",
+      "name": "Wolfen",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 89,
+      "deaths": 87,
+      "assists": 41,
+      "rating": 1.03,
+      "acs": 208,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
     },
     {
       "playerId": "cod-40",
