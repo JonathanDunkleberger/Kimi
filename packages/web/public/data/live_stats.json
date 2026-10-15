@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T12:13:05.856972+00:00",
+  "updatedAt": "2026-10-15T18:11:09.296600+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -198,6 +198,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-58496",
+      "name": "Kachoww",
+      "team": "FF",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
+      "maps": 7,
+      "kills": 153,
+      "deaths": 117,
+      "assists": 28,
+      "rating": 1.21,
+      "acs": 265,
+      "damage": null,
+      "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-62291",
       "name": "Xiesta",
       "team": "GEN",
@@ -321,22 +337,6 @@
       "assists": 33,
       "rating": 1.18,
       "acs": 225,
-      "damage": null,
-      "hsPercent": 38.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
-      "maps": 9,
-      "kills": 190,
-      "deaths": 149,
-      "assists": 41,
-      "rating": 1.18,
-      "acs": 263,
       "damage": null,
       "hsPercent": 38.0,
       "source": "vlr"
@@ -1923,22 +1923,6 @@
       "acs": 205,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-55694",
-      "name": "hezacoil",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 132,
-      "deaths": 125,
-      "assists": 68,
-      "rating": 1.05,
-      "acs": 185,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
