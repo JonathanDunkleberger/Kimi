@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T06:14:46.239929+00:00",
+  "updatedAt": "2026-10-16T12:12:56.599095+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -150,6 +150,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29242",
+      "name": "erde",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 33,
+      "kills": 554,
+      "deaths": 433,
+      "assists": 276,
+      "rating": 1.22,
+      "acs": 223,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-8480",
       "name": "aspas",
       "team": "SLICK",
@@ -164,22 +180,6 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-29242",
-      "name": "erde",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 30,
-      "kills": 500,
-      "deaths": 390,
-      "assists": 244,
-      "rating": 1.21,
-      "acs": 220,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-36245",
@@ -246,6 +246,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-28716",
+      "name": "lukxo",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
+      "maps": 33,
+      "kills": 632,
+      "deaths": 466,
+      "assists": 85,
+      "rating": 1.2,
+      "acs": 244,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-2168",
       "name": "trexx",
       "team": "KOI",
@@ -260,22 +276,6 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-28716",
-      "name": "lukxo",
-      "team": "LOUD",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69e023fe3a5b8.png",
-      "maps": 30,
-      "kills": 568,
-      "deaths": 424,
-      "assists": 77,
-      "rating": 1.19,
-      "acs": 240,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-4147",
@@ -1222,22 +1222,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 257,
-      "deaths": 219,
-      "assists": 86,
-      "rating": 1.09,
-      "acs": 192,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-939",
       "name": "mwzera",
       "team": "Gamelanders Blue",
@@ -1347,6 +1331,22 @@
       "acs": 193,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 305,
+      "deaths": 267,
+      "assists": 102,
+      "rating": 1.08,
+      "acs": 196,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -2582,19 +2582,35 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-10885",
-      "name": "DaviH",
-      "team": "LOUD",
+      "playerId": "val-15735",
+      "name": "KROSTALY",
+      "team": "FUT",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 30,
-      "kills": 357,
-      "deaths": 381,
-      "assists": 203,
+      "maps": 16,
+      "kills": 225,
+      "deaths": 220,
+      "assists": 71,
       "rating": 1.01,
-      "acs": 162,
+      "acs": 189,
       "damage": null,
-      "hsPercent": 23.0,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37354",
+      "name": "basic",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 109,
+      "deaths": 115,
+      "assists": 48,
+      "rating": 1.01,
+      "acs": 200,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
