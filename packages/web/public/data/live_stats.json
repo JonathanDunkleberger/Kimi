@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T00:20:40.153200+00:00",
+  "updatedAt": "2026-10-16T06:14:46.239929+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -164,22 +164,6 @@
       "damage": null,
       "hsPercent": 26.6,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-18796",
-      "name": "OXY",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/679c2222b0181.png",
-      "maps": 5,
-      "kills": 98,
-      "deaths": 76,
-      "assists": 18,
-      "rating": 1.21,
-      "acs": 263,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-29242",
@@ -1462,6 +1446,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-8873",
+      "name": "dgzin",
+      "team": "EG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 171,
+      "deaths": 152,
+      "assists": 35,
+      "rating": 1.07,
+      "acs": 239,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-13274",
       "name": "Hazard",
       "team": "GEOR",
@@ -1622,7 +1622,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-supamen",
+      "playerId": "val-826",
       "name": "supamen",
       "team": "Rise",
       "game": "VALORANT",
@@ -1862,22 +1862,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-8873",
-      "name": "dgzin",
-      "team": "EG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 218,
-      "deaths": 197,
-      "assists": 46,
-      "rating": 1.05,
-      "acs": 234,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11494",
       "name": "keiko",
       "team": "NRG",
@@ -2086,22 +2070,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-14048",
-      "name": "zerona",
-      "team": "EG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 195,
-      "deaths": 185,
-      "assists": 75,
-      "rating": 1.04,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-25053",
       "name": "Wolverine",
       "team": "VLR",
@@ -2115,22 +2083,6 @@
       "acs": 198,
       "damage": null,
       "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-44842",
-      "name": "Jackk",
-      "team": "C9",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 69,
-      "deaths": 68,
-      "assists": 30,
-      "rating": 1.04,
-      "acs": 181,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -2323,6 +2275,22 @@
       "acs": 177,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-14048",
+      "name": "zerona",
+      "team": "EG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 154,
+      "deaths": 145,
+      "assists": 51,
+      "rating": 1.03,
+      "acs": 222,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -2612,6 +2580,22 @@
       "damage": null,
       "hsPercent": 31.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-10885",
+      "name": "DaviH",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 30,
+      "kills": 357,
+      "deaths": 381,
+      "assists": 203,
+      "rating": 1.01,
+      "acs": 162,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-hist-starxo",
