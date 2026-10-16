@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T18:11:09.296600+00:00",
+  "updatedAt": "2026-10-16T00:20:40.153200+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -83,6 +83,22 @@
       "acs": 228,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-24007",
+      "name": "Shyy",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/687bfb9a9e913.png",
+      "maps": 8,
+      "kills": 132,
+      "deaths": 98,
+      "assists": 35,
+      "rating": 1.28,
+      "acs": 230,
+      "damage": null,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -260,22 +276,6 @@
       "damage": null,
       "hsPercent": 19.5,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-24007",
-      "name": "Shyy",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/687bfb9a9e913.png",
-      "maps": 11,
-      "kills": 176,
-      "deaths": 142,
-      "assists": 57,
-      "rating": 1.19,
-      "acs": 217,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-28716",
@@ -1078,6 +1078,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 29,
+      "kills": 454,
+      "deaths": 403,
+      "assists": 125,
+      "rating": 1.1,
+      "acs": 208,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-33731",
       "name": "stonezy",
       "team": "Magn",
@@ -1558,7 +1574,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-valyn",
+      "playerId": "val-3885",
       "name": "valyn",
       "team": "Complexity",
       "game": "VALORANT",
@@ -1702,22 +1718,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5957",
-      "name": "artzin",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 155,
-      "deaths": 148,
-      "assists": 112,
-      "rating": 1.06,
-      "acs": 193,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29893",
       "name": "Timotino",
       "team": "100T",
@@ -1846,22 +1846,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 32,
-      "kills": 484,
-      "deaths": 457,
-      "assists": 135,
-      "rating": 1.05,
-      "acs": 199,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-7857",
       "name": "BerLIN",
       "team": "JDG",
@@ -1905,22 +1889,6 @@
       "assists": 108,
       "rating": 1.05,
       "acs": 195,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-37354",
-      "name": "basic",
-      "team": "FUR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 165,
-      "deaths": 159,
-      "assists": 69,
-      "rating": 1.05,
-      "acs": 205,
       "damage": null,
       "hsPercent": 27.0,
       "source": "vlr"
@@ -2099,6 +2067,22 @@
       "acs": 187,
       "damage": null,
       "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-5957",
+      "name": "artzin",
+      "team": "FUR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 111,
+      "deaths": 105,
+      "assists": 73,
+      "rating": 1.04,
+      "acs": 198,
+      "damage": null,
+      "hsPercent": 22.0,
       "source": "vlr"
     },
     {
