@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T12:12:56.599095+00:00",
+  "updatedAt": "2026-10-16T18:10:32.143708+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -1062,22 +1062,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-2170",
-      "name": "BABYBAY",
-      "team": "G2",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 29,
-      "kills": 454,
-      "deaths": 403,
-      "assists": 125,
-      "rating": 1.1,
-      "acs": 208,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-33731",
       "name": "stonezy",
       "team": "Magn",
@@ -1204,6 +1188,22 @@
       "damage": null,
       "hsPercent": 25.7,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-2170",
+      "name": "BABYBAY",
+      "team": "G2",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 32,
+      "kills": 501,
+      "deaths": 449,
+      "assists": 141,
+      "rating": 1.09,
+      "acs": 208,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-21668",
@@ -1478,22 +1478,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-20140",
-      "name": "vora",
-      "team": "100T",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 264,
-      "deaths": 239,
-      "assists": 135,
-      "rating": 1.07,
-      "acs": 187,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21659",
       "name": "Sato",
       "team": "LEV",
@@ -1723,14 +1707,14 @@
       "team": "100T",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 20,
-      "kills": 327,
-      "deaths": 275,
-      "assists": 97,
+      "maps": 23,
+      "kills": 378,
+      "deaths": 324,
+      "assists": 117,
       "rating": 1.06,
-      "acs": 230,
+      "acs": 231,
       "damage": null,
-      "hsPercent": 24.0,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -2291,6 +2275,22 @@
       "acs": 222,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-20140",
+      "name": "vora",
+      "team": "100T",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 23,
+      "kills": 298,
+      "deaths": 287,
+      "assists": 157,
+      "rating": 1.03,
+      "acs": 181,
+      "damage": null,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
