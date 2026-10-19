@@ -1,26 +1,10 @@
 {
-  "updatedAt": "2026-10-19T06:19:07.107657+00:00",
+  "updatedAt": "2026-10-19T12:14:26.453739+00:00",
   "sources": [
     "vct_history",
     "vlr"
   ],
   "players": [
-    {
-      "playerId": "val-6672",
-      "name": "Meiy",
-      "team": "DFM",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/674037871e878.png",
-      "maps": 7,
-      "kills": 156,
-      "deaths": 97,
-      "assists": 16,
-      "rating": 1.44,
-      "acs": 296,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
     {
       "playerId": "val-33840",
       "name": "luky",
@@ -83,22 +67,6 @@
       "acs": 230,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-13002",
-      "name": "Akame",
-      "team": "DFM",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/674037c47365d.png",
-      "maps": 7,
-      "kills": 118,
-      "deaths": 87,
-      "assists": 48,
-      "rating": 1.26,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -422,22 +390,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-36685",
-      "name": "splash",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 287,
-      "deaths": 238,
-      "assists": 79,
-      "rating": 1.16,
-      "acs": 243,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-4462",
       "name": "MaKo",
       "team": "TUBEPLE Gaming",
@@ -554,7 +506,7 @@
       "name": "brawk",
       "team": "NRG",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/697426e1f3308.png",
       "maps": 22,
       "kills": 328,
       "deaths": 295,
@@ -710,11 +662,27 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-36685",
+      "name": "splash",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 236,
+      "deaths": 208,
+      "assists": 66,
+      "rating": 1.13,
+      "acs": 236,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-9196",
       "name": "t3xture",
       "team": "DAMWON Gaming",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/676ba04aee5f9.png",
       "maps": 647,
       "kills": 12410,
       "deaths": 10088,
@@ -835,6 +803,22 @@
       "acs": 203,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41739",
+      "name": "slowly",
+      "team": "TYL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 245,
+      "deaths": 207,
+      "assists": 42,
+      "rating": 1.12,
+      "acs": 241,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -995,22 +979,6 @@
       "acs": 202,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41739",
-      "name": "slowly",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 287,
-      "deaths": 242,
-      "assists": 53,
-      "rating": 1.11,
-      "acs": 242,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2523,14 +2491,14 @@
       "team": "TYL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 16,
-      "kills": 212,
-      "deaths": 217,
-      "assists": 137,
+      "maps": 14,
+      "kills": 181,
+      "deaths": 187,
+      "assists": 116,
       "rating": 1.01,
-      "acs": 177,
+      "acs": 176,
       "damage": null,
-      "hsPercent": 32.0,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -2659,6 +2627,38 @@
       "acs": 175,
       "damage": null,
       "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-10885",
+      "name": "DaviH",
+      "team": "LOUD",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 37,
+      "kills": 438,
+      "deaths": 472,
+      "assists": 252,
+      "rating": 0.99,
+      "acs": 159,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-16215",
+      "name": "dos9",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 202,
+      "deaths": 208,
+      "assists": 136,
+      "rating": 0.99,
+      "acs": 165,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
