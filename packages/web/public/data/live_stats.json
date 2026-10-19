@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T18:08:53.568812+00:00",
+  "updatedAt": "2026-10-19T00:23:57.353828+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -1195,14 +1195,14 @@
       "team": "G2",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 32,
-      "kills": 501,
-      "deaths": 449,
-      "assists": 141,
+      "maps": 30,
+      "kills": 460,
+      "deaths": 417,
+      "assists": 131,
       "rating": 1.09,
-      "acs": 208,
+      "acs": 206,
       "damage": null,
-      "hsPercent": 24.0,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
