@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T12:14:26.453739+00:00",
+  "updatedAt": "2026-10-19T18:11:41.595682+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -792,7 +792,7 @@
     {
       "playerId": "val-7754",
       "name": "xavi8k",
-      "team": "GE",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 24,
@@ -936,7 +936,7 @@
     {
       "playerId": "val-13744",
       "name": "PatMen",
-      "team": "GE",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 24,
@@ -971,12 +971,12 @@
       "team": "VIT",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 27,
-      "kills": 440,
-      "deaths": 379,
-      "assists": 151,
+      "maps": 24,
+      "kills": 400,
+      "deaths": 339,
+      "assists": 135,
       "rating": 1.11,
-      "acs": 202,
+      "acs": 204,
       "damage": null,
       "hsPercent": 32.0,
       "source": "vlr"
@@ -1059,22 +1059,6 @@
       "acs": 225,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-55681",
-      "name": "kozzy",
-      "team": "BRAT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 148,
-      "deaths": 132,
-      "assists": 20,
-      "rating": 1.1,
-      "acs": 254,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1187,6 +1171,22 @@
       "acs": 202,
       "damage": null,
       "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-55681",
+      "name": "kozzy",
+      "team": "BRAT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 91,
+      "deaths": 80,
+      "assists": 10,
+      "rating": 1.09,
+      "acs": 237,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -1944,7 +1944,7 @@
     {
       "playerId": "val-5796",
       "name": "Kr1stal",
-      "team": "GE",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 24,
@@ -2659,6 +2659,22 @@
       "acs": 165,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29243",
+      "name": "Neon",
+      "team": "LEV",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 93,
+      "deaths": 87,
+      "assists": 17,
+      "rating": 0.99,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
