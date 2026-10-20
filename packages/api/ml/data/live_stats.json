@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-19T18:11:41.595682+00:00",
+  "updatedAt": "2026-10-20T00:22:12.495236+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -310,22 +310,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 24,
-      "kills": 426,
-      "deaths": 347,
-      "assists": 107,
-      "rating": 1.17,
-      "acs": 249,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-28716",
       "name": "lukxo",
       "team": "LOUD",
@@ -436,6 +420,22 @@
       "damage": null,
       "hsPercent": 30.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 22,
+      "kills": 378,
+      "deaths": 315,
+      "assists": 102,
+      "rating": 1.15,
+      "acs": 247,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-5022",
@@ -1766,6 +1766,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-11134",
+      "name": "Kicks",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 288,
+      "deaths": 275,
+      "assists": 161,
+      "rating": 1.05,
+      "acs": 181,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-11494",
       "name": "keiko",
       "team": "NRG",
@@ -2107,12 +2123,12 @@
       "team": "FUT",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 16,
-      "kills": 230,
-      "deaths": 213,
-      "assists": 56,
+      "maps": 14,
+      "kills": 199,
+      "deaths": 184,
+      "assists": 50,
       "rating": 1.03,
-      "acs": 188,
+      "acs": 191,
       "damage": null,
       "hsPercent": 29.0,
       "source": "vlr"
@@ -2131,22 +2147,6 @@
       "acs": 208,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-11134",
-      "name": "Kicks",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 313,
-      "deaths": 310,
-      "assists": 176,
-      "rating": 1.03,
-      "acs": 177,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -2358,22 +2358,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-39357",
-      "name": "s0pp",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 267,
-      "deaths": 243,
-      "assists": 59,
-      "rating": 1.02,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-42772",
       "name": "Xross",
       "team": "NS",
@@ -2452,22 +2436,6 @@
       "damage": null,
       "hsPercent": 31.4,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-15735",
-      "name": "KROSTALY",
-      "team": "FUT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 225,
-      "deaths": 220,
-      "assists": 71,
-      "rating": 1.01,
-      "acs": 189,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-37354",
@@ -2678,6 +2646,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-39357",
+      "name": "s0pp",
+      "team": "FUT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 226,
+      "deaths": 212,
+      "assists": 52,
+      "rating": 0.99,
+      "acs": 228,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-hist-qraxs",
       "name": "qRaxs",
       "team": "FUT Esports",
@@ -2724,6 +2708,22 @@
       "damage": null,
       "hsPercent": 26.8,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-20144",
+      "name": "LewN",
+      "team": "KC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 268,
+      "deaths": 249,
+      "assists": 59,
+      "rating": 0.98,
+      "acs": 216,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-hist-vanity",
