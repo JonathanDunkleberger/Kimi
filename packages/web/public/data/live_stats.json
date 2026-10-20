@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T00:22:12.495236+00:00",
+  "updatedAt": "2026-10-20T06:14:08.027427+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -56,7 +56,7 @@
     {
       "playerId": "val-24007",
       "name": "Shyy",
-      "team": "FUR",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/687bfb9a9e913.png",
       "maps": 8,
@@ -2440,7 +2440,7 @@
     {
       "playerId": "val-37354",
       "name": "basic",
-      "team": "FUR",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 8,
