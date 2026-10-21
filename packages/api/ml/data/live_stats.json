@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T12:12:40.108101+00:00",
+  "updatedAt": "2026-10-21T18:11:19.918390+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -42,7 +42,7 @@
       "name": "shinnok",
       "team": "CGN",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/695fd3082a0e3.png",
+      "imageUrl": "https://owcdn.net/img/6ad8cadbaed1a.png",
       "maps": 6,
       "kills": 115,
       "deaths": 84,
@@ -74,7 +74,7 @@
       "name": "Serial",
       "team": "CGN",
       "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/695fd2f333c22.png",
+      "imageUrl": "https://owcdn.net/img/6ad8cae4354e9.png",
       "maps": 6,
       "kills": 118,
       "deaths": 87,
@@ -147,22 +147,6 @@
       "acs": 240,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58496",
-      "name": "Kachoww",
-      "team": "FF",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69bea0ef6d14c.png",
-      "maps": 7,
-      "kills": 153,
-      "deaths": 117,
-      "assists": 28,
-      "rating": 1.21,
-      "acs": 265,
-      "damage": null,
-      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
@@ -374,22 +358,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-14681",
-      "name": "kamo",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
-      "maps": 22,
-      "kills": 378,
-      "deaths": 315,
-      "assists": 102,
-      "rating": 1.15,
-      "acs": 247,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-5022",
       "name": "Derke",
       "team": "CrowСrowd",
@@ -467,6 +435,22 @@
       "acs": 215,
       "damage": null,
       "hsPercent": 21.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-14681",
+      "name": "kamo",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/697355a36ffa7.png",
+      "maps": 19,
+      "kills": 330,
+      "deaths": 284,
+      "assists": 93,
+      "rating": 1.14,
+      "acs": 245,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -870,22 +854,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-33902",
-      "name": "Sayonara",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 400,
-      "deaths": 339,
-      "assists": 135,
-      "rating": 1.11,
-      "acs": 204,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-804",
       "name": "BuZz",
       "team": "DRX",
@@ -947,6 +915,22 @@
       "acs": 206,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-33902",
+      "name": "Sayonara",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 345,
+      "deaths": 299,
+      "assists": 121,
+      "rating": 1.1,
+      "acs": 203,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -1075,6 +1059,22 @@
       "acs": 239,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-11134",
+      "name": "Kicks",
+      "team": "TL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 267,
+      "deaths": 247,
+      "assists": 147,
+      "rating": 1.09,
+      "acs": 188,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -1418,7 +1418,7 @@
       "name": "supamen",
       "team": "Rise",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/67b5554423542.png",
       "maps": 394,
       "kills": 6095,
       "deaths": 5719,
@@ -1604,22 +1604,6 @@
       "damage": null,
       "hsPercent": 21.2,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-11134",
-      "name": "Kicks",
-      "team": "TL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 22,
-      "kills": 288,
-      "deaths": 275,
-      "assists": 161,
-      "rating": 1.05,
-      "acs": 181,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-11494",
@@ -2598,19 +2582,19 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-18615",
-      "name": "batujnax",
-      "team": "FF",
+      "playerId": "val-5554",
+      "name": "PROFEK",
+      "team": "VIT",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 7,
-      "kills": 103,
-      "deaths": 110,
-      "assists": 45,
+      "maps": 21,
+      "kills": 296,
+      "deaths": 306,
+      "assists": 148,
       "rating": 0.97,
-      "acs": 191,
+      "acs": 175,
       "damage": null,
-      "hsPercent": 20.0,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -2662,22 +2646,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5554",
-      "name": "PROFEK",
-      "team": "VIT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 24,
-      "kills": 339,
-      "deaths": 357,
-      "assists": 172,
-      "rating": 0.96,
-      "acs": 176,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11118",
       "name": "skuba",
       "team": "NRG",
@@ -2691,6 +2659,22 @@
       "acs": 168,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31829",
+      "name": "Ivy",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 26,
+      "kills": 376,
+      "deaths": 381,
+      "assists": 127,
+      "rating": 0.96,
+      "acs": 193,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
