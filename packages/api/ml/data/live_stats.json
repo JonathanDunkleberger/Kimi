@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T06:14:36.595706+00:00",
+  "updatedAt": "2026-10-21T12:12:40.108101+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -91,14 +91,14 @@
       "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 7,
-      "kills": 125,
-      "deaths": 93,
-      "assists": 38,
-      "rating": 1.24,
-      "acs": 244,
+      "maps": 5,
+      "kills": 86,
+      "deaths": 68,
+      "assists": 28,
+      "rating": 1.22,
+      "acs": 238,
       "damage": null,
-      "hsPercent": 30.0,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -227,22 +227,6 @@
       "acs": 205,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-62291",
-      "name": "Xiesta",
-      "team": "GEN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 117,
-      "deaths": 96,
-      "assists": 42,
-      "rating": 1.18,
-      "acs": 238,
-      "damage": null,
-      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -438,7 +422,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-f0rsaken",
+      "playerId": "val-9801",
       "name": "f0rsakeN",
       "team": "Paper Rex",
       "game": "VALORANT",
@@ -762,7 +746,7 @@
       "name": "xavi8k",
       "team": "VLR",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/6a1960983a0b5.png",
       "maps": 24,
       "kills": 363,
       "deaths": 331,
@@ -966,19 +950,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-41739",
-      "name": "slowly",
-      "team": "TYL",
+      "playerId": "val-62291",
+      "name": "Xiesta",
+      "team": "GEN",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 12,
-      "kills": 205,
-      "deaths": 177,
-      "assists": 36,
+      "maps": 5,
+      "kills": 78,
+      "deaths": 70,
+      "assists": 26,
       "rating": 1.1,
-      "acs": 239,
+      "acs": 227,
       "damage": null,
-      "hsPercent": 34.0,
+      "hsPercent": 20.0,
       "source": "vlr"
     },
     {
@@ -1990,22 +1974,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-55085",
-      "name": "Erv",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 156,
-      "deaths": 159,
-      "assists": 99,
-      "rating": 1.03,
-      "acs": 178,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-hist-sushiboys",
       "name": "Sushiboys",
       "team": "X10 Esports",
@@ -2102,7 +2070,7 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-hist-jamppi",
+      "playerId": "val-9780",
       "name": "Jamppi",
       "team": "Team Liquid",
       "game": "VALORANT",
@@ -2294,19 +2262,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-36685",
-      "name": "splash",
+      "playerId": "val-41739",
+      "name": "slowly",
       "team": "TYL",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 12,
-      "kills": 186,
-      "deaths": 183,
-      "assists": 50,
+      "maps": 9,
+      "kills": 134,
+      "deaths": 125,
+      "assists": 19,
       "rating": 1.01,
-      "acs": 220,
+      "acs": 225,
       "damage": null,
-      "hsPercent": 32.0,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -2646,22 +2614,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-39485",
-      "name": "Scales",
-      "team": "TYL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 168,
-      "deaths": 170,
-      "assists": 61,
-      "rating": 0.97,
-      "acs": 198,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-52976",
       "name": "henky",
       "team": "GEOR",
@@ -2723,6 +2675,22 @@
       "acs": 176,
       "damage": null,
       "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-11118",
+      "name": "skuba",
+      "team": "NRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 275,
+      "deaths": 296,
+      "assists": 145,
+      "rating": 0.96,
+      "acs": 168,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
