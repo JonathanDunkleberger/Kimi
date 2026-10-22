@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-22T00:21:12.943924+00:00",
+  "updatedAt": "2026-10-22T06:14:21.146115+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -1656,7 +1656,7 @@
     {
       "playerId": "val-11494",
       "name": "keiko",
-      "team": "NRG",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 22,
@@ -2248,7 +2248,7 @@
     {
       "playerId": "val-4678",
       "name": "BeYN",
-      "team": "KRX",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 5,
