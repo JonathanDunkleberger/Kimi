@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T00:22:45.572498+00:00",
+  "updatedAt": "2026-10-23T06:15:03.625912+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -1204,22 +1204,6 @@
       "damage": null,
       "hsPercent": 25.7,
       "source": "vct_history"
-    },
-    {
-      "playerId": "val-8873",
-      "name": "dgzin",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 120,
-      "deaths": 102,
-      "assists": 26,
-      "rating": 1.09,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
     },
     {
       "playerId": "val-939",
@@ -2550,22 +2534,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-34400",
-      "name": "bao",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 86,
-      "deaths": 91,
-      "assists": 31,
-      "rating": 1.0,
-      "acs": 174,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-42772",
       "name": "Xross",
       "team": "NS",
@@ -2678,22 +2646,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-14048",
-      "name": "zerona",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 106,
-      "deaths": 100,
-      "assists": 31,
-      "rating": 0.99,
-      "acs": 216,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29243",
       "name": "Neon",
       "team": "LEV",
@@ -2774,19 +2726,35 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-2164",
-      "name": "Paincakes",
-      "team": "VLR",
+      "playerId": "val-31827",
+      "name": "Dambi",
+      "team": "NS",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 6,
-      "kills": 74,
-      "deaths": 87,
-      "assists": 53,
+      "maps": 26,
+      "kills": 400,
+      "deaths": 414,
+      "assists": 153,
       "rating": 0.98,
-      "acs": 164,
+      "acs": 215,
       "damage": null,
-      "hsPercent": 27.0,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-37532",
+      "name": "Zexy",
+      "team": "VL",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 104,
+      "deaths": 108,
+      "assists": 19,
+      "rating": 0.98,
+      "acs": 195,
+      "damage": null,
+      "hsPercent": 24.0,
       "source": "vlr"
     },
     {
@@ -2804,6 +2772,38 @@
       "damage": null,
       "hsPercent": 17.5,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-4329",
+      "name": "Vince",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 150,
+      "deaths": 165,
+      "assists": 128,
+      "rating": 0.97,
+      "acs": 159,
+      "damage": null,
+      "hsPercent": 19.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-5554",
+      "name": "PROFEK",
+      "team": "VIT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 21,
+      "kills": 296,
+      "deaths": 306,
+      "assists": 148,
+      "rating": 0.97,
+      "acs": 175,
+      "damage": null,
+      "hsPercent": 35.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-438",
