@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T06:15:03.625912+00:00",
+  "updatedAt": "2026-10-23T12:12:14.666940+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -22,6 +22,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-33358",
+      "name": "shinnok",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6ad8cadbaed1a.png",
+      "maps": 15,
+      "kills": 289,
+      "deaths": 194,
+      "assists": 112,
+      "rating": 1.38,
+      "acs": 254,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-12670",
       "name": "nekky",
       "team": "EF",
@@ -35,38 +51,6 @@
       "acs": 241,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-33358",
-      "name": "shinnok",
-      "team": "CGN",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6ad8cadbaed1a.png",
-      "maps": 13,
-      "kills": 242,
-      "deaths": 168,
-      "assists": 95,
-      "rating": 1.34,
-      "acs": 246,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42358",
-      "name": "Darxcioo",
-      "team": "NVJ",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6a37f4580f782.png",
-      "maps": 7,
-      "kills": 129,
-      "deaths": 95,
-      "assists": 30,
-      "rating": 1.32,
-      "acs": 280,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -131,6 +115,22 @@
       "acs": 240,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42358",
+      "name": "Darxcioo",
+      "team": "NVJ",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6a37f4580f782.png",
+      "maps": 9,
+      "kills": 158,
+      "deaths": 130,
+      "assists": 37,
+      "rating": 1.21,
+      "acs": 261,
+      "damage": null,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -358,22 +358,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-42651",
-      "name": "avey",
-      "team": "NVJ",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6a2bc46895d30.png",
-      "maps": 7,
-      "kills": 95,
-      "deaths": 79,
-      "assists": 47,
-      "rating": 1.16,
-      "acs": 202,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-42661",
       "name": "BarcK",
       "team": "UK W",
@@ -436,6 +420,22 @@
       "damage": null,
       "hsPercent": 30.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-42651",
+      "name": "avey",
+      "team": "NVJ",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6a2bc46895d30.png",
+      "maps": 9,
+      "kills": 122,
+      "deaths": 104,
+      "assists": 60,
+      "rating": 1.15,
+      "acs": 199,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-5022",
@@ -870,22 +870,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-35513",
-      "name": "samed",
-      "team": "CGN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 220,
-      "deaths": 188,
-      "assists": 58,
-      "rating": 1.12,
-      "acs": 228,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-3520",
       "name": "ZmjjKK",
       "team": "CBT Gaming",
@@ -1011,6 +995,22 @@
       "acs": 222,
       "damage": null,
       "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-35513",
+      "name": "samed",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 256,
+      "deaths": 218,
+      "assists": 67,
+      "rating": 1.11,
+      "acs": 227,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1286,38 +1286,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-9558",
-      "name": "Wolfen",
-      "team": "CGN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 206,
-      "deaths": 183,
-      "assists": 69,
-      "rating": 1.08,
-      "acs": 214,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-18162",
-      "name": "Serial",
-      "team": "CGN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 219,
-      "deaths": 184,
-      "assists": 59,
-      "rating": 1.08,
-      "acs": 213,
-      "damage": null,
-      "hsPercent": 44.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29893",
       "name": "Timotino",
       "team": "100T",
@@ -1412,6 +1380,22 @@
       "damage": null,
       "hsPercent": 24.9,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-9558",
+      "name": "Wolfen",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 238,
+      "deaths": 210,
+      "assists": 78,
+      "rating": 1.07,
+      "acs": 213,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-21659",
@@ -1654,22 +1638,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29559",
-      "name": "Javelin",
-      "team": "NVJ",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 83,
-      "deaths": 82,
-      "assists": 60,
-      "rating": 1.06,
-      "acs": 174,
-      "damage": null,
-      "hsPercent": 21.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29833",
       "name": "iZu",
       "team": "T1",
@@ -1811,22 +1779,6 @@
       "acs": 195,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-37925",
-      "name": "Kolosha",
-      "team": "NVJ",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 99,
-      "deaths": 91,
-      "assists": 52,
-      "rating": 1.05,
-      "acs": 209,
-      "damage": null,
-      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
@@ -2132,6 +2084,22 @@
       "damage": null,
       "hsPercent": 25.3,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-18162",
+      "name": "Serial",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 239,
+      "deaths": 212,
+      "assists": 64,
+      "rating": 1.03,
+      "acs": 202,
+      "damage": null,
+      "hsPercent": 43.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-21668",
@@ -2534,6 +2502,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-37925",
+      "name": "Kolosha",
+      "team": "NVJ",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 123,
+      "deaths": 123,
+      "assists": 65,
+      "rating": 1.0,
+      "acs": 197,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-42772",
       "name": "Xross",
       "team": "NS",
@@ -2726,6 +2710,22 @@
       "source": "vct_history"
     },
     {
+      "playerId": "val-29559",
+      "name": "Javelin",
+      "team": "NVJ",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 106,
+      "deaths": 116,
+      "assists": 70,
+      "rating": 0.98,
+      "acs": 167,
+      "damage": null,
+      "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-31827",
       "name": "Dambi",
       "team": "NS",
@@ -2774,22 +2774,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-4329",
-      "name": "Vince",
-      "team": "CGN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 150,
-      "deaths": 165,
-      "assists": 128,
-      "rating": 0.97,
-      "acs": 159,
-      "damage": null,
-      "hsPercent": 19.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-5554",
       "name": "PROFEK",
       "team": "VIT",
@@ -2820,6 +2804,22 @@
       "damage": null,
       "hsPercent": 21.7,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-4329",
+      "name": "Vince",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 172,
+      "deaths": 188,
+      "assists": 143,
+      "rating": 0.96,
+      "acs": 157,
+      "damage": null,
+      "hsPercent": 18.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-hist-boostio",
