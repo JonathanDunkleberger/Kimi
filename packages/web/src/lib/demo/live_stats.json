@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T12:07:48.232143+00:00",
+  "updatedAt": "2026-11-01T18:06:07.946585+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -2507,12 +2507,12 @@
       "team": "UR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 25,
-      "kills": 384,
-      "deaths": 400,
-      "assists": 140,
+      "maps": 26,
+      "kills": 390,
+      "deaths": 416,
+      "assists": 142,
       "rating": 0.0,
-      "acs": 222,
+      "acs": 217,
       "damage": null,
       "hsPercent": null,
       "source": "vlr"
@@ -2795,12 +2795,12 @@
       "team": "UR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 25,
-      "kills": 377,
-      "deaths": 364,
-      "assists": 147,
+      "maps": 26,
+      "kills": 390,
+      "deaths": 380,
+      "assists": 149,
       "rating": 0.0,
-      "acs": 203,
+      "acs": 202,
       "damage": null,
       "hsPercent": null,
       "source": "vlr"
