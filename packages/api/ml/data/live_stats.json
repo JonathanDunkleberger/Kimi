@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T06:09:27.319967+00:00",
+  "updatedAt": "2026-11-04T12:08:35.285281+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -422,22 +422,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-13744",
-      "name": "PatMen",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6a19607c9c6c7.png",
-      "maps": 16,
-      "kills": 271,
-      "deaths": 233,
-      "assists": 102,
-      "rating": 1.13,
-      "acs": 225,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-14681",
       "name": "kamo",
       "team": "TL",
@@ -571,10 +555,10 @@
       "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "https://owcdn.net/img/6a1960983a0b5.png",
-      "maps": 16,
-      "kills": 245,
-      "deaths": 219,
-      "assists": 112,
+      "maps": 12,
+      "kills": 184,
+      "deaths": 170,
+      "assists": 80,
       "rating": 1.12,
       "acs": 206,
       "damage": null,
@@ -854,22 +838,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-5796",
-      "name": "Kr1stal",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6a19608e4d952.png",
-      "maps": 16,
-      "kills": 232,
-      "deaths": 218,
-      "assists": 94,
-      "rating": 1.09,
-      "acs": 197,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-8369",
       "name": "yetujey",
       "team": "FUT",
@@ -899,6 +867,22 @@
       "acs": 200,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13744",
+      "name": "PatMen",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6a19607c9c6c7.png",
+      "maps": 12,
+      "kills": 200,
+      "deaths": 183,
+      "assists": 77,
+      "rating": 1.09,
+      "acs": 219,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1268,6 +1252,22 @@
       "damage": null,
       "hsPercent": 22.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-29833",
+      "name": "iZu",
+      "team": "T1",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/696cbeb2ce31f.png",
+      "maps": 15,
+      "kills": 225,
+      "deaths": 205,
+      "assists": 69,
+      "rating": 1.06,
+      "acs": 194,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-601",
@@ -1686,22 +1686,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-29833",
-      "name": "iZu",
-      "team": "T1",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 275,
-      "deaths": 264,
-      "assists": 85,
-      "rating": 1.03,
-      "acs": 191,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-50813",
       "name": "GSR",
       "team": "TL",
@@ -1924,6 +1908,22 @@
       "damage": null,
       "hsPercent": 31.4,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-5796",
+      "name": "Kr1stal",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 166,
+      "deaths": 172,
+      "assists": 68,
+      "rating": 1.01,
+      "acs": 187,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-10885",
@@ -2182,22 +2182,6 @@
       "source": "vct_history"
     },
     {
-      "playerId": "val-4428",
-      "name": "UdoTan",
-      "team": "NS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 259,
-      "deaths": 260,
-      "assists": 84,
-      "rating": 0.96,
-      "acs": 227,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-11118",
       "name": "skuba",
       "team": "NRG",
@@ -2372,6 +2356,22 @@
       "damage": null,
       "hsPercent": 31.7,
       "source": "vct_history"
+    },
+    {
+      "playerId": "val-4428",
+      "name": "UdoTan",
+      "team": "NS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 190,
+      "deaths": 204,
+      "assists": 64,
+      "rating": 0.91,
+      "acs": 223,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
     },
     {
       "playerId": "val-5132",
