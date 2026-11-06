@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T06:10:03.378474+00:00",
+  "updatedAt": "2026-11-06T12:08:32.814670+00:00",
   "sources": [
     "vct_history",
     "vlr"
@@ -88,7 +88,7 @@
     {
       "playerId": "val-62052",
       "name": "ShenSu",
-      "team": "VLR",
+      "team": "Engi",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 6,
@@ -168,7 +168,7 @@
     {
       "playerId": "val-67329",
       "name": "airwy",
-      "team": "VLR",
+      "team": "Engi",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 6,
@@ -2360,7 +2360,7 @@
     {
       "playerId": "val-58629",
       "name": "pants",
-      "team": "VLR",
+      "team": "Engi",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 6,
@@ -2664,7 +2664,7 @@
     {
       "playerId": "val-61293",
       "name": "Upfii",
-      "team": "VLR",
+      "team": "Engi",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 6,
