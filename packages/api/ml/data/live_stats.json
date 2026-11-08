@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T12:07:38.743669+00:00",
+  "updatedAt": "2026-11-08T18:05:59.058909+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -20,6 +20,22 @@
       "acs": 300,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-44186",
+      "name": "d3nZ",
+      "team": "FL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69d33a5195b23.png",
+      "maps": 11,
+      "kills": 201,
+      "deaths": 114,
+      "assists": 68,
+      "rating": 1.48,
+      "acs": 297,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -100,22 +116,6 @@
       "acs": 300,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-41390",
-      "name": "troizyyy",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69c55e42a4db4.png",
-      "maps": 10,
-      "kills": 151,
-      "deaths": 85,
-      "assists": 92,
-      "rating": 1.45,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -404,22 +404,6 @@
       "acs": 233,
       "damage": null,
       "hsPercent": 40.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-44186",
-      "name": "d3nZ",
-      "team": "FL",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 233,
-      "deaths": 145,
-      "assists": 79,
-      "rating": 1.4,
-      "acs": 288,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -727,6 +711,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-41390",
+      "name": "troizyyy",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 10,
+      "kills": 148,
+      "deaths": 90,
+      "assists": 103,
+      "rating": 1.37,
+      "acs": 224,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-58995",
       "name": "xela",
       "team": "SCC",
@@ -887,6 +887,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-251",
+      "name": "B1SK",
+      "team": "AURA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 131,
+      "deaths": 78,
+      "assists": 46,
+      "rating": 1.34,
+      "acs": 260,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-35513",
       "name": "samed",
       "team": "CGN",
@@ -969,7 +985,7 @@
     {
       "playerId": "val-54204",
       "name": "Dillon",
-      "team": "BKR",
+      "team": "Xora",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 11,
@@ -1236,22 +1252,6 @@
       "acs": 261,
       "damage": null,
       "hsPercent": 41.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-59970",
-      "name": "slinc",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 100,
-      "deaths": 79,
-      "assists": 45,
-      "rating": 1.32,
-      "acs": 267,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
