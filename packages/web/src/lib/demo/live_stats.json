@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T06:09:57.901529+00:00",
+  "updatedAt": "2026-11-10T12:08:10.123889+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -55,6 +55,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-36433",
+      "name": "phc",
+      "team": "BIDA",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/69e654f88e779.png",
+      "maps": 8,
+      "kills": 117,
+      "deaths": 69,
+      "assists": 92,
+      "rating": 1.47,
+      "acs": 237,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-44787",
       "name": "RayUndaunted",
       "team": "BLUE",
@@ -84,22 +100,6 @@
       "acs": 253,
       "damage": null,
       "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42867",
-      "name": "ghoul33",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 243,
-      "deaths": 133,
-      "assists": 90,
-      "rating": 1.46,
-      "acs": 275,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -196,6 +196,22 @@
       "acs": 214,
       "damage": null,
       "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42867",
+      "name": "ghoul33",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 282,
+      "deaths": 159,
+      "assists": 97,
+      "rating": 1.43,
+      "acs": 269,
+      "damage": null,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -308,6 +324,22 @@
       "acs": 279,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41225",
+      "name": "kramarick",
+      "team": "BIDA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 125,
+      "deaths": 65,
+      "assists": 23,
+      "rating": 1.42,
+      "acs": 254,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1220,38 +1252,6 @@
       "acs": 217,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-562",
-      "name": "zeek",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 133,
-      "deaths": 89,
-      "assists": 78,
-      "rating": 1.33,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-2653",
-      "name": "Jesse",
-      "team": "WIP",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 166,
-      "deaths": 118,
-      "assists": 109,
-      "rating": 1.33,
-      "acs": 230,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
