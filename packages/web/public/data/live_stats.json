@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-10T00:13:57.548025+00:00",
+  "updatedAt": "2026-11-10T06:09:57.901529+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -87,8 +87,8 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-26302",
-      "name": "gui",
+      "playerId": "val-42867",
+      "name": "ghoul33",
       "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
@@ -393,7 +393,7 @@
     {
       "playerId": "val-44186",
       "name": "d3nZ",
-      "team": "FL",
+      "team": "ycat",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 13,
