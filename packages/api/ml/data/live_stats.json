@@ -1,27 +1,11 @@
 {
-  "updatedAt": "2026-11-11T12:08:55.751634+00:00",
+  "updatedAt": "2026-11-11T18:06:18.093383+00:00",
   "sources": [
     "vct_history",
     "vlr",
     "breakingpoint"
   ],
   "players": [
-    {
-      "playerId": "val-27321",
-      "name": "Izuki",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 216,
-      "deaths": 104,
-      "assists": 36,
-      "rating": 1.7,
-      "acs": 361,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
     {
       "playerId": "val-49254",
       "name": "ensag",
@@ -36,22 +20,6 @@
       "acs": 362,
       "damage": null,
       "hsPercent": 42.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42496",
-      "name": "Süsanô",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 124,
-      "deaths": 64,
-      "assists": 32,
-      "rating": 1.62,
-      "acs": 330,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -71,19 +39,35 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-67474",
-      "name": "týr",
-      "team": "Auth",
+      "playerId": "val-27321",
+      "name": "Izuki",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 7,
-      "kills": 123,
-      "deaths": 70,
-      "assists": 41,
-      "rating": 1.49,
-      "acs": 267,
+      "maps": 11,
+      "kills": 246,
+      "deaths": 142,
+      "assists": 43,
+      "rating": 1.5,
+      "acs": 320,
       "damage": null,
-      "hsPercent": 46.0,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42496",
+      "name": "Süsanô",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 165,
+      "deaths": 96,
+      "assists": 39,
+      "rating": 1.49,
+      "acs": 305,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -199,22 +183,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-48587",
-      "name": "soufy",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 106,
-      "deaths": 54,
-      "assists": 38,
-      "rating": 1.45,
-      "acs": 270,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-15455",
       "name": "tr1ck",
       "team": "GTH",
@@ -315,7 +283,7 @@
       "name": "deev",
       "team": "TOYO",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/6976959fd187c.png",
       "maps": 8,
       "kills": 137,
       "deaths": 85,
@@ -423,6 +391,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-36073",
+      "name": "AL7B",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 147,
+      "deaths": 89,
+      "assists": 67,
+      "rating": 1.42,
+      "acs": 247,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41225",
       "name": "kramarick",
       "team": "BIDA",
@@ -521,7 +505,7 @@
     {
       "playerId": "val-45918",
       "name": "clutchz",
-      "team": "CHV",
+      "team": "STA",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 11,
@@ -692,22 +676,6 @@
       "acs": 263,
       "damage": null,
       "hsPercent": 40.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-4615",
-      "name": "Syratch",
-      "team": "FEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 113,
-      "deaths": 80,
-      "assists": 73,
-      "rating": 1.39,
-      "acs": 244,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1031,6 +999,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-67474",
+      "name": "týr",
+      "team": "Auth",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 155,
+      "deaths": 104,
+      "assists": 49,
+      "rating": 1.37,
+      "acs": 258,
+      "damage": null,
+      "hsPercent": 46.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-69608",
       "name": "Piguoispiwo",
       "team": "VLR",
@@ -1159,6 +1143,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-4615",
+      "name": "Syratch",
+      "team": "FEC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 143,
+      "deaths": 103,
+      "assists": 94,
+      "rating": 1.35,
+      "acs": 239,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-6217",
       "name": "lula molusco",
       "team": "FDS",
@@ -1223,19 +1223,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-59095",
-      "name": "leadssj",
-      "team": "SHI",
+      "playerId": "val-48587",
+      "name": "soufy",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 10,
-      "kills": 155,
+      "maps": 8,
+      "kills": 145,
       "deaths": 88,
-      "assists": 59,
+      "assists": 57,
       "rating": 1.35,
-      "acs": 248,
+      "acs": 263,
       "damage": null,
-      "hsPercent": 30.0,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
