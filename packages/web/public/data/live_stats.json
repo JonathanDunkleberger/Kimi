@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T12:08:45.016611+00:00",
+  "updatedAt": "2026-11-12T18:07:18.798705+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -50,38 +50,6 @@
       "assists": 30,
       "rating": 1.61,
       "acs": 310,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-16459",
-      "name": "Elite",
-      "team": "Lide",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/655dc75a40ccc.png",
-      "maps": 6,
-      "kills": 101,
-      "deaths": 44,
-      "assists": 31,
-      "rating": 1.54,
-      "acs": 241,
-      "damage": null,
-      "hsPercent": 40.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58377",
-      "name": "akame",
-      "team": "Lour",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 144,
-      "deaths": 80,
-      "assists": 35,
-      "rating": 1.53,
-      "acs": 296,
       "damage": null,
       "hsPercent": 35.0,
       "source": "vlr"
@@ -164,6 +132,38 @@
       "acs": 320,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-49341",
+      "name": "sh0ut",
+      "team": "NVS",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/68019f07c07c6.png",
+      "maps": 8,
+      "kills": 134,
+      "deaths": 67,
+      "assists": 64,
+      "rating": 1.5,
+      "acs": 250,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-58740",
+      "name": "Esconardo",
+      "team": "Trig",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 167,
+      "deaths": 99,
+      "assists": 35,
+      "rating": 1.48,
+      "acs": 289,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -279,6 +279,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-16459",
+      "name": "Elite",
+      "team": "Lide",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/655dc75a40ccc.png",
+      "maps": 8,
+      "kills": 138,
+      "deaths": 76,
+      "assists": 47,
+      "rating": 1.45,
+      "acs": 238,
+      "damage": null,
+      "hsPercent": 39.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-68994",
       "name": "ASHEN1",
       "team": "VLR",
@@ -356,22 +372,6 @@
       "acs": 289,
       "damage": null,
       "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-546",
-      "name": "gosaydam",
-      "team": "Over",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 112,
-      "deaths": 62,
-      "assists": 26,
-      "rating": 1.43,
-      "acs": 255,
-      "damage": null,
-      "hsPercent": 20.0,
       "source": "vlr"
     },
     {
@@ -535,22 +535,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-22671",
-      "name": "PhuRME",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 116,
-      "deaths": 64,
-      "assists": 48,
-      "rating": 1.41,
-      "acs": 251,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-25872",
       "name": "propszin",
       "team": "CRW",
@@ -569,7 +553,7 @@
     {
       "playerId": "val-41409",
       "name": "vandals",
-      "team": "MR",
+      "team": "CRB",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 8,
@@ -871,22 +855,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-58740",
-      "name": "Esconardo",
-      "team": "Trig",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 113,
-      "deaths": 67,
-      "assists": 19,
-      "rating": 1.4,
-      "acs": 287,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-65464",
       "name": "Fadi",
       "team": "VLR",
@@ -1031,6 +999,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-58377",
+      "name": "akame",
+      "team": "Lour",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 171,
+      "deaths": 114,
+      "assists": 45,
+      "rating": 1.39,
+      "acs": 276,
+      "damage": null,
+      "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-58474",
       "name": "tcoy",
       "team": "SADE",
@@ -1097,7 +1081,7 @@
     {
       "playerId": "val-8790",
       "name": "MiniNiwde",
-      "team": "LZR",
+      "team": "CRB",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 8,
@@ -1252,6 +1236,22 @@
       "acs": 273,
       "damage": null,
       "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-2653",
+      "name": "Jesse",
+      "team": "WIP",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 195,
+      "deaths": 127,
+      "assists": 121,
+      "rating": 1.37,
+      "acs": 233,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
