@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-12T06:10:12.113284+00:00",
+  "updatedAt": "2026-11-12T12:08:45.016611+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -167,22 +167,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-42496",
-      "name": "Süsanô",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 165,
-      "deaths": 96,
-      "assists": 39,
-      "rating": 1.49,
-      "acs": 305,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-71433",
       "name": "Jahreinn",
       "team": "VLR",
@@ -290,6 +274,22 @@
       "assists": 63,
       "rating": 1.45,
       "acs": 251,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-68994",
+      "name": "ASHEN1",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 113,
+      "deaths": 75,
+      "assists": 37,
+      "rating": 1.45,
+      "acs": 264,
       "damage": null,
       "hsPercent": 28.0,
       "source": "vlr"
@@ -516,22 +516,6 @@
       "acs": 279,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-36073",
-      "name": "AL7B",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 147,
-      "deaths": 89,
-      "assists": 67,
-      "rating": 1.42,
-      "acs": 247,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -1252,6 +1236,22 @@
       "acs": 280,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-71296",
+      "name": "l3ssz",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 98,
+      "deaths": 59,
+      "assists": 25,
+      "rating": 1.38,
+      "acs": 273,
+      "damage": null,
+      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
