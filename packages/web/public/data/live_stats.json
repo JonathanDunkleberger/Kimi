@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T06:09:52.579712+00:00",
+  "updatedAt": "2026-11-13T12:08:06.940889+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -68,6 +68,22 @@
       "acs": 284,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42557",
+      "name": "6ankai",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 140,
+      "deaths": 90,
+      "assists": 34,
+      "rating": 1.51,
+      "acs": 292,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
@@ -359,22 +375,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-68366",
-      "name": "Z0rwey",
-      "team": "D1G",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 185,
-      "deaths": 110,
-      "assists": 49,
-      "rating": 1.45,
-      "acs": 303,
-      "damage": null,
-      "hsPercent": 39.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-70803",
       "name": "p0uco b0m",
       "team": "VLR",
@@ -652,14 +652,14 @@
       "team": "CGN",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 11,
-      "kills": 153,
-      "deaths": 85,
-      "assists": 61,
+      "maps": 13,
+      "kills": 177,
+      "deaths": 98,
+      "assists": 74,
       "rating": 1.42,
-      "acs": 238,
+      "acs": 235,
       "damage": null,
-      "hsPercent": 41.0,
+      "hsPercent": 40.0,
       "source": "vlr"
     },
     {
@@ -820,22 +820,6 @@
       "acs": 257,
       "damage": null,
       "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-42323",
-      "name": "Akira",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 99,
-      "deaths": 65,
-      "assists": 34,
-      "rating": 1.41,
-      "acs": 277,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -1172,6 +1156,22 @@
       "acs": 252,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-35513",
+      "name": "samed",
+      "team": "CGN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 211,
+      "deaths": 117,
+      "assists": 48,
+      "rating": 1.39,
+      "acs": 284,
+      "damage": null,
+      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
