@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T06:08:40.762551+00:00",
+  "updatedAt": "2026-11-14T12:07:26.878438+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -343,22 +343,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-49876",
-      "name": "Mora",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 179,
-      "deaths": 103,
-      "assists": 89,
-      "rating": 1.45,
-      "acs": 258,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-54195",
       "name": "kimchi",
       "team": "CCG",
@@ -436,6 +420,22 @@
       "acs": 259,
       "damage": null,
       "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-49876",
+      "name": "Mora",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 209,
+      "deaths": 123,
+      "assists": 105,
+      "rating": 1.44,
+      "acs": 258,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -580,6 +580,22 @@
       "acs": 253,
       "damage": null,
       "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-61302",
+      "name": "Benjaˇ",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 148,
+      "deaths": 75,
+      "assists": 23,
+      "rating": 1.43,
+      "acs": 241,
+      "damage": null,
+      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -1111,6 +1127,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-50646",
+      "name": "MrNajib",
+      "team": "LAZ",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 148,
+      "deaths": 100,
+      "assists": 36,
+      "rating": 1.38,
+      "acs": 290,
+      "damage": null,
+      "hsPercent": 23.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-51275",
       "name": "ozy",
       "team": "VRUM",
@@ -1220,38 +1252,6 @@
       "acs": 242,
       "damage": null,
       "hsPercent": 17.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-22046",
-      "name": "Lazare",
-      "team": "SYX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 157,
-      "deaths": 111,
-      "assists": 85,
-      "rating": 1.37,
-      "acs": 258,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-25902",
-      "name": "Shondex",
-      "team": "MU",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 18,
-      "kills": 294,
-      "deaths": 162,
-      "assists": 74,
-      "rating": 1.37,
-      "acs": 248,
-      "damage": null,
-      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
