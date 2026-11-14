@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T12:07:26.878438+00:00",
+  "updatedAt": "2026-11-14T18:05:44.282597+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -407,22 +407,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-36389",
-      "name": "izana",
-      "team": "Host",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 166,
-      "deaths": 95,
-      "assists": 45,
-      "rating": 1.44,
-      "acs": 259,
-      "damage": null,
-      "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-49876",
       "name": "Mora",
       "team": "VLR",
@@ -484,22 +468,6 @@
       "acs": 271,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-24424",
-      "name": "Pa1ze",
-      "team": "BAR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 23,
-      "kills": 386,
-      "deaths": 211,
-      "assists": 111,
-      "rating": 1.43,
-      "acs": 269,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -652,14 +620,14 @@
       "team": "BAR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 23,
-      "kills": 364,
-      "deaths": 175,
-      "assists": 78,
+      "maps": 25,
+      "kills": 401,
+      "deaths": 191,
+      "assists": 83,
       "rating": 1.42,
-      "acs": 245,
+      "acs": 248,
       "damage": null,
-      "hsPercent": 33.0,
+      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -727,6 +695,38 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-24424",
+      "name": "Pa1ze",
+      "team": "BAR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 25,
+      "kills": 413,
+      "deaths": 229,
+      "assists": 123,
+      "rating": 1.41,
+      "acs": 266,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-36389",
+      "name": "izana",
+      "team": "Host",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 196,
+      "deaths": 111,
+      "assists": 51,
+      "rating": 1.41,
+      "acs": 254,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-36934",
       "name": "jk30",
       "team": "TwoF",
@@ -740,6 +740,22 @@
       "acs": 258,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-41390",
+      "name": "troizyyy",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 23,
+      "kills": 341,
+      "deaths": 200,
+      "assists": 252,
+      "rating": 1.41,
+      "acs": 227,
+      "damage": null,
+      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -935,22 +951,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-41390",
-      "name": "troizyyy",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 316,
-      "deaths": 187,
-      "assists": 227,
-      "rating": 1.4,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21247",
       "name": "LoveX",
       "team": "VLR",
@@ -1060,6 +1060,22 @@
       "acs": 234,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-2653",
+      "name": "Jesse",
+      "team": "WIP",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 23,
+      "kills": 367,
+      "deaths": 231,
+      "assists": 220,
+      "rating": 1.38,
+      "acs": 232,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
@@ -1220,22 +1236,6 @@
       "acs": 245,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-2653",
-      "name": "Jesse",
-      "team": "WIP",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 21,
-      "kills": 338,
-      "deaths": 217,
-      "assists": 207,
-      "rating": 1.37,
-      "acs": 234,
-      "damage": null,
-      "hsPercent": 31.0,
       "source": "vlr"
     },
     {
