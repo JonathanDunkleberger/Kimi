@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T00:16:33.755259+00:00",
+  "updatedAt": "2026-11-15T06:08:41.896092+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -36,22 +36,6 @@
       "acs": 329,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29240",
-      "name": "skyppervz",
-      "team": "9ZG",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/69ea90baeb6d3.png",
-      "maps": 7,
-      "kills": 126,
-      "deaths": 61,
-      "assists": 45,
-      "rating": 1.55,
-      "acs": 274,
-      "damage": null,
-      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -167,22 +151,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-19290",
-      "name": "azrex",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 19,
-      "kills": 360,
-      "deaths": 186,
-      "assists": 56,
-      "rating": 1.47,
-      "acs": 267,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-23799",
       "name": "caiobaz",
       "team": "BIDA",
@@ -231,22 +199,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-15691",
-      "name": "BayPopper",
-      "team": "Eter",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 197,
-      "deaths": 114,
-      "assists": 93,
-      "rating": 1.46,
-      "acs": 250,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-60476",
       "name": "duby",
       "team": "GS",
@@ -260,22 +212,6 @@
       "acs": 300,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-8422",
-      "name": "Spaz",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 276,
-      "deaths": 156,
-      "assists": 222,
-      "rating": 1.45,
-      "acs": 224,
-      "damage": null,
-      "hsPercent": 21.0,
       "source": "vlr"
     },
     {
@@ -331,7 +267,7 @@
       "name": "Dlasqx1",
       "team": "STA",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/69c4c13cbe010.png",
       "maps": 8,
       "kills": 120,
       "deaths": 57,
@@ -359,27 +295,11 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-30467",
-      "name": "Zamal",
-      "team": "COO",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 349,
-      "deaths": 204,
-      "assists": 104,
-      "rating": 1.43,
-      "acs": 291,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41134",
       "name": "nx1",
       "team": "SHI",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/69ebd91881638.png",
       "maps": 10,
       "kills": 124,
       "deaths": 75,
@@ -436,22 +356,6 @@
       "acs": 253,
       "damage": null,
       "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-61302",
-      "name": "Benjaˇ",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 10,
-      "kills": 183,
-      "deaths": 95,
-      "assists": 27,
-      "rating": 1.43,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -535,6 +439,38 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-19290",
+      "name": "azrex",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 407,
+      "deaths": 227,
+      "assists": 64,
+      "rating": 1.42,
+      "acs": 260,
+      "damage": null,
+      "hsPercent": 22.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-49876",
+      "name": "Mora",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 280,
+      "deaths": 167,
+      "assists": 139,
+      "rating": 1.42,
+      "acs": 251,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-53883",
       "name": "Piguoispiguo",
       "team": "VLR",
@@ -567,6 +503,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-8422",
+      "name": "Spaz",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 302,
+      "deaths": 184,
+      "assists": 248,
+      "rating": 1.41,
+      "acs": 219,
+      "damage": null,
+      "hsPercent": 20.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-24424",
       "name": "Pa1ze",
       "team": "BAR",
@@ -578,6 +530,22 @@
       "assists": 130,
       "rating": 1.41,
       "acs": 265,
+      "damage": null,
+      "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-30467",
+      "name": "Zamal",
+      "team": "COO",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 387,
+      "deaths": 227,
+      "assists": 108,
+      "rating": 1.41,
+      "acs": 288,
       "damage": null,
       "hsPercent": 32.0,
       "source": "vlr"
@@ -775,22 +743,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-49876",
-      "name": "Mora",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 240,
-      "deaths": 143,
-      "assists": 115,
-      "rating": 1.4,
-      "acs": 251,
-      "damage": null,
-      "hsPercent": 28.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-21247",
       "name": "LoveX",
       "team": "VLR",
@@ -807,6 +759,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29240",
+      "name": "skyppervz",
+      "team": "9ZG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 161,
+      "deaths": 98,
+      "assists": 57,
+      "rating": 1.39,
+      "acs": 255,
+      "damage": null,
+      "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-37923",
       "name": "oasis",
       "team": "Quac",
@@ -818,22 +786,6 @@
       "assists": 22,
       "rating": 1.39,
       "acs": 271,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-57175",
-      "name": "jzn",
-      "team": "LPT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 12,
-      "kills": 226,
-      "deaths": 145,
-      "assists": 72,
-      "rating": 1.39,
-      "acs": 280,
       "damage": null,
       "hsPercent": 30.0,
       "source": "vlr"
@@ -903,6 +855,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-14048",
+      "name": "zerona",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 356,
+      "deaths": 220,
+      "assists": 160,
+      "rating": 1.38,
+      "acs": 256,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-24878",
       "name": "kodaki",
       "team": "VLR",
@@ -916,6 +884,22 @@
       "acs": 244,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-25902",
+      "name": "Shondex",
+      "team": "MU",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 22,
+      "kills": 370,
+      "deaths": 201,
+      "assists": 88,
+      "rating": 1.38,
+      "acs": 252,
+      "damage": null,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -1172,6 +1156,22 @@
       "acs": 297,
       "damage": null,
       "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-61302",
+      "name": "Benjaˇ",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 12,
+      "kills": 219,
+      "deaths": 127,
+      "assists": 32,
+      "rating": 1.37,
+      "acs": 236,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
