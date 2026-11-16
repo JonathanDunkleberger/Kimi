@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T12:12:50.081600+00:00",
+  "updatedAt": "2026-11-16T18:07:31.547713+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -551,6 +551,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-55040",
+      "name": "fvrdrms1",
+      "team": "BLAC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 112,
+      "deaths": 74,
+      "assists": 25,
+      "rating": 1.41,
+      "acs": 271,
+      "damage": null,
+      "hsPercent": 39.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-70129",
       "name": "Little peanut",
       "team": "VLR",
@@ -564,22 +580,6 @@
       "acs": 283,
       "damage": null,
       "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-71493",
-      "name": "notonmylvl",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 112,
-      "deaths": 74,
-      "assists": 25,
-      "rating": 1.41,
-      "acs": 271,
-      "damage": null,
-      "hsPercent": 39.0,
       "source": "vlr"
     },
     {
@@ -756,6 +756,22 @@
       "acs": 276,
       "damage": null,
       "hsPercent": 34.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-59902",
+      "name": "DemoN",
+      "team": "infl",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 113,
+      "deaths": 79,
+      "assists": 50,
+      "rating": 1.39,
+      "acs": 262,
+      "damage": null,
+      "hsPercent": 36.0,
       "source": "vlr"
     },
     {
@@ -1236,22 +1252,6 @@
       "acs": 281,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-31300",
-      "name": "Drog",
-      "team": "ppp",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 154,
-      "deaths": 87,
-      "assists": 43,
-      "rating": 1.36,
-      "acs": 242,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
