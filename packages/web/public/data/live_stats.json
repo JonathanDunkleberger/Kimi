@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T00:14:58.510181+00:00",
+  "updatedAt": "2026-11-17T06:10:09.075891+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -132,22 +132,6 @@
       "acs": 289,
       "damage": null,
       "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-27321",
-      "name": "Izuki",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 246,
-      "deaths": 142,
-      "assists": 43,
-      "rating": 1.5,
-      "acs": 320,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
@@ -327,6 +311,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-27321",
+      "name": "Izuki",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 288,
+      "deaths": 178,
+      "assists": 52,
+      "rating": 1.43,
+      "acs": 309,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41134",
       "name": "nx1",
       "team": "SHI",
@@ -391,19 +391,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-62468",
-      "name": "KHAFASH",
-      "team": "trih",
+      "playerId": "val-66522",
+      "name": "bandz",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 6,
-      "kills": 92,
-      "deaths": 58,
-      "assists": 66,
+      "maps": 18,
+      "kills": 363,
+      "deaths": 225,
+      "assists": 95,
       "rating": 1.43,
-      "acs": 248,
+      "acs": 302,
       "damage": null,
-      "hsPercent": 30.0,
+      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -684,12 +684,12 @@
       "team": "R8",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 9,
-      "kills": 176,
-      "deaths": 117,
-      "assists": 59,
+      "maps": 11,
+      "kills": 210,
+      "deaths": 139,
+      "assists": 71,
       "rating": 1.4,
-      "acs": 288,
+      "acs": 289,
       "damage": null,
       "hsPercent": 26.0,
       "source": "vlr"
@@ -951,19 +951,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-68292",
-      "name": "Imran",
-      "team": "Blue",
+      "playerId": "val-62468",
+      "name": "KHAFASH",
+      "team": "trih",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 10,
-      "kills": 170,
-      "deaths": 119,
-      "assists": 73,
+      "maps": 7,
+      "kills": 100,
+      "deaths": 67,
+      "assists": 77,
       "rating": 1.38,
-      "acs": 255,
+      "acs": 239,
       "damage": null,
-      "hsPercent": 21.0,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1127,22 +1127,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-66522",
-      "name": "bandz",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 307,
-      "deaths": 203,
-      "assists": 83,
-      "rating": 1.37,
-      "acs": 290,
-      "damage": null,
-      "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-69738",
       "name": "Ryzin",
       "team": "Dark",
@@ -1252,6 +1236,22 @@
       "acs": 281,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31300",
+      "name": "Drog",
+      "team": "ppp",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 154,
+      "deaths": 87,
+      "assists": 43,
+      "rating": 1.36,
+      "acs": 242,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
