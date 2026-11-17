@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T12:08:35.953765+00:00",
+  "updatedAt": "2026-11-17T18:07:28.540159+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -23,6 +23,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-5599",
+      "name": "KHaaLiD",
+      "team": "STS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 103,
+      "deaths": 50,
+      "assists": 50,
+      "rating": 1.56,
+      "acs": 277,
+      "damage": null,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-73007",
       "name": "yukine",
       "team": "VLR",
@@ -36,22 +52,6 @@
       "acs": 329,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-53123",
-      "name": "Sulaiman",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 117,
-      "deaths": 64,
-      "assists": 36,
-      "rating": 1.53,
-      "acs": 285,
-      "damage": null,
-      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
@@ -148,6 +148,22 @@
       "acs": 318,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-53123",
+      "name": "Sulaiman",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 149,
+      "deaths": 81,
+      "assists": 42,
+      "rating": 1.49,
+      "acs": 272,
+      "damage": null,
+      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -439,22 +455,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-15455",
-      "name": "tr1ck",
-      "team": "GTH",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 336,
-      "deaths": 215,
-      "assists": 88,
-      "rating": 1.42,
-      "acs": 258,
-      "damage": null,
-      "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-16684",
       "name": "chqse",
       "team": "VLR",
@@ -516,6 +516,38 @@
       "acs": 297,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-15455",
+      "name": "tr1ck",
+      "team": "GTH",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 19,
+      "kills": 366,
+      "deaths": 239,
+      "assists": 95,
+      "rating": 1.41,
+      "acs": 260,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-16447",
+      "name": "d3mur",
+      "team": "R8",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 251,
+      "deaths": 164,
+      "assists": 89,
+      "rating": 1.41,
+      "acs": 291,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -615,6 +647,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-65581",
+      "name": "Snop",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 106,
+      "deaths": 74,
+      "assists": 26,
+      "rating": 1.41,
+      "acs": 287,
+      "damage": null,
+      "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-70129",
       "name": "Little peanut",
       "team": "VLR",
@@ -676,22 +724,6 @@
       "acs": 235,
       "damage": null,
       "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-16447",
-      "name": "d3mur",
-      "team": "R8",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 210,
-      "deaths": 139,
-      "assists": 71,
-      "rating": 1.4,
-      "acs": 289,
-      "damage": null,
-      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
@@ -948,22 +980,6 @@
       "acs": 247,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-62468",
-      "name": "KHAFASH",
-      "team": "trih",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 100,
-      "deaths": 67,
-      "assists": 77,
-      "rating": 1.38,
-      "acs": 239,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1236,22 +1252,6 @@
       "acs": 281,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-31300",
-      "name": "Drog",
-      "team": "ppp",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 154,
-      "deaths": 87,
-      "assists": 43,
-      "rating": 1.36,
-      "acs": 242,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
