@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T06:10:08.865243+00:00",
+  "updatedAt": "2026-11-19T12:08:12.432325+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -228,6 +228,22 @@
       "acs": 263,
       "damage": null,
       "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-73972",
+      "name": "finaI boss",
+      "team": "Back",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 120,
+      "deaths": 93,
+      "assists": 36,
+      "rating": 1.45,
+      "acs": 310,
+      "damage": null,
+      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -649,7 +665,7 @@
     {
       "playerId": "val-3722",
       "name": "koalanoob",
-      "team": "VLR",
+      "team": "AQ",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 12,
@@ -1236,22 +1252,6 @@
       "acs": 260,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-16459",
-      "name": "Elite",
-      "team": "Lide",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 11,
-      "kills": 175,
-      "deaths": 109,
-      "assists": 60,
-      "rating": 1.36,
-      "acs": 230,
-      "damage": null,
-      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
