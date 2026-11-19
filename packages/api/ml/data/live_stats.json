@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T00:15:03.269005+00:00",
+  "updatedAt": "2026-11-19T06:10:08.865243+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -23,22 +23,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5599",
-      "name": "KHaaLiD",
-      "team": "STS",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 103,
-      "deaths": 50,
-      "assists": 50,
-      "rating": 1.56,
-      "acs": 277,
-      "damage": null,
-      "hsPercent": 33.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-73007",
       "name": "yukine",
       "team": "VLR",
@@ -52,22 +36,6 @@
       "acs": 329,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-71291",
-      "name": "DarkSaga",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 171,
-      "deaths": 92,
-      "assists": 33,
-      "rating": 1.53,
-      "acs": 320,
-      "damage": null,
-      "hsPercent": 46.0,
       "source": "vlr"
     },
     {
@@ -132,22 +100,6 @@
       "acs": 318,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-53123",
-      "name": "Sulaiman",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 149,
-      "deaths": 81,
-      "assists": 42,
-      "rating": 1.49,
-      "acs": 272,
-      "damage": null,
-      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -231,6 +183,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-10883",
+      "name": "Baransel",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6580d52426303.png",
+      "maps": 5,
+      "kills": 129,
+      "deaths": 83,
+      "assists": 23,
+      "rating": 1.45,
+      "acs": 311,
+      "damage": null,
+      "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-23799",
       "name": "caiobaz",
       "team": "BIDA",
@@ -311,27 +279,11 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-27321",
-      "name": "Izuki",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 16,
-      "kills": 357,
-      "deaths": 217,
-      "assists": 65,
-      "rating": 1.43,
-      "acs": 303,
-      "damage": null,
-      "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-41134",
       "name": "nx1",
       "team": "SHI",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/69ebd91881638.png",
       "maps": 10,
       "kills": 124,
       "deaths": 75,
@@ -457,7 +409,7 @@
     {
       "playerId": "val-48705",
       "name": "Chaza",
-      "team": "VRC",
+      "team": "GMX",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 10,
@@ -628,6 +580,22 @@
       "acs": 271,
       "damage": null,
       "hsPercent": 39.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-58377",
+      "name": "akame",
+      "team": "Lour",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 11,
+      "kills": 205,
+      "deaths": 130,
+      "assists": 55,
+      "rating": 1.41,
+      "acs": 274,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
@@ -839,22 +807,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-58377",
-      "name": "akame",
-      "team": "Lour",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 171,
-      "deaths": 114,
-      "assists": 45,
-      "rating": 1.39,
-      "acs": 276,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-61411",
       "name": "Kipins",
       "team": "VLR",
@@ -884,6 +836,22 @@
       "acs": 234,
       "damage": null,
       "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-71291",
+      "name": "DarkSaga",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 10,
+      "kills": 203,
+      "deaths": 124,
+      "assists": 35,
+      "rating": 1.39,
+      "acs": 289,
+      "damage": null,
+      "hsPercent": 43.0,
       "source": "vlr"
     },
     {
@@ -983,19 +951,35 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-58501",
-      "name": "b1squw1",
-      "team": "Lour",
+      "playerId": "val-53123",
+      "name": "Sulaiman",
+      "team": "VLR",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 7,
-      "kills": 124,
-      "deaths": 81,
-      "assists": 35,
+      "maps": 10,
+      "kills": 171,
+      "deaths": 109,
+      "assists": 48,
       "rating": 1.38,
-      "acs": 247,
+      "acs": 263,
       "damage": null,
-      "hsPercent": 31.0,
+      "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-58474",
+      "name": "tcoy",
+      "team": "SADE",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 167,
+      "deaths": 113,
+      "assists": 66,
+      "rating": 1.38,
+      "acs": 239,
+      "damage": null,
+      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
@@ -1028,6 +1012,22 @@
       "acs": 242,
       "damage": null,
       "hsPercent": 17.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13557",
+      "name": "Zeask",
+      "team": "delu",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 14,
+      "kills": 229,
+      "deaths": 127,
+      "assists": 57,
+      "rating": 1.37,
+      "acs": 268,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -1095,6 +1095,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-40697",
+      "name": "hAwksinho",
+      "team": "STS",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 15,
+      "kills": 302,
+      "deaths": 188,
+      "assists": 66,
+      "rating": 1.37,
+      "acs": 290,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-42496",
       "name": "Süsanô",
       "team": "VLR",
@@ -1108,22 +1124,6 @@
       "acs": 287,
       "damage": null,
       "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-58474",
-      "name": "tcoy",
-      "team": "SADE",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 138,
-      "deaths": 97,
-      "assists": 54,
-      "rating": 1.37,
-      "acs": 243,
-      "damage": null,
-      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
@@ -1239,19 +1239,19 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-20688",
-      "name": "Yassien",
-      "team": "GMX",
+      "playerId": "val-16459",
+      "name": "Elite",
+      "team": "Lide",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 12,
-      "kills": 200,
-      "deaths": 130,
-      "assists": 85,
+      "maps": 11,
+      "kills": 175,
+      "deaths": 109,
+      "assists": 60,
       "rating": 1.36,
-      "acs": 249,
+      "acs": 230,
       "damage": null,
-      "hsPercent": 32.0,
+      "hsPercent": 38.0,
       "source": "vlr"
     },
     {
