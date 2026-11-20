@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T06:10:09.780037+00:00",
+  "updatedAt": "2026-11-20T12:08:19.618330+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -356,6 +356,22 @@
       "acs": 285,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-74062",
+      "name": "NIKqteenッ",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 113,
+      "deaths": 73,
+      "assists": 39,
+      "rating": 1.44,
+      "acs": 284,
+      "damage": null,
+      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -823,6 +839,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-46104",
+      "name": "Envy2K",
+      "team": "GOC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 108,
+      "deaths": 66,
+      "assists": 43,
+      "rating": 1.39,
+      "acs": 285,
+      "damage": null,
+      "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-58377",
       "name": "akame",
       "team": "Lour",
@@ -900,6 +932,22 @@
       "acs": 254,
       "damage": null,
       "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-30693",
+      "name": "Makaveli",
+      "team": "GOC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 83,
+      "deaths": 54,
+      "assists": 59,
+      "rating": 1.38,
+      "acs": 220,
+      "damage": null,
+      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -1143,6 +1191,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-51696",
+      "name": "SynX",
+      "team": "GOC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 95,
+      "deaths": 57,
+      "assists": 35,
+      "rating": 1.37,
+      "acs": 230,
+      "damage": null,
+      "hsPercent": 37.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-60850",
       "name": "nurahh",
       "team": "ATNA",
@@ -1188,70 +1252,6 @@
       "acs": 280,
       "damage": null,
       "hsPercent": 26.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-72554",
-      "name": "MArtEx",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 5,
-      "kills": 96,
-      "deaths": 65,
-      "assists": 29,
-      "rating": 1.37,
-      "acs": 255,
-      "damage": null,
-      "hsPercent": 24.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-73214",
-      "name": "Czehks",
-      "team": "KMT",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 109,
-      "deaths": 71,
-      "assists": 21,
-      "rating": 1.37,
-      "acs": 272,
-      "damage": null,
-      "hsPercent": 39.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-6195",
-      "name": "lz",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 15,
-      "kills": 238,
-      "deaths": 146,
-      "assists": 140,
-      "rating": 1.36,
-      "acs": 219,
-      "damage": null,
-      "hsPercent": 41.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-14048",
-      "name": "zerona",
-      "team": "WC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 26,
-      "kills": 438,
-      "deaths": 287,
-      "assists": 199,
-      "rating": 1.36,
-      "acs": 260,
-      "damage": null,
-      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
