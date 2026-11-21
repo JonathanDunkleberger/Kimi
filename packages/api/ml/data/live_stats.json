@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T18:07:19.736656+00:00",
+  "updatedAt": "2026-11-21T00:15:06.450974+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -103,6 +103,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-41723",
+      "name": "4z4z1",
+      "team": "Akid",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 148,
+      "deaths": 78,
+      "assists": 24,
+      "rating": 1.49,
+      "acs": 274,
+      "damage": null,
+      "hsPercent": 26.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-41855",
       "name": "Sabotage",
       "team": "ARN",
@@ -116,22 +132,6 @@
       "acs": 318,
       "damage": null,
       "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-64874",
-      "name": "4Z4Z1",
-      "team": "Akid",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 104,
-      "deaths": 55,
-      "assists": 17,
-      "rating": 1.49,
-      "acs": 270,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -500,22 +500,6 @@
       "acs": 297,
       "damage": null,
       "hsPercent": 32.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-5517",
-      "name": "Masic",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 125,
-      "deaths": 68,
-      "assists": 21,
-      "rating": 1.41,
-      "acs": 271,
-      "damage": null,
-      "hsPercent": 34.0,
       "source": "vlr"
     },
     {
@@ -1207,22 +1191,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-10152",
-      "name": "Padisah",
-      "team": "delu",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 20,
-      "kills": 330,
-      "deaths": 191,
-      "assists": 86,
-      "rating": 1.36,
-      "acs": 256,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-14048",
       "name": "zerona",
       "team": "WC",
@@ -1252,6 +1220,38 @@
       "acs": 276,
       "damage": null,
       "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-30575",
+      "name": "r1seN",
+      "team": "Kryo",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 7,
+      "kills": 104,
+      "deaths": 59,
+      "assists": 53,
+      "rating": 1.36,
+      "acs": 225,
+      "damage": null,
+      "hsPercent": 28.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31300",
+      "name": "Drog",
+      "team": "ppp",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 154,
+      "deaths": 87,
+      "assists": 43,
+      "rating": 1.36,
+      "acs": 242,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
