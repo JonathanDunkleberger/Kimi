@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T12:07:35.388119+00:00",
+  "updatedAt": "2026-11-22T18:06:21.721482+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -615,6 +615,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-74785",
+      "name": "MAILER DAEMON",
+      "team": "VLR",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 5,
+      "kills": 121,
+      "deaths": 81,
+      "assists": 37,
+      "rating": 1.41,
+      "acs": 313,
+      "damage": null,
+      "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-1209",
       "name": "SWERL",
       "team": "BONK",
@@ -692,22 +708,6 @@
       "acs": 262,
       "damage": null,
       "hsPercent": 48.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-29240",
-      "name": "skyppervz",
-      "team": "9ZG",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 161,
-      "deaths": 98,
-      "assists": 57,
-      "rating": 1.39,
-      "acs": 255,
-      "damage": null,
-      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -1143,6 +1143,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-29240",
+      "name": "skyppervz",
+      "team": "9ZG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 10,
+      "kills": 183,
+      "deaths": 115,
+      "assists": 65,
+      "rating": 1.36,
+      "acs": 243,
+      "damage": null,
+      "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-30305",
       "name": "gurbby",
       "team": "FRG",
@@ -1252,22 +1268,6 @@
       "acs": 240,
       "damage": null,
       "hsPercent": 40.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-62052",
-      "name": "ShenSu",
-      "team": "Engi",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 17,
-      "kills": 314,
-      "deaths": 221,
-      "assists": 134,
-      "rating": 1.36,
-      "acs": 251,
-      "damage": null,
-      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
