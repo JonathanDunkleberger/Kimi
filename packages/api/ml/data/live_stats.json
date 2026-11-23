@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T12:08:35.395788+00:00",
+  "updatedAt": "2026-11-23T18:07:01.194262+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -71,22 +71,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-13221",
-      "name": "azys",
-      "team": "GDL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67cfba5cd4c85.png",
-      "maps": 6,
-      "kills": 109,
-      "deaths": 53,
-      "assists": 34,
-      "rating": 1.54,
-      "acs": 292,
-      "damage": null,
-      "hsPercent": 39.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-72533",
       "name": "j1ngle",
       "team": "VLR",
@@ -116,6 +100,22 @@
       "acs": 249,
       "damage": null,
       "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-13221",
+      "name": "azys",
+      "team": "GODL",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/67cfba5cd4c85.png",
+      "maps": 8,
+      "kills": 148,
+      "deaths": 76,
+      "assists": 51,
+      "rating": 1.51,
+      "acs": 286,
+      "damage": null,
+      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -748,10 +748,10 @@
       "team": "AQ",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 18,
-      "kills": 309,
-      "deaths": 194,
-      "assists": 103,
+      "maps": 20,
+      "kills": 329,
+      "deaths": 218,
+      "assists": 109,
       "rating": 1.4,
       "acs": 280,
       "damage": null,
