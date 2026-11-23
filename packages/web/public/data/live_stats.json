@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T00:16:24.285943+00:00",
+  "updatedAt": "2026-11-23T06:13:17.611545+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -743,22 +743,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-45918",
-      "name": "clutchz",
-      "team": "STA",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 242,
-      "deaths": 150,
-      "assists": 54,
-      "rating": 1.39,
-      "acs": 267,
-      "damage": null,
-      "hsPercent": 22.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-68377",
       "name": "Yont",
       "team": "VLR",
@@ -1268,6 +1252,22 @@
       "acs": 240,
       "damage": null,
       "hsPercent": 40.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-62052",
+      "name": "ShenSu",
+      "team": "Engi",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 17,
+      "kills": 314,
+      "deaths": 221,
+      "assists": 134,
+      "rating": 1.36,
+      "acs": 251,
+      "damage": null,
+      "hsPercent": 23.0,
       "source": "vlr"
     },
     {
