@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T18:06:21.721482+00:00",
+  "updatedAt": "2026-11-23T00:16:24.285943+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -652,10 +652,10 @@
       "team": "AQ",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 14,
-      "kills": 243,
-      "deaths": 147,
-      "assists": 73,
+      "maps": 18,
+      "kills": 309,
+      "deaths": 194,
+      "assists": 103,
       "rating": 1.4,
       "acs": 280,
       "damage": null,
