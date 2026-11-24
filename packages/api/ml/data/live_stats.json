@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T06:09:54.776586+00:00",
+  "updatedAt": "2026-11-24T12:08:35.156795+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -361,7 +361,7 @@
     {
       "playerId": "val-56457",
       "name": "arcto",
-      "team": "TROO",
+      "team": "TRP",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 8,
@@ -748,10 +748,10 @@
       "team": "AQ",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 20,
-      "kills": 329,
-      "deaths": 218,
-      "assists": 109,
+      "maps": 24,
+      "kills": 401,
+      "deaths": 275,
+      "assists": 137,
       "rating": 1.4,
       "acs": 280,
       "damage": null,
