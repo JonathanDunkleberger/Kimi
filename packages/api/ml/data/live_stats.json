@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T12:08:35.156795+00:00",
+  "updatedAt": "2026-11-24T18:06:57.582119+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -295,22 +295,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-3639",
-      "name": "Hoax",
-      "team": "RNTX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 109,
-      "deaths": 68,
-      "assists": 84,
-      "rating": 1.46,
-      "acs": 238,
-      "damage": null,
-      "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-7871",
       "name": "Xeppaa",
       "team": "ENVY",
@@ -420,22 +404,6 @@
       "acs": 310,
       "damage": null,
       "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-46104",
-      "name": "Envy2K",
-      "team": "GOC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 149,
-      "deaths": 87,
-      "assists": 56,
-      "rating": 1.44,
-      "acs": 296,
-      "damage": null,
-      "hsPercent": 29.0,
       "source": "vlr"
     },
     {
@@ -1252,6 +1220,38 @@
       "acs": 255,
       "damage": null,
       "hsPercent": 24.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-73214",
+      "name": "Czehks",
+      "team": "KMT",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 109,
+      "deaths": 71,
+      "assists": 21,
+      "rating": 1.37,
+      "acs": 272,
+      "damage": null,
+      "hsPercent": 39.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-74547",
+      "name": "Xyn",
+      "team": "IGZA",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 138,
+      "deaths": 90,
+      "assists": 59,
+      "rating": 1.37,
+      "acs": 270,
+      "damage": null,
+      "hsPercent": 35.0,
       "source": "vlr"
     },
     {
