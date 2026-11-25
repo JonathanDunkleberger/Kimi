@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T12:08:42.298720+00:00",
+  "updatedAt": "2026-11-25T18:06:42.924689+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -100,22 +100,6 @@
       "acs": 249,
       "damage": null,
       "hsPercent": 35.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-13221",
-      "name": "azys",
-      "team": "GODL",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/67cfba5cd4c85.png",
-      "maps": 8,
-      "kills": 148,
-      "deaths": 76,
-      "assists": 51,
-      "rating": 1.51,
-      "acs": 286,
-      "damage": null,
-      "hsPercent": 37.0,
       "source": "vlr"
     },
     {
@@ -276,6 +260,22 @@
       "acs": 277,
       "damage": null,
       "hsPercent": 32.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-5795",
+      "name": "sickrey",
+      "team": "GX",
+      "game": "VALORANT",
+      "imageUrl": "https://owcdn.net/img/6433aefbcc038.png",
+      "maps": 11,
+      "kills": 190,
+      "deaths": 108,
+      "assists": 126,
+      "rating": 1.46,
+      "acs": 251,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -692,22 +692,6 @@
       "acs": 280,
       "damage": null,
       "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-5795",
-      "name": "sickrey",
-      "team": "GX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 9,
-      "kills": 142,
-      "deaths": 83,
-      "assists": 94,
-      "rating": 1.4,
-      "acs": 235,
-      "damage": null,
-      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -1252,6 +1236,22 @@
       "acs": 242,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-39659",
+      "name": "RESLYDE",
+      "team": "AUEC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 141,
+      "deaths": 84,
+      "assists": 36,
+      "rating": 1.36,
+      "acs": 255,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
