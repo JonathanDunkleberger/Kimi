@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T06:10:30.484284+00:00",
+  "updatedAt": "2026-11-25T12:08:42.298720+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -215,22 +215,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-31255",
-      "name": "BiggieCheese",
-      "team": "MZN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 92,
-      "deaths": 51,
-      "assists": 47,
-      "rating": 1.47,
-      "acs": 238,
-      "damage": null,
-      "hsPercent": 34.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-46546",
       "name": "lily",
       "team": "VLR",
@@ -299,7 +283,7 @@
       "name": "Xeppaa",
       "team": "ENVY",
       "game": "VALORANT",
-      "imageUrl": "",
+      "imageUrl": "https://owcdn.net/img/679c223b5ed99.png",
       "maps": 5,
       "kills": 107,
       "deaths": 68,
@@ -340,22 +324,6 @@
       "acs": 315,
       "damage": null,
       "hsPercent": 39.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-56457",
-      "name": "arcto",
-      "team": "TRP",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 162,
-      "deaths": 98,
-      "assists": 60,
-      "rating": 1.45,
-      "acs": 296,
-      "damage": null,
-      "hsPercent": 25.0,
       "source": "vlr"
     },
     {
@@ -500,6 +468,22 @@
       "acs": 281,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31255",
+      "name": "BiggieCheese",
+      "team": "MZN",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 123,
+      "deaths": 73,
+      "assists": 67,
+      "rating": 1.42,
+      "acs": 231,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -695,22 +679,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-1209",
-      "name": "SWERL",
-      "team": "BONK",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 7,
-      "kills": 114,
-      "deaths": 76,
-      "assists": 63,
-      "rating": 1.4,
-      "acs": 265,
-      "damage": null,
-      "hsPercent": 29.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-3722",
       "name": "koalanoob",
       "team": "AQ",
@@ -820,22 +788,6 @@
       "acs": 271,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-39659",
-      "name": "RESLYDE",
-      "team": "AUEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 103,
-      "deaths": 60,
-      "assists": 28,
-      "rating": 1.39,
-      "acs": 256,
-      "damage": null,
-      "hsPercent": 28.0,
       "source": "vlr"
     },
     {
@@ -1127,22 +1079,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-31254",
-      "name": "FETA",
-      "team": "AUEC",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 6,
-      "kills": 89,
-      "deaths": 54,
-      "assists": 40,
-      "rating": 1.37,
-      "acs": 229,
-      "damage": null,
-      "hsPercent": 37.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-49906",
       "name": "HoneyBunny",
       "team": "MRG",
@@ -1252,6 +1188,70 @@
       "acs": 270,
       "damage": null,
       "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-10152",
+      "name": "Padisah",
+      "team": "delu",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 26,
+      "kills": 453,
+      "deaths": 254,
+      "assists": 107,
+      "rating": 1.36,
+      "acs": 260,
+      "damage": null,
+      "hsPercent": 31.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-29240",
+      "name": "skyppervz",
+      "team": "9ZG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 10,
+      "kills": 183,
+      "deaths": 115,
+      "assists": 65,
+      "rating": 1.36,
+      "acs": 243,
+      "damage": null,
+      "hsPercent": 38.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-30305",
+      "name": "gurbby",
+      "team": "FRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 18,
+      "kills": 322,
+      "deaths": 213,
+      "assists": 101,
+      "rating": 1.36,
+      "acs": 276,
+      "damage": null,
+      "hsPercent": 35.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-31300",
+      "name": "Drog",
+      "team": "ppp",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 9,
+      "kills": 154,
+      "deaths": 87,
+      "assists": 43,
+      "rating": 1.36,
+      "acs": 242,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
