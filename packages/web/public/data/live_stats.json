@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T18:06:42.924689+00:00",
+  "updatedAt": "2026-11-26T00:14:36.073009+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1175,22 +1175,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-10152",
-      "name": "Padisah",
-      "team": "delu",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 26,
-      "kills": 453,
-      "deaths": 254,
-      "assists": 107,
-      "rating": 1.36,
-      "acs": 260,
-      "damage": null,
-      "hsPercent": 31.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-29240",
       "name": "skyppervz",
       "team": "9ZG",
@@ -1252,6 +1236,22 @@
       "acs": 255,
       "damage": null,
       "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-42566",
+      "name": "Peppe",
+      "team": "VDX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 129,
+      "deaths": 88,
+      "assists": 28,
+      "rating": 1.36,
+      "acs": 293,
+      "damage": null,
+      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
