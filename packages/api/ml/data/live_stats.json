@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T18:06:59.878138+00:00",
+  "updatedAt": "2026-11-27T00:14:49.484494+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -263,22 +263,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5795",
-      "name": "sickrey",
-      "team": "GX",
-      "game": "VALORANT",
-      "imageUrl": "https://owcdn.net/img/6433aefbcc038.png",
-      "maps": 11,
-      "kills": 190,
-      "deaths": 108,
-      "assists": 126,
-      "rating": 1.46,
-      "acs": 251,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-7871",
       "name": "Xeppaa",
       "team": "ENVY",
@@ -290,22 +274,6 @@
       "assists": 41,
       "rating": 1.45,
       "acs": 264,
-      "damage": null,
-      "hsPercent": 25.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-23799",
-      "name": "caiobaz",
-      "team": "BIDA",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 14,
-      "kills": 210,
-      "deaths": 112,
-      "assists": 112,
-      "rating": 1.45,
-      "acs": 238,
       "damage": null,
       "hsPercent": 25.0,
       "source": "vlr"
@@ -729,7 +697,7 @@
     {
       "playerId": "val-24007",
       "name": "Shyy",
-      "team": "VLR",
+      "team": "EL L",
       "game": "VALORANT",
       "imageUrl": "",
       "maps": 5,
@@ -1015,6 +983,22 @@
       "source": "vlr"
     },
     {
+      "playerId": "val-5795",
+      "name": "sickrey",
+      "team": "GX",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 13,
+      "kills": 214,
+      "deaths": 140,
+      "assists": 149,
+      "rating": 1.37,
+      "acs": 240,
+      "damage": null,
+      "hsPercent": 27.0,
+      "source": "vlr"
+    },
+    {
       "playerId": "val-8329",
       "name": "StarBound",
       "team": "Zodi",
@@ -1252,6 +1236,22 @@
       "acs": 242,
       "damage": null,
       "hsPercent": 30.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-39659",
+      "name": "RESLYDE",
+      "team": "AUEC",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 8,
+      "kills": 141,
+      "deaths": 84,
+      "assists": 36,
+      "rating": 1.36,
+      "acs": 255,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
