@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T06:10:12.426041+00:00",
+  "updatedAt": "2026-11-27T12:08:48.234377+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -452,22 +452,6 @@
       "acs": 281,
       "damage": null,
       "hsPercent": 30.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-31255",
-      "name": "BiggieCheese",
-      "team": "MZN",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 123,
-      "deaths": 73,
-      "assists": 67,
-      "rating": 1.42,
-      "acs": 231,
-      "damage": null,
-      "hsPercent": 33.0,
       "source": "vlr"
     },
     {
@@ -1239,19 +1223,35 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-39659",
-      "name": "RESLYDE",
-      "team": "AUEC",
+      "playerId": "val-42566",
+      "name": "Peppe",
+      "team": "VDX",
       "game": "VALORANT",
       "imageUrl": "",
-      "maps": 8,
-      "kills": 141,
-      "deaths": 84,
-      "assists": 36,
+      "maps": 6,
+      "kills": 129,
+      "deaths": 88,
+      "assists": 28,
       "rating": 1.36,
-      "acs": 255,
+      "acs": 293,
       "damage": null,
-      "hsPercent": 27.0,
+      "hsPercent": 33.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-45914",
+      "name": "KODA",
+      "team": "BM",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 114,
+      "deaths": 77,
+      "assists": 32,
+      "rating": 1.36,
+      "acs": 268,
+      "damage": null,
+      "hsPercent": 26.0,
       "source": "vlr"
     },
     {
