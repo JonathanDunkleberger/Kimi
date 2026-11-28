@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T00:14:19.644596+00:00",
+  "updatedAt": "2026-11-28T06:09:06.574656+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -68,6 +68,22 @@
       "acs": 329,
       "damage": null,
       "hsPercent": 29.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-52025",
+      "name": "SDY",
+      "team": "FP",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 122,
+      "deaths": 64,
+      "assists": 18,
+      "rating": 1.54,
+      "acs": 294,
+      "damage": null,
+      "hsPercent": 27.0,
       "source": "vlr"
     },
     {
@@ -276,22 +292,6 @@
       "acs": 294,
       "damage": null,
       "hsPercent": 23.0,
-      "source": "vlr"
-    },
-    {
-      "playerId": "val-74634",
-      "name": "never die",
-      "team": "VLR",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 8,
-      "kills": 142,
-      "deaths": 84,
-      "assists": 47,
-      "rating": 1.47,
-      "acs": 277,
-      "damage": null,
-      "hsPercent": 32.0,
       "source": "vlr"
     },
     {
