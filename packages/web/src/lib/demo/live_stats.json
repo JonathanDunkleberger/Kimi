@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T18:06:51.802322+00:00",
+  "updatedAt": "2026-11-28T00:14:19.644596+00:00",
   "sources": [
     "vct_history",
     "vlr",
@@ -1111,22 +1111,6 @@
       "source": "vlr"
     },
     {
-      "playerId": "val-5795",
-      "name": "sickrey",
-      "team": "GX",
-      "game": "VALORANT",
-      "imageUrl": "",
-      "maps": 13,
-      "kills": 214,
-      "deaths": 140,
-      "assists": 149,
-      "rating": 1.37,
-      "acs": 240,
-      "damage": null,
-      "hsPercent": 27.0,
-      "source": "vlr"
-    },
-    {
       "playerId": "val-7749",
       "name": "Nexi",
       "team": "JADE",
@@ -1236,6 +1220,22 @@
       "acs": 257,
       "damage": null,
       "hsPercent": 25.0,
+      "source": "vlr"
+    },
+    {
+      "playerId": "val-49906",
+      "name": "HoneyBunny",
+      "team": "MRG",
+      "game": "VALORANT",
+      "imageUrl": "",
+      "maps": 6,
+      "kills": 104,
+      "deaths": 56,
+      "assists": 16,
+      "rating": 1.37,
+      "acs": 241,
+      "damage": null,
+      "hsPercent": 30.0,
       "source": "vlr"
     },
     {
